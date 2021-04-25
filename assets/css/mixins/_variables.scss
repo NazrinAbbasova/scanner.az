@@ -1,0 +1,61 @@
+@use 'sass:map';
+
+$body-bg: #f8f8f8;
+$primary-color: #2873f0;
+$primary-darker-color: rgb(15, 94, 231);
+$primary-darkest-color: #03376b;
+$primary-lighter-color: #3ea0ff;
+$primary-lightest-color: #a2d1ff;
+$secondary-color: #e74c3c;
+$primary-font: "Averta", Arial, "Helvetica Neue", Helvetica, sans-serif;
+$secondary-font: Arial, "Helvetica Neue", Helvetica, sans-serif;
+$text-color: #414141;
+$label-color: #606060;
+$footer-bg: #fff;
+$input-border-color: #ededef;
+$link-color: #03376b;
+$lighter-text-color: #7d7d7d;
+$facebook-color: #4267b2;
+$twitter-color: #38a1f3;
+$instagram-color: #231f20;
+$linkedin-color: #0077b5;
+$youtube-color: #ed3833;
+$divider-color: #f1f1f1;
+$success-color: #00d900;
+$warning-color: #ffb100;
+$error-color: #e74c3c;
+$error-darker-color: #d64131;
+
+//Get the value for justify-content
+$justify: (
+  "sa": space-around,
+  "sb": space-between,
+  "se": space-evenly,
+  "c": center,
+  "fs": flex-start,
+  "fe": flex-end
+);
+
+//Get the value for align-items
+$align: (
+  "b": baseline,
+  "s": stretch,
+  "c": center,
+  "fs": flex-start,
+  "fe": flex-end
+);
+
+$direction: (
+  "r": row,
+  "rr": row-reverse,
+  "c": column,
+  "cr": column-reverse
+);
+
+//Get the value for flex-wrap
+$wrap: (
+  "w": wrap,
+  "n": nowrap,
+  "wr": wrap-reverse,
+  "u": unset
+);
