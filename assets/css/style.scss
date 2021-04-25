@@ -1,0 +1,40 @@
+@import "mixins/element", "mixins/flex", "mixins/font", "mixins/mixins",
+  "mixins/text", "mixins/variables";
+
+$primary-color: #325cf6;
+$secondary-color: #1a1d21;
+
+.button {
+  background-color: $primary-color;
+}
+* {
+  @include el($bgColor: #f5f5f5, $p: 0, $m: 0);
+  @include text($color: #414141);
+}
+
+header {
+  @include el($w: 100%, $h: auto, $p: 1rem, $bb: 2px solid $primary-color);
+  @include fx();
+
+  .logo {
+    img {
+      @include el($w: 15rem);
+    }
+  }
+
+  .nav {
+    @include fx();
+    @include flex($jc: fe);
+    a {
+      @include el($p: 1rem, $m: 1rem);
+      @include text($decoration: none);
+    }
+    .button {
+      @include text($color: white);
+    }
+  }
+}
+
+.auth-box {
+  @include el($w: 50rem, $h: 50rem, $bgColor: white);
+}

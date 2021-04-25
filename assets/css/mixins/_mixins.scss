@@ -1,0 +1,62 @@
+@import './element';
+
+@mixin width-height($width, $height) {
+  width: $width;
+  height: $height;
+}
+@mixin square($size) {
+  @include width-height($size, $size);
+}
+@mixin linear-background($color1, $color2, $direction) {
+  background-image: linear-gradient(to $direction, $color1, $color2);
+}
+@mixin linear-percent-background($color1, $color2, $direction) {
+  background-image: linear-gradient(to $direction, $color1 1%, $color2 99%);
+}
+
+@mixin animated-border-bottom() {
+  &:after {
+    display: block;
+    content: "";
+    border-bottom: solid 3px $primary-color;
+    transform: scaleX(0);
+    transform-origin: 0% 50%;
+    transition: transform 250ms ease-in-out;
+  }
+  &.active:after,
+  &:hover:after {
+    transform: scaleX(1);
+  }
+}
+
+@mixin line-and-height($height) {
+  height: $height;
+  line-height: $height;
+}
+
+@mixin animate($animation, $duration) {
+  animation-name: $animation;
+  animation-duration: $duration;
+  animation-fill-mode: both;
+}
+
+@mixin fadeIn($duration) {
+  animation-name: fadeIn;
+  animation-duration: $duration;
+  animation-fill-mode: both;
+}
+@mixin absolute($top, $right, $bottom, $left) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin fixed($top, $right, $bottom, $left) {
+  position: fixed;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}

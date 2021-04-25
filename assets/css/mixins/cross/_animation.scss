@@ -1,0 +1,63 @@
+@mixin transition($property: all, $time: .5s) {
+    // transition times
+    transition-duration: $time;
+    -o-transition-duration: $time;
+    -ms-transition-duration: $time;
+    -moz-transition-duration: $time;
+    -webkit-transition-duration: $time;
+
+    // transition properties
+    transition-property: $property;
+    -o-transition-property: $property;
+    -ms-transition-property: $property;
+    -moz-transition-property: $property;
+    -webkit-transition-property: $property;
+
+    // transition function
+    transition-timing-function: ease-in-out;
+    -o-transition-timing-function: ease-in-out;
+    -ms-transition-timing-function: ease-in-out;
+    -moz-transition-timing-function: ease-in-out;
+    -webkit-transition-timing-function: ease-in-out;
+}
+
+@mixin frame($name) {
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+
+    @-o-keyframes #{$name} {
+        @content;
+    }
+
+    @keyframes #{$name} {
+        @content;
+    }
+}
+
+@mixin animation($val) {
+    -webkit-animation: $val; /* Safari 4+ */
+    -moz-animation: $val; /* Fx 5+ */
+    -o-animation: $val; /* Opera 12+ */
+    animation: $val; /* IE 10+, Fx 29+ */
+}
+
+@mixin fadeIn($duration: null) {
+    @if $duration != null {
+        animation-name: fadeIn;
+        animation-duration: $duration;
+        animation-fill-mode: both;
+    }
+}
+
+@mixin transition($val) {
+    -webkit-transition: $val;
+    -moz-transition: $val;
+    -o-transition: $val;
+    -ms-transition: $val;
+    transition: $val;
+}
