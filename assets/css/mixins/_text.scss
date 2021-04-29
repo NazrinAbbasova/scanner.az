@@ -49,7 +49,7 @@ h1,
 
 h2 {
   @include el($m: 0.75rem 0);
-  @extend .primary-font-medium, .uppercase;
+  @extend .primary-font-medium;
 }
 h4 {
   @extend .primary-font-medium, .small-text, .lighter-text, .uppercase;
