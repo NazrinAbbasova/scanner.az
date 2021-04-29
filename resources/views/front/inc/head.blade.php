@@ -3,7 +3,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@yield('title', env('APP_NAME'))</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-grid.min.css" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('static/css/front/bootstrap-grid.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('static/dashboard/css/front/app.css') }}">
     <link rel="shortcut icon" type="image/jpg" href="assets/images/favicon/favicon.png" />
     <link rel="preconnect" href="https://fonts.gstatic.com">

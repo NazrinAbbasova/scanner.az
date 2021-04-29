@@ -9,7 +9,7 @@
 
   @yield('content')
 
-  <script src="/script.js"></script>
+  <script src="{{ asset('static/dashboard/js/front/app.js') }}"></script>
 </body>
 
 </html>
