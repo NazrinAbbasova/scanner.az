@@ -15,41 +15,20 @@ function changeTab() {
   applicantTab.addEventListener("click", () => {
     companyForm.style.display = "none";
     applicantForm.style.display = "block";
-    applicantTab.style.border = "1px solid #4567f4";
+    applicantTab.style.background = "linear-gradient(0deg, #4567f4, #3cd3ad)";
+    applicantTab.style.color = "white";
     companyTab.style.border = "1px solid #ededef";
+    companyTab.style.background = "white";
+    companyTab.style.color = "#4567f4";
   });
   companyTab.addEventListener("click", () => {
     applicantForm.style.display = "none";
     companyForm.style.display = "block";
-    companyTab.style.border = "1px solid #4567f4";
+    companyTab.style.background = "linear-gradient(0deg, #4567f4, #3cd3ad)";
+    companyTab.style.color = "white";
     applicantTab.style.border = "1px solid #ededef";
+    applicantTab.style.background = "white";
+    applicantTab.style.color = "#4567f4";
   });
 }
 changeTab();
-
-function changePage() {
-  loginButton.addEventListener("click", () => {
-    registerForm.style.display = "none";
-    loginForm.style.display = "block";
-    loginButton.style.display = "none";
-    registerButton.style.display = "block";
-    forgotForm.style.display = "none";
-  });
-  registerButton.addEventListener("click", () => {
-    loginForm.style.display = "none";
-    registerForm.style.display = "block";
-    loginButton.style.display = "block";
-    registerButton.style.display = "none";
-  });
-}
-changePage();
-
-function forgotPassword() {
-  forgotButton.addEventListener("click", () => {
-    loginForm.style.display = "none";
-    forgotForm.style.display = "block";
-    loginButton.style.display = "block";
-    registerButton.style.display = "none";
-  });
-}
-forgotPassword();
