@@ -1,0 +1,260 @@
+@import "mixins/element", "mixins/flex", "mixins/font", "mixins/mixins",
+  "mixins/text", "mixins/variables";
+
+$primary-color: #4567f4;
+$gradient: linear-gradient(0deg, #4567f4, #3cd3ad);
+$gradient-button: linear-gradient(45deg, #4567f4, #3cd3ad);
+$secondary-color: #081828;
+
+.auth-box {
+  @include fx();
+  @include flex($ai: c);
+  @include el($m: auto, $mt: 4rem, $w: 100%, $radius: 5px);
+  background: $gradient;
+  .form-container {
+    @include el($w: 60%, $h: 30rem, $p: 4rem, $bgColor: white);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    @include fx();
+    @include flex($ai: c);
+    flex-direction: column;
+
+    .register-form {
+      @include el($w: 60%, $h: 100%);
+      @include flex($ai: c);
+      flex-direction: column;
+
+      h2 {
+        @include el($mb: 2rem);
+        @include text($color: $primary-color, $weight: bold, $align: center);
+      }
+
+      .account-type {
+        @include fx();
+        @include flex($jc: sb);
+        @include el($w: 100%, $crs: pointer);
+        @include text($color: $primary-color);
+
+        .register-applicant,
+        .register-company {
+          @include el($p: 1rem, $w: 7.8rem, $radius: 5px);
+          @include text($align: center);
+          transition: border-color 0.5s;
+        }
+        .register-applicant {
+          @include el($b: 1px solid $primary-color);
+        }
+        .register-company {
+          @include el($b: 1px solid #ededef);
+        }
+      }
+      .applicant-form,
+      .company-form {
+        @include fx();
+        @include flex($ai: c);
+        flex-direction: column;
+        @include el($w: 100%);
+
+        input {
+          @include el(
+            $w: 100%,
+            $b: 1px solid #ededef,
+            $radius: 3px,
+            $p: 1rem 0,
+            $mt: 1rem
+          );
+
+          @include text($indent: 20px);
+          outline: none;
+          &:focus {
+            border-color: $primary-color;
+          }
+        }
+      }
+      .company-form {
+        @include el($dsp: none);
+      }
+
+      button {
+        @include el(
+          $w: 100%,
+          $b: none,
+          $radius: 3px,
+          $p: 1rem,
+          $mt: 1rem,
+          $crs: pointer
+        );
+        background: $gradient-button;
+        outline: none;
+        @include text($color: white);
+      }
+    }
+    .login-form {
+      @include el($w: 60%);
+      @include flex($ai: c);
+      flex-direction: column;
+
+      h2 {
+        @include el($mb: 2rem);
+        @include text($color: $primary-color, $weight: bold, $align: center);
+      }
+      input {
+        @include el(
+          $w: 100%,
+          $b: 1px solid #ededef,
+          $radius: 3px,
+          $p: 1rem 0,
+          $mt: 1rem
+        );
+
+        @include text($indent: 20px);
+        outline: none;
+        &:focus {
+          border-color: $primary-color;
+        }
+      }
+      .forgot-password {
+        @include fx();
+        @include flex($jc: c);
+        @include el($mt: 1rem, $crs: pointer);
+        @include text($size: 12px, $color: $primary-color, $decoration: none);
+      }
+      button {
+        @include el(
+          $w: 100%,
+          $b: none,
+          $radius: 3px,
+          $p: 1rem,
+          $mt: 1rem,
+          $crs: pointer
+        );
+        background: $gradient-button;
+        outline: none;
+        @include text($color: white);
+      }
+      display: none;
+    }
+    .forgot-form {
+      @include el($w: 60%);
+      @include flex($ai: c);
+      flex-direction: column;
+      h2 {
+        @include el($mb: 2rem);
+        @include text($color: $primary-color, $weight: bold, $align: center);
+      }
+      input {
+        @include el(
+          $w: 100%,
+          $b: 1px solid #ededef,
+          $radius: 3px,
+          $p: 1rem 0,
+          $mt: 1rem
+        );
+
+        @include text($indent: 20px);
+        outline: none;
+        &:focus {
+          border-color: $primary-color;
+        }
+      }
+
+      button {
+        @include el(
+          $w: 100%,
+          $b: none,
+          $radius: 3px,
+          $p: 1rem,
+          $mt: 1rem,
+          $crs: pointer
+        );
+        background: $gradient-button;
+        outline: none;
+        @include text($color: white);
+      }
+      display: none;
+    }
+    .reset-form {
+      @include el($w: 60%);
+      @include flex($ai: c);
+      flex-direction: column;
+      h2 {
+        @include el($mb: 2rem);
+        @include text($color: $primary-color, $weight: bold, $align: center);
+      }
+      input {
+        @include el(
+          $w: 100%,
+          $b: 1px solid #ededef,
+          $radius: 3px,
+          $p: 1rem 0,
+          $mt: 1rem
+        );
+
+        @include text($indent: 20px);
+        outline: none;
+        &:focus {
+          border-color: $primary-color;
+        }
+      }
+
+      button {
+        @include el(
+          $w: 100%,
+          $b: none,
+          $radius: 3px,
+          $p: 1rem,
+          $mt: 1rem,
+          $crs: pointer
+        );
+        background: $gradient-button;
+        outline: none;
+        @include text($color: white);
+      }
+    }
+  }
+  .overlay-container {
+    animation: 0.8s;
+    @include fx();
+    @include flex($ai: c);
+    flex-direction: column;
+
+    @include el($w: 40%);
+    background-image: gradient;
+
+    img {
+      @include el($w: 100%);
+    }
+    button {
+      @include el(
+        $w: 90%,
+        $bgColor: white,
+        $b: 1px solid $primary-color,
+        $radius: 3px,
+        $p: 1rem,
+        $mt: 4rem
+      );
+      @include text($color: $primary-color);
+      &:hover {
+        @include el(
+          $bgColor: $primary-color,
+          $b: 1px solid white,
+          $crs: pointer
+        );
+        transition: background-color 0.5s;
+        @include text($color: white);
+      }
+    }
+    .page-register {
+      @include el($dsp: none);
+    }
+  }
+  .overlay-container.reset {
+    a {
+      @include el($w: 90%);
+
+      button {
+        @include el($w: 100%);
+      }
+    }
+  }
+}

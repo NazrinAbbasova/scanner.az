@@ -203,7 +203,7 @@ h2 {
   color: #e74c3c;
 }
 
-.uppercase, h2, h4 {
+.uppercase, h4 {
   text-transform: uppercase;
 }
 
@@ -232,25 +232,31 @@ h2 {
   font-weight: 500;
 }
 
-.button {
-  background-color: #325cf6;
+button,
+input {
+  font-family: "Poppins", sans-serif;
 }
 
-* {
+body {
+  font-family: "Poppins", sans-serif;
   padding: 0;
   margin: 0;
   background-color: #f5f5f5;
-  color: #414141;
+  color: #081828;
   /* Chrome all / Safari all */
   /* Firefox all */
   /* IE 10+ */
 }
 
 header {
-  padding: 1rem;
-  border-bottom: 2px solid #325cf6;
+  border-bottom: 2px solid #4567f4;
   width: 100%;
   height: auto;
+}
+header .logo {
+  padding: 0;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 header .logo img {
   width: 15rem;
@@ -261,6 +267,11 @@ header .nav {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
   -webkit-box-pack: end;
   -moz-box-pack: end;
   -ms-flex-pack: end;
@@ -268,24 +279,24 @@ header .nav {
   justify-content: flex-end;
 }
 header .nav a {
-  padding: 1rem;
-  margin: 1rem;
+  padding: 0.75rem 1.5rem;
   text-decoration: none;
+  color: #081828;
+  font-size: 15px;
   /* Chrome all / Safari all */
   /* Firefox all */
   /* IE 10+ */
 }
 header .nav .button {
+  background: linear-gradient(45deg, #4567f4, #3cd3ad);
   color: white;
   /* Chrome all / Safari all */
   /* Firefox all */
   /* IE 10+ */
+  border-radius: 5px;
+}
+header .nav .button:not(:last-child) {
+  margin: 0 15px 0 15px;
 }
 
-.auth-box {
-  width: 50rem;
-  height: 50rem;
-  background-color: white;
-}
-
-/*# sourceMappingURL=output.css.map */
+/*# sourceMappingURL=nav.css.map */
