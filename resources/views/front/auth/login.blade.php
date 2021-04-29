@@ -43,7 +43,7 @@
             </div>
           </div>
           <div class="overlay-container">
-            <img src="/assets/images/auth-img.png" alt="auth">
+            <img src="{{ asset('static/front/images/auth-img.png') }}" alt="auth">
             <button type="submit" class="page-login">Daxil ol</button>
             <button type="submit" class="page-register">Qeydiyyatdan keç</button>
           </div>

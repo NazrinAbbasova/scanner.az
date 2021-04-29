@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('front.index');
 });
 
+Route::get('/login', 'LoginController@index')->name('login');
+
 Route::get('locale/{locale}', 'PageController@locale')->name('locale');
 
 Route::prefix('dashboard')->group(function () {
