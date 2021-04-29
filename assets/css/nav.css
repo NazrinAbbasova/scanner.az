@@ -237,6 +237,12 @@ input {
   font-family: "Poppins", sans-serif;
 }
 
+button:hover {
+  background: linear-gradient(0deg, #4567f4, #3cd3ad);
+  color: white;
+  transition: background-image 1s ease-in-out;
+}
+
 body {
   font-family: "Poppins", sans-serif;
   padding: 0;
@@ -279,10 +285,16 @@ header .nav {
   justify-content: flex-end;
 }
 header .nav a {
-  padding: 0.75rem 1.5rem;
+  padding: 0.75rem 2.5rem;
   text-decoration: none;
-  color: #081828;
+  color: #4567f4;
   font-size: 15px;
+  /* Chrome all / Safari all */
+  /* Firefox all */
+  /* IE 10+ */
+}
+header .nav a:hover {
+  color: #4567f4;
   /* Chrome all / Safari all */
   /* Firefox all */
   /* IE 10+ */
@@ -293,7 +305,13 @@ header .nav .button {
   /* Chrome all / Safari all */
   /* Firefox all */
   /* IE 10+ */
+  padding: 0.75rem 1.5rem;
   border-radius: 5px;
+}
+header .nav .button:hover {
+  background: linear-gradient(0deg, #4567f4, #3cd3ad);
+  color: white;
+  transition: background-image 1s ease-in-out;
 }
 header .nav .button:not(:last-child) {
   margin: 0 15px 0 15px;
