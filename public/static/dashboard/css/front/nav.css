@@ -1,0 +1,302 @@
+.flex {
+  display: flex;
+}
+.flex.wrap {
+  flex-wrap: wrap;
+}
+.flex.justify.start {
+  justify-content: flex-start;
+  -webkit-justify-content: flex-start;
+  -webkit-box-pack: start;
+  -moz-box-pack: start;
+  -ms-flex-pack: start;
+}
+.flex.justify.center {
+  justify-content: center;
+  -webkit-justify-content: center;
+}
+.flex.justify.sb {
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+}
+.flex.justify.sa {
+  justify-content: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+}
+.flex.justify.end {
+  justify-content: flex-end;
+  -webkit-justify-content: flex-end;
+  -webkit-box-pack: end;
+  -moz-box-pack: end;
+  -ms-flex-pack: end;
+}
+.flex.align.start {
+  align-items: flex-start;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: start;
+  -moz-box-align: start;
+  -ms-flex-align: start;
+}
+.flex.align.center {
+  align-items: center !important;
+  -webkit-align-items: center !important;
+}
+.flex.align.end {
+  align-items: flex-end;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: end;
+  -moz-box-align: end;
+  -ms-flex-align: end;
+}
+.flex.column {
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -moz-box-direction: normal;
+  -moz-box-orient: vertical;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-2 {
+  flex: 2;
+}
+
+.flex-3 {
+  flex: 3;
+}
+
+.flex-4 {
+  flex: 4;
+}
+
+.flex-5 {
+  flex: 5;
+}
+
+.flex-6 {
+  flex: 6;
+}
+
+.flex-7 {
+  flex: 7;
+}
+
+.flex-8 {
+  flex: 8;
+}
+
+.flex-9 {
+  flex: 9;
+}
+
+.flex-10 {
+  flex: 10;
+}
+
+.flex-11 {
+  flex: 11;
+}
+
+.flex-12 {
+  flex: 12;
+}
+
+@font-face {
+  font-family: "Averta";
+  src: url("../fonts/Averta-Bold.eot");
+  src: url("../fonts/Averta-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Averta-Bold.woff2") format("woff2"), url("../fonts/Averta-Bold.woff") format("woff"), url("../fonts/Averta-Bold.svg#Averta-Bold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Averta";
+  src: url("../fonts/Averta-Regular.eot");
+  src: url("../fonts/Averta-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Averta-Regular.woff2") format("woff2"), url("../fonts/Averta-Regular.woff") format("woff"), url("../fonts/Averta-Regular.svg#Averta-Regular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Averta";
+  src: url("../fonts/Averta-Semibold.eot");
+  src: url("../fonts/Averta-Semibold.eot?#iefix") format("embedded-opentype"), url("../fonts/Averta-Semibold.woff2") format("woff2"), url("../fonts/Averta-Semibold.woff") format("woff"), url("../fonts/Averta-Semibold.svg#Averta-Semibold") format("svg");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Averta";
+  src: url("../fonts/Averta-Light.eot");
+  src: url("../fonts/Averta-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/Averta-Light.woff2") format("woff2"), url("../fonts/Averta-Light.woff") format("woff"), url("../fonts/Averta-Light.svg#Averta-Light") format("svg");
+  font-weight: 300;
+  font-style: normal;
+}
+h1,
+.heading-1 {
+  font-size: 1.5rem;
+}
+
+h2 {
+  margin: 0.75rem 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-start {
+  text-align: start;
+}
+
+.link-text {
+  color: #2873f0;
+}
+.link-text:hover {
+  color: #03376b;
+}
+
+.lighter-text, h4 {
+  color: #7d7d7d;
+}
+
+.xs-text {
+  font-size: 0.65rem;
+}
+
+.sm-text {
+  font-size: 1.5rem;
+  color: #c0c0c0;
+}
+
+.small-text, h4 {
+  font-size: 0.8rem;
+}
+
+.smaller-text {
+  font-size: 0.9rem;
+}
+
+.big-text {
+  font-size: 2rem;
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
+.xl-text {
+  font-size: 3.5rem;
+}
+
+.success-text {
+  color: #2873f0;
+}
+
+.error-text {
+  color: #e74c3c;
+}
+
+.uppercase, h4 {
+  text-transform: uppercase;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+.primary-font-bold, h1,
+.heading-1, .big-text {
+  font-family: "Averta", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+.primary-font-regular {
+  font-family: "Averta", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: normal;
+}
+
+.primary-font-light {
+  font-family: "Averta", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 300;
+}
+
+.primary-font-medium, h2, h4 {
+  font-family: "Averta", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 500;
+}
+
+button,
+input {
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  padding: 0;
+  margin: 0;
+  background-color: #f5f5f5;
+  color: #081828;
+  /* Chrome all / Safari all */
+  /* Firefox all */
+  /* IE 10+ */
+}
+
+header {
+  border-bottom: 2px solid #4567f4;
+  width: 100%;
+  height: auto;
+}
+header .logo {
+  padding: 0;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+header .logo img {
+  width: 15rem;
+}
+header .nav {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -moz-box-pack: end;
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+}
+header .nav a {
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  color: #081828;
+  font-size: 15px;
+  /* Chrome all / Safari all */
+  /* Firefox all */
+  /* IE 10+ */
+}
+header .nav .button {
+  background: linear-gradient(45deg, #4567f4, #3cd3ad);
+  color: white;
+  /* Chrome all / Safari all */
+  /* Firefox all */
+  /* IE 10+ */
+  border-radius: 5px;
+}
+header .nav .button:not(:last-child) {
+  margin: 0 15px 0 15px;
+}
+
+/*# sourceMappingURL=nav.css.map */
