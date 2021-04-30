@@ -1,16 +1,17 @@
 @extends('front.layout.master')
 @section('content')
-<section>
+<section class="login">
   <div class="container">
     <div class="auth-box">
       <div class="form-container">
         <div class="login-form">
           <h2>Giriş</h2>
-          <form>
+          <form method="post" action="">
+            @csrf
             <label for="email">Email</label>
-            <input type="email" placeholder="Emailinizi daxil edin">
+            <input type="email" name="email" placeholder="Emailinizi daxil edin">
             <label for="password">Şifrə</label>
-            <input type="password" placeholder="Şifrənizi daxil edin">
+            <input type="password" name="password" placeholder="Şifrənizi daxil edin">
             <a href="forgot-pass.html">
               <div class="forgot-password">Şifrəni unutdum</div>
             </a>
