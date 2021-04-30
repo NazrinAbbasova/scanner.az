@@ -8,20 +8,19 @@
           <div class="form-container">
             <div class="reset-form">
               <h2>Şifrəni yenilə</h2>
-              <input type="password" placeholder="Yeni şifrə təyin edin">
-              <input type="password" placeholder="Yeni şifrəni təsdiqləyin">
-              <button type="submit">Təsdiqlə</button>
+              <form>
+                <label for="password">Yeni şifrə</label>
+                <input type="password" placeholder="Yeni şifrə təyin edin">
+                <label for="password">Yeni şifrənin təkrarı</label>
+                <input type="password" placeholder="Yeni şifrəni təsdiqləyin">
+                <button type="submit">Təsdiqlə</button>
+              </form>
             </div>
           </div>
-          <div class="overlay-container reset">
-            <img src="/assets/images/auth-img.png" alt="auth">
-            <a href="auth.html">
-              <button type="submit" class="page-login">Daxil ol</button>
-            </a>
-          </div>
+          @include('front.auth.imagebox')
         </div>
       </div>
     </div>
-</div>
+  </div>
 </section>
 @endsection
