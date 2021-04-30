@@ -252,7 +252,6 @@ h2 {
 }
 .container .auth-box .form-container {
   padding: 2rem;
-  width: 45%;
   background-color: white;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
@@ -350,6 +349,7 @@ h2 {
   -ms-flex-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between;
+  margin-bottom: 2rem;
   width: 100%;
   cursor: pointer;
   color: #4567f4;
@@ -460,10 +460,6 @@ h2 {
 .container .auth-box .form-container .forgot-form form,
 .container .auth-box .form-container .reset-form form {
   width: 100%;
-}
-.container .auth-box .overlay-container {
-  width: 50%;
-  background-image: gradient;
 }
 .container .auth-box .overlay-container img {
   width: 100%;

@@ -317,4 +317,21 @@ header .nav .button:not(:last-child) {
   margin: 0 15px 0 15px;
 }
 
+@media only screen and (max-width: 1199px) {
+  header .nav a {
+    padding: 0.75rem 1rem;
+  }
+}
+@media only screen and (max-width: 991px) {
+  header .nav a {
+    font-size: 11px;
+    /* Chrome all / Safari all */
+    /* Firefox all */
+    /* IE 10+ */
+  }
+  header .logo img {
+    width: 10rem;
+  }
+}
+
 /*# sourceMappingURL=nav.css.map */
