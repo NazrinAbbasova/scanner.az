@@ -22,8 +22,12 @@ Route::get('/register', 'RegisterController@index')->name('register');
 
 Route::get('locale/{locale}', 'PageController@locale')->name('locale');
 
-Route::get('/forgot',        'AuthController@forgot')->name('forgot');
-Route::get('/reset/{token}', 'AuthController@reset')->name('reset');
+// Verify email
+Route::get('/verify/{token}',   'AuthController@verify')->name('verify');
+Route::get('/forgot',           'AuthController@forgot')->name('forgot');
+Route::get('/reset/{token}',    'AuthController@reset')->name('reset');
+
+
 
 Route::prefix('dashboard')->group(function () {
     Route::get('/', 'PageController@dashboard')->name('dashboard');
