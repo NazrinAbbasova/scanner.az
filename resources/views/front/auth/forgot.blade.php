@@ -8,9 +8,10 @@
           <div class="form-container">
             <div class="forgot-form">
               <h2>Şifrəni unutdum</h2>
-              <form>
+              <form method="post" action="{{ route('forgot.submit') }}">
+                @csrf
                 <label for="email">Email</label>
-                <input type="email" placeholder="Emailinizi daxil edin">
+                <input type="email" name="email" placeholder="Emailinizi daxil edin">
                 <button type="submit">Göndər</button>
               </form>
             </div>

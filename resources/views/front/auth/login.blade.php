@@ -9,12 +9,13 @@
           <div class="form-container">
             <div class="login-form">
               <h2>Giriş</h2>
-              <form>
-                <label for="email">Email</label>
-                <input type="email" placeholder="Emailinizi daxil edin">
-                <label for="password">Şifrə</label>
-                <input type="password" placeholder="Şifrənizi daxil edin">
-                <a href="forgot-pass.html">
+              <form method="post" action="{{ route('login.attempt') }}">
+                @csrf
+                <label for="email">Email *</label>
+                <input type="email" name="email" placeholder="Emailinizi daxil edin">
+                <label for="password">Şifrə *</label>
+                <input type="password" name="password" placeholder="Şifrənizi daxil edin">
+                <a href="{{ route('forgot') }}">
                   <div class="forgot-password">Şifrəni unutdum</div>
                 </a>
                 <button type="submit">Daxil ol</button>

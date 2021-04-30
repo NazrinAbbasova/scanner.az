@@ -15,17 +15,30 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('front.index');
-});
+})->name('home');
 
 Route::get('/login',    'LoginController@index')->name('login');
-Route::get('/register', 'RegisterController@index')->name('register');
+Route::post('/login',   'LoginController@attempt')->name('login.attempt');
+Route::get('/logout',   'LoginController@logout')->name('logout');
+
+// Registration
+Route::get('/register',  'RegisterController@index')->name('register');
+Route::post('/register', 'RegisterController@store')->name('register.store');
 
 Route::get('locale/{locale}', 'PageController@locale')->name('locale');
 
 // Verify email
-Route::get('/verify/{token}',   'AuthController@verify')->name('verify');
+Route::get('/verify/{token}',   'AuthController@verify')->name('verify'); 
+Route::get('/verified/{token}', 'AuthController@verified')->name('verified');
+
+// Forgot email
 Route::get('/forgot',           'AuthController@forgot')->name('forgot');
+Route::post('/forgot',          'AuthController@submit')->name('forgot.submit');
+
+// Reset email
+
 Route::get('/reset/{token}',    'AuthController@reset')->name('reset');
+Route::post('/reset',           'AuthController@new_password')->name('reset.submit');
 
 
 

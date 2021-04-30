@@ -13,30 +13,34 @@
                 <div class="register-applicant">Namizəd</div>
                 <div class="register-company">Şirkət</div>
               </div>
-              <form>
+              <form method="post" action="{{ route('register.store') }}">
+                @csrf
+                <input type="hidden" name="type" value="applicant">
                 <div class="applicant-form">
-                  <label for="name">Ad</label>
-                  <input type="text" placeholder="Adınızı daxil edin">
-                  <label for="surname">Soyad</label>
-                  <input type="text" placeholder="Soyadınızı daxil edin">
-                  <label for="email">Email</label>
-                  <input type="email" placeholder="Emailinizi daxil edin">
-                  <label for="password">Şifrə</label>
-                  <input type="password" placeholder="Şifrə təyin edin">
+                  <label for="name">Ad *</label>
+                  <input type="text" name="firstname" placeholder="Adınızı daxil edin">
+                  <label for="surname" >Soyad *</label>
+                  <input type="text" name="lastname" placeholder="Soyadınızı daxil edin">
+                  <label for="email">Email *</label>
+                  <input type="email" name="email" placeholder="Emailinizi daxil edin">
+                  <label for="password">Şifrə *</label>
+                  <input type="password" name="password" placeholder="Şifrə təyin edin">
                   <button type="submit">Qeydiyyatdan keç</button>
                 </div>
               </form>
 
-              <form>
+              <form method="post" action="{{ route('register.store') }}">
+                @csrf
+                <input type="hidden" name="type" value="company">
                 <div class="company-form">
-                  <label for="company-name">Şirkət adı</label>
-                  <input type="text" placeholder="Şirkət adını daxil edin">
+                  <label for="company-name">Şirkət adı *</label>
+                  <input type="text" required name="company" placeholder="Şirkət adını daxil edin">
                   <label for="mobile">Mobil nömrə</label>
-                  <input type="text" placeholder="Nömrənizi daxil edin">
-                  <label for="email">Email</label>
-                  <input type="email" placeholder="Emailinizi daxil edin">
-                  <label for="password">Şifrə</label>
-                  <input type="password" placeholder="Şifrə təyin edin">
+                  <input type="text" name="phone" placeholder="Nömrənizi daxil edin">
+                  <label for="email">Email *</label>
+                  <input type="email" required placeholder="Emailinizi daxil edin">
+                  <label for="password" >Şifrə *</label>
+                  <input type="password" required name="password" placeholder="Şifrə təyin edin">
                   <button type="submit">Qeydiyyatdan keç</button>
                 </div>
               </form>

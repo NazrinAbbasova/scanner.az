@@ -9,6 +9,14 @@
 
   @yield('content')
 
+  @if (session('error'))
+      {{ session('error') }}
+  @endif
+
+  @if (session('success'))
+      {{ session('success') }}
+  @endif
+
   <script src="{{ asset('static/front/js/app.js') }}"></script>
 </body>
 
