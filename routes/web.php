@@ -17,7 +17,8 @@ Route::get('/', function () {
     return view('front.index');
 });
 
-Route::get('/login', 'LoginController@index')->name('login');
+Route::get('/login',    'LoginController@index')->name('login');
+Route::get('/register', 'RegisterController@index')->name('register');
 
 Route::get('locale/{locale}', 'PageController@locale')->name('locale');
 
