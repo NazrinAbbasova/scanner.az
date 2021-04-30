@@ -1,10 +1,10 @@
 @extends('front.layout.master')
 @section('content')
-<section class="reset">
+<section>
   <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="auth-box">
+    <div class="auth-box">
+      <div class="row">
+        <div class="col-md-6">
           <div class="form-container">
             <div class="reset-form">
               <h2>Şifrəni yenilə</h2>
@@ -17,6 +17,9 @@
               </form>
             </div>
           </div>
+        </div>
+
+        <div class="col-md-6">
           @include('front.auth.imagebox')
         </div>
       </div>
