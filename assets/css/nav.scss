@@ -61,3 +61,27 @@ header {
     }
   }
 }
+@media only screen and (max-width: 1199px) {
+  header {
+    .nav {
+      a {
+        @include el($p: 0.75rem 1rem);
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  header {
+    .nav {
+      a {
+        @include text($size: 11px);
+      }
+    }
+    .logo {
+      img {
+        @include el($w: 10rem);
+      }
+    }
+  }
+}
