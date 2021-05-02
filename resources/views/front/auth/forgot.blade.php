@@ -5,6 +5,7 @@
 <section>
 
   <div class="container">
+
     <div class="auth-box">
       <div class="row">
 
@@ -28,6 +29,7 @@
 
       </div>
     </div>
+    
   </div>
 
 </section>

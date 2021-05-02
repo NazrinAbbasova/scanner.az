@@ -2,8 +2,11 @@
 @section('title', 'Şifrəni yenilə')
 @section('content')
 <section>
+
   <div class="container">
+
     <div class="auth-box">
+
       <div class="row">
 
         <div class="col-md-6">
@@ -28,7 +31,10 @@
         </div>
 
       </div>
+
     </div>
+    
   </div>
+
 </section>
 @endsection
