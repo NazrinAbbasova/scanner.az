@@ -64,4 +64,5 @@
 
 @section('load')
     <link rel="stylesheet" href="{{ asset('static/front/css/contact.css') }}">
+    <link rel="stylesheet" href="{{ asset('static/front/css/icons.css') }}">
 @endsection
