@@ -73,28 +73,3 @@ h4 {
 .lowercase {
     text-transform: lowercase;
 }
-
-.primary-font-bold,
-h1,
-.heading-1,
-.big-text {
-    font-family: "Averta", Arial, "Helvetica Neue", Helvetica, sans-serif;
-    font-weight: bold;
-}
-
-.primary-font-regular {
-    font-family: "Averta", Arial, "Helvetica Neue", Helvetica, sans-serif;
-    font-weight: normal;
-}
-
-.primary-font-light {
-    font-family: "Averta", Arial, "Helvetica Neue", Helvetica, sans-serif;
-    font-weight: 300;
-}
-
-.primary-font-medium,
-h2,
-h4 {
-    font-family: "Averta", Arial, "Helvetica Neue", Helvetica, sans-serif;
-    font-weight: 500;
-}

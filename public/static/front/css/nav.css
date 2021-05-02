@@ -1,84 +1,105 @@
 button,
 input {
-    font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 button:hover {
-    background: linear-gradient(0deg, #4567f4, #3cd3ad);
-    color: white;
-    transition: background-image 1s ease-in-out;
+  background: linear-gradient(0deg, #4567f4, #3cd3ad);
+  color: white;
+  transition: all 1s ease-in-out;
 }
 
 body {
-    font-family: "Poppins", sans-serif;
-    padding: 0;
-    margin: 0;
-    background-color: #f5f5f5;
-    color: #081828;
-    /* Chrome all / Safari all */
-    /* Firefox all */
-    /* IE 10+ */
+  font-family: "Poppins", sans-serif;
+  padding: 0;
+  margin: 0;
+  background-color: #f5f5f5;
+  color: #081828;
+  /* Chrome all / Safari all */
+  /* Firefox all */
+  /* IE 10+ */
 }
 
 header {
-    border-bottom: 2px solid #4567f4;
-    width: 100%;
-    height: auto;
+  border-bottom: 2px solid #4567f4;
+  width: 100%;
+  height: auto;
 }
 header .logo {
-    padding: 0;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+  padding: 0;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 header .logo img {
-    width: 15rem;
+  width: 15rem;
 }
 header .nav {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -moz-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-    -webkit-box-pack: end;
-    -moz-box-pack: end;
-    -ms-flex-pack: end;
-    -webkit-justify-content: flex-end;
-    justify-content: flex-end;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -moz-box-pack: end;
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
 }
 header .nav a {
-    padding: 0.75rem 2.5rem;
-    text-decoration: none;
-    color: #4567f4;
-    font-size: 15px;
-    /* Chrome all / Safari all */
-    /* Firefox all */
-    /* IE 10+ */
+  padding: 0.75rem 2.5rem;
+  text-decoration: none;
+  color: #081828;
+  font-size: 15px;
+  font-weight: 600;
+  /* Chrome all / Safari all */
+  /* Firefox all */
+  /* IE 10+ */
 }
 header .nav a:hover {
-    color: #4567f4;
-    /* Chrome all / Safari all */
-    /* Firefox all */
-    /* IE 10+ */
+  color: #4567f4;
+  /* Chrome all / Safari all */
+  /* Firefox all */
+  /* IE 10+ */
+  transition: color 0.3s ease-out 0s;
 }
 header .nav .button {
-    background: linear-gradient(45deg, #4567f4, #3cd3ad);
-    color: white;
+  background: linear-gradient(45deg, #4567f4, #3cd3ad);
+  color: white;
+  /* Chrome all / Safari all */
+  /* Firefox all */
+  /* IE 10+ */
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+}
+header .nav .button:hover {
+  background: linear-gradient(0deg, #4567f4, #3cd3ad);
+  color: white;
+  transition: all 1s ease-in-out;
+}
+header .nav .button:not(:last-child) {
+  margin: 0 15px 0 15px;
+}
+
+@media only screen and (max-width: 1199px) {
+  header .nav a {
+    padding: 0.75rem 1rem;
+  }
+}
+@media only screen and (max-width: 991px) {
+  header .nav a {
+    font-size: 11px;
     /* Chrome all / Safari all */
     /* Firefox all */
     /* IE 10+ */
-    padding: 0.75rem 1.5rem;
-    border-radius: 5px;
+  }
+  header .logo img {
+    width: 10rem;
+  }
 }
-header .nav .button:hover {
-    background: linear-gradient(0deg, #4567f4, #3cd3ad);
-    color: white;
-    transition: background-image 1s ease-in-out;
-}
-header .nav .button:not(:last-child) {
-    margin: 0 15px 0 15px;
-}
+
+/*# sourceMappingURL=nav.css.map */

@@ -40,6 +40,11 @@ Route::get('/reset/{token}',    'AuthController@reset')->name('reset');
 Route::post('/reset',           'AuthController@new_password')->name('reset.submit');
 
 
+Route::get('/about',          'PageController@about')->name('about');
+Route::get('/how-it-works',   'PageController@how_it_works')->name('how-it-works');
+Route::get('/contact',        'PageController@contact')->name('contact');
+
+
 
 Route::prefix('dashboard')->group(function () {
     Route::get('/', 'PageController@dashboard')->name('dashboard');

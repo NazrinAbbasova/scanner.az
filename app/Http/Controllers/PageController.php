@@ -16,4 +16,16 @@ class PageController extends Controller
         return view('dashboard.index');
     }
 
+    public function about(){
+        return view('front.about');
+    }
+
+    public function how_it_works(){
+        return view('front.how-it-works');
+    }
+
+    public function contact(){
+        return view('front.contact');
+    }
+
 }

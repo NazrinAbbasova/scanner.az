@@ -9,6 +9,8 @@
 
   @yield('content')
 
+  @yield('load')
+
   @if (session('error'))
       {{ session('error') }}
   @endif

@@ -1,244 +1,224 @@
 .container .auth-box {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -moz-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-    margin: auto;
-    margin-top: 3rem;
-    width: 100%;
-    border-radius: 5px;
-    background: linear-gradient(0deg, #4567f4, #3cd3ad);
-    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 3rem;
+  width: 100%;
+  border-radius: 5px;
+  background: linear-gradient(0deg, #4567f4, #3cd3ad);
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
 }
 .container .auth-box .form-container {
-    padding: 2rem;
-    background-color: white;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    min-height: 27rem;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -moz-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-    flex-direction: column;
+  padding: 2rem;
+  background-color: white;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  min-height: 27rem;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  flex-direction: column;
 }
 .container .auth-box .form-container h2 {
-    margin-bottom: 2rem;
-    text-align: center;
-    color: #4567f4;
-    font-size: 35px;
-    font-weight: bold;
-    /* Chrome all / Safari all */
-    /* Firefox all */
-    /* IE 10+ */
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #4567f4;
+  font-size: 35px;
+  font-weight: bold;
+  /* Chrome all / Safari all */
+  /* Firefox all */
+  /* IE 10+ */
 }
 .container .auth-box .form-container label {
-    color: #606060;
-    font-size: 12px;
-    /* Chrome all / Safari all */
-    /* Firefox all */
-    /* IE 10+ */
+  color: #606060;
+  font-size: 12px;
+  /* Chrome all / Safari all */
+  /* Firefox all */
+  /* IE 10+ */
 }
 .container .auth-box .form-container input {
-    padding: 0.8rem 0;
-    margin-bottom: 1.2rem;
-    border: 1px solid #ededef;
-    width: 100%;
-    border-radius: 3px;
-    text-indent: 20px;
-    /* Chrome all / Safari all */
-    /* Firefox all */
-    /* IE 10+ */
-    outline: none;
+  padding: 0.8rem 0;
+  margin-bottom: 1.2rem;
+  border: 1px solid #ededef;
+  width: 100%;
+  border-radius: 3px;
+  text-indent: 20px;
+  /* Chrome all / Safari all */
+  /* Firefox all */
+  /* IE 10+ */
+  outline: none;
 }
 .container .auth-box .form-container input:focus {
-    border-color: #4567f4;
+  border-color: #4567f4;
 }
 .container .auth-box .form-container input::-webkit-input-placeholder {
-    color: #c3c3c3;
+  color: #c3c3c3;
 }
 .container .auth-box .form-container button {
-    padding: 1rem;
-    margin-top: 1rem;
-    border: none;
-    width: 100%;
-    border-radius: 3px;
-    cursor: pointer;
-    background: linear-gradient(45deg, #4567f4, #3cd3ad);
-    outline: none;
-    color: white;
-    font-size: 15px;
-    /* Chrome all / Safari all */
-    /* Firefox all */
-    /* IE 10+ */
+  padding: 1rem;
+  margin-top: 1rem;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  background: linear-gradient(45deg, #4567f4, #3cd3ad);
+  outline: none;
+  color: white;
+  font-size: 15px;
+  /* Chrome all / Safari all */
+  /* Firefox all */
+  /* IE 10+ */
 }
 .container .auth-box .form-container button:hover {
-    background: linear-gradient(0deg, #4567f4, #3cd3ad);
-    color: white;
-    transition: background-image 1s;
+  background: linear-gradient(0deg, #4567f4, #3cd3ad);
+  color: white;
+  transition: all 1s;
 }
 .container .auth-box .form-container .register-form {
-    width: 80%;
-    height: 100%;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -moz-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-    flex-direction: column;
+  width: 80%;
+  height: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  flex-direction: column;
 }
 .container .auth-box .form-container .register-form .account-type {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -moz-box-pack: justify;
-    -ms-flex-pack: justify;
-    -webkit-justify-content: space-between;
-    justify-content: space-between;
-    margin-bottom: 2rem;
-    width: 100%;
-    cursor: pointer;
-    color: #4567f4;
-    /* Chrome all / Safari all */
-    /* Firefox all */
-    /* IE 10+ */
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  width: 100%;
+  cursor: pointer;
+  color: #4567f4;
+  /* Chrome all / Safari all */
+  /* Firefox all */
+  /* IE 10+ */
 }
-.container
-    .auth-box
-    .form-container
-    .register-form
-    .account-type
-    .register-applicant,
-.container
-    .auth-box
-    .form-container
-    .register-form
-    .account-type
-    .register-company {
-    padding: 1rem;
-    width: 7.8rem;
-    border-radius: 5px;
-    text-align: center;
-    /* Chrome all / Safari all */
-    /* Firefox all */
-    /* IE 10+ */
-    transition: border-color 0.5s;
+.container .auth-box .form-container .register-form .account-type .register-applicant,
+.container .auth-box .form-container .register-form .account-type .register-company {
+  padding: 1rem;
+  width: 7.8rem;
+  border-radius: 5px;
+  text-align: center;
+  /* Chrome all / Safari all */
+  /* Firefox all */
+  /* IE 10+ */
+  transition: border-color 0.5s;
 }
-.container
-    .auth-box
-    .form-container
-    .register-form
-    .account-type
-    .register-applicant {
-    color: white;
-    /* Chrome all / Safari all */
-    /* Firefox all */
-    /* IE 10+ */
-    background: linear-gradient(45deg, #4567f4, #3cd3ad);
+.container .auth-box .form-container .register-form .account-type .register-applicant {
+  color: white;
+  /* Chrome all / Safari all */
+  /* Firefox all */
+  /* IE 10+ */
+  background: linear-gradient(45deg, #4567f4, #3cd3ad);
 }
-.container
-    .auth-box
-    .form-container
-    .register-form
-    .account-type
-    .register-company {
-    border: 1px solid #ededef;
+.container .auth-box .form-container .register-form .account-type .register-company {
+  border: 1px solid #ededef;
 }
 .container .auth-box .form-container .register-form form {
-    width: 100%;
+  width: 100%;
 }
 .container .auth-box .form-container .register-form form .applicant-form,
 .container .auth-box .form-container .register-form form .company-form {
-    flex-direction: column;
-    width: 100%;
+  flex-direction: column;
+  width: 100%;
 }
 .container .auth-box .form-container .register-form form .company-form {
-    display: none;
+  display: none;
 }
 .container .auth-box .form-container .login-form {
-    width: 80%;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -moz-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-    flex-direction: column;
+  width: 80%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  flex-direction: column;
 }
 .container .auth-box .form-container .login-form form {
-    width: 100%;
+  width: 100%;
 }
 .container .auth-box .form-container .login-form form a {
-    text-decoration: none;
-    /* Chrome all / Safari all */
-    /* Firefox all */
-    /* IE 10+ */
+  text-decoration: none;
+  /* Chrome all / Safari all */
+  /* Firefox all */
+  /* IE 10+ */
 }
 .container .auth-box .form-container .login-form form a .forgot-password {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -moz-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    margin-top: 1rem;
-    cursor: pointer;
-    text-decoration: none;
-    color: #4567f4;
-    font-size: 12px;
-    /* Chrome all / Safari all */
-    /* Firefox all */
-    /* IE 10+ */
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  margin-top: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  color: #4567f4;
+  font-size: 12px;
+  /* Chrome all / Safari all */
+  /* Firefox all */
+  /* IE 10+ */
 }
 .container .auth-box .form-container .forgot-form,
 .container .auth-box .form-container .reset-form {
-    width: 80%;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -moz-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-    flex-direction: column;
+  width: 80%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  flex-direction: column;
 }
 .container .auth-box .form-container .forgot-form form,
 .container .auth-box .form-container .reset-form form {
-    width: 100%;
+  width: 100%;
 }
 .container .auth-box .overlay-container img {
-    width: 100%;
+  width: 100%;
 }
 
 /*# sourceMappingURL=auth.css.map */
