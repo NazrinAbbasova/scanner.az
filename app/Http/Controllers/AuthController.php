@@ -38,7 +38,7 @@ class AuthController extends Controller
         return redirect()->route('home')->with('success', 'Təlimatlar e-mail adresinizə göndərildi.');
     }
 
-    public function verified($token){
+    public function verify($token){
         $user = User::where('remember_token', $token)->first();
 
         if(!$user) {

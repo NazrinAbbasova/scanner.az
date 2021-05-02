@@ -29,7 +29,6 @@ Route::get('locale/{locale}', 'PageController@locale')->name('locale');
 
 // Verify email
 Route::get('/verify/{token}',   'AuthController@verify')->name('verify'); 
-Route::get('/verified/{token}', 'AuthController@verified')->name('verified');
 
 // Forgot email
 Route::get('/forgot',           'AuthController@forgot')->name('forgot');

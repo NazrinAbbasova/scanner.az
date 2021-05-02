@@ -13,6 +13,7 @@ class RegisterController extends Controller
 {
     public function index(){
         if(auth()->check()) return redirect()->route('home');
+        return view('front.auth.register');
     }
 
     public function store(Request $request) {
