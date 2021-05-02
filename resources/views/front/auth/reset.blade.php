@@ -1,4 +1,5 @@
 @extends('front.layout.master')
+@section('title', 'Şifrəni yenilə')
 @section('content')
 <section>
   <div class="container">

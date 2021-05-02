@@ -1,10 +1,13 @@
 @extends('front.layout.master')
+@section('title', 'Şifrəni unutdum')
 @section('content')
+
 <section>
+
   <div class="container">
     <div class="auth-box">
       <div class="row">
-        
+
         <div class="col-md-6">
           <div class="form-container">
             <div class="forgot-form">
@@ -26,5 +29,6 @@
       </div>
     </div>
   </div>
+
 </section>
 @endsection

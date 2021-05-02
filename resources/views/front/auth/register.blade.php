@@ -1,4 +1,5 @@
 @extends('front.layout.master')
+@section('title', 'Qeydiyyat')
 @section('content')
 
 <section>
