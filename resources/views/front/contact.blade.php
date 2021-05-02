@@ -12,24 +12,25 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="contact-form">
-                    <form>
+                    <form method="post" action="{{ route('contact.store') }}">
+                        @csrf
                         <div class="col-md-12">
                             <div class="form-group">
                                 <!-- <label for="name">Adınız</label> -->
-                                <input type="text" placeholder="Adınızı daxil edin">
+                                <input type="text" required name="name" placeholder="Adınızı daxil edin">
                                 <!-- <label for="subject">Başlıq</label> -->
-                                <input type="text" placeholder="Başlığı daxil edin">
+                                <input type="text" name="subject" placeholder="Başlığı daxil edin">
                             </div>
 
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
                                 <!-- <label for="email">Email</label> -->
-                                <input type="email" placeholder="Emailinizi daxil edin">
+                                <input type="email" required name="email" placeholder="Emailinizi daxil edin">
                                 <!-- <label for="mobile">Mobil nömrə</label> -->
-                                <input type="text" placeholder="Nömrənizi daxil edin">
+                                <input type="number" name="phone" placeholder="Nömrənizi daxil edin">
                             </div>
-                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                            <textarea name="text" required rows="10"></textarea>
                         </div>
                         <div class="col-md-3">
                             <button>Göndər</button>

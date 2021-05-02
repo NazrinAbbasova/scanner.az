@@ -24,8 +24,4 @@ class PageController extends Controller
         return view('front.how-it-works');
     }
 
-    public function contact(){
-        return view('front.contact');
-    }
-
 }

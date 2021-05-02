@@ -42,8 +42,9 @@ Route::post('/reset',           'AuthController@new_password')->name('reset.subm
 
 Route::get('/about',          'PageController@about')->name('about');
 Route::get('/how-it-works',   'PageController@how_it_works')->name('how-it-works');
-Route::get('/contact',        'PageController@contact')->name('contact');
 
+Route::get('/contact',        'ContactController@index')->name('contact');
+Route::post('/contact',       'ContactController@store')->name('contact.store');
 
 
 Route::prefix('dashboard')->group(function () {
