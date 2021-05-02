@@ -44,15 +44,13 @@
 h1,
 .heading-1 {
   font-size: 1.5rem;
-  @extend .primary-font-bold;
 }
 
 h2 {
   @include el($m: 0.75rem 0);
-  @extend .primary-font-medium;
 }
 h4 {
-  @extend .primary-font-medium, .small-text, .lighter-text, .uppercase;
+  @extend .small-text, .lighter-text, .uppercase;
 }
 .text-center {
   text-align: center;

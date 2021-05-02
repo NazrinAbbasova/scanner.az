@@ -1,12 +1,12 @@
-@import "mixins/element", "mixins/flex", "mixins/font", "mixins/mixins",
-  "mixins/text", "mixins/variables";
+@import "mixins/element", "mixins/flex", "mixins/mixins", "mixins/text",
+  "mixins/variables";
 
-  $primary-color: #4567f4;
-  $gradient: linear-gradient(0deg, #4567f4, #3cd3ad);
-  $gradient-button: linear-gradient(45deg, #4567f4, #3cd3ad);
-  $secondary-color: #081828;
-  $light-text: #888;
-  $lighter-text: #c3c3c3;
+$primary-color: #4567f4;
+$gradient: linear-gradient(0deg, #4567f4, #3cd3ad);
+$gradient-button: linear-gradient(45deg, #4567f4, #3cd3ad);
+$secondary-color: #081828;
+$light-text: #888;
+$lighter-text: #c3c3c3;
 
 .container {
   .auth-box {
@@ -17,16 +17,15 @@
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
 
     .form-container {
-      @include el($p: 2rem, $bgColor: white);
+      @include el($h: 100%, $bgColor: white);
       border-top-left-radius: 5px;
       border-bottom-left-radius: 5px;
-      min-height: 27rem;
       @include fx();
       @include flex($ai: c);
       flex-direction: column;
 
       h2 {
-        @include el($mb: 2rem);
+        @include el($mt: 2rem, $mb: 2rem);
         @include text(
           $color: $primary-color,
           $weight: bold,
@@ -62,6 +61,7 @@
           $radius: 3px,
           $p: 1rem,
           $mt: 1rem,
+          $mb: 1rem,
           $crs: pointer
         );
         background: $gradient-button;
