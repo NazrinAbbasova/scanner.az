@@ -1,4 +1,4 @@
-@import "mixins/element", "mixins/flex", "mixins/font", "mixins/mixins",
+@import "mixins/element", "mixins/flex", "mixins/mixins",
   "mixins/text", "mixins/variables";
 
 $primary-color: #4567f4;
@@ -8,21 +8,18 @@ $secondary-color: #081828;
 $light-text: #888;
 $lighter-text: #c3c3c3;
 
-button,
-input {
+body {
   font-family: "Poppins", sans-serif;
+  @include el($bgColor: #f5f5f5, $p: 0, $m: 0);
+  @include text($color: $secondary-color);
 }
+
 button {
   &:hover {
     background: $gradient;
     color: white;
     transition: all 1s ease-in-out;
   }
-}
-body {
-  font-family: "Poppins", sans-serif;
-  @include el($bgColor: #f5f5f5, $p: 0, $m: 0);
-  @include text($color: $secondary-color);
 }
 
 header {
