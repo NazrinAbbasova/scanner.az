@@ -5,6 +5,8 @@ $primary-color: #4567f4;
 $gradient: linear-gradient(0deg, #4567f4, #3cd3ad);
 $gradient-button: linear-gradient(45deg, #4567f4, #3cd3ad);
 $secondary-color: #081828;
+$light-text: #888;
+$lighter-text: #c3c3c3;
 
 button,
 input {
@@ -14,7 +16,7 @@ button {
   &:hover {
     background: $gradient;
     color: white;
-    transition: background-image 1s ease-in-out;
+    transition: all 1s ease-in-out;
   }
 }
 body {
@@ -41,9 +43,15 @@ header {
     a {
       @include el($p: 0.75rem 2.5rem);
 
-      @include text($decoration: none, $color: $primary-color, $size: 15px);
+      @include text(
+        $decoration: none,
+        $color: $secondary-color,
+        $size: 15px,
+        $weight: 600
+      );
       &:hover {
         @include text($color: $primary-color);
+        transition: color 0.3s ease-out 0s;
       }
     }
     .button {
@@ -53,7 +61,7 @@ header {
       &:hover {
         background: $gradient;
         color: white;
-        transition: background-image 1s ease-in-out;
+        transition: all 1s ease-in-out;
       }
     }
     .button:not(:last-child) {
