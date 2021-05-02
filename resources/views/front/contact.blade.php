@@ -16,19 +16,19 @@
                         @csrf
                         <div class="col-md-12">
                             <div class="form-group">
-                                <!-- <label for="name">Adınız</label> -->
+                                <label for="name">Adınız *</label>
                                 <input type="text" required name="name" placeholder="Adınızı daxil edin">
-                                <!-- <label for="subject">Başlıq</label> -->
-                                <input type="text" name="subject" placeholder="Başlığı daxil edin">
+                                <label for="subject">Başlıq *</label>
+                                <input type="text" required name="subject" placeholder="Başlığı daxil edin">
                             </div>
 
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <!-- <label for="email">Email</label> -->
+                                <label for="email">Email</label> 
                                 <input type="email" required name="email" placeholder="Emailinizi daxil edin">
-                                <!-- <label for="mobile">Mobil nömrə</label> -->
-                                <input type="number" name="phone" placeholder="Nömrənizi daxil edin">
+                                 <label for="mobile">Mobil nömrə</label> 
+                                <input type="number" required name="phone" placeholder="Nömrənizi daxil edin">
                             </div>
                             <textarea name="text" required rows="10"></textarea>
                         </div>

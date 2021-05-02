@@ -37,15 +37,19 @@ class ContactController extends Controller
     public function store(Request $request)
     {
         $rules = [
-            'name'  => 'required',
-            'email' => 'required',
-            'text'  => 'required',
+            'name'    => 'required',
+            'subject' => 'required',
+            'phone'   => 'required',
+            'email'   => 'required',
+            'text'    => 'required',
         ];
 
         $messages = [
-            'name.required'  => 'Adınızı qeyd edin.',
-            'email.required' => 'E-mail adresinizi qeyd edin.',
-            'text.required'  => 'Mətn daxil edin.',
+            'name.required'    => 'Adınızı qeyd edin.',
+            'subject.required' => 'Başlığı daxil edin.',
+            'phone.required'   => 'Əlaqə telefonu qeyd edin.',
+            'email.required'   => 'E-mail adresinizi qeyd edin.',
+            'text.required'    => 'Mətn daxil edin.',
         ];
         
         $this->validate($request, $rules, $messages);
