@@ -56,7 +56,7 @@ $lighter-text: #c3c3c3;
         $p: 0.8rem 0,
         $mb: 1.2rem
       );
-      box-shadow: 0 0 10px #00000014;
+      // box-shadow: 0 0 10px #00000014;
       @include text($indent: 20px);
       outline: none;
       &:focus {
@@ -72,9 +72,9 @@ $lighter-text: #c3c3c3;
     }
   }
   textarea {
-    box-shadow: 0 0 10px #00000014;
+    // box-shadow: 0 0 10px #00000014;
     resize: none;
-    outline: none;
+    text-indent: 1rem;
     @include el(
       $w: 100%,
       $b: 1px solid #ededef,
@@ -82,6 +82,7 @@ $lighter-text: #c3c3c3;
       $p: 0.8rem 0,
       $mb: 1.2rem
     );
+    outline: none;
     &:focus {
       border-color: $primary-color;
     }
@@ -95,7 +96,12 @@ $lighter-text: #c3c3c3;
     @include el($mb: 2rem);
     i {
       @include el($w: 3rem, $h: 3rem, $mr: 1rem, $radius: 5px);
-      @include text($color: white);
+      @include text(
+        $color: white,
+        $lnHeight: 45px,
+        $size: 20px,
+        $align: center
+      );
       background-image: $gradient-button;
     }
     ul {

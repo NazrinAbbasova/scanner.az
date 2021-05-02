@@ -203,17 +203,8 @@ h2 {
   font-weight: 500;
 }
 
-.container .auth-box {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
+.auth-box {
   display: flex;
-  -webkit-box-align: center;
-  -moz-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center;
   margin: auto;
   margin-top: 3rem;
   width: 100%;
@@ -221,7 +212,7 @@ h2 {
   background: linear-gradient(0deg, #4567f4, #3cd3ad);
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
 }
-.container .auth-box .form-container {
+.auth-box .form-container {
   height: 100%;
   background-color: white;
   border-top-left-radius: 5px;
@@ -238,8 +229,8 @@ h2 {
   align-items: center;
   flex-direction: column;
 }
-.container .auth-box .form-container h2 {
-  margin-top: 2rem;
+.auth-box .form-container h2 {
+  margin-top: 4rem;
   margin-bottom: 2rem;
   text-align: center;
   color: #4567f4;
@@ -249,14 +240,14 @@ h2 {
   /* Firefox all */
   /* IE 10+ */
 }
-.container .auth-box .form-container label {
+.auth-box .form-container label {
   color: #081828;
   font-size: 12px;
   /* Chrome all / Safari all */
   /* Firefox all */
   /* IE 10+ */
 }
-.container .auth-box .form-container input {
+.auth-box .form-container input {
   padding: 0.8rem 0;
   margin-bottom: 1.2rem;
   border: 1px solid #ededef;
@@ -268,16 +259,16 @@ h2 {
   /* IE 10+ */
   outline: none;
 }
-.container .auth-box .form-container input:focus {
+.auth-box .form-container input:focus {
   border-color: #4567f4;
 }
-.container .auth-box .form-container input::-webkit-input-placeholder {
+.auth-box .form-container input::-webkit-input-placeholder {
   color: #c3c3c3;
   /* Chrome all / Safari all */
   /* Firefox all */
   /* IE 10+ */
 }
-.container .auth-box .form-container button {
+.auth-box .form-container button {
   padding: 1rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -293,12 +284,12 @@ h2 {
   /* Firefox all */
   /* IE 10+ */
 }
-.container .auth-box .form-container button:hover {
+.auth-box .form-container button:hover {
   background: linear-gradient(0deg, #4567f4, #3cd3ad);
   color: white;
   transition: all 1s;
 }
-.container .auth-box .form-container .register-form {
+.auth-box .form-container .register-form {
   width: 80%;
   height: 100%;
   display: -webkit-box;
@@ -313,7 +304,7 @@ h2 {
   align-items: center;
   flex-direction: column;
 }
-.container .auth-box .form-container .register-form .account-type {
+.auth-box .form-container .register-form .account-type {
   display: -webkit-box;
   display: -moz-box;
   display: -webkit-flex;
@@ -324,7 +315,7 @@ h2 {
   -ms-flex-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   width: 100%;
   cursor: pointer;
   color: #4567f4;
@@ -332,8 +323,8 @@ h2 {
   /* Firefox all */
   /* IE 10+ */
 }
-.container .auth-box .form-container .register-form .account-type .register-applicant,
-.container .auth-box .form-container .register-form .account-type .register-company {
+.auth-box .form-container .register-form .account-type .register-applicant,
+.auth-box .form-container .register-form .account-type .register-company {
   padding: 1rem;
   width: 7.8rem;
   border-radius: 5px;
@@ -343,28 +334,28 @@ h2 {
   /* IE 10+ */
   transition: border-color 0.5s;
 }
-.container .auth-box .form-container .register-form .account-type .register-applicant {
+.auth-box .form-container .register-form .account-type .register-applicant {
   color: white;
   /* Chrome all / Safari all */
   /* Firefox all */
   /* IE 10+ */
   background: linear-gradient(45deg, #4567f4, #3cd3ad);
 }
-.container .auth-box .form-container .register-form .account-type .register-company {
+.auth-box .form-container .register-form .account-type .register-company {
   border: 1px solid #ededef;
 }
-.container .auth-box .form-container .register-form form {
+.auth-box .form-container .register-form form {
   width: 100%;
 }
-.container .auth-box .form-container .register-form form .applicant-form,
-.container .auth-box .form-container .register-form form .company-form {
+.auth-box .form-container .register-form form .applicant-form,
+.auth-box .form-container .register-form form .company-form {
   flex-direction: column;
   width: 100%;
 }
-.container .auth-box .form-container .register-form form .company-form {
+.auth-box .form-container .register-form form .company-form {
   display: none;
 }
-.container .auth-box .form-container .login-form {
+.auth-box .form-container .login-form {
   width: 80%;
   display: -webkit-box;
   display: -moz-box;
@@ -378,37 +369,32 @@ h2 {
   align-items: center;
   flex-direction: column;
 }
-.container .auth-box .form-container .login-form form {
+.auth-box .form-container .login-form form {
   width: 100%;
 }
-.container .auth-box .form-container .login-form form a {
-  text-decoration: none;
-  /* Chrome all / Safari all */
-  /* Firefox all */
-  /* IE 10+ */
-}
-.container .auth-box .form-container .login-form form a .forgot-password {
+.auth-box .form-container .login-form form .forgot-password {
   display: -webkit-box;
   display: -moz-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -moz-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  margin-top: 1rem;
+  -webkit-box-pack: end;
+  -moz-box-pack: end;
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
   cursor: pointer;
+}
+.auth-box .form-container .login-form form .forgot-password a {
   text-decoration: none;
   color: #4567f4;
-  font-size: 12px;
+  font-size: 14px;
   /* Chrome all / Safari all */
   /* Firefox all */
   /* IE 10+ */
 }
-.container .auth-box .form-container .forgot-form,
-.container .auth-box .form-container .reset-form {
+.auth-box .form-container .forgot-form,
+.auth-box .form-container .reset-form {
   width: 80%;
   display: -webkit-box;
   display: -moz-box;
@@ -422,11 +408,11 @@ h2 {
   align-items: center;
   flex-direction: column;
 }
-.container .auth-box .form-container .forgot-form form,
-.container .auth-box .form-container .reset-form form {
+.auth-box .form-container .forgot-form form,
+.auth-box .form-container .reset-form form {
   width: 100%;
 }
-.container .auth-box .overlay-container img {
+.auth-box .overlay-container img {
   width: 100%;
 }
 

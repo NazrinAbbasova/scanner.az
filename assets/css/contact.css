@@ -269,7 +269,6 @@ h2 {
   border: 1px solid #ededef;
   width: 100%;
   border-radius: 3px;
-  box-shadow: 0 0 10px #00000014;
   text-indent: 20px;
   /* Chrome all / Safari all */
   /* Firefox all */
@@ -286,14 +285,14 @@ h2 {
   color: -internal-light-dark(black, white);
 }
 .contact-form textarea {
-  box-shadow: 0 0 10px #00000014;
   resize: none;
-  outline: none;
+  text-indent: 1rem;
   padding: 0.8rem 0;
   margin-bottom: 1.2rem;
   border: 1px solid #ededef;
   width: 100%;
   border-radius: 3px;
+  outline: none;
 }
 .contact-form textarea:focus {
   border-color: #4567f4;
@@ -311,7 +310,10 @@ h2 {
   width: 3rem;
   height: 3rem;
   border-radius: 5px;
+  text-align: center;
   color: white;
+  font-size: 20px;
+  line-height: 45px;
   /* Chrome all / Safari all */
   /* Firefox all */
   /* IE 10+ */
