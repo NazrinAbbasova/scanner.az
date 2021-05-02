@@ -27,7 +27,7 @@ header {
   @include fx();
 
   .logo {
-    @include el($mt: 1rem, $mb: 1rem, $p: 0);
+    @include el($mt: 1rem, $mb: 1rem);
 
     img {
       @include el($w: 15rem);

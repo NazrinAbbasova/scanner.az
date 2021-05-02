@@ -21,10 +21,12 @@
   <header>
     <div class="container">
       <div class="row">
-        <div class="logo col-md-3">
-          <a href="index.html">
-            <img src="assets/images/logo.png" alt="" />
-          </a>
+        <div class="col-md-3">
+          <div class="logo">
+            <a href="index.html">
+              <img src="assets/images/logo.png" alt="" />
+            </a>
+          </div>
         </div>
         <div class="nav col-md-9">
           <a href="about.html">Haqqımızda</a>
@@ -39,33 +41,34 @@
 
   <section>
     <div class="container">
-      <div class="auth-box">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="form-container">
-              <div class="login-form">
-                <h2>Giriş</h2>
-                <form>
-                  <label for="email">Email</label>
-                  <input type="email" placeholder="Emailinizi daxil edin">
-                  <label for="password">Şifrə</label>
-                  <input type="password" placeholder="Şifrənizi daxil edin">
-                  <a href="forgot-pass.html">
-                    <div class="forgot-password">Şifrəni unutdum</div>
-                  </a>
-                  <button type="submit">Daxil ol</button>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="auth-box">
+            <div class="col-md-6">
+              <div class="form-container">
+                <div class="login-form">
+                  <h2>Giriş</h2>
+                  <form>
+                    <label for="email">Email</label>
+                    <input type="email" placeholder="Emailinizi daxil edin">
+                    <label for="password">Şifrə</label>
+                    <input type="password" placeholder="Şifrənizi daxil edin">
+                    <button type="submit">Daxil ol</button>
+                    <div class="forgot-password">
+                      <a href="forgot-pass.html">Şifrəni unutdum</a>
+                    </div>
+                </div>
                 </form>
               </div>
             </div>
-          </div>
-          <div class="col-md-6">
-            <div class="overlay-container">
-              <img src="/assets/images/auth-img.png" alt="auth">
+            <div class="col-md-6">
+              <div class="overlay-container">
+                <img src="/assets/images/auth-img.png" alt="auth">
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
     </div>
   </section>
   <script src="/script.js"></script>
