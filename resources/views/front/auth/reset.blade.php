@@ -4,6 +4,7 @@
   <div class="container">
     <div class="auth-box">
       <div class="row">
+
         <div class="col-md-6">
           <div class="form-container">
             <div class="reset-form">
@@ -24,6 +25,7 @@
         <div class="col-md-6">
           @include('front.auth.imagebox')
         </div>
+
       </div>
     </div>
   </div>
