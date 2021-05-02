@@ -1,0 +1,120 @@
+@import "mixins/element", "mixins/flex", "mixins/font", "mixins/mixins",
+  "mixins/text", "mixins/variables";
+
+$primary-color: #4567f4;
+$gradient: linear-gradient(0deg, #4567f4, #3cd3ad);
+$gradient-button: linear-gradient(45deg, #4567f4, #3cd3ad);
+$secondary-color: #081828;
+$light-text: #888;
+$lighter-text: #c3c3c3;
+
+.contact-text {
+  @include fx();
+  @include flex($ai: c);
+  flex-direction: column;
+
+  h1 {
+    @include text($size: 30px, $color: $primary-color);
+  }
+  p {
+    @include text(
+      $align: center,
+      $size: 14px,
+      $lnHeight: 24px,
+      $color: $light-text
+    );
+    @include el($w: 50%, $m: 0);
+  }
+}
+.contact-form {
+  @include el($w: 100%, $mr: 2rem, $mt: 3rem);
+  button {
+    @include el(
+      $w: 100%,
+      $b: none,
+      $radius: 3px,
+      $p: 1rem,
+      $mt: 1rem,
+      $crs: pointer
+    );
+    background: $gradient-button;
+    outline: none;
+    @include text($color: white, $size: 15px);
+    &:hover {
+      background: $gradient;
+      color: white;
+      transition: all 1s;
+    }
+  }
+  .form-group {
+    display: flex;
+    input {
+      @include el(
+        $w: 100%,
+        $b: 1px solid #ededef,
+        $radius: 3px,
+        $p: 0.8rem 0,
+        $mb: 1.2rem
+      );
+      box-shadow: 0 0 10px #00000014;
+      @include text($indent: 20px);
+      outline: none;
+      &:focus {
+        border-color: $primary-color;
+      }
+      &:nth-child(1) {
+        @include el($mr: 1.5rem);
+      }
+    }
+
+    input::-webkit-input-placeholder {
+      color: -internal-light-dark(black, white);
+    }
+  }
+  textarea {
+    box-shadow: 0 0 10px #00000014;
+    resize: none;
+    outline: none;
+    @include el(
+      $w: 100%,
+      $b: 1px solid #ededef,
+      $radius: 3px,
+      $p: 0.8rem 0,
+      $mb: 1.2rem
+    );
+    &:focus {
+      border-color: $primary-color;
+    }
+  }
+}
+.contact-info {
+  @include el($m: 3rem 0 0 3rem);
+
+  .single-info {
+    display: flex;
+    @include el($mb: 2rem);
+    i {
+      @include el($w: 3rem, $h: 3rem, $mr: 1rem, $radius: 5px);
+      @include text($color: white);
+      background-image: $gradient-button;
+    }
+    ul {
+      @include el($m: 0, $p: 0);
+      @include text($size: 13px);
+
+      li {
+        @include el($style: none, $mb: 4px);
+        span {
+          @include text($weight: 600);
+        }
+        a {
+          @include text(
+            $weight: 500,
+            $color: $secondary-color,
+            $decoration: none
+          );
+        }
+      }
+    }
+  }
+}
