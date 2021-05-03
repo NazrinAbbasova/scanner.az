@@ -1,9 +1,4 @@
 .auth-box {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
     margin: auto;
     margin-top: 3rem;
     width: 100%;
