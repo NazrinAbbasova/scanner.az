@@ -46,6 +46,7 @@ Route::get('/how-it-works',   'PageController@how_it_works')->name('how-it-works
 Route::get('/contact',        'ContactController@index')->name('contact');
 Route::post('/contact',       'ContactController@store')->name('contact.store');
 
+Route::get('/resume', 'PageController@pdf');
 
 Route::prefix('dashboard')->group(function () {
     Route::get('/', 'PageController@dashboard')->name('dashboard');

@@ -49,7 +49,7 @@
                         </ul>
                     </div>
                     <div class="single-info">
-                        <i class="fal fa-phone-alt"></i>
+                        <i class="fal fa-phone"></i>
                         <ul>
                             <li><span>Call Us</span></li>
                             <li><a href="#">+1 756 445 5658</a></li>

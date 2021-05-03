@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -22,6 +23,12 @@ class PageController extends Controller
 
     public function how_it_works(){
         return view('front.how-it-works');
+    }
+
+
+    public function pdf(){
+        $pdf = PDF::loadView('pdf.resume');
+        return $pdf->download('invoice.pdf');
     }
 
 }
