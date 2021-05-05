@@ -1,6 +1,0 @@
-@import './animation', './filter', './shadow', './transform',  './flex';
-
-@mixin object-fit($val) {
-    -o-object-fit: $val;
-    object-fit: $val;
-}
