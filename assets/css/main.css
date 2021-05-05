@@ -2959,7 +2959,9 @@ ol {
   background-color: #F4F7FA;
   z-index: 2;
 }
-
+.about-section{
+  padding-bottom: 60px;
+}
 .app-description img {
   width: 100%;
 }
@@ -3452,7 +3454,9 @@ ol {
   background-color: #fff;
   position: relative;
 }
-
+.why-choose-padding{
+  margin-bottom: 3rem;
+}
 .why-choose::before {
   position: absolute;
   content: "";
