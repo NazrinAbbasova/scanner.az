@@ -59,16 +59,16 @@
               <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                 <ul id="nav" class="navbar-nav me-auto">
                   <li class="nav-item">
-                    <a class="page-scroll" href="index.html">Əsas səhifə</a>
+                    <a class="page-scroll" href="#home">Əsas səhifə</a>
                   </li>
                   <li class="nav-item">
-                    <a class="page-scroll" href="how-to-use.html">Sistem necə İşləyir?</a>
+                    <a class="page-scroll" href="#about">Haqqımızda</a>
                   </li>
                   <li class="nav-item">
-                    <a class="page-scroll" href="about.html">Haqqımızda</a>
+                    <a class="page-scroll" href="#how-it-works">Sistem necə İşləyir?</a>
                   </li>
                   <li class="nav-item">
-                    <a class="page-scroll" href="contact.html">Əlaqə</a>
+                    <a class="page-scroll" href="#contact">Əlaqə</a>
                   </li>
                 </ul>
               </div>
@@ -92,7 +92,7 @@
   <!-- End Header Area -->
 
   <!-- Start Hero Area -->
-  <section id="hero-area" class="hero-area style3">
+  <section id="home" class="hero-area style3">
     <img src="assets/images/hero/startup-shape.png" alt="#" class="custom-shape">
     <!-- Single Slider -->
     <div class="hero-inner">
@@ -101,22 +101,20 @@
           <div class="col-lg-6 co-12">
             <div class="home-slider">
               <div class="hero-text">
-                <h5 class="wow fadeInUp" data-wow-delay=".3s">Best Businesse Solutions</h5>
-                <h1 class="wow fadeInUp" data-wow-delay=".5s">We build and transform<br>businesse
-                  strategy</h1>
-                <p class="wow fadeInUp" data-wow-delay=".7s">Lorem Ipsum is simply dummy text of the
-                  printing and typesetting <br> industry. Lorem Ipsum has been the industry's standard
-                  <br>dummy text ever since.
+                <h1 class="wow fadeInUp" data-wow-delay=".5s">Doğru insan, doğru iş!</h1>
+                <p class="wow fadeInUp" data-wow-delay=".7s">Scanner işə qəbul sistemində olan problemləri aradan
+                  qaldırmaqla ən ədalətli və ən sürətli işə qəbul sistemi yaratmağa kömək olur. <br><br>
+                  Əgər siz də bizə qoşulmaq istəyirsinizsə elə indi qeydiyyatdan keçin
                 </p>
                 <div class="button wow fadeInUp" data-wow-delay=".9s">
-                  <a href="#" class="btn">Get Started Now</a>
+                  <a href="register.html" class="btn">Qeydiyyatdan keç</a>
                 </div>
               </div>
             </div>
           </div>
           <div class="col-lg-6 col-12">
             <div class="hero-image wow fadeInRight" data-wow-delay=".4s">
-              <img src="/assets/images/img1.png" alt="#">
+              <img src="/assets/images/img3.png" alt="#">
             </div>
           </div>
         </div>
@@ -126,8 +124,49 @@
   </section>
   <!--/ End Hero Area -->
 
+
+  <!-- Start About Area -->
+  <section id="about" class="app-description startup-page-style section white-bg">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="section-title style3">
+            <span class="wow fadeInDown" data-wow-delay=".2s">Haqqımızda</span>
+          </div>
+        </div>
+      </div>
+      <div class="row align-items-center">
+        <div class="col-lg-6 col-12">
+          <div class="content wow fadeInLeft" data-wow-delay=".4s">
+            <h2>Perfect for Operation HR <br>and Finance</h2>
+            <p><strong>Niyə?</strong> - İşə qəbul sistemində olan problemləri aradan qaldırmaqla ən ədalətli və ən
+              sürətli işə qəbul sistemi yaratmağa kömək oluruq.</p>
+            <p><strong>Necə edirik?</strong>
+            <ul>
+              <li>Rəqəmsal həllər vasitəsilə</li>
+              <li>Hər kəsə bərabər imkanlar yaratmaqla</li>
+              <li>İşə qəbul xətalarını, zamanını və xərclərini azaltmaqla</li>
+            </ul>
+            </p>
+            <p><strong>Nə edirik (məhsulumuz nədir?)?</strong> - Avtomatlaşmış online namizəd izləmə platforması
+              vasitəsilə ən doğru namizədi təyin edirik.</p>
+            <div class="button style3">
+              <a href="about.html" class="btn">Daha çox</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-12">
+          <div class="right wow fadeInRight" data-wow-delay=".6s">
+            <img src="assets/images/img2.png" alt="#">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /End About Area -->
+
   <!-- Start Why Choose Area -->
-  <section id="features" class="why-choose section">
+  <section id="how-it-works" class="why-choose section">
     <div class="container">
       <div class="row row-cols-5">
         <div class="col-12">
@@ -387,26 +426,31 @@
                   <div class="row">
                     <div class="col-lg-6 col-md-6 col-12">
                       <div class="form-group">
+                        <label for="company-name">Ad</label>
                         <input name="name" type="text" placeholder="Adınız" required="required">
                       </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-12">
                       <div class="form-group">
-                        <input name="subject" type="text" placeholder="Başlıq" required="required">
+                        <label for="company-name">Mövzu</label>
+                        <input name="subject" type="text" placeholder="Mövzu" required="required">
                       </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-12">
                       <div class="form-group">
+                        <label for="company-name">Email</label>
                         <input name="email" type="email" placeholder="Emailiniz" required="required">
                       </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-12">
                       <div class="form-group">
+                        <label for="company-name">Mobil nömrə</label>
                         <input name="phone" type="text" placeholder="Mobil nömrəniz" required="required">
                       </div>
                     </div>
                     <div class="col-12">
                       <div class="form-group message">
+                        <label for="company-name">Mesaj</label>
                         <textarea name="message" placeholder="Mesajınız"></textarea>
                       </div>
                     </div>
@@ -490,9 +534,7 @@
               <div class="footer-social">
                 <ul>
                   <li><a href="#"><i class="lni lni-facebook-original"></i></a></li>
-                  <li><a href="#"><i class="lni lni-twitter-original"></i></a></li>
                   <li><a href="#"><i class="lni lni-linkedin-original"></i></a></li>
-                  <li><a href="#"><i class="lni lni-google"></i></a></li>
                 </ul>
               </div>
             </div>
