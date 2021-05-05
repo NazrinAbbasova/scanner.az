@@ -1,9 +1,11 @@
 .auth-box {
+    display: flex;
     margin: auto;
-    margin-top: 3rem;
+    margin-top: 8rem;
+    margin-bottom: 3rem;
     width: 100%;
     border-radius: 5px;
-    background: linear-gradient(0deg, #4567f4, #3cd3ad);
+    /* background: linear-gradient(0deg, #4567f4, #3cd3ad); */
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
 }
 .auth-box .form-container {
@@ -27,9 +29,10 @@
     margin-top: 4rem;
     margin-bottom: 2rem;
     text-align: center;
-    color: #4567f4;
-    font-size: 35px;
-    font-weight: bold;
+    color: #081828;
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: capitalize;
     /* Chrome all / Safari all */
     /* Firefox all */
     /* IE 10+ */
@@ -65,7 +68,7 @@
 .auth-box .form-container button {
     padding: 1rem;
     margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
     border: none;
     width: 100%;
     border-radius: 3px;
@@ -120,7 +123,7 @@
 .auth-box .form-container .register-form .account-type .register-applicant,
 .auth-box .form-container .register-form .account-type .register-company {
     padding: 1rem;
-    width: 7.8rem;
+    width: 12rem;
     border-radius: 5px;
     text-align: center;
     /* Chrome all / Safari all */
@@ -183,6 +186,7 @@
     text-decoration: none;
     color: #4567f4;
     font-size: 14px;
+    margin-top: -2rem;
     /* Chrome all / Safari all */
     /* Firefox all */
     /* IE 10+ */

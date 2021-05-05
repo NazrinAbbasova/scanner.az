@@ -1,3 +1,3 @@
 <div class="overlay-container">
-    <img src="{{ asset('static/front/images/auth-img.png') }}" alt="auth">
+    <img src="{{ asset($src ?? "static/front/images/img3.png") }}" alt="auth">
 </div>

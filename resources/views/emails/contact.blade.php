@@ -4,5 +4,6 @@
 {{ $data->text }}
 
 Hörmətlə,<br>
-{{ $data->name }}
+{{ $data->name }}<br> 
+{{ $data->phone }}
 @endcomponent

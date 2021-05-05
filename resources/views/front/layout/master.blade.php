@@ -5,6 +5,7 @@
 
 <body>
 
+  @include('front.components.loader')
   @include('front.inc.header')
 
   @yield('content')
@@ -19,7 +20,15 @@
       {{ session('success') }}
   @endif
 
-  <script src="{{ asset('static/front/js/app.js') }}"></script>
+  @include('front.inc.footer')
+
+  <!-- ========================= scroll-top ========================= -->
+  <a href="#" class="scroll-top style3 btn-hover">
+    <i class="lni lni-chevron-up"></i>
+  </a>
+
+  
+  @include('front.inc.scripts')
 </body>
 
 </html>

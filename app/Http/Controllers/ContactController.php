@@ -41,7 +41,7 @@ class ContactController extends Controller
             'subject' => 'required',
             'phone'   => 'required',
             'email'   => 'required',
-            'text'    => 'required',
+            'message' => 'required',
         ];
 
         $messages = [
@@ -49,7 +49,7 @@ class ContactController extends Controller
             'subject.required' => 'Başlığı daxil edin.',
             'phone.required'   => 'Əlaqə telefonu qeyd edin.',
             'email.required'   => 'E-mail adresinizi qeyd edin.',
-            'text.required'    => 'Mətn daxil edin.',
+            'message.required' => 'Mətn daxil edin.',
         ];
         
         $this->validate($request, $rules, $messages);
