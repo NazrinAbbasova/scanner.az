@@ -18,8 +18,10 @@
     <!-- ========================= CSS here ========================= -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/css/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="assets/css/icons.min.css" />
     <link rel="stylesheet" href="assets/css/animate.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/profile.css" />
 
 </head>
 
@@ -89,107 +91,63 @@
     </header>
     <!-- End Header Area -->
 
-
-    <!-- Start About Area -->
-
-    <section id="explore" class="app-description startup-page-style section white-bg about-section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 col-12">
-                    <div class="content wow fadeInLeft" data-wow-delay=".4s">
-                        <h2>Perfect for Operation HR <br>and Finance</h2>
-                        <p><strong>Missiyamız (bizim vəzifəmiz, var olma səbəbimiz nədir?)</strong></p>
-                        <p>Ən ədalətli və ən sürətli işə qəbul sistemi yaratmaq.</p>
-
-                        <p><strong>Vizyonumuz (Gələcəyi necə görürük)</strong></p>
-                        <p>İşə qəbul sistemini 1 klikdə toplamaq (ən doğru sözü və ya ekvivalenti müzakirəyə açıq)</p>
-                        <p><strong>Niyə?</strong> - İşə qəbul sistemində olan problemləri aradan qaldırmaqla ən ədalətli
-                            və ən
-                            sürətli işə qəbul sistemi yaratmağa kömək oluruq.</p>
-                        <p><strong>Necə edirik?</strong>
-                        <ul>
-                            <li>Rəqəmsal həllər vasitəsilə</li>
-                            <li>Hər kəsə bərabər imkanlar yaratmaqla</li>
-                            <li>İşə qəbul xətalarını, zamanını və xərclərini azaltmaqla</li>
-                        </ul>
-                        </p>
-                        <p><strong>Nə edirik (məhsulumuz nədir?)?</strong> - Avtomatlaşmış online namizəd izləmə
-                            platforması
-                            vasitəsilə ən doğru namizədi təyin edirik.</p>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-12">
-                    <div class="right wow fadeInRight" data-wow-delay=".6s">
-                        <img src="assets/images/img2.png" alt="#">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!--/ End About Area -->
-
-    <!-- Start Why Choose Area -->
-    <section id="features" class="why-choose why-choose-padding">
+    <section class="profile margin-page">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3">
-                    <!-- Single Choose -->
-                    <div class="single-choose wow fadeInUp" data-wow-delay=".2s">
-                        <div class="icon">
-                            <!-- <i class="lni lni-cog"></i> -->
-                            1
+                <div class="col-xl-3 col-lg-4">
+                    <div class="user-menu">
+                        <div class="profile-img">
+                            <div class="avatar-wrapper">
+                                <img class="profile-pic" src="/assets/images/avatar.png" />
+                                <div class="upload-button">
+                                </div>
+                                <input class="file-upload" type="file" accept="image/*" />
+                            </div>
                         </div>
-                        <h3>Ədalətli</h3>
-                        <p>İnsanlara bərabər imkanlar tanımağa və haqqı olanı verməyə çalışırıq, Biz ədalətin qarşılıqlı
-                            anlayış və güvən yaratdığına inanırıq.
-                        </p>
+                        <ul>
+                            <li><a class="active" href="user-profile.html"><i class="fal fa-user"></i><span>Profil</span></a></li>
+                            <li><a href=""><i class="fal fa-id-card"></i><span>CV</span></a></li>
+                            <li><a href=""><i class="fal fa-file-plus"></i><span>CV yarat</span></a>
+                            </li>
+                            <li><a href=""><i class="fal fa-file-check"></i><span>Müraciət olunanlar</span></a></li>
+                            <li><a href=""><i class="fal fa-chart-pie"></i><span>Ümumi
+                                        statistika</span></a>
+                            </li>
+                            <li><a href="change-password.html"><i class="fal fa-key"></i><span>Şifrəni dəyiş</span></a>
+                            </li>
+                            <li><a href=""><i class="fal fa-sign-out"></i><span>Çıxış</span></a></li>
+                        </ul>
                     </div>
-                    <!-- End Single Choose -->
                 </div>
-                <div class="col-lg-3">
-                    <!-- Single Choose -->
-                    <div class="single-choose wow fadeInUp" data-wow-delay=".2s">
-                        <div class="icon">
-                            <!-- <i class="lni lni-cog"></i> -->
-                            2
+                <div class="col-xl-9 col-lg-8">
+                    <div class="profile-content">
+                        <div class="content-title">
+                            <h5 class="font-weight-700 pull-left text-uppercase">İstifadəçi profili</h5>
                         </div>
-                        <h3>Güvənilir</h3>
-                        <p>Bizim uğur kriteriyamız yaratdığımız güvənin ölçüsüdür.</p>
+                        <form>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12">
+                                    <div class="form-group"><label>Ad</label><input type="text" class="form-control"
+                                            placeholder="Adınız">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12">
+                                    <div class="form-group"><label>Soyad</label><input type="text" class="form-control"
+                                            placeholder="Soyadınız"></div>
+                                </div>
+                                <div class="col-lg-12 col-md-12">
+                                    <div class="form-group"><label>Email</label><input type="email" class="form-control"
+                                            placeholder="exemple@gmail.com"></div>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="update">Dəyişiklikləri yadda saxla</button>
+                        </form>
                     </div>
-                    <!-- End Single Choose -->
-                </div>
-                <div class="col-lg-3">
-                    <!-- Single Choose -->
-                    <div class="single-choose wow fadeInUp" data-wow-delay=".4s">
-                        <div class="icon two">
-                            <!-- <i class="lni lni-phone-set"></i> -->
-                            3
-                        </div>
-                        <h3>Yenilikçi</h3>
-                        <p>Cəmiyyət üçün yeni dəyərlər yaratdıqca inkişaf etdiyimizin
-                            fərqindəyik, bu səbəbdən daim yaradıcı və yenilikçi olmağa çalışırıq.</p>
-                    </div>
-                    <!-- End Single Choose -->
-                </div>
-                <div class="col-lg-3">
-                    <!-- Single Choose -->
-                    <div class="single-choose wow fadeInUp" data-wow-delay=".6s">
-                        <div class="icon three">
-                            <!-- <i class="lni lni-codepen"></i> -->
-                            4
-                        </div>
-                        <h3>Sürətli</h3>
-                        <p>Yaratdığımız dəyərlərdə prosesləri avtomatlaşdıraraq sürətli və
-                            səmərəli həllər yaratmağa çalışırıq.</p>
-                    </div>
-                    <!-- End Single Choose -->
                 </div>
             </div>
         </div>
     </section>
-    <!-- End Why Choose Area -->
-
 
     <!-- Start Footer Area -->
     <footer class="footer style3">
