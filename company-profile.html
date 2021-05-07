@@ -72,13 +72,6 @@
                                     </li>
                                 </ul>
                             </div>
-                            <!-- navbar collapse -->
-                            <div class="button">
-                                <a href="login.html" class="btn">Daxil ol</a>
-                            </div>
-                            <div class="button">
-                                <a href="register.html" class="btn">Qeydiyyat</a>
-                            </div>
                         </nav>
                         <!-- navbar -->
                     </div>
@@ -105,7 +98,8 @@
                             </div>
                         </div>
                         <ul>
-                            <li><a class="active" href="company-profile.html"><i class="fal fa-building"></i><span>Haqqımızda</span></a></li>
+                            <li><a class="active" href="company-profile.html"><i
+                                        class="fal fa-building"></i><span>Haqqımızda</span></a></li>
                             <li><a href=""><i class="fal fa-id-card"></i><span>Vakansiyalara bax</span></a></li>
                             <li><a href=""><i class="fal fa-file-plus"></i><span>Vakansiya yarat</span></a>
                             </li>
@@ -126,17 +120,23 @@
                         <form>
                             <div class="row">
                                 <div class="col-lg-12 col-md-12">
-                                    <div class="form-group"><label>Şirkət adı</label><input type="text" class="form-control"
-                                            placeholder="Şirkət adı">
+                                    <div class="form-group">
+                                        <label for="company-name">Şirkət adı</label>
+                                        <input name="name" type="text" placeholder="Şirkət adı" required="required">
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-md-12">
-                                    <div class="form-group"><label>Nömrə</label><input type="number" class="form-control"
-                                            placeholder="Nömrəniz"></div>
+                                    <div class="form-group">
+                                        <label for="mobile">Mobil nömrə</label>
+                                        <input name="phone" type="text" placeholder="Mobil nömrəniz"
+                                            required="required">
+                                    </div>
                                 </div>
                                 <div class="col-lg-12 col-md-12">
-                                    <div class="form-group"><label>Email</label><input type="email" class="form-control"
-                                            placeholder="exemple@gmail.com"></div>
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input name="email" type="text" placeholder="Emailiniz" required="required">
+                                    </div>
                                 </div>
                             </div>
 
