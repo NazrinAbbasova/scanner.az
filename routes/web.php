@@ -45,9 +45,19 @@ Route::get('/about',          'PageController@about')->name('about');
 Route::post('/contact',       'ContactController@store')->name('contact.store'); // Sending contact email
 
 Route::middleware(['auth'])->group(function () {
+
+    // Company profile
+
     Route::prefix('company')->group(function () {
         Route::get('/edit',        'CompanyController@edit')->name('company.edit');
         Route::post('/update',     'CompanyController@update')->name('company.update');
+    });
+
+    // Applicant profile
+
+    Route::prefix('applicant')->group(function () {
+        Route::get('/edit',        'ApplicantController@edit')->name('applicant.edit');
+        Route::post('/update',     'ApplicantController@update')->name('applicant.update');
     });
 
     Route::prefix('password')->group(function () {

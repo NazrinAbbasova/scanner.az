@@ -2,7 +2,6 @@
     <div class="user-menu">
         <div class="profile-img">
             <div class="avatar-wrapper">
-                <img class="profile-pic" src="{{ asset('static/front/images/avatar.png') }}" />
                 <div class="upload-button">
                 </div>
                 <input class="file-upload" type="file" accept="image/*" />

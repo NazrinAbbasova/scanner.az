@@ -33,12 +33,20 @@
               </ul>
             </div>
             <!-- navbar collapse -->
+            @auth
+            <div class="button">
+              <a href="{{ auth()->user()->type == 'company' ? route('company.edit') : route('applicant.edit') }}" class="btn">Hesab</a>
+            </div>
+            @endauth
+            
+            @guest
             <div class="button">
               <a href="{{ route('login') }}" class="btn">Daxil ol</a>
             </div>
             <div class="button">
               <a href="{{ route('register') }}" class="btn">Qeydiyyat</a>
             </div>
+            @endguest
           </nav>
           <!-- navbar -->
         </div>

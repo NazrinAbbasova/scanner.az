@@ -858,6 +858,10 @@ ol {
 .pb-225 {
     padding-bottom: 225px;
 }
+.margin-page {
+    margin-top: 8rem;
+    margin-bottom: 3rem;
+}
 
 .img-bg {
     background-position: center center;
