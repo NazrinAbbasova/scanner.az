@@ -40,11 +40,15 @@ Route::get('/reset/{token}',    'AuthController@reset')->name('reset');
 Route::post('/reset',           'AuthController@new_password')->name('reset.submit');
 
 
-Route::get('/about',          'PageController@about')->name('about');
-Route::get('/how-it-works',   'PageController@how_it_works')->name('how-it-works');
+Route::get('/about',          'PageController@about')->name('about'); 
 
-Route::get('/contact',        'ContactController@index')->name('contact');
-Route::post('/contact',       'ContactController@store')->name('contact.store');
+Route::post('/contact',       'ContactController@store')->name('contact.store'); // Sending contact email
+
+Route::middleware(['auth'])->group(function () {
+    Route::prefix('company')->group(function () {
+        Route::get('/edit', 'CompanyController@edit')->name('company.edit');
+    });
+});
 
 Route::get('/resume', 'PageController@pdf');
 
