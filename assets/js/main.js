@@ -44,26 +44,24 @@ Author: GrayGrids
     var readURL = function (input) {
       if (input.files && input.files[0]) {
         var reader = new FileReader();
-
+        const profilePic = document.querySelector(".profile-pic");
         reader.onload = function (e) {
-          document.querySelector(".profile-pic").setAttribute("src", e.target.result);
+          profilePic.setAttribute("src", e.target.result);
         };
 
         reader.readAsDataURL(input.files[0]);
       }
     };
-
-    document
-      .querySelector(".file-upload")
-      .addEventListener("change", function () {
+    const fileUpload = document.querySelector(".file-upload");
+    const uploadButton = document.querySelector(".upload-button");
+    if (fileUpload && uploadButton) {
+      fileUpload.addEventListener("change", function () {
         readURL(this);
       });
-
-    document
-      .querySelector(".upload-button")
-      .addEventListener("click", function () {
-        document.querySelector(".file-upload").click();
+      uploadButton.addEventListener("click", function () {
+        fileUpload.click();
       });
+    }
   }
   changePicture();
 
