@@ -46,8 +46,9 @@
                     <div class="col-lg-12">
                         <nav class="navbar navbar-expand-lg">
                             <a class="navbar-brand logo" href="index.html">
-                                <img class="primary-logo" src="assets/images/logo/logo.png" alt="Logo" />
-                                <img class="alt-logo" src="assets/images/logo/logo.png" alt="Logo" />
+                                <img class="primary-logo" src="assets/images/logo/logo.svg" alt="Logo" />
+
+                                <img class="alt-logo" src="assets/images/logo/logo.svg" alt="Logo" />
                             </a>
                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -87,20 +88,20 @@
     <section class="profile margin-page">
         <div class="container">
             <div class="row">
-                <div class="col-xl-3 col-lg-4">
+                <div class="col-xl-4 col-lg-4">
                     <div class="user-menu">
                         <div class="profile-img">
-                            <div class="avatar-wrapper">
-                                <img class="profile-pic" src="/assets/images/avatar.png" />
-                                <div class="upload-button">
+                                <div class="avatar-wrapper">
+                                    <img class="profile-pic" src="/assets/images/avatar.png" />
+                                    <div class="upload-button">
+                                    </div>
+                                    <input class="file-upload" type="file" accept="image/*" />
                                 </div>
-                                <input class="file-upload" type="file" accept="image/*" />
-                            </div>
                         </div>
                         <ul>
                             <li><a class="active" href="company-profile.html"><i
                                         class="fal fa-building"></i><span>Haqqımızda</span></a></li>
-                            <li><a href=""><i class="fal fa-id-card"></i><span>Vakansiyalara bax</span></a></li>
+                            <li><a href=""><i class="fal fa-id-card"></i><span>Yaradılmış vakansiyalar</span></a></li>
                             <li><a href=""><i class="fal fa-file-plus"></i><span>Vakansiya yarat</span></a>
                             </li>
                             <li><a href=""><i class="fal fa-chart-pie"></i><span>Ümumi
@@ -112,17 +113,33 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-xl-9 col-lg-8">
+                <div class="col-xl-8 col-lg-8">
                     <div class="profile-content">
                         <div class="content-title">
-                            <h5 class="font-weight-700 pull-left text-uppercase">Şirkət profili</h5>
+                            <h5 class="font-weight-700 pull-left text-uppercase">Haqqımızda</h5>
                         </div>
                         <form>
                             <div class="row">
+
+
+                                <div class="col-lg-12 col-md-12">
+                                    <div class="form-group">
+                                        <label for="about-company">Şirkət haqqında</label>
+                                        <input name="about-company" type="text" placeholder="Şirkət haqqında"
+                                            required="required">
+                                    </div>
+                                </div>
                                 <div class="col-lg-12 col-md-12">
                                     <div class="form-group">
                                         <label for="company-name">Şirkət adı</label>
                                         <input name="name" type="text" placeholder="Şirkət adı" required="required">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12">
+                                    <div class="form-group">
+                                        <label for="about-company">Şirkət ünvanı</label>
+                                        <input name="about-company" type="text" placeholder="Şirkət ünvanı"
+                                            required="required">
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-md-12">
@@ -136,6 +153,24 @@
                                     <div class="form-group">
                                         <label for="email">Email</label>
                                         <input name="email" type="text" placeholder="Emailiniz" required="required">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12">
+                                    <div class="form-group">
+                                        <label for="website">Website</label>
+                                        <input name="website" type="text" placeholder="www.example.com" required="required">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12">
+                                    <div class="form-group">
+                                        <label for="linkedin">Linkedin</label>
+                                        <input name="linkedin" type="text" placeholder="https://www.linkedin.com/in/example/" required="required">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12">
+                                    <div class="form-group">
+                                        <label for="facebook">Facebook</label>
+                                        <input name="facebook" type="text" placeholder="https://www.facebook.com/example/" required="required">
                                     </div>
                                 </div>
                             </div>
@@ -157,7 +192,7 @@
                         <!-- Single Widget -->
                         <div class="f-about single-footer">
                             <div class="logo">
-                                <a href="index.html"><img src="assets/images/logo/white-logo.svg" alt="Logo"></a>
+                                <a href="index.html"><img src="assets/images/logo/logo-white.svg" alt="Logo"></a>
                             </div>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
                                 incididunt.</p>

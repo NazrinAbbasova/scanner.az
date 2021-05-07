@@ -58,6 +58,7 @@
 .user-menu{
     box-shadow: 0 0 10px 0 rgba(0,24,128,.1);
     padding: 1.5rem;
+    /* position: fixed; */
 }
 .user-menu ul{
     margin-top: 1rem;
@@ -66,8 +67,10 @@
     font-size:16px;
     padding-top: 15px;
     padding-bottom: 15px;
-    border-bottom: 1px solid #e1e7ff;
 
+}
+.user-menu li:not(:last-child) {
+    border-bottom: 1px solid #e1e7ff;
 }
 .user-menu a{
     color: #081828;
@@ -78,6 +81,7 @@
     padding-left: 5px;
     cursor: pointer;
 }
+
 .user-menu a:hover{
     color: #4567f4;
     transition: all 0s;

@@ -1005,7 +1005,7 @@ ol {
   background: linear-gradient(45deg, #6831e3, #f528cb);
   display: inline-block;
   margin-bottom: 10px;
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 500;
   padding: 5px 15px;
   border-radius: 4px;
@@ -1795,7 +1795,7 @@ ol {
 
 .header .logo {
   position: relative;
-  top: -14px;
+  top: -25px;
 }
 
 .header .logo img {
@@ -2429,7 +2429,7 @@ ol {
 }
 
 .hero-area.style4 .hero-image {
-  margin-top: 160px;
+  margin-top: 150px;
 }
 
 .hero-area::after {
@@ -2482,7 +2482,7 @@ ol {
 
 .hero-area .hero-text {
   float: none;
-  margin-top: 275px;
+  margin-top: 250px;
 }
 
 .hero-area .hero-text h5 {
@@ -4351,7 +4351,6 @@ ol {
   margin: 0;
   text-align: left;
   padding: 0;
-  padding-left: 50px;
 }
 
 .intro-video-area .section-title span {
