@@ -35,7 +35,12 @@
             <!-- navbar collapse -->
             @auth
             <div class="button">
-              <a href="{{ auth()->user()->type == 'company' ? route('company.edit') : route('applicant.edit') }}" class="btn">Hesab</a>
+              @if (auth()->user()->type == 'applicant')
+              <a href="{{ route('applicant.edit') }}" class="btn">Hesab </a>
+              @else
+              <a href="{{ route('company.edit') }}" class="btn">Hesab </a>
+              @endif
+              
             </div>
             @endauth
             

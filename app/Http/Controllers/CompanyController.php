@@ -57,7 +57,9 @@ class CompanyController extends Controller
      */
     public function edit()
     {
-        return view('front.company.edit');
+        if(auth()->user()->type == 'company') return view('front.company.edit');
+
+        return abort(403);
     }
 
     public function password()

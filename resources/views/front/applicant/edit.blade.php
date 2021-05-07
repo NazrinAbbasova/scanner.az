@@ -1,5 +1,5 @@
 @extends('front.layout.master')
-@section('title', auth()->user()->name.' '.auth()->user()->lastname)
+@section('title', auth()->user()->firstname.' '.auth()->user()->lastname)
 @section('content')
 <section class="profile margin-page">
     <div class="container">
@@ -10,23 +10,25 @@
                     <div class="content-title">
                         <h5 class="font-weight-700 pull-left text-uppercase">İstifadəçi profili</h5>
                     </div>
-                    <form>
+                    <form method="post" action="{{ route('applicant.update') }}">
+                        @csrf
+                        <input type="hidden" name="id" value="{{ auth()->user()->id }}">
                         <div class="row">
                             <div class="col-lg-12 col-md-12">
                                 <div class="form-group">
                                     <label for="name">Ad</label>
-                                    <input name="name" type="text" placeholder="Adınız" required="required">
+                                    <input name="firstname" value="{{ auth()->user()->firstname }}" type="text" placeholder="Adınız" required="required">
                                 </div>
                             </div>
                             <div class="col-lg-12 col-md-12">
                                 <div class="form-group">
-                                    <label for="surname">Soyad</label>
-                                    <input name="surname" type="text" placeholder="Soyadınız" required="required">
+                                    <label for="lastname">Soyad</label>
+                                    <input name="lastname" value="{{ auth()->user()->lastname }}" type="text" placeholder="Soyadınız" required="required">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="email">Email</label>
-                                <input name="email" type="text" placeholder="Emailiniz" required="required">
+                                <input name="email" type="email" value="{{ auth()->user()->email }}"  placeholder="Emailiniz" required="required">
                             </div>
                         </div>
 
@@ -37,4 +39,9 @@
         </div>
     </div>
 </section>
+@endsection
+
+@section('load')
+<link rel="stylesheet" href="{{ asset('static/front/css/icons.min.css') }}" />
+<link rel="stylesheet" href="{{ asset('static/front/css/profile.css') }}">
 @endsection

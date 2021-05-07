@@ -46,5 +46,6 @@
 @endsection
 
 @section('load')
+    <link rel="stylesheet" href="{{ asset('static/front/css/icons.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('static/front/css/profile.css') }}">
 @endsection

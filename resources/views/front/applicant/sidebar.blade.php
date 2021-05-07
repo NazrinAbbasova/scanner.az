@@ -2,15 +2,15 @@
     <div class="user-menu">
         <div class="profile-img">
             <div class="avatar-wrapper">
-                <img class="profile-pic" src="/assets/images/avatar.png" />
-                <div class="upload-button">
-                </div>
-                <input class="file-upload" type="file" accept="image/*" />
+                <label>
+                    <img class="profile-pic" src="{{ asset('static/front/images/avatar.png') }}" />
+                    <input class="file-upload d-none" type="file" accept="image/*" />
+                </label>
             </div>
         </div>
         <ul>
             <li>
-                <a class="active" href="user-profile.html">
+                <a class="active" href="{{ route('applicant.edit') }}">
                     <i class="fal fa-user"></i>
                     <span>Profil</span>
                     </a>
@@ -40,9 +40,9 @@
                 </a>
             </li>
             <li>
-                <a href="{{ route('password.edit') }}">
-                    <i class="fal fa-key"></i><
-                    span>Şifrəni dəyiş</span>
+                <a href="{{ route('password.edit', ['type' => 'applicant']) }}">
+                    <i class="fal fa-key"></i>
+                    <span>Şifrəni dəyiş</span>
                 </a>
             </li>
             <li>

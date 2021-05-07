@@ -862,7 +862,6 @@ ol {
     margin-top: 8rem;
     margin-bottom: 3rem;
 }
-
 .img-bg {
     background-position: center center;
     background-size: cover;
@@ -4247,7 +4246,7 @@ ol {
 }
 
 .intro-video-area.style3 .intro-video-play {
-    background-image: url("../images/img4.png");
+    background-image: url(../images/img4.png);
     background-size: contain;
     background-repeat: no-repeat;
 }

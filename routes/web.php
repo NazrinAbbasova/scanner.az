@@ -48,21 +48,21 @@ Route::middleware(['auth'])->group(function () {
 
     // Company profile
 
-    Route::prefix('company')->group(function () {
+    Route::prefix('/company')->group(function () {
         Route::get('/edit',        'CompanyController@edit')->name('company.edit');
         Route::post('/update',     'CompanyController@update')->name('company.update');
     });
 
     // Applicant profile
 
-    Route::prefix('applicant')->group(function () {
-        Route::get('/edit',        'ApplicantController@edit')->name('applicant.edit');
-        Route::post('/update',     'ApplicantController@update')->name('applicant.update');
+    Route::prefix('/applicant')->group(function () {
+        Route::get('/profile',        'ApplicantController@edit')->name('applicant.edit');
+        Route::post('/update',        'ApplicantController@update')->name('applicant.update');
     });
 
     Route::prefix('password')->group(function () {
-        Route::get('/edit',      'UserController@password')->name('password.edit');
-        Route::post('/update',   'UserController@password')->name('password.update');
+        Route::get('/profile/{type}',  'PasswordController@edit')->name('password.edit');
+        Route::post('/update',         'PasswordController@update')->name('password.update');
     });
 
     

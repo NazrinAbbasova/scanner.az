@@ -12,19 +12,21 @@
                     <div class="content-title">
                         <h5 class="font-weight-700 pull-left text-uppercase">Şifrəni dəyiş</h5>
                     </div>
-                    <form>
+                    <form method="post" action="{{ route('password.update') }}">
+                        @csrf
+                        <input type="hidden" name="id" value="{{ auth()->user()->id }}">
                         <div class="row">
                             <div class="col-lg-12 col-md-12">
                                 <div class="form-group">
                                     <label for="password">Hazırki şifrə</label>
-                                    <input name="password" type="password" placeholder="Hazırki şifrəniz"
+                                    <input name="current_password" type="password" placeholder="Hazırki şifrəniz"
                                         required="required">
                                 </div>
                             </div>
                             <div class="col-lg-12 col-md-12">
                                 <div class="form-group">
                                     <label for="password">Yeni şifrə</label>
-                                    <input name="password" type="password" placeholder="Yeni şifrəniz"
+                                    <input name="new_password" type="password" placeholder="Yeni şifrəniz"
                                         required="required">
                                 </div>
                             </div>

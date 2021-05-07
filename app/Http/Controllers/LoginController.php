@@ -10,8 +10,6 @@ class LoginController extends Controller
 {
     public function index(){
         if(auth()->check()) return redirect()->route('home');
-
-
         return view('front.auth.login');
     }
 

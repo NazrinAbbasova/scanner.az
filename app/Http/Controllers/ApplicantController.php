@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ApplicantController extends Controller
@@ -16,7 +17,9 @@ class ApplicantController extends Controller
      */
     public function edit()
     {
-        return view('front.applicant.edit');
+        if(auth()->user()->type == 'applicant') return view('front.applicant.edit');
+
+        return abort(403);
     }
 
     public function password()
@@ -33,7 +36,25 @@ class ApplicantController extends Controller
      */
     public function update(Request $request)
     {
-        //
+        $rules = [
+            'firstname' => 'required',
+            'lastname'  => 'required',
+        ];
+
+        $messages = [
+            'firstname.required' => 'Adınızı qeyd edin.',
+            'lastname.required'  => 'Soyadınzı qeyd edin.',
+        ];
+
+        $user = User::find($request->id);
+        
+        $this->validate($request, $rules, $messages);
+
+        $user->firstname = $request->firstname;
+        $user->lastname  = $request->lastname;
+        $user->save();
+
+        return redirect()->back()->with('success', 'Dəyişikliklər yadda saxlanıldı');
     }
 
 }
