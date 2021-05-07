@@ -46,8 +46,16 @@ Route::post('/contact',       'ContactController@store')->name('contact.store');
 
 Route::middleware(['auth'])->group(function () {
     Route::prefix('company')->group(function () {
-        Route::get('/edit', 'CompanyController@edit')->name('company.edit');
+        Route::get('/edit',        'CompanyController@edit')->name('company.edit');
+        Route::post('/update',     'CompanyController@update')->name('company.update');
     });
+
+    Route::prefix('password')->group(function () {
+        Route::get('/edit',      'UserController@password')->name('password.edit');
+        Route::post('/update',   'UserController@password')->name('password.update');
+    });
+
+    
 });
 
 Route::get('/resume', 'PageController@pdf');

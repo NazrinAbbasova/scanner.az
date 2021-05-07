@@ -45,7 +45,7 @@
                       <label for="mobile">Mobil nömrə</label>
                       <input type="text" name="phone" placeholder="Nömrənizi daxil edin">
                       <label for="email">Email *</label>
-                      <input type="email" required placeholder="Emailinizi daxil edin">
+                      <input type="email" required name="email" placeholder="Emailinizi daxil edin">
                       <label for="password" >Şifrə *</label>
                       <input type="password" required name="password" placeholder="Şifrə təyin edin">
                       <button type="submit">Qeydiyyatdan keç</button>

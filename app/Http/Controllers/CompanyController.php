@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class CompanyController extends Controller
@@ -59,6 +60,11 @@ class CompanyController extends Controller
         return view('front.company.edit');
     }
 
+    public function password()
+    {
+        return view('front.company.password');
+    }
+
     /**
      * Update the specified resource in storage.
      *
@@ -66,9 +72,25 @@ class CompanyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $rules = [
+            'company' => 'required',
+        ];
+
+        $user = User::find($request->id);
+
+        $messages = [
+            'company.required'   => 'Şirkət adını qeyd edin.',
+        ];
+
+        $this->validate($request, $rules, $messages);
+
+        $user->company = $request->company;
+        $user->phone = $request->phone;
+        $user->save();
+
+        return redirect()->back()->with('success', 'Dəyişikliklər yadda saxlanıldı');
     }
 
     /**
