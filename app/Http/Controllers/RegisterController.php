@@ -46,6 +46,7 @@ class RegisterController extends Controller
             $user->password       = Hash::make($request->password);
             $user->type           = 'applicant';
             $user->remember_token = Str::random(32);
+            $user->premium        = null;
             $user->save();
             
         } else {
