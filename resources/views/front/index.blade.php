@@ -66,7 +66,7 @@
         </div>
         <div class="col-lg-6 col-12">
           <div class="right wow fadeInRight" data-wow-delay=".6s">
-            <img src="{{ asset('static/front/images/img2.png') }}" alt="#">
+            <img src="{{ ('static/front/images/img2.png') }}" alt="#">
           </div>
         </div>
       </div>
@@ -187,7 +187,6 @@
       </div>
     </div>
   </section>
-  <!-- End Intro Video Area -->
   
   <!-- Start Contact Area -->
   <section id="contact" class="contact-us style3 section">
