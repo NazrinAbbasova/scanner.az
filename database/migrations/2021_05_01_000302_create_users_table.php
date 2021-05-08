@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             // Company
             $table->string('company')->nullable();
             $table->text('description')->nullable();
+            $table->text('address')->nullable();
             $table->string('logo')->nullable();
             $table->string('website')->nullable();
             $table->string('facebook')->nullable();

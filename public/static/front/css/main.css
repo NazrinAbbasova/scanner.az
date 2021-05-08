@@ -1033,7 +1033,7 @@ ol {
 }
 
 .section-title p {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 24px;
 }
 
@@ -1794,11 +1794,11 @@ ol {
 
 .header .logo {
     position: relative;
-    top: -14px;
+    top: -30px;
 }
 
 .header .logo img {
-    width: 150px;
+    width: 180px;
     position: absolute;
     left: 0;
     top: 0;

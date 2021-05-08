@@ -88,8 +88,12 @@ class CompanyController extends Controller
 
         $this->validate($request, $rules, $messages);
 
-        $user->company = $request->company;
-        $user->phone = $request->phone;
+        $user->company    = $request->company;
+        $user->phone      = $request->phone;
+        $user->address    = $request->address;
+        $user->website    = $request->website;
+        $user->linkedin   = $request->linkedin;
+        $user->facebook   = $request->facebook;
         $user->save();
 
         return redirect()->back()->with('success', 'Dəyişikliklər yadda saxlanıldı');

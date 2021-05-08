@@ -12,7 +12,7 @@
               <div class="hero-text">
                 <h1 class="wow fadeInUp" data-wow-delay=".5s">Doğru insan, doğru iş!</h1>
                 <p class="wow fadeInUp" data-wow-delay=".7s">Scanner işə qəbul sistemində olan problemləri aradan
-                  qaldırmaqla ən ədalətli və ən sürətli işə qəbul sistemi yaratmağa kömək olur. <br><br>
+                  qaldırmaqla <br> ən ədalətli və ən sürətli işə qəbul sistemi yaratmağa kömək olur. <br><br>
                   Əgər siz də bizə qoşulmaq istəyirsinizsə elə indi qeydiyyatdan keçin
                 </p>
                 <div class="button wow fadeInUp" data-wow-delay=".9s">
@@ -47,7 +47,7 @@
       <div class="row align-items-center">
         <div class="col-lg-6 col-12">
           <div class="content wow fadeInLeft" data-wow-delay=".4s">
-            <h2>Perfect for Operation HR <br>and Finance</h2>
+            <h2>Scannerdən niyə istifadə edək?</h2>
             <p><strong>Niyə?</strong> - İşə qəbul sistemində olan problemləri aradan qaldırmaqla ən ədalətli və ən
               sürətli işə qəbul sistemi yaratmağa kömək oluruq.</p>
             <p><strong>Necə edirik?</strong>
@@ -81,10 +81,7 @@
         <div class="col-12">
           <div class="section-title style3">
             <span class="wow fadeInDown" data-wow-delay=".2s">Sistem necə İşləyir?</span>
-            <h2 class="wow fadeInUp" data-wow-delay=".4s">Why Choose Xpeedo?</h2>
-            <p class="wow fadeInUp" data-wow-delay=".6s">Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit sed do eiusmod tempor incididunt ut
-              labore et dolore magna aliqua.</p>
+            <p class="wow fadeInUp" data-wow-delay=".6s">Scannerin sizlər üçün 5 addımda yaratdığı dəyər mexanizmi</p>
           </div>
         </div>
       </div>
@@ -195,9 +192,8 @@
         <div class="col-12">
           <div class="section-title style3">
             <span class="wow fadeInDown" data-wow-delay=".2s">Bizimlə əlaqə</span>
-            <h2 class="wow fadeInUp" data-wow-delay=".4s">Let’s cooperate!</h2>
-            <p class="wow fadeInUp" data-wow-delay=".6s">There are many variations of passages of Lorem
-              Ipsum available, but the majority have suffered alteration in some form.</p>
+            <p class="wow fadeInUp" data-wow-delay=".6s">Scannerin yaratdığı imkanlardan yararlanmaq üçün bizimlə əlaqə
+              yaradın</p>
           </div>
         </div>
       </div>
@@ -263,8 +259,7 @@
                     <i class="lni lni-envelope"></i>
                     <ul>
                       <li><span>Bizə mail göndər</span></li>
-                      <li><a href="mailto:support@yourmail.com">support@yourmail.com</a></li>
-                      <li><a href="mailto:contact@yourmail.com">contact@yourmail.com</a></li>
+                      <li><a href="mailto:support@info@scanner.az">info@scanner.az</a></li>
                     </ul>
                   </div>
                 </div>
