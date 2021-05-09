@@ -22,11 +22,17 @@
                                 </div>
                             </div>
                             <div class="col-lg-12 col-md-12">
-                                    <div class="form-group">
-                                        <label for="address">Şirkət ünvanı</label>
-                                        <input name="address" type="text" value="{{ auth()->user()->address }}" placeholder="Şirkət ünvanı">
-                                    </div>
+                                <div class="form-group">
+                                    <label for="company-name">Şirkət haqqında</label>
+                                    <textarea name="description" required rows="5">{{ auth()->user()->description }}</textarea>
                                 </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12">
+                                <div class="form-group">
+                                    <label for="address">Şirkət ünvanı</label>
+                                    <input name="address" type="text" value="{{ auth()->user()->address }}" placeholder="Şirkət ünvanı">
+                                </div>
+                            </div>
                             <div class="col-lg-12 col-md-12">
                                 <div class="form-group">
                                     <label for="mobile">Mobil nömrə</label>

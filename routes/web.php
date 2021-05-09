@@ -47,17 +47,22 @@ Route::post('/contact',       'ContactController@store')->name('contact.store');
 Route::middleware(['auth'])->group(function () {
 
     // Company profile
-
-    Route::prefix('/company')->group(function () {
-        Route::get('/edit',        'CompanyController@edit')->name('company.edit');
-        Route::post('/update',     'CompanyController@update')->name('company.update');
+    Route::middleware(['company'])->group(function () {
+        Route::prefix('/company')->group(function () {
+            Route::get('/profile',     'CompanyController@edit')->name('company.edit');
+            Route::post('/update',     'CompanyController@update')->name('company.update');
+            Route::post('/logo',       'CompanyController@logo')->name('company.logo');
+        });
     });
 
     // Applicant profile
 
-    Route::prefix('/applicant')->group(function () {
-        Route::get('/profile',        'ApplicantController@edit')->name('applicant.edit');
-        Route::post('/update',        'ApplicantController@update')->name('applicant.update');
+    Route::middleware(['applicant'])->group(function () {
+        Route::prefix('/applicant')->group(function () {
+            Route::get('/profile',        'ApplicantController@edit')->name('applicant.edit');
+            Route::post('/update',        'ApplicantController@update')->name('applicant.update');
+            Route::post('/photo',         'ApplicantController@photo')->name('applicant.photo');
+        });
     });
 
     Route::prefix('password')->group(function () {

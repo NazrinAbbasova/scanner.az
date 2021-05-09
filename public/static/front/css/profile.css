@@ -96,13 +96,12 @@
 .form-group {
     margin-top: 2rem;
 }
-.form-group input {
-    height: 55px;
+.form-group input,
+.form-group textarea {
     outline: none;
-    line-height: 55px;
     width: 100%;
     border: 2px solid #eee;
-    padding: 0px 20px;
+    padding: 15px 20px;
     color: #333;
     border-radius: 0px;
     font-weight: 400;

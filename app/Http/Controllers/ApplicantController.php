@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ApplicantController extends Controller
 {
@@ -17,9 +18,7 @@ class ApplicantController extends Controller
      */
     public function edit()
     {
-        if(auth()->user()->type == 'applicant') return view('front.applicant.edit');
-
-        return abort(403);
+        return view('front.applicant.edit');
     }
 
     public function password()
@@ -55,6 +54,25 @@ class ApplicantController extends Controller
         $user->save();
 
         return redirect()->back()->with('success', 'Dəyişikliklər yadda saxlanıldı');
+    }
+
+    public function photo(Request $request){
+        if($request->hasFile('photo')){
+            $photo = $request->photo;
+
+            $file_name = 'applicant-'.$request->id.'.'.$photo->extension();
+
+            $photo->storeAs('public/applicants', $file_name);
+
+            $url  = '/storage/applicants/'.$file_name;
+            $user = User::find($request->id);
+            $user->photo = $url;
+            $user->save();
+
+            return redirect()->back()->with('success', 'Dəyişikliklər yadda saxlanıldı');
+        }
+
+        return back();
     }
 
 }
