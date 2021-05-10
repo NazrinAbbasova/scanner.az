@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row">
             @include('front.company.sidebar')
-            <div class="col-xl-9 col-lg-8">
+            <div class="col-lg-8">
                 <div class="profile-content">
                     <div class="content-title">
                         <h5 class="font-weight-700 pull-left text-uppercase">Şirkət profili</h5>

@@ -6,8 +6,8 @@
         <div class="col-lg-12">
           <nav class="navbar navbar-expand-lg">
             <a class="navbar-brand logo" href="{{ route('home') }}">
-              <img class="primary-logo" src="{{ asset('static/front/images/logo/logo.png') }}" alt="Logo" />
-              <img class="alt-logo" src="{{ asset('static/front/images/logo/logo.png') }}" alt="Logo" />
+              <img class="primary-logo" src="{{ asset('static/front/images/logo/logo-white.svg') }}" alt="Logo" />
+              <img class="alt-logo" src="{{ asset('static/front/images/logo/logo.svg') }}" alt="Logo" />
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
               data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"

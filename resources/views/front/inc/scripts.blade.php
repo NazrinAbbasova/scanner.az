@@ -7,6 +7,7 @@
 <script src="{{ asset('static/front/js/imagesloaded.min.js') }}"></script>
 <script src="{{ asset('static/front/js/isotope.min.js') }}"></script>
 <script src="{{ asset('static/front/js/main.js') }}"></script>
+<script src="{{ asset('static/front/js/app.js') }}"></script>
   
 <script type="text/javascript">
     //========= glightbox

@@ -161,11 +161,9 @@
         <div class="row">
           <div class="col-lg-8 offset-lg-2 col-md-12 col-12">
             <div class="section-title">
-              <span class="wow fadeInDown" data-wow-delay=".2s">Intro Video</span>
-              <h2 class="wow fadeInUp" data-wow-delay=".4s">Watch our Platform</h2>
-              <p class="wow fadeInUp" data-wow-delay=".6s">Lorem ipsum dolor sit amet, consectetur
-                adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+              <h2 class="wow fadeInUp" data-wow-delay=".4s">Gəlin Scanneri Daha Yaxından Tanıyaq</h2>
+              <p class="wow fadeInUp" data-wow-delay=".6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">Azərbaycanın ilk namizəd izləmə platforması sizin
+                xidmətinizdədir</p>
             </div>
           </div>
           <div class="col-lg-8 offset-lg-2 col-md-12 col-12">

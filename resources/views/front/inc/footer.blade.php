@@ -7,7 +7,7 @@
             <!-- Single Widget -->
             <div class="f-about single-footer">
               <div class="logo">
-                <a href="{{ route('home') }}"><img src="{{ asset('static/front/images/logo/white-logo.svg') }}" alt="Logo"></a>
+                <a href="{{ route('home') }}"><img src="{{ asset('static/front/images/logo/logo-white.svg') }}" alt="Logo"></a>
               </div>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
                 incididunt.</p>
@@ -31,7 +31,7 @@
                   <ul>
                     <!-- <li><i class="lni lni-map-marker"></i> 113 Sassnex, White House, New Jercy, USA
                                         </li> -->
-                    <li><i class="lni lni-envelope"></i> info@yourdomain.com</li>
+                    <li><i class="lni lni-envelope"></i> info@scanner.az</li>
                     <li><i class="lni lni-phone"></i> +001 548 159 2491</li>
                   </ul>
                 </div>
@@ -42,22 +42,5 @@
         </div>
       </div>
     </div>
-    <!--/ End Footer Middle -->
-    <!-- Start Footer Bottom -->
-    <!-- <div class="footer-bottom">
-            <div class="container">
-                <div class="inner">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="left">
-                                <p>Designed and Developed by<a href="https://graygrids.com/" rel="nofollow"
-                                        target="_blank">GrayGrids</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-    <!-- End Footer Middle -->
   </footer>
   <!--/ End Footer Area -->

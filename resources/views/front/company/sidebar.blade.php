@@ -1,17 +1,17 @@
-<div class="col-xl-3 col-lg-4">
+<div class="col-lg-4">
     <div class="user-menu">
         <div class="profile-img">
-            <form action="{{ route('company.logo') }}" enctype="multipart/form-data" method="post">
-            <div class="avatar-wrapper">
+            <form class="text-center" action="{{ route('company.logo') }}" enctype="multipart/form-data" method="post">
+                <div class="avatar-wrapper">
                     @csrf
                     <input type="hidden" name="company" value="{{ auth()->user()->company }}">
                     <input type="hidden" name="id" value="{{ auth()->user()->id }}">
-                    <label>
-                        <img class="profile-pic" src="{{ auth()->user()->logo ?? asset('static/front/images/avatar.png') }}" />
-                        <input name="logo" class="file-upload d-none" type="file" accept="image/*" />
+                    <label class="{{ auth()->user()->logo ? '' : 'avatar-placeholder' }}">
+                        <img class="profile-pic" src="{{ auth()->user()->logo ?? asset('static/front/images/company.svg') }}" />
+                        <input name="logo" id="upload-avatar" class="file-upload d-none" type="file" accept="image/*" />
                     </label>
                 </div>
-                <button type="submit">Save</button>
+                <button id="save-avatar" type="submit">Yadda saxla</button>
             </form>
         </div>
         <ul>
@@ -40,7 +40,7 @@
                 </a>
             </li>
             <li>
-                <a href="{{ route('password.edit', ['type' => 'applicant']) }}">
+                <a href="{{ route('password.edit', ['type' => 'company']) }}">
                     <i class="fal fa-key"></i>
                     <span>Şifrəni dəyiş</span>
                 </a>
