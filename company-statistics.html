@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="assets/css/icons.min.css" />
     <link rel="stylesheet" href="assets/css/animate.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="assets/css/profile.css" />
+    <link rel="stylesheet" href="assets/css/statistics.css" />
 
 </head>
 
@@ -115,78 +115,55 @@
                     </div>
                 </div>
                 <div class="col-xl-8 col-lg-8">
-                    <div class="profile-content">
-                        <div class="content-title">
-                            <h5 class="font-weight-700 pull-left text-uppercase">Haqqımızda</h5>
-                        </div>
-                        <form>
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="form-group">
-                                        <label for="company-name">İşə götürən adı</label>
-                                        <input name="name" type="text" placeholder="Adınız" required="required">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="form-group">
-                                        <label for="website">Website</label>
-                                        <input name="website" type="text" placeholder="www.example.com"
-                                            required="required">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="form-group">
-                                        <label for="profession-company">Fəaliyyət göstərdiyi sahə</label>
-                                        <input name="profession-company" type="text"
-                                            placeholder="Fəaliyyət göstərdiyiniz sahə" required="required">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="form-group">
-                                        <label for="email">Email</label>
-                                        <input name="email" disabled type="text" placeholder="Emailiniz"
-                                            required="required">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="form-group">
-                                        <label for="about-company">Ünvan</label>
-                                        <input name="about-company" type="text" placeholder="Ünvanınız"
-                                            required="required">
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="form-group">
-                                        <label for="linkedin">Linkedin</label>
-                                        <input name="linkedin" type="text"
-                                            placeholder="https://www.linkedin.com/in/example/" required="required">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="form-group">
-                                        <label for="mobile">Mobil nömrə</label>
-                                        <input name="phone" type="text" placeholder="Mobil nömrəniz"
-                                            required="required">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="form-group">
-                                        <label for="facebook">Facebook</label>
-                                        <input name="facebook" type="text"
-                                            placeholder="https://www.facebook.com/example/" required="required">
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-md-12">
-                                    <div class="form-group message">
-                                        <label for="about-company">İşə götürən haqqında</label>
-                                        <textarea name="about-company" placeholder="Haqqınızda"></textarea>
-                                    </div>
-                                </div>
+                    <h5>Ümumi statistika</h5>
+                    <div class="our-achievement">
+                        <div class="col-lg-3 col-md-6 col-12">
+                            <div class="single-achievement wow fadeInUp" data-wow-delay=".2s">
+                                <i class="fal fa-file"></i>
+                                <h3 class="counter"><span id="secondo1" class="countup" cup-end="264">264</span>K+</h3>
+                                <p>Ümumi vakansiya sayı</p>
                             </div>
-
-                            <button type="submit" class="update">Dəyişiklikləri yadda saxla</button>
-                        </form>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-12">
+                            <div class="single-achievement wow fadeInUp" data-wow-delay=".4s">
+                                <i class="lni lni-users"></i>
+                                <h3 class="counter"><span id="secondo2" class="countup" cup-end="100">100</span>K+</h3>
+                                <p>Müraciət edən namizədlər</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-12">
+                            <div class="single-achievement wow fadeInUp" data-wow-delay=".6s">
+                                <i class="fal fa-file-check"></i>
+                                <h3 class="counter"><span id="secondo3" class="countup" cup-end="855">855</span>K+</h3>
+                                <p>Uğurlu namizədlər</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-12">
+                            <div class="single-achievement wow fadeInUp" data-wow-delay=".6s">
+                                <i class="fal fa-clock"></i>
+                                <h3 class="counter"><span id="secondo3" class="countup" cup-end="295">295</span>K+</h3>
+                                <p>Qənaət olunmuş zaman</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calculator">
+                        <div class="col-lg-9 col-md-6 col-12">
+                            <form action="">
+                                <div class="form-group">
+                                    <label for="name">Maaş</label>
+                                    <input class="salary" name="salary" type="number" placeholder="Maaşınızı daxil edin"
+                                        required="required">
+                                </div>
+                                <input type="button" class="calculate" value="Hesabla">
+                            </form>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="single-achievement wow fadeInUp" data-wow->
+                                <i class="fal fa-money-bill-alt"></i>
+                                <h3 class="counter"><span id="secondo3" class="budget countup"></span></h3>
+                                <p class="budget-text">Qənaət olunmuş büdcəni hesabla</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

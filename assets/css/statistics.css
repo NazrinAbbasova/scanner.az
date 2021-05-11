@@ -1,21 +1,5 @@
 .our-achievement {
-    background: linear-gradient(45deg, #4567f4, #3CD3AD);
-    position: relative;
-    z-index: 1;
-}
-
-.our-achievement::before {
-    position: absolute;
-    content: "";
-    left: 0;
-    top: -10px;
-    height: 110%;
-    width: 110%;
-    background-image: url("../images/video/video-overlay.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    z-index: -1;
+    display: flex;
 }
 
 .our-achievement .single-achievement i {
@@ -27,7 +11,8 @@
     text-align: center;
 }
 
-.our-achievement .single-achievement i {
+.our-achievement .single-achievement i,
+.calculator i {
     font-size: 22px;
     margin-bottom: 15px;
     height: 45px;
@@ -35,21 +20,75 @@
     line-height: 40px;
     text-align: center;
     display: inline-block;
-    background: #fff;
-    color: #6831e3;
+    border: 1px solid #4567f4;
+    color: #4567f4;
     border-radius: 10px;
 }
 
-.our-achievement .single-achievement h3 {
+.our-achievement .single-achievement h3,
+.calculator h3 {
     font-size: 20px;
     font-weight: 700;
     display: block;
     margin-bottom: 8px;
-    color: #fff;
+    color: #333;
 }
 
-.our-achievement .single-achievement p {
+.our-achievement .single-achievement p,
+.calculator p {
     font-size: 12px;
-    color: #fff;
+    color: #333;
     font-weight: 600;
+}
+
+.common {
+    display: flex
+}
+
+.calculator {
+    display: flex;
+    margin-top: 3rem;
+}
+
+.calculator .single-achievement {
+    text-align: center;
+}
+
+.calculator span {
+    display: none
+}
+
+.form-group input {
+    height: 55px;
+    outline: none;
+    line-height: 55px;
+    width: 90%;
+    border: 2px solid #eee;
+    padding: 0px 20px;
+    color: #333;
+    border-radius: 0px;
+    font-weight: 400;
+    border-radius: 0;
+    -webkit-box-shadow: 0px 0px 10px #00000014;
+    box-shadow: 0px 0px 10px #00000014;
+    margin-left: 1rem;
+}
+
+.form-group label {
+    margin-left: 1rem;
+
+}
+
+.calculate {
+    margin-top: 2rem;
+    text-transform: capitalize;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 15px 30px;
+    background: linear-gradient(45deg, #4567f4, #3CD3AD);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    margin-left: 1rem;
+
 }
