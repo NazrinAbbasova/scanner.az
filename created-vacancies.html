@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="assets/css/icons.min.css" />
     <link rel="stylesheet" href="assets/css/animate.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="assets/css/profile.css" />
+    <link rel="stylesheet" href="assets/css/created-vacancies.css" />
 
 </head>
 
@@ -105,82 +105,134 @@
                                         vakansiyalar</span></a></li>
                             <li><a href=""><i class="fal fa-file-plus"></i><span>Vakansiya yarat</span></a>
                             </li>
-                            <li><a href=""><i class="fal fa-chart-pie"></i><span>Ümumi
+                            <!-- <li><a href=""><i class="fal fa-chart-pie"></i><span>Ümumi
                                         statistika</span></a>
-                            </li>
+                            </li> -->
                             <li><a href="change-password.html"><i class="fal fa-key"></i><span>Şifrəni dəyiş</span></a>
                             </li>
                             <li><a href=""><i class="fal fa-sign-out"></i><span>Çıxış</span></a></li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-xl-8 col-lg-8">
-                    <div class="profile-content">
-                        <div class="content-title">
-                            <h5 class="font-weight-700 pull-left text-uppercase">Haqqımızda</h5>
+                <div class="col-xl-8 col-lg-8 m-b30">
+                    <div class="created-jobs table-created-jobs">
+                        <div class="created-jobs-title">
+                            <h5>Job Alerts</h5>
                         </div>
-                        <form>
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="form-group">
-                                        <label for="company-name">İşə götürən adı</label>
-                                        <input name="name" type="text" placeholder="İşə götürən adı"
-                                            required="required">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="form-group">
-                                        <label for="mobile">Mobil nömrə</label>
-                                        <input name="phone" type="text" placeholder="Mobil nömrəniz"
-                                            required="required">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="form-group">
-                                        <label for="email">Email</label>
-                                        <input name="email" disabled type="text" placeholder="Emailiniz"
-                                            required="required">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="form-group">
-                                        <label for="about-company">İşə götürən ünvanı</label>
-                                        <input name="about-company" type="text" placeholder="İşə götürən ünvanı"
-                                            required="required">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="form-group">
-                                        <label for="website">Website</label>
-                                        <input name="website" type="text" placeholder="www.example.com"
-                                            required="required">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="form-group">
-                                        <label for="linkedin">Linkedin</label>
-                                        <input name="linkedin" type="text"
-                                            placeholder="https://www.linkedin.com/in/example/" required="required">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6"></div>
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="form-group">
-                                        <label for="facebook">Facebook</label>
-                                        <input name="facebook" type="text"
-                                            placeholder="https://www.facebook.com/example/" required="required">
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-md-12">
-                                    <div class="form-group message">
-                                        <label for="about-company">İşə götürən haqqında</label>
-                                        <textarea name="about-company" placeholder="Haqqınızda"></textarea>
+                        <table>
+                            <div class="our-achievement">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-6 col-12">
+                                            <div class="single-achievement wow fadeInUp" data-wow-delay=".2s">
+                                                <i class="fal fa-file-alt"></i>
+                                                <h3 class="counter"><span id="secondo1" class="countup"
+                                                        cup-end="264">264</span>K+</h3>
+                                                <p>Ümumi vakansiyaların sayı</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-6 col-12">
+                                            <div class="single-achievement wow fadeInUp" data-wow-delay=".4s">
+                                                <i class="lni lni-users"></i>
+                                                <h3 class="counter"><span id="secondo2" class="countup"
+                                                        cup-end="100">100</span>K+</h3>
+                                                <p>Müraciət edən namizədlər</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-6 col-12">
+                                            <div class="single-achievement wow fadeInUp" data-wow-delay=".6s">
+                                                <i class="fal fa-file-check"></i>
+                                                <h3 class="counter"><span id="secondo3" class="countup"
+                                                        cup-end="855">855</span>K+</h3>
+                                                <p>Scannerdən uğurla keçənlər</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-6 col-12">
+                                            <div class="single-achievement wow fadeInUp" data-wow-delay=".6s">
+                                                <i class="fal fa-clock"></i>
+                                                <h3 class="counter"><span id="secondo3" class="countup"
+                                                        cup-end="295">295</span>K+</h3>
+                                                <p>Qənaət olunmuş zaman</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-
-                            <button type="submit" class="update">Dəyişiklikləri yadda saxla</button>
-                        </form>
+                            <thead class="jobs-list">
+                                <tr>
+                                    <th scope="col">Vakansiyanın adı</th>
+                                    <th scope="col">Aid olduğu sahə</th>
+                                    <th scope="col">Elan olunma tarixi</th>
+                                    <th scope="col">Müraciət edənlərin sayı</th>
+                                    <th scope="col">Uğurlu namizədlərin sayı</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="job-name">Front-end developer</td>
+                                    <td class="profession-name">Proqramlaşdırma</td>
+                                    <td class="date">December 15,2018</td>
+                                    <td class="common-applicants">134</td>
+                                    <td class="successful-applicants">23</td>
+                                </tr>
+                                <tr>
+                                    <td class="job-name">Front-end developer</td>
+                                    <td class="profession-name">Proqramlaşdırma</td>
+                                    <td class="date">December 15,2018</td>
+                                    <td class="common-applicants">134</td>
+                                    <td class="successful-applicants">23</td>
+                                </tr>
+                                <tr>
+                                    <td class="job-name">Front-end developer</td>
+                                    <td class="profession-name">Proqramlaşdırma</td>
+                                    <td class="date">December 15,2018</td>
+                                    <td class="common-applicants">134</td>
+                                    <td class="successful-applicants">23</td>
+                                </tr>
+                                <tr>
+                                    <td class="job-name">Front-end developer</td>
+                                    <td class="profession-name">Proqramlaşdırma</td>
+                                    <td class="date">December 15,2018</td>
+                                    <td class="common-applicants">134</td>
+                                    <td class="successful-applicants">23</td>
+                                </tr>
+                                <tr>
+                                    <td class="job-name">Front-end developer</td>
+                                    <td class="profession-name">Proqramlaşdırma</td>
+                                    <td class="date">December 15,2018</td>
+                                    <td class="common-applicants">134</td>
+                                    <td class="successful-applicants">23</td>
+                                </tr>
+                                <tr>
+                                    <td class="job-name">Front-end developer</td>
+                                    <td class="profession-name">Proqramlaşdırma</td>
+                                    <td class="date">December 15,2018</td>
+                                    <td class="common-applicants">134</td>
+                                    <td class="successful-applicants">23</td>
+                                </tr>
+                                <tr>
+                                    <td class="job-name">Front-end developer</td>
+                                    <td class="profession-name">Proqramlaşdırma</td>
+                                    <td class="date">December 15,2018</td>
+                                    <td class="common-applicants">134</td>
+                                    <td class="successful-applicants">23</td>
+                                </tr>
+                                <tr>
+                                    <td class="job-name">Front-end developer</td>
+                                    <td class="profession-name">Proqramlaşdırma</td>
+                                    <td class="date">December 15,2018</td>
+                                    <td class="common-applicants">134</td>
+                                    <td class="successful-applicants">23</td>
+                                </tr>
+                                <tr>
+                                    <td class="job-name">Front-end developer</td>
+                                    <td class="profession-name">Proqramlaşdırma</td>
+                                    <td class="date">December 15,2018</td>
+                                    <td class="common-applicants">134</td>
+                                    <td class="successful-applicants">23</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>

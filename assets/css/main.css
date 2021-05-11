@@ -3371,7 +3371,7 @@ ol {
 /*======================================
     Our Achievement CSS
 ========================================*/
-.our-achievement {
+/* .our-achievement {
   background: linear-gradient(45deg, #6831e3, #f528cb);
   position: relative;
   padding-top: 70px;
@@ -3448,7 +3448,7 @@ ol {
   font-size: 15px;
   color: #fff;
   font-weight: 600;
-}
+} */
 
 /*======================================
     Why Choose CSS
@@ -6461,3 +6461,111 @@ ol {
 /*======================================
 	End Contact CSS
 ========================================*/
+
+.profile-img {
+  display: flex;
+  justify-content: center;
+}
+
+.avatar-wrapper {
+  position: relative;
+  height: 180px;
+  width: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 1px 1px 15px -5px black;
+  transition: all 0.3s ease;
+}
+
+.avatar-wrapper:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.avatar-wrapper:hover .profile-pic {
+  opacity: 0.5;
+}
+
+.avatar-wrapper .profile-pic {
+  height: 100%;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.avatar-wrapper .profile-pic:after {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  font-size: 190px;
+  background: #ecf0f1;
+  color: #34495e;
+  text-align: center;
+}
+
+.avatar-wrapper .upload-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.avatar-wrapper .upload-button .fa-arrow-circle-up {
+  position: absolute;
+  font-size: 234px;
+  top: -17px;
+  left: 0;
+  text-align: center;
+  opacity: 0;
+  transition: all 0.3s ease;
+  color: #34495e;
+}
+
+.avatar-wrapper .upload-button:hover .fa-arrow-circle-up {
+  opacity: 0.9;
+}
+
+.user-menu {
+  box-shadow: 0 0 10px 0 rgba(0, 24, 128, .1);
+  padding: 1.5rem;
+  position: sticky;
+  top: 100px;
+}
+
+.user-menu ul {
+  margin-top: 1rem;
+}
+
+.user-menu li {
+  font-size: 16px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+}
+
+.user-menu li:not(:last-child) {
+  border-bottom: 1px solid #e1e7ff;
+}
+
+.user-menu a {
+  color: #081828;
+  width: 100%;
+}
+
+.user-menu li:hover {
+  background: #e1e7ff;
+  transition: all .2s linear;
+  padding-left: 5px;
+  cursor: pointer;
+}
+
+.user-menu a:hover {
+  color: #4567f4;
+  transition: all 0s;
+}
+
+.user-menu i {
+  margin-right: 0.5rem;
+}
