@@ -68,13 +68,13 @@ Author: GrayGrids
   // Calculate saved budget
   const calculate = document.querySelector(".calculate");
   const budgetText = document.querySelector(".budget-text");
+  const budgetCommon = document.querySelector(".calculator .single-achievement");
   const budgetNumber = document.querySelector(".budget");
   const salary = document.querySelector(".salary");
 
   if (calculate) {
     calculate.addEventListener("click", () => {
-      budgetText.innerHTML = "Qənaət olunmuş büdcə";
-      budgetNumber.style.display = "block";
+      budgetCommon.style.display = "block";
       budgetNumber.innerHTML = Math.round((salary.value * 100) / 9600) + " AZN";
     });
   }

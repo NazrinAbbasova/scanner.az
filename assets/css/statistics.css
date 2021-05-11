@@ -1,5 +1,7 @@
 .our-achievement {
     display: flex;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
 }
 
 .our-achievement .single-achievement i {
@@ -50,12 +52,17 @@
     margin-top: 3rem;
 }
 
-.calculator .single-achievement {
-    text-align: center;
+.calculator-head {
+    margin-left: 1rem;
 }
 
-.calculator span {
-    display: none
+.calculator-head p {
+    margin-top: 1rem;
+}
+
+.calculator .single-achievement {
+    display: none;
+    text-align: center;
 }
 
 .form-group input {

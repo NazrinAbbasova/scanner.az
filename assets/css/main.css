@@ -6423,7 +6423,19 @@ ol {
   -webkit-box-shadow: 0px 0px 10px #00000014;
           box-shadow: 0px 0px 10px #00000014;
 }
-
+.form-group input,
+.form-group textarea {
+    outline: none;
+    width: 100%;
+    border: 2px solid #eee;
+    padding: 15px 20px;
+    color: #333;
+    border-radius: 0px;
+    font-weight: 400;
+    border-radius: 0;
+    -webkit-box-shadow: 0px 0px 10px #00000014;
+    box-shadow: 0px 0px 10px #00000014;
+}
 .contact-us .form .form-group textarea {
   height: 180px;
   width: 100%;
