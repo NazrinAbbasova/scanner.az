@@ -69,14 +69,18 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/profile/{type}',  'PasswordController@edit')->name('password.edit');
         Route::post('/update',         'PasswordController@update')->name('password.update');
     });
-
     
 });
 
 Route::get('/resume', 'PageController@pdf');
 
 Route::prefix('dashboard')->group(function () {
+    
     Route::get('/', 'PageController@dashboard')->name('dashboard');
+
+    Route::prefix('vacancies')->group(function () {
+        Route::get('/create', 'PageController@vacancies')->name('dashboard.vacancies');
+    });
 
     Route::get('/languages',    'LanguageController@index')->name('dashboard.languages');
     Route::get('/translations', 'TranslationController@index')->name('dashboard.translations');

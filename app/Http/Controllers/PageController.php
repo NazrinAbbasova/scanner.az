@@ -31,4 +31,9 @@ class PageController extends Controller
         return $pdf->download('invoice.pdf');
     }
 
+
+    public function vacancies(){
+        return view('dashboard.vacancy.create');
+    }
+
 }

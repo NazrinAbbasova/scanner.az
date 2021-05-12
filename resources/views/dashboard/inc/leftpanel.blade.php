@@ -31,6 +31,14 @@
               Translations
             </a>
           </li>
+          
+          {{-- Translations --}}
+          <li>
+            <a href="{{ route('dashboard.vacancies') }}">
+              <i class="menu-icon fas fa-language"></i>
+              Vacancies
+            </a>
+          </li>
 
         </ul>
       </div>
