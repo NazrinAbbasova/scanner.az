@@ -17,8 +17,8 @@ class CreateVacancyCertificatesTable extends Migration
             $table->id();
             $table->unsignedBigInteger('vacancy_id');
             $table->string('certificate');
-            $table->string('certificate_level');
-            $table->integer('certificate_importance');
+            $table->string('level');
+            $table->integer('importance');
             $table->timestamps();
 
             $table->foreign('vacancy_id')

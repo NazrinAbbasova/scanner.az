@@ -13,20 +13,20 @@
                   <h4 class="box-title">Vacancies</h4>
                 </div>
                 <div class="card-body">
-                    <form action="" method="post">
+                    <form action="{{ route('vacancy.store') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
                             {{-- Age --}}
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Age<span class="required">*</span></label>
-                                    <input type="text" required class="form-control" value="" name="group" />
+                                    <input type="text" required class="form-control" name="age" />
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Importance<span class="required">*</span></label>
-                                    <select name="" id="" class="form-control">
+                                    <select name="age_importance" class="form-control">
                                         <option value="0">Not important</option>
                                         <option value="1">Less important</option>
                                         <option value="2">Important</option>
@@ -39,17 +39,17 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Nationality<span class="required">*</span></label>
-                                    <select name="" id="" class="form-control">
-                                        <option value="0">Azerbaijani</option>
-                                        <option value="1">Russian</option>
-                                        <option value="2">Turkish</option>
+                                    <select name="nationality" class="form-control">
+                                        <option value="Azerbaijani">Azerbaijani</option>
+                                        <option value="Russian">Russian</option>
+                                        <option value="Turkish">Turkish</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Importance<span class="required">*</span></label>
-                                    <select name="" id="" class="form-control">
+                                    <select name="nationality_importance" class="form-control">
                                         <option value="0">Not important</option>
                                         <option value="1">Less important</option>
                                         <option value="2">Important</option>
@@ -58,35 +58,24 @@
                                 </div>
                             </div>
 
-                            {{-- Sex --}}
+                            {{-- Gender --}}
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Sex<span class="required">*</span></label>
-                                    <select name="" id="" class="form-control">
-                                        <option value="0">Male</option>
-                                        <option value="1">Female</option>
+                                    <label>Gender<span class="required">*</span></label>
+                                    <select name="gender" class="form-control">
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Importance<span class="required">*</span></label>
-                                    <select name="" id="" class="form-control">
+                                    <select name="gender_importance" class="form-control">
                                         <option value="0">Not important</option>
                                         <option value="1">Less important</option>
                                         <option value="2">Important</option>
                                         <option value="3">Mandatory</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            {{-- Marital status --}}
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label>Marital status<span class="required">*</span></label>
-                                    <select name="" id="" class="form-control">
-                                        <option value="0">Single</option>
-                                        <option value="1">Married</option>
                                     </select>
                                 </div>
                             </div>
@@ -95,7 +84,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Military obligation<span class="required">*</span></label>
-                                    <select name="" id="" class="form-control">
+                                    <select name="military" class="form-control">
                                         <option value="0">Obligated</option>
                                         <option value="1">Free</option>
                                     </select>
@@ -104,7 +93,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Importance<span class="required">*</span></label>
-                                    <select name="" id="" class="form-control">
+                                    <select name="military_importance"  class="form-control">
                                         <option value="0">Not important</option>
                                         <option value="1">Less important</option>
                                         <option value="2">Important</option>
@@ -117,7 +106,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Driver license<span class="required">*</span></label>
-                                    <select name="" id="" class="form-control">
+                                    <select name="driver_license"  class="form-control">
                                         <option value="0">Owns</option>
                                         <option value="1">Does not own</option>
                                     </select>
@@ -126,7 +115,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Importance<span class="required">*</span></label>
-                                    <select name="" id="" class="form-control">
+                                    <select name="driver_license_importance"  class="form-control">
                                         <option value="0">Not important</option>
                                         <option value="1">Less important</option>
                                         <option value="2">Important</option>
@@ -138,8 +127,8 @@
                             {{-- Driver license category --}}
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Driver license<span class="required">*</span></label>
-                                    <select name="" id="" class="form-control">
+                                    <label>Driver license category<span class="required">*</span></label>
+                                    <select name="driver_license_category"  class="form-control">
                                         <option value="A1">A1</option>
                                         <option value="A">A</option>
                                         <option value="B">B</option>
@@ -154,7 +143,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Importance<span class="required">*</span></label>
-                                    <select name="" id="" class="form-control">
+                                    <select name="driver_license_category_importance"  class="form-control">
                                         <option value="0">Not important</option>
                                         <option value="1">Less important</option>
                                         <option value="2">Important</option>
@@ -163,46 +152,22 @@
                                 </div>
                             </div>
 
-                            {{-- Mobile --}}
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label>Mobile</label>
-                                    <input type="text" required class="form-control" value="" name="group" />
-                                </div>
-                            </div>
-
-                            {{-- Landline --}}
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label>Landline</label>
-                                    <input type="text" required class="form-control" value="" name="group" />
-                                </div>
-                            </div>
-
-                            {{-- Linkedin --}}
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label>Linkedin</label>
-                                    <input type="text" required class="form-control" value="" name="group" />
-                                </div>
-                            </div>
-
                             {{-- Education --}}
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Education<span class="required">*</span></label>
-                                    <select name="" id="" class="form-control">
-                                        <option value="1">Middle school</option>
-                                        <option value="2">High school</option>
-                                        <option value="3">Bachelors</option>
-                                        <option value="4">Master</option>
+                                    <select name="education"  class="form-control">
+                                        <option value="Middle school">Middle school</option>
+                                        <option value="High school">High school</option>
+                                        <option value="Bachelors">Bachelors</option>
+                                        <option value="Master">Master</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Importance<span class="required">*</span></label>
-                                    <select name="" id="" class="form-control">
+                                    <select name="education_importance"  class="form-control">
                                         <option value="0">Not important</option>
                                         <option value="1">Less important</option>
                                         <option value="2">Important</option>
@@ -215,13 +180,13 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Exam score<span class="required">*</span></label>
-                                    <input type="text" required class="form-control" value="" name="group" />
+                                    <input type="text" required class="form-control" name="exam_score" />
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Importance<span class="required">*</span></label>
-                                    <select name="" id="" class="form-control">
+                                    <select name="exam_score_importance"  class="form-control">
                                         <option value="0">Not important</option>
                                         <option value="1">Less important</option>
                                         <option value="2">Important</option>
@@ -234,7 +199,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Field<span class="required">*</span></label>
-                                    <select name="" id="" class="form-control">
+                                    <select name="field" class="form-control">
                                         <option value="0">IT</option>
                                         <option value="0">Economy</option>
                                     </select>
@@ -243,35 +208,12 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Importance<span class="required">*</span></label>
-                                    <select name="" id="" class="form-control">
+                                    <select name="field_importance"  class="form-control">
                                         <option value="0">Not important</option>
                                         <option value="1">Less important</option>
                                         <option value="2">Important</option>
                                         <option value="3">Mandatory</option>
                                     </select>
-                                </div>
-                            </div>
-
-                            {{-- Profession --}}
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Profession<span class="required">*</span></label>
-                                    <select name="" id="" class="form-control">
-                                        <option value="0">IT</option>
-                                        <option value="0">Economy</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label>Accepted<span class="required">*</span></label>
-                                    <input type="text" required class="form-control" value="" name="group" />
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label>Graduated<span class="required">*</span></label>
-                                    <input type="text" required class="form-control" value="" name="group" />
                                 </div>
                             </div>
 
@@ -279,16 +221,16 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Experience<span class="required">*</span></label>
-                                    <select name="" id="" class="form-control">
-                                        <option value="0">IT</option>
-                                        <option value="0">Economy</option>
+                                    <select name="experience"  class="form-control">
+                                        <option value="IT">IT</option>
+                                        <option value="Economy">Economy</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Importance<span class="required">*</span></label>
-                                    <select name="" id="" class="form-control">
+                                    <select name="experience_importance" class="form-control">
                                         <option value="0">Not important</option>
                                         <option value="1">Less important</option>
                                         <option value="2">Important</option>
@@ -297,28 +239,20 @@
                                 </div>
                             </div>
 
-                            {{-- Company --}}
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label>Company<span class="required">*</span></label>
-                                    <input type="text" required class="form-control" value="" name="group" />
-                                </div>
-                            </div>
-
                             {{-- Function --}}
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Function<span class="required">*</span></label>
-                                    <select name="" id="" class="form-control">
-                                        <option value="0">Leader</option>
-                                        <option value="0">Accountant</option>
+                                    <select name="function"  class="form-control">
+                                        <option value="Leader">Leader</option>
+                                        <option value="Accountant">Accountant</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Importance<span class="required">*</span></label>
-                                    <select name="" id="" class="form-control">
+                                    <select name="function_importance"  class="form-control">
                                         <option value="0">Not important</option>
                                         <option value="1">Less important</option>
                                         <option value="2">Important</option>
@@ -331,16 +265,16 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Job roles<span class="required">*</span></label>
-                                    <select name="" id="" class="form-control">
-                                        <option value="0">Leader</option>
-                                        <option value="0">Accountant</option>
+                                    <select name="rob_role"  class="form-control">
+                                        <option value="Leader">Leader</option>
+                                        <option value="Accountant">Accountant</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Importance<span class="required">*</span></label>
-                                    <select name="" id="" class="form-control">
+                                    <select name="job_role_important"  class="form-control">
                                         <option value="0">Not important</option>
                                         <option value="1">Less important</option>
                                         <option value="2">Important</option>
@@ -349,25 +283,17 @@
                                 </div>
                             </div>
 
-                            {{-- Obligations --}}
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label>Obligations<span class="required">*</span></label>
-                                    <input type="text" required class="form-control" value="" name="group" />
-                                </div>
-                            </div>
-
-                            {{-- Empoyment duration --}}
+                            {{-- Employment duration --}}
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Empoyment duration<span class="required">*</span></label>
-                                    <input type="text" class="form-control">
+                                    <label>Employment duration<span class="required">*</span></label>
+                                    <input type="text" name="employment_duration" class="form-control">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Importance<span class="required">*</span></label>
-                                    <select name="" id="" class="form-control">
+                                    <select name="employment_duration_importance"  class="form-control">
                                         <option value="0">Not important</option>
                                         <option value="1">Less important</option>
                                         <option value="2">Important</option>
@@ -380,13 +306,21 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Languages<span class="required">*</span></label>
-                                    <input type="text" class="form-control">
+                                    <select name="languages[]"  class="form-control">
+                                        <option value="Azerbaijani">Azerbaijani</option>
+                                        <option value="Russian">Russian</option>
+                                        <option value="English">English</option>
+                                        <option value="Italian">Italian</option>
+                                        <option value="German">German</option>
+                                        <option value="French">French</option>
+                                        <option value="Arabian">Arabian</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Level<span class="required">*</span></label>
-                                    <select name="" id="" class="form-control">
+                                    <select name="language_levels[]"  class="form-control">
                                         <option value="0">Elementry</option>
                                         <option value="1">Intermediate</option>
                                         <option value="2">Advanced</option>
@@ -396,7 +330,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Importance<span class="required">*</span></label>
-                                    <select name="" id="" class="form-control">
+                                    <select name="language_importances[]"  class="form-control">
                                         <option value="0">Not important</option>
                                         <option value="1">Less important</option>
                                         <option value="2">Important</option>
@@ -409,16 +343,26 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Computer knowledge<span class="required">*</span></label>
-                                    <select name="" id="" class="form-control">
+                                    <select name="computer_knowledges[]"  class="form-control">
                                         <option value="0">Javascript</option>
                                         <option value="0">Php</option>
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Level<span class="required">*</span></label>
+                                    <select name="computer_knowledge_levels[]"  class="form-control">
+                                        <option value="Elementry">Elementry</option>
+                                        <option value="Intermediate">Intermediate</option>
+                                        <option value="Advanced">Advanced</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Importance<span class="required">*</span></label>
-                                    <select name="" id="" class="form-control">
+                                    <select name="computer_knowledge_importances[]"  class="form-control">
                                         <option value="0">Not important</option>
                                         <option value="1">Less important</option>
                                         <option value="2">Important</option>
@@ -428,10 +372,10 @@
                             </div>
 
                             {{-- Certificates --}}
-                            <div class="col-md-3">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Certificates<span class="required">*</span></label>
-                                    <select name="" id="" class="form-control">
+                                    <select name="certificates[]"  class="form-control">
                                         <option value="0">Not important</option>
                                         <option value="1">Less important</option>
                                         <option value="2">Important</option>
@@ -442,29 +386,17 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Level<span class="required">*</span></label>
-                                    <select name="" id="" class="form-control">
+                                    <select name="certificate_levels[]"  class="form-control">
                                         <option value="0">Elementry</option>
                                         <option value="1">Intermediate</option>
                                         <option value="2">Advanced</option>
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-md-2">
-                                <div class="form-group">
-                                    <label>Verification URL<span class="required">*</span></label>
-                                    <input type="text" class="form-control">
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="form-group">
-                                    <label>File</label>
-                                    <input type="file" class="form-control">
-                                </div>
-                            </div>
-                            <div class="col-md-2">
+                            <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Importance<span class="required">*</span></label>
-                                    <select name="" id="" class="form-control">
+                                    <select name="certificate_importances[]"  class="form-control">
                                         <option value="0">Not important</option>
                                         <option value="1">Less important</option>
                                         <option value="2">Important</option>
@@ -476,7 +408,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Salary expectation</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" name="salary_expectation" class="form-control">
                                 </div>
                             </div>
 

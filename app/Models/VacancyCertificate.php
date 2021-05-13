@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class VacancyCertificate extends Model
 {
     use HasFactory;
+
+    
 }

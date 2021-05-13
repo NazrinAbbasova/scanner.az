@@ -17,8 +17,8 @@ class CreateVacancyLanguagesTable extends Migration
             $table->id();
             $table->unsignedBigInteger('vacancy_id');
             $table->string('language');
-            $table->string('language_level');
-            $table->integer('language_importance');
+            $table->string('level');
+            $table->integer('importance');
             $table->timestamps();
 
 

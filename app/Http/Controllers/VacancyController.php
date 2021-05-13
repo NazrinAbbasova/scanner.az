@@ -1,0 +1,145 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Vacancy;
+use App\Models\VacancyCertificate;
+use App\Models\VacancyComputerKnowledge;
+use App\Models\VacancyLanguage;
+use Illuminate\Http\Request;
+
+class VacancyController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        //
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        return view("dashboard.vacancy.create");
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $v = new Vacancy;
+        $v->age                                = $request->age;
+        $v->age_importance                     = $request->age_importance;
+        $v->nationality                        = $request->nationality;
+        $v->nationality_importance             = $request->nationality_importance;
+        $v->gender                             = $request->gender;
+        $v->gender_importance                  = $request->gender_importance;
+        $v->military                           = $request->military;
+        $v->military_importance                = $request->military_importance;
+        $v->driver_license                     = $request->driver_license;
+        $v->driver_license_importance          = $request->driver_license_importance;
+        $v->driver_license_category            = $request->driver_license_category;
+        $v->driver_license_category_importance = $request->driver_license_category_importance;
+        $v->education                          = $request->education;
+        $v->education_importance               = $request->education_importance;
+        $v->exam_score                         = $request->group;
+        $v->exam_score_importance              = $request->exam_score_importance;
+        $v->field                              = $request->field;
+        $v->field_importance                   = $request->field_importance;
+        $v->experience                         = $request->experience;
+        $v->experience_importance              = $request->experience_importance;
+        $v->function                           = $request->function;
+        $v->function_importance                = $request->function_importance;
+        $v->job_role                           = $request->rob_roles;
+        $v->job_role_importance                = $request->job_roles_important;
+        $v->employment_duration                = $request->employment_duration;
+        $v->employment_duration_importance     = $request->employment_duration_importance;
+        $v->salary_expectation                 = $request->salary_expectation;
+        $v->save();
+
+        for($i = 0; $i < count($request->languages); $i++) {
+            $v_lang = new VacancyLanguage;
+            $v_lang->vacancy_id = $v->id;
+            $v_lang->language = $request->languages[$i];
+            $v_lang->level = $request->language_levels[$i];
+            $v_lang->importance = $request->language_importances[$i];
+            $v_lang->save();
+        }
+
+        for($i = 0; $i < count($request->computer_knowledges); $i++) {
+            $v_comp_knowledge = new VacancyComputerKnowledge();
+            $v_comp_knowledge->vacancy_id = $v->id;
+            $v_comp_knowledge->computer_knowledge = $request->computer_knowledges[$i];
+            $v_comp_knowledge->level = $request->computer_knowledge_levels[$i];
+            $v_comp_knowledge->importance = $request->computer_knowledge_importances[$i];
+            $v_comp_knowledge->save();
+        }
+
+        for($i = 0; $i < count($request->certificates); $i++) {
+            $v_cert = new VacancyCertificate;
+            $v_cert->vacancy_id = $v->id;
+            $v_cert->certificate = $request->certificates[$i];
+            $v_cert->level = $request->certificate_levels[$i];
+            $v_cert->importance = $request->certificate_importances[$i];
+            $v_cert->save();
+        }
+
+
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
+    }
+}

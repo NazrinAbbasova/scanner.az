@@ -98,4 +98,10 @@ Route::prefix('dashboard')->group(function () {
         Route::get('/edit/{t}',      'TranslationController@edit')->name('translation.edit');
         Route::post('/update/{t}',   'TranslationController@update')->name('translation.update');
     });
+
+
+    Route::prefix('vacancy')->group(function () {
+        Route::get('/create', 'VacancyController@create')->name('vacancy.create');
+        Route::post('/store', 'VacancyController@store')->name('vacancy.store');
+    });
 });

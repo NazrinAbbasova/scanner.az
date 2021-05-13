@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class VacancyComputerKnowledge extends Model
 {
     use HasFactory;
+
+    
 }

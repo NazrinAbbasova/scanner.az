@@ -34,7 +34,7 @@
           
           {{-- Translations --}}
           <li>
-            <a href="{{ route('dashboard.vacancies') }}">
+            <a href="{{ route('vacancy.create') }}">
               <i class="menu-icon fas fa-language"></i>
               Vacancies
             </a>

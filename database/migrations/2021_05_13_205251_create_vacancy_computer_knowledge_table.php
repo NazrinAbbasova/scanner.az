@@ -17,8 +17,8 @@ class CreateVacancyComputerKnowledgeTable extends Migration
             $table->id();
             $table->unsignedBigInteger('vacancy_id');
             $table->string('computer_knowledge');
-            $table->string('computer_knowledge_level');
-            $table->integer('computer_knowledge_importance');
+            $table->string('level');
+            $table->integer('importance');
             $table->timestamps();
 
             $table->foreign('vacancy_id')
