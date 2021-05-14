@@ -3,30 +3,50 @@
     padding: 15px 20px;
 }
 
-.filter {
+.actions {
+    display: flex;
+    justify-content: space-between;
     margin-top: 1rem;
+}
+
+.filter ul {
+    display: flex;
+}
+
+.filter ul li {
+    margin-right: 1rem;
+    padding: 1rem;
     cursor: pointer;
+    width: 4rem;
+    line-height: 2rem;
+    height: 4rem;
+    border-radius: 50%;
+    border: 1px solid #4567f4;
 }
 
-.filter-active {
-    color: #4567f4;
-}
-
-.success,
-.fail {
-    color: white;
+.filter ul li:hover {
+    background: linear-gradient(45deg, #4567f4, #3CD3AD);
+    color: #fff;
     border: none;
-    padding: 15px 20px;
 }
 
-.success {
-    background-color: #349c59;
+.selected {
+    background: linear-gradient(45deg, #4567f4, #3CD3AD);
+    color: #fff;
+    border: none !important;
 }
 
-.fail {
-    background-color: #d22222;
+.operations {
+    text-transform: capitalize;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 15px 30px;
+    background: linear-gradient(45deg, #4567f4, #3CD3AD);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    margin-left: 1rem;
 }
-
 
 .applicant-img {
     border-radius: 50%;
@@ -96,4 +116,26 @@
 
 .applicant-cv {
     width: 3rem;
+}
+
+.modal-title {
+    text-align: center;
+}
+
+.modal-body button {
+    margin-top: 2rem;
+    text-transform: capitalize;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 15px 20px;
+    color: #000;
+    border: none;
+    border-radius: 6px;
+    margin-left: 1rem;
+    width: 45%;
+}
+
+.modal-body button:hover {
+    background: linear-gradient(45deg, #4567f4, #3CD3AD);
+    color: #fff;
 }

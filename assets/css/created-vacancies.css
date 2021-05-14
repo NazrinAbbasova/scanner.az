@@ -1,6 +1,6 @@
 .table-created-jobs thead th,
 .table-created-jobs tbody td {
-    padding: 15px 20px;
+    padding: 15px 15px;
 }
 
 .table-created-jobs table {
@@ -56,5 +56,24 @@
 
 .table-created-jobs tbody tr td i {
     font-size: 16px;
-    padding: 5px;
+    padding-left: 5px;
+}
+
+.successful-applicants a {
+    text-decoration: underline;
+}
+
+.show-message {
+    color: #4567f4;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.modal-title {
+    font-size: 20px;
+}
+
+.modal-body {
+    text-align: center;
+    padding: 2rem;
 }

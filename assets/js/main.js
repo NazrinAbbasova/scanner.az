@@ -68,14 +68,17 @@ Author: GrayGrids
   // Calculate saved budget
   const calculate = document.querySelector(".calculate");
   const budgetText = document.querySelector(".budget-text");
-  const budgetCommon = document.querySelector(".calculator .single-achievement");
+  const budgetCommon = document.querySelector(
+    ".calculator .single-achievement"
+  );
   const budgetNumber = document.querySelector(".budget");
   const salary = document.querySelector(".salary");
 
   if (calculate) {
     calculate.addEventListener("click", () => {
       budgetCommon.style.display = "block";
-      budgetNumber.innerHTML = Math.round((salary.value * 100) / 9600) + " AZN";
+      budgetNumber.innerHTML =
+        Math.round((salary.value * 100) / 9600) * 2 + " AZN";
     });
   }
 
@@ -90,6 +93,19 @@ Author: GrayGrids
     document.querySelector(".preloader").style.display = "none";
   }
 
+  // Filter applicants
+
+  const percentage = document.querySelector(".percentage");
+
+  function changeColor() {
+    if (percentage) {
+      percentage.addEventListener("click", () => {
+        console.log("sald")
+        percentage.classList.add("selected");
+      });
+    }
+  }
+  changeColor();
   /*=====================================
     Sticky
     ======================================= */
