@@ -39,6 +39,7 @@ class VacancyController extends Controller
     public function store(Request $request)
     {
         $v = new Vacancy;
+        $v->company_id                         = 1;
         $v->age                                = $request->age;
         $v->age_importance                     = $request->age_importance;
         $v->nationality                        = $request->nationality;
@@ -53,7 +54,7 @@ class VacancyController extends Controller
         $v->driver_license_category_importance = $request->driver_license_category_importance;
         $v->education                          = $request->education;
         $v->education_importance               = $request->education_importance;
-        $v->exam_score                         = $request->group;
+        $v->exam_score                         = $request->exam_score;
         $v->exam_score_importance              = $request->exam_score_importance;
         $v->field                              = $request->field;
         $v->field_importance                   = $request->field_importance;
@@ -61,8 +62,8 @@ class VacancyController extends Controller
         $v->experience_importance              = $request->experience_importance;
         $v->function                           = $request->function;
         $v->function_importance                = $request->function_importance;
-        $v->job_role                           = $request->rob_roles;
-        $v->job_role_importance                = $request->job_roles_important;
+        $v->job_role                           = $request->job_role;
+        $v->job_role_importance                = $request->job_role_importance;
         $v->employment_duration                = $request->employment_duration;
         $v->employment_duration_importance     = $request->employment_duration_importance;
         $v->salary_expectation                 = $request->salary_expectation;

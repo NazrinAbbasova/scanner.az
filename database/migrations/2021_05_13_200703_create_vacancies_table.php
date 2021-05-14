@@ -15,6 +15,7 @@ class CreateVacanciesTable extends Migration
     {
         Schema::create('vacancies', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('company_id');
             $table->string('age')->nullable();
             $table->integer('age_importance');
             $table->string('nationality')->nullable();
@@ -45,6 +46,11 @@ class CreateVacanciesTable extends Migration
             $table->boolean('isActive')->default(1);
             $table->boolean('send_resumes')->default(0);
             $table->timestamps();
+
+            $table->foreign('company_id')
+                    ->references('id')
+                    ->on('users')
+                    ->onDelete('cascade');
         });
     }
 
