@@ -13,10 +13,10 @@ class CreateVacancyComputerKnowledgeTable extends Migration
      */
     public function up()
     {
-        Schema::create('vacancy_computer_knowledge', function (Blueprint $table) {
+        Schema::create('vacancy_computer_skills', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('vacancy_id');
-            $table->string('computer_knowledge');
+            $table->unsignedBigInteger('computer_skill_id');
             $table->string('level');
             $table->integer('importance');
             $table->timestamps();
@@ -24,7 +24,12 @@ class CreateVacancyComputerKnowledgeTable extends Migration
             $table->foreign('vacancy_id')
                     ->references('id')
                     ->on('vacancies')
-                    ->onDelete('cascade');
+                    ->onDelete('set null');
+
+            $table->foreign('computer_skill_id')
+                    ->references('id')
+                    ->on('computer_skills')
+                    ->onDelete('set null');
         });
         
     }
@@ -36,6 +41,6 @@ class CreateVacancyComputerKnowledgeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('vacancy_computer_knowledge');
+        Schema::dropIfExists('vacancy_computer_skills');
     }
 }

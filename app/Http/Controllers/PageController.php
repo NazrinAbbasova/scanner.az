@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
+    public function index(){
+        $page = 'home';
+        return view('front.index', compact('page'));
+    }
 
     public function locale($locale){
         session()->put('locale', $locale);

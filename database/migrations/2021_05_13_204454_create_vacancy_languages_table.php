@@ -16,7 +16,7 @@ class CreateVacancyLanguagesTable extends Migration
         Schema::create('vacancy_languages', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('vacancy_id');
-            $table->string('language');
+            $table->unsignedBigInteger('language_id');
             $table->string('level');
             $table->integer('importance');
             $table->timestamps();
@@ -25,7 +25,12 @@ class CreateVacancyLanguagesTable extends Migration
             $table->foreign('vacancy_id')
                     ->references('id')
                     ->on('vacancies')
-                    ->onDelete('cascade');
+                    ->onDelete('set null');
+
+            $table->foreign('language_id')
+                    ->references('id')
+                    ->on('language')
+                    ->onDelete('set null');
         });
     }
 

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateVacancyCertificatesTable extends Migration
+class CreateCertificateLevelsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,25 +13,16 @@ class CreateVacancyCertificatesTable extends Migration
      */
     public function up()
     {
-        Schema::create('vacancy_certificates', function (Blueprint $table) {
+        Schema::create('certificate_levels', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('vacancy_id');
+            $table->string('name');
             $table->unsignedBigInteger('certificate_id');
-            $table->string('level');
-            $table->integer('importance');
             $table->timestamps();
-
-            $table->foreign('vacancy_id')
-                    ->references('id')
-                    ->on('vacancies')
-                    ->onDelete('set null');
 
             $table->foreign('certificate_id')
                     ->references('id')
                     ->on('certificates')
                     ->onDelete('set null');
-
-            
         });
     }
 
@@ -42,6 +33,6 @@ class CreateVacancyCertificatesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('vacancy_certificates');
+        Schema::dropIfExists('certificate_levels');
     }
 }

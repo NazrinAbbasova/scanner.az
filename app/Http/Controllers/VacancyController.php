@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Vacancy;
 use App\Models\VacancyCertificate;
-use App\Models\VacancyComputerKnowledge;
+use App\Models\VacancyComputerSkill;
 use App\Models\VacancyLanguage;
 use Illuminate\Http\Request;
 
@@ -79,7 +79,7 @@ class VacancyController extends Controller
         }
 
         for($i = 0; $i < count($request->computer_knowledges); $i++) {
-            $v_comp_knowledge = new VacancyComputerKnowledge();
+            $v_comp_knowledge = new VacancyComputerSkill();
             $v_comp_knowledge->vacancy_id = $v->id;
             $v_comp_knowledge->computer_knowledge = $request->computer_knowledges[$i];
             $v_comp_knowledge->level = $request->computer_knowledge_levels[$i];

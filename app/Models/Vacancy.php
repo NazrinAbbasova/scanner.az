@@ -17,7 +17,7 @@ class Vacancy extends Model
         return $this->hasMany(VacancyCertificate::class);
     }
 
-    public function compute_knowledges(){
-        return $this->hasMany(VacancyComputerKnowledge::class);
+    public function computer_skills(){
+        return $this->hasMany(VacancyComputerSkill::class);
     }
 }

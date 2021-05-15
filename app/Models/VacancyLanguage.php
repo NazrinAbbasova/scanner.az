@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class VacancyLanguage extends Model
 {
     use HasFactory;
+
+    public function language(){
+        return $this->belongsTo(Language::class);
+    }
 }

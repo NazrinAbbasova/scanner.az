@@ -16,19 +16,36 @@
               <span class="toggler-icon"></span>
               <span class="toggler-icon"></span>
             </button>
+            
             <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
               <ul id="nav" class="navbar-nav me-auto">
                 <li class="nav-item">
+                  @if(isset($page))
                   <a class="page-scroll" href="#home">Əsas səhifə</a>
+                  @else
+                  <a class="page-scroll" href="{{ route('home') }}">Əsas səhifə</a>
+                  @endif
                 </li>
                 <li class="nav-item">
+                  @if(isset($page))
                   <a class="page-scroll" href="#about">Haqqımızda</a>
+                  @else
+                  <a class="page-scroll" href="{{ route('home').'#about' }}">Haqqımızda</a>
+                  @endif
                 </li>
                 <li class="nav-item">
+                  @if(isset($page))
                   <a class="page-scroll" href="#how-it-works">Sistem necə İşləyir?</a>
+                  @else
+                  <a class="page-scroll" href="{{ route('home').'#how-it-works' }}">Sistem necə İşləyir?</a>
+                  @endif
                 </li>
                 <li class="nav-item">
+                  @if(isset($page))
                   <a class="page-scroll" href="#contact">Əlaqə</a>
+                  @else
+                  <a class="page-scroll" href="{{ route('home').'#contact' }}">Əlaqə</a>
+                  @endif
                 </li>
               </ul>
             </div>

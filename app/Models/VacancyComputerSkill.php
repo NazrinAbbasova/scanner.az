@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class VacancyCertificate extends Model
+class VacancyComputerSkill extends Model
 {
     use HasFactory;
 
-    public function certificate(){
-        return $this->belongsTo(Certificate::class);
+    public function computer_skill(){
+        return $this->belongsTo(ComputerSkill::class);
     }
 }

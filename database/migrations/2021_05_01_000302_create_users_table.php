@@ -30,7 +30,8 @@ class CreateUsersTable extends Migration
             $table->string('facebook')->nullable();
             $table->string('linkedin')->nullable();
             $table->string('phone')->nullable();
-            $table->text('feedback_email')->nullable();
+            $table->text('success_email')->nullable();
+            $table->text('fail_email')->nullable();
             $table->boolean('premium')->nullable()->default(0);
 
             // Common
