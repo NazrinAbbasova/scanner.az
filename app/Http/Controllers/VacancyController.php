@@ -62,8 +62,8 @@ class VacancyController extends Controller
         $v->experience_importance              = $request->experience_importance;
         $v->function                           = $request->function;
         $v->function_importance                = $request->function_importance;
-        $v->job_role                           = $request->job_role;
-        $v->job_role_importance                = $request->job_role_importance;
+        $v->position                           = $request->position;
+        $v->position_importance                = $request->position_importance;
         $v->employment_duration                = $request->employment_duration;
         $v->employment_duration_importance     = $request->employment_duration_importance;
         $v->salary_expectation                 = $request->salary_expectation;

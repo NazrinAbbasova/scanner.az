@@ -22,15 +22,15 @@ class CreateVacancyLanguagesTable extends Migration
             $table->timestamps();
 
 
-            $table->foreign('vacancy_id')
-                    ->references('id')
-                    ->on('vacancies')
-                    ->onDelete('set null');
+            // $table->foreign('vacancy_id')
+            //         ->references('id')
+            //         ->on('vacancies')
+            //         ->onDelete('cascade');
 
-            $table->foreign('language_id')
-                    ->references('id')
-                    ->on('language')
-                    ->onDelete('set null');
+            // $table->foreign('language_id')
+            //         ->references('id')
+            //         ->on('languages')
+            //         ->onDelete('cascade');
         });
     }
 

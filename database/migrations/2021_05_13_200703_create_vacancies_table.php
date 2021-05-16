@@ -38,8 +38,8 @@ class CreateVacanciesTable extends Migration
             $table->integer('experience_importance');
             $table->string('function')->nullable();
             $table->integer('function_importance');
-            $table->string('job_role')->nullable();
-            $table->integer('job_role_importance');
+            $table->string('position')->nullable();
+            $table->integer('position_importance');
             $table->string('employment_duration')->nullable();
             $table->integer('employment_duration_importance');
             $table->string('salary_expectation');

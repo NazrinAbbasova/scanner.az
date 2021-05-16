@@ -21,15 +21,15 @@ class CreateVacancyCertificatesTable extends Migration
             $table->integer('importance');
             $table->timestamps();
 
-            $table->foreign('vacancy_id')
-                    ->references('id')
-                    ->on('vacancies')
-                    ->onDelete('set null');
+            // $table->foreign('vacancy_id')
+            //         ->references('id')
+            //         ->on('vacancies')
+            //         ->onDelete('cascade');
 
-            $table->foreign('certificate_id')
-                    ->references('id')
-                    ->on('certificates')
-                    ->onDelete('set null');
+            // $table->foreign('certificate_id')
+            //         ->references('id')
+            //         ->on('certificates')
+            //         ->onDelete('cascade');
 
             
         });

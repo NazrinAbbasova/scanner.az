@@ -21,15 +21,15 @@ class CreateVacancyComputerKnowledgeTable extends Migration
             $table->integer('importance');
             $table->timestamps();
 
-            $table->foreign('vacancy_id')
-                    ->references('id')
-                    ->on('vacancies')
-                    ->onDelete('set null');
+            // $table->foreign('vacancy_id')
+            //         ->references('id')
+            //         ->on('vacancies')
+            //         ->onDelete('cascade');
 
-            $table->foreign('computer_skill_id')
-                    ->references('id')
-                    ->on('computer_skills')
-                    ->onDelete('set null');
+            // $table->foreign('computer_skill_id')
+            //         ->references('id')
+            //         ->on('computer_skills')
+            //         ->onDelete('cascade');
         });
         
     }
