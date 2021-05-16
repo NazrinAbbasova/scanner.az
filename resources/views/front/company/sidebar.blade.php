@@ -22,7 +22,7 @@
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="{{ route('vacancies') }}">
                     <i class="fal fa-id-card"></i>
                     <span>Vakansiyalara bax</span>
                 </a>

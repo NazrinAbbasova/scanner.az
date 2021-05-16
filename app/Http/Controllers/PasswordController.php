@@ -30,13 +30,15 @@ class PasswordController extends Controller
     public function update(Request $request)
     {
         $rules = [
-            'current_password'  => 'required',
-            'new_password'  => 'required',
+            'current_password'     => 'required',
+            'new_password'         => 'required',
+            'confirm_new_password' => 'required'
         ];
 
         $messages = [
-            'current_password.required'  => 'Hazırki şifrənizi daxil edin.',
-            'new_password.required'  => 'Yeni şifrənizi daxil edin.',
+            'current_password.required'      => 'Hazırki şifrənizi daxil edin.',
+            'new_password.required'          => 'Yeni şifrənizi daxil edin.',
+            'confirm_new_password.required'  => 'Yeni şifrənizin təkrarını daxil edin.',
         ];
 
         $this->validate($request, $rules, $messages);
@@ -44,7 +46,11 @@ class PasswordController extends Controller
         $user = User::find($request->id);
 
         if(!Hash::check($request->current_password, $user->password)) {
-            return redirect()->back()->with('error', 'Şifrə doğru deyil');
+            return redirect()->back()->with('error', 'Şifrəniz doğru deyil');
+        }
+
+        if($request->new_password != $request->confirm_new_password) {
+            return redirect()->back()->with('error', 'Yeni şifrələr eyni deyil');
         }
 
         $user->password = Hash::make($request->new_password);

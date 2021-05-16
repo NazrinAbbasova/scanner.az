@@ -23,7 +23,9 @@ class VacancyController extends Controller
      */
     public function index()
     {
-        //
+        $vacancies = Vacancy::all();
+
+        return view('front.vacancy.index', compact('vacancies'));
     }
 
     /**
@@ -164,5 +166,10 @@ class VacancyController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+    public function applicants(){
+        return view('front.vacancy.applicants');
     }
 }

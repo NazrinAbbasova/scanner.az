@@ -56,6 +56,8 @@ Route::middleware(['auth'])->group(function () {
             Route::get('/',        'VacancyController@index')->name('vacancies');
             Route::get('/new',     'VacancyController@create')->name('vacancies.create');
             Route::post('/store',  'VacancyController@store')->name('vacancies.store');
+
+            Route::get('/applicants', 'VacancyController@applicants')->name('vacancies.applicants');
         });
     });
     

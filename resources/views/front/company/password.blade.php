@@ -30,6 +30,12 @@
                                         required="required">
                                 </div>
                             </div>
+                            <div class="col-lg-12 col-md-12">
+                                <div class="form-group">
+                                    <label for="password">Yeni şifrənin təkrarı</label>
+                                    <input name="confirm_new_password" type="password" placeholder="Yeni şifrənizin təkrarı"required="required">
+                                </div>
+                            </div>
                         </div>
 
                         <button type="submit" class="update">Dəyiş</button>
@@ -42,5 +48,5 @@
 @endsection
 
 @section('load')
-    <link rel="stylesheet" href="{{ asset('static/front/css/profile.css') }}">
+    @include('front.company.load')
 @endsection
