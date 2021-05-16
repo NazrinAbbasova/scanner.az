@@ -51,7 +51,14 @@ Route::middleware(['auth'])->group(function () {
             Route::post('/update',     'CompanyController@update')->name('company.update');
             Route::post('/logo',       'CompanyController@logo')->name('company.logo');
         });
+
+        Route::prefix('/vacancies')->group(function () {
+            Route::get('/',        'VacancyController@index')->name('vacancies');
+            Route::get('/new',     'VacancyController@create')->name('vacancies.create');
+            Route::post('/store',  'VacancyController@store')->name('vacancies.store');
+        });
     });
+    
 
     // Applicant profile
 

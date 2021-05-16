@@ -1,4 +1,4 @@
-<div class="col-lg-4">
+<div class="col-lg-3">
     <div class="user-menu">
         <div class="profile-img">
             <form class="text-center" action="{{ route('company.logo') }}" enctype="multipart/form-data" method="post">
@@ -28,7 +28,7 @@
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="{{ route('vacancies.create') }}">
                     <i class="fal fa-file-plus"></i>
                     <span>Vakansiya yarat</span>
                 </a>

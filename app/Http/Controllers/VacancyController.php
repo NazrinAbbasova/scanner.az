@@ -2,6 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Certificate;
+use App\Models\ComputerSkill;
+use App\Models\Field;
+use App\Models\Func;
+use App\Models\Position;
+use App\Models\Region;
 use App\Models\Vacancy;
 use App\Models\VacancyCertificate;
 use App\Models\VacancyComputerSkill;
@@ -27,7 +33,21 @@ class VacancyController extends Controller
      */
     public function create()
     {
-        return view("dashboard.vacancy.create");
+        $regions = Region::all();
+        $fields  = Field::all();
+        $funcs   = Func::all();
+        $positions   = Position::all();
+        $skills  = ComputerSkill::all();
+        $certificates = Certificate::all();
+
+        return view("front.vacancy.create", compact(
+            'regions',
+            'fields',
+            'funcs',
+            'positions',
+            'skills',
+            'certificates'
+        ));
     }
 
     /**
@@ -38,6 +58,8 @@ class VacancyController extends Controller
      */
     public function store(Request $request)
     {
+        return $request->all();
+        
         $v = new Vacancy;
         $v->company_id                         = 1;
         $v->age                                = $request->age;
