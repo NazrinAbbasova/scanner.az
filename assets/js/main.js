@@ -100,12 +100,57 @@ Author: GrayGrids
   function changeColor() {
     if (percentage) {
       percentage.addEventListener("click", () => {
-        console.log("sald")
+        console.log("sald");
         percentage.classList.add("selected");
       });
     }
   }
   changeColor();
+
+  // Create vacancy steps
+  
+  let progressbar = $("#progressbar li");
+  if (progressbar) {
+    progressbar.on("click", function () {
+      $(this).addClass("active");
+      $(this).siblings().removeClass("active");
+      let fieldset = $(this).data("fieldset");
+      $('fieldset:not([data-field=" + fieldset + "])').fadeOut(200);
+      $("fieldset[data-field=" + fieldset + "]").fadeIn(200);
+    });
+  }
+
+  // $(".next.action-button").on("click", function () {
+  //   $(this).addClass("active").addClass("active");
+  //   $(this).addClass("active").siblings().removeClass("active");
+  //   let fieldset = $("#progressbar li").data("fieldset");
+  //   $('fieldset:not([data-field=" + fieldset + "])').fadeOut(200);
+  //   $("fieldset[data-field=" + fieldset + "]").fadeIn(200);
+  // });
+
+  // $(".previous.action-button").on("click", function () {
+  //   $("#progressbar li").addClass("active");
+  //   $("#progressbar li").siblings().removeClass("active");
+  //   let fieldset = $("#progressbar li").data("fieldset");
+  //   $('fieldset:not([data-field=" + fieldset + "])').fadeOut(200);
+  //   $("fieldset[data-field=" + fieldset + "]").fadeIn(200);
+  // });
+
+  // $(".submit").click(function () {
+  //   return false;
+  // });
+
+  $(".importance").on("change", function () {
+    var select = $(this).data("select");
+
+    $(this).val() == "choose"
+      ? $(`[data-s=${select}]`).prop("disabled", true)
+      : $(`[data-s=${select}]`).prop("disabled", false);
+    $(this).val() == "not-important"
+      ? $(`[data-s=${select}]`).prop("disabled", true)
+      : $(`[data-s=${select}]`).prop("disabled", false);
+  });
+
   /*=====================================
     Sticky
     ======================================= */

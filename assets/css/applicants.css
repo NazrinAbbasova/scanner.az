@@ -13,7 +13,7 @@
     display: flex;
 }
 
-.filter ul li {
+.filter-percentage{
     margin-right: 1rem;
     padding: 1rem;
     cursor: pointer;
@@ -23,11 +23,20 @@
     border-radius: 50%;
     border: 1px solid #4567f4;
 }
+.filter-fails{
+    margin-right: 1rem;
+    padding: 1rem;
+    cursor: pointer;
+    line-height: 2rem;
+    height: 4rem;
+    border-radius: 5px;
+    border: 1px solid #4567f4;
+}
 
 .filter ul li:hover {
     background: linear-gradient(45deg, #4567f4, #3CD3AD);
     color: #fff;
-    border: none;
+    border: 1px solid white;
 }
 
 .selected {
