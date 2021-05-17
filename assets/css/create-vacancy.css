@@ -35,7 +35,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 3rem;
 }
 
 /*buttons*/
@@ -49,6 +48,7 @@
     border-radius: 1px;
     cursor: pointer;
     padding: 10px 5px;
+    margin-top: 3rem;
 }
 
 #vacancy-form .action-button:hover,
@@ -163,4 +163,29 @@ select.importance {
     background: linear-gradient(45deg, #4567f4, #3CD3AD);
     color: white;
     border: none;
+}
+
+.add-language,
+.add-computer,
+.add-certificate {
+    color: #4567f4;
+    cursor: pointer;
+}
+
+.save-vacancy input {
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 15px 30px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    border: 1px solid #4567f4 !important;
+    color: #4567f4 !important;
+    background: white;
+}
+
+.save-vacancy input:hover {
+    background: linear-gradient(45deg, #4567f4, #3CD3AD);
+    border: 1px solid #fff !important;
+    color: white !important;
 }

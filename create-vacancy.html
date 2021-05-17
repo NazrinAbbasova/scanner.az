@@ -383,7 +383,7 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <input data-field="contact" type="button" name="previous"
-                                        class="previous action-button" value="Previous" />
+                                        class="previous action-button" value="Əvvəlki" />
                                 </div>
                                 <div class="col-lg-6">
                                     <input data-field="work" type="button" name="next" class="next action-button"
@@ -492,7 +492,7 @@
 
                                 <div class="col-lg-6">
                                     <input data-field="education" type="button" name="previous"
-                                        class="previous action-button" value="Previous" />
+                                        class="previous action-button" value="Əvvəlki" />
                                 </div>
                                 <div class="col-lg-6">
                                     <input data-field="language" type="button" name="next" class="next action-button"
@@ -513,49 +513,58 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-lg-4">
-                                    <label for=""></label>
-                                    <select c class="importance" name="language" id="language">
-                                        <option>Önəmlilik dərəcəsini təyin et</option>
-                                        <option value="not-important">Önəm daşımır</option>
-                                        <option value="less-important">Az önəm daşıyır</option>
-                                        <option value="important">Önəmlidir</option>
-                                        <option value="more-important">Mütləqdir</option>
-                                    </select>
-                                </div>
-                                <div class="col-lg-4">
-                                    <label for="language">Dil</label>
-                                    <select data-s="language" disabled name="language" id="language">
-                                        <option>Seç</option>
-                                        <option value="">İngilis dili</option>
-                                        <option value="">Rus dili</option>
-                                        <option value="bachelor">Türk dili</option>
-                                        <option value="master">Alman dili</option>
-                                        <option value="phd">Fransız dili</option>
-                                    </select>
-                                </div>
+                            <div class="dynamic-fields-language">
+                                <div class="dynamic-language">
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <label for=""></label>
+                                            <select class="importance" name="language" id="language">
+                                                <option>Önəmlilik dərəcəsini təyin et</option>
+                                                <option value="not-important">Önəm daşımır</option>
+                                                <option value="less-important">Az önəm daşıyır</option>
+                                                <option value="important">Önəmlidir</option>
+                                                <option value="more-important">Mütləqdir</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <label for="language">Dil</label>
+                                            <select data-s="language" disabled name="language" id="language">
+                                                <option>Seç</option>
+                                                <option value="english">İngilis dili</option>
+                                                <option value="russian">Rus dili</option>
+                                                <option value="turkish">Türk dili</option>
+                                                <option value="german">Alman dili</option>
+                                                <option value="french">Fransız dili</option>
+                                            </select>
+                                        </div>
 
-                                <div class="col-lg-4">
-                                    <label for="level">Səviyyə</label>
-                                    <select ddata-s="language" disabled name="level" id="level">
-                                        <option>Seç</option>
-                                        <option value="">Starter</option>
-                                        <option value="">Beginner</option>
-                                        <option value="bachelor">Pre-intermediate</option>
-                                        <option value="master">İntermediate</option>
-                                        <option value="phd">Advance</option>
-                                    </select>
+                                        <div class="col-lg-4">
+                                            <label for="level">Səviyyə</label>
+                                            <select ddata-s="language" disabled name="level" id="level">
+                                                <option>Seç</option>
+                                                <option value="starter">Starter</option>
+                                                <option value="beginner">Beginner</option>
+                                                <option value="pre-intermediate">Pre-intermediate</option>
+                                                <option value="intermediate">İntermediate</option>
+                                                <option value="advance">Advance</option>
+                                            </select>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="add-field"></div>
+                            </div>
+                            <div class="add-language">
+                                + Əlavə et
+                            </div>
+                            <div class="row">
                                 <div class="col-lg-6">
                                     <input data-field="work" type="button" name="previous"
-                                        class="previous action-button" value="Previous" />
+                                        class="previous action-button" value="Əvvəlki" />
                                 </div>
                                 <div class="col-lg-6">
                                     <input data-field="computer" type="button" name="next" class="next action-button"
                                         value="Next" />
                                 </div>
+                            </div>
                         </fieldset>
                         <!-- Computer informations -->
                         <fieldset data-field="computer">
@@ -571,33 +580,44 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="dynamic-fields-computer">
+                                <div class="dynamic-computer">
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <label for=""></label>
+                                            <select data-select="computer" class="importance" name="computer"
+                                                id="computer">
+                                                <option>Önəmlilik dərəcəsini təyin et</option>
+                                                <option value="not-important">Önəm daşımır</option>
+                                                <option value="less-important">Az önəm daşıyır</option>
+                                                <option value="important">Önəmlidir</option>
+                                                <option value="more-important">Mütləqdir</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <label for="computer">Kompyuter bilikləri</label>
+                                            <select data-s="computer" disabled name="computer" id="computer">
+                                                <option>Seç</option>
+                                                <option value="">MS Office</option>
+                                                <option value="">Digər</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="add-computer">
+                                + Əlavə et
+                            </div>
                             <div class="row">
-                                <div class="col-lg-4">
-                                    <label for=""></label>
-                                    <select data-select="computer" class="importance" name="computer" id="computer">
-                                        <option>Önəmlilik dərəcəsini təyin et</option>
-                                        <option value="not-important">Önəm daşımır</option>
-                                        <option value="less-important">Az önəm daşıyır</option>
-                                        <option value="important">Önəmlidir</option>
-                                        <option value="more-important">Mütləqdir</option>
-                                    </select>
-                                </div>
-                                <div class="col-lg-4">
-                                    <label for="computer">Kompyuter bilikləri</label>
-                                    <select data-s="computer" disabled name="computer" id="computer">
-                                        <option>Seç</option>
-                                        <option value="">MS Office</option>
-                                        <option value="">Digər</option>
-                                    </select>
-                                </div>
                                 <div class="col-lg-6">
                                     <input data-field="language" type="button" name="previous"
-                                        class="previous action-button" value="Previous" />
+                                        class="previous action-button" value="Əvvəlki" />
                                 </div>
                                 <div class="col-lg-6">
-                                    <input data-field="certificates" type="button" name="next" class="next action-button"
-                                        value="Next" />
+                                    <input data-field="certificates" type="button" name="next"
+                                        class="next action-button" value="Next" />
                                 </div>
+                            </div>
                         </fieldset>
                         <!-- Certificates informations -->
                         <fieldset data-field="certificates">
@@ -613,33 +633,76 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="dynamic-fields-certificate">
+                                <div class="dynamic-certificate">
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <label for=""></label>
+                                            <select data-select="certificates" class="importance" name="certificates"
+                                                id="Certificates">
+                                                <option>Önəmlilik dərəcəsini təyin et</option>
+                                                <option value="not-important">Önəm daşımır</option>
+                                                <option value="less-important">Az önəm daşıyır</option>
+                                                <option value="important">Önəmlidir</option>
+                                                <option value="more-important">Mütləqdir</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <label for="Certificates">Sertifikat</label>
+                                            <select data-s="certificates" disabled name="certificates"
+                                                id="certificates">
+                                                <option>Seç</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <label for="Certificates">Sertifikat səviyyəsi</label>
+                                            <select data-s="certificates" disabled name="certificate-level"
+                                                id="certificate-level">
+                                                <option>Seç</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="add-certificate">
+                                + Əlavə et
+                            </div>
+                            <hr>
+                            <!-- <div class="col-lg-4">
+                                <label for=""></label>
+                                <select data-select="certificates" class="importance" name="birthdate" id="birthdate">
+                                    <option value="choose">Önəmlilik dərəcəsini təyin et</option>
+                                    <option value="not-important">Önəm daşımır</option>
+                                    <option value="less-important">Az önəm daşıyır</option>
+                                    <option value="important">Önəmlidir</option>
+                                    <option value="more-important">Mütləqdir</option>
+                                </select>
+                            </div> -->
                             <div class="row">
                                 <div class="col-lg-4">
-                                    <label for=""></label>
-                                    <select data-select="certificates" class="importance" name="certificates"
-                                        id="Certificates">
-                                        <option>Önəmlilik dərəcəsini təyin et</option>
-                                        <option value="not-important">Önəm daşımır</option>
-                                        <option value="less-important">Az önəm daşıyır</option>
-                                        <option value="important">Önəmlidir</option>
-                                        <option value="more-important">Mütləqdir</option>
-                                    </select>
+                                    <label for="salary">Minimum əmək haqqı tələbi</label>
+                                    <input data-s="certificates" type="number" placeholder="Min.">
                                 </div>
                                 <div class="col-lg-4">
-                                    <label for="Certificates">Sertifikat</label>
-                                    <select data-s="certificates" disabled name="certificates" id="certificates">
-                                        <option>Seç</option>
-                                    </select>
+                                    <label for="salary">Maksimum əmək haqqı tələbi</label>
+                                    <input data-s="certificates" type="number" placeholder="Maks.">
                                 </div>
-                                <div class="col-lg-4">
-                                    <label for="Certificates">Sertifikat səviyyəsi</label>
-                                    <select data-s="certificates" disabled name="certificate-level"
-                                        id="certificate-level">
-                                        <option>Seç</option>
-                                    </select>
+                            </div>
+                            <input data-field="computer" type="button" name="previous" class="previous action-button"
+                                value="Əvvəlki" />
+                            <div class="save-vacancy">
+                                <div class=" row">
+                                    <div class="col-lg-4">
+                                        <input type="button" name="save" value="Yadda saxla" />
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <input type="button" name="save" value="Emailə göndər" />
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <input type="button" name="save" value="Paylaş" />
+                                    </div>
                                 </div>
-                                <input data-field="computer" type="button" name="previous"
-                                    class="previous action-button" value="Previous" />
+                            </div>
                         </fieldset>
                     </form>
                 </div>
@@ -704,6 +767,8 @@
     <script src="assets/js/imagesloaded.min.js"></script>
     <script src="assets/js/isotope.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/create-items.js"></script>
+
     <script type="text/javascript">
         //========= glightbox
         GLightbox({
