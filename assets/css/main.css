@@ -2360,7 +2360,8 @@ ol {
 }
 
 .hero-area.style3 .hero-image {
-  margin-top: 160px;
+  margin-top: 120px;
+  width: 42rem;
 }
 
 .hero-area.style4 {
@@ -4869,7 +4870,7 @@ ol {
 }
 
 .footer .logo img {
-  width: 200px;
+  width: 220px;
 }
 
 .footer .f-about {
