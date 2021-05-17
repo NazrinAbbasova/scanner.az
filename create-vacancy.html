@@ -122,7 +122,7 @@
                             <li data-fieldset="personal" class="active">Şəxsi məlumatlar</li>
                             <li data-fieldset="contact">Əlaqə məlumatları</li>
                             <li data-fieldset="education">Təhsil məlumatları</li>
-                            <li data-fieldset="work">İş təcrübəsi</li>
+                            <li data-fieldset="work">İş<br> təcrübəsi</li>
                             <li data-fieldset="language">Dil bilikləri</li>
                             <li data-fieldset="computer">Kompyuter bilikləri</li>
                             <li data-fieldset="certificates">Sertifikatlar</li>
@@ -154,11 +154,11 @@
                                 </div>
                                 <div class="col-lg-4">
                                     <label for="birthdate"> Minimum yaş</label>
-                                    <input data-s="age" disabled type="text" placeholder="Min.">
+                                    <input data-s="age" disabled type="number" placeholder="Min.">
                                 </div>
                                 <div class="col-lg-4">
                                     <label for="birthdate">Maksimum yaş</label>
-                                    <input data-s="age" disabled type="text" placeholder="Maks.">
+                                    <input data-s="age" disabled type="number" placeholder="Maks.">
                                 </div>
                                 <hr>
                                 <div class="col-lg-4">
@@ -267,7 +267,7 @@
                                         </select>
                                 </div>
                             </div>
-                            <input data-field="personal" type="button" name="next" class="next action-button"
+                            <input data-field="contact" type="button" name="next" class="next action-button"
                                 value="Next" />
                         </fieldset>
                         <!-- Contact informations -->
@@ -307,11 +307,11 @@
                                 <div class="change-step">
                                     <div class="row">
                                         <div class="col-lg-6">
-                                            <input data-field="contact" type="button" name="previous"
+                                            <input data-field="personal" type="button" name="previous"
                                                 class="previous action-button" value="Əvvəlki" />
                                         </div>
                                         <div class="col-lg-6">
-                                            <input data-field="contact" type="button" name="next"
+                                            <input data-field="education" type="button" name="next"
                                                 class="next action-button" value="Növbəti" />
                                         </div>
                                     </div>
@@ -366,14 +366,27 @@
                                 </div>
                                 <div class="col-lg-4">
                                     <label for="score">Qəbul balı</label>
-                                    <input data-s="score" disabled type="text" placeholder="Bal">
+                                    <select data-s="score" disabled name="score" id="score">
+                                        <option>Seç</option>
+                                        <option value="200">200+</option>
+                                        <option value="250">250+</option>
+                                        <option value="300">300+</option>
+                                        <option value="350">350+</option>
+                                        <option value="400">400+</option>
+                                        <option value="450">450+</option>
+                                        <option value="500">500+</option>
+                                        <option value="550">550+</option>
+                                        <option value="600">600+</option>
+                                        <option value="650">650+</option>
+
+                                    </select>
                                 </div>
                                 <div class="col-lg-6">
-                                    <input data-field="education" type="button" name="previous"
+                                    <input data-field="contact" type="button" name="previous"
                                         class="previous action-button" value="Previous" />
                                 </div>
                                 <div class="col-lg-6">
-                                    <input data-field="education" type="button" name="next" class="next action-button"
+                                    <input data-field="work" type="button" name="next" class="next action-button"
                                         value="Next" />
                                 </div>
 
@@ -411,6 +424,10 @@
                                         <option value="">Art</option>
                                     </select>
                                 </div>
+                                <div class="col-lg-4">
+                                    <label for="start-work">İşləmə müddəti</label>
+                                    <input data-s="field" disabled type="number" placeholder="Müddət">
+                                </div>
                                 <hr>
                                 <div class="col-lg-4">
                                     <label for=""></label>
@@ -429,6 +446,10 @@
                                         <option value="">Finance</option>
                                         <option value="">Art</option>
                                     </select>
+                                </div>
+                                <div class="col-lg-4">
+                                    <label for="start-work">İşləmə müddəti</label>
+                                    <input data-s="function" disabled type="number" placeholder="Müddət">
                                 </div>
                                 <hr>
                                 <div class="col-lg-4">
@@ -449,6 +470,10 @@
                                         <option value="">Art</option>
                                     </select>
                                 </div>
+                                <div class="col-lg-4">
+                                    <label for="start-work">İşləmə müddəti</label>
+                                    <input data-s="category" disabled type="number" placeholder="Müddət">
+                                </div>
                                 <hr>
                                 <div class="col-lg-4">
                                     <label for=""></label>
@@ -462,15 +487,15 @@
                                 </div>
                                 <div class="col-lg-4">
                                     <label for="start-work">İşləmə müddəti</label>
-                                    <input data-s="worktime" disabled type="text" placeholder="Müddət">
+                                    <input data-s="worktime" disabled type="number" placeholder="Müddət">
                                 </div>
 
                                 <div class="col-lg-6">
-                                    <input data-field="work" type="button" name="previous"
+                                    <input data-field="education" type="button" name="previous"
                                         class="previous action-button" value="Previous" />
                                 </div>
                                 <div class="col-lg-6">
-                                    <input data-field="work" type="button" name="next" class="next action-button"
+                                    <input data-field="language" type="button" name="next" class="next action-button"
                                         value="Next" />
                                 </div>
                         </fieldset>
@@ -524,11 +549,11 @@
                                 </div>
                                 <div class="add-field"></div>
                                 <div class="col-lg-6">
-                                    <input data-field="language" type="button" name="previous"
+                                    <input data-field="work" type="button" name="previous"
                                         class="previous action-button" value="Previous" />
                                 </div>
                                 <div class="col-lg-6">
-                                    <input data-field="language" type="button" name="next" class="next action-button"
+                                    <input data-field="computer" type="button" name="next" class="next action-button"
                                         value="Next" />
                                 </div>
                         </fieldset>
@@ -566,11 +591,11 @@
                                     </select>
                                 </div>
                                 <div class="col-lg-6">
-                                    <input data-field="computer" type="button" name="previous"
+                                    <input data-field="language" type="button" name="previous"
                                         class="previous action-button" value="Previous" />
                                 </div>
                                 <div class="col-lg-6">
-                                    <input data-field="computer" type="button" name="next" class="next action-button"
+                                    <input data-field="certificates" type="button" name="next" class="next action-button"
                                         value="Next" />
                                 </div>
                         </fieldset>
@@ -613,7 +638,7 @@
                                         <option>Seç</option>
                                     </select>
                                 </div>
-                                <input data-field="certificates" type="button" name="previous"
+                                <input data-field="computer" type="button" name="previous"
                                     class="previous action-button" value="Previous" />
                         </fieldset>
                     </form>
@@ -707,21 +732,14 @@
         });
 
 
-        // $(".next.action-button").on("click", function () {
-        //   $(this).addClass("active").addClass("active");
-        //   $(this).addClass("active").siblings().removeClass("active");
-        //   let fieldset = $("#progressbar li").data("fieldset");
-        //   $('fieldset:not([data-field=" + fieldset + "])').fadeOut(200);
-        //   $("fieldset[data-field=" + fieldset + "]").fadeIn(200);
-        // });
-
-        // $(".previous.action-button").on("click", function () {
-        //   $("#progressbar li").addClass("active");
-        //   $("#progressbar li").siblings().removeClass("active");
-        //   let fieldset = $("#progressbar li").data("fieldset");
-        //   $('fieldset:not([data-field=" + fieldset + "])').fadeOut(200);
-        //   $("fieldset[data-field=" + fieldset + "]").fadeIn(200);
-        // });
+        $(".action-button").on("click", function () {
+            let field = $(this).data("field");
+            $(`fieldset:not([data-field=${field}])`).fadeOut(200);
+            $(`fieldset[data-field=${field}]`).fadeIn(200);
+            // List active indicator
+            $(`#progressbar li[data-fieldset=${field}]`).addClass("active");
+            $(`#progressbar li[data-fieldset=${field}]`).siblings().removeClass("active");
+        });
 
         // $(".submit").click(function () {
         //   return false;
