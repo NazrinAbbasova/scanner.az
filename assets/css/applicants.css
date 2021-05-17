@@ -14,7 +14,7 @@
 }
 
 .filter-percentage {
-    margin-left: 3rem;
+    margin-left: 2rem;
     padding: 1rem;
     cursor: pointer;
     width: 4rem;
@@ -54,15 +54,31 @@
 
 .operations {
     text-transform: capitalize;
-    font-size: 14px;
-    font-weight: 500;
-    padding: 15px 30px;
+    width: 14rem;
+    padding: 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
     background: linear-gradient(45deg, #4567f4, #3CD3AD);
     color: #fff;
     border: none;
     border-radius: 6px;
     margin-left: 1rem;
 }
+
+/* .filter-fails {
+    width: 14rem;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 2rem;
+    height: 4rem;
+    border-radius: 5px;
+    border: 1px solid #4567f4;
+    color: #4567f4;
+} */
 
 .applicant-img {
     border-radius: 50%;
