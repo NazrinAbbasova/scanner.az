@@ -43,6 +43,10 @@
     font-weight: 600;
 }
 
+.our-achievement.applicant {
+    margin-top: 10rem;
+}
+
 .common {
     display: flex
 }
@@ -50,10 +54,6 @@
 .calculator {
     display: flex;
     margin-top: 2rem;
-}
-
-.calculator-head {
-    margin-left: 1rem;
 }
 
 .calculator-head p {
@@ -78,12 +78,6 @@
     border-radius: 0;
     -webkit-box-shadow: 0px 0px 10px #00000014;
     box-shadow: 0px 0px 10px #00000014;
-    margin-left: 1rem;
-}
-
-.form-group label {
-    margin-left: 1rem;
-
 }
 
 .calculate {
@@ -96,6 +90,4 @@
     color: #fff;
     border: none;
     border-radius: 6px;
-    margin-left: 1rem;
 }
-

@@ -31,3 +31,11 @@ if (addCertificate) {
     dynamicFieldsCertificate.appendChild(cln);
   });
 }
+
+// Create inputs
+function createOtherInput() {
+  const option = document.querySelector("option");
+  if (option.value == "other") {
+    console.log("salam");
+  }
+}

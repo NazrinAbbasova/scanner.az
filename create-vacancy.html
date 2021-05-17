@@ -120,12 +120,12 @@
                         <!-- progressbar -->
                         <ul id="progressbar">
                             <li data-fieldset="personal" class="active">Şəxsi məlumatlar</li>
-                            <li data-fieldset="contact">Əlaqə məlumatları</li>
                             <li data-fieldset="education">Təhsil məlumatları</li>
                             <li data-fieldset="work">İş<br> təcrübəsi</li>
                             <li data-fieldset="language">Dil bilikləri</li>
                             <li data-fieldset="computer">Kompyuter bilikləri</li>
                             <li data-fieldset="certificates">Sertifikatlar</li>
+                            <li data-fieldset="contact">Yekun</li>
                         </ul>
                         <!-- Personal informations -->
                         <fieldset data-field="personal">
@@ -174,13 +174,35 @@
                                 </div>
                                 <div class="col-lg-4">
                                     <label for="birthdate">Vətəndaşlıq</label>
-                                    <input data-s="citizenship" disabled type="text" placeholder="Vətəndaşlıq">
+                                    <select data-s="citizenship" disabled name="citizenship" id="citizenship">
+                                        <option value="choose">Azərbaycanlı</option>
+                                        <option value="not-important">Əcnəbi</option>
+                                    </select>
                                 </div>
                                 <hr>
                                 <div class="col-lg-4">
                                     <label for=""></label>
-                                    <select data-select="gender" class="importance" name="gender" id="gender">
+                                    <select data-select="city" class="importance" name="gender" id="gender">
                                         <option value="choose">Önəmlilik dərəcəsini təyin et</option>
+                                        <option value="not-important">Önəm daşımır</option>
+                                        <option value="less-important">Az önəm daşıyır</option>
+                                        <option value="important">Önəmlidir</option>
+                                        <option value="more-important">Mütləqdir</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-4">
+                                    <label for="city">Yaşadığı şəhər</label>
+                                    <select data-s="city" disabled name="city" id="city">
+                                        <option value="choose">Bakı</option>
+                                        <option value="not-important">Gəncə</option>
+                                        <option value="less-important">Sumqayıt</option>
+                                    </select>
+                                </div>
+                                <hr>
+                                <div class="col-lg-4">
+                                    <label for=""></label>
+                                    <select data-select="gender" class="importance" name="address" id="address">
+                                        <option>Önəmlilik dərəcəsini təyin et</option>
                                         <option value="not-important">Önəm daşımır</option>
                                         <option value="less-important">Az önəm daşıyır</option>
                                         <option value="important">Önəmlidir</option>
@@ -267,55 +289,8 @@
                                         </select>
                                 </div>
                             </div>
-                            <input data-field="contact" type="button" name="next" class="next action-button"
+                            <input data-field="education" type="button" name="next" class="next action-button"
                                 value="Next" />
-                        </fieldset>
-                        <!-- Contact informations -->
-                        <fieldset data-field="contact">
-                            <h5>Əlaqə məlumatları</h5>
-                            <div class="intro-video-play">
-                                <div class="row justify-content-center">
-                                    <div class="col-lg-10 col-12">
-                                        <div class="play-thumb wow zoomIn" data-wow-delay=".2s">
-                                            <a href="https://www.youtube.com/watch?v=r44RKWyfcFw&fbclid=IwAR21beSJORalzmzokxDRcGfkZA1AtRTE__l5N4r09HcGS5Y6vOluyouM9EM"
-                                                class="glightbox video"><i class="lni lni-play"></i> Video təlimatı
-                                                izlə</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-4">
-                                    <label for=""></label>
-                                    <select data-select="address" class="importance" name="address" id="address">
-                                        <option>Önəmlilik dərəcəsini təyin et</option>
-                                        <option value="not-important">Önəm daşımır</option>
-                                        <option value="less-important">Az önəm daşıyır</option>
-                                        <option value="important">Önəmlidir</option>
-                                        <option value="more-important">Mütləqdir</option>
-                                    </select>
-                                </div>
-                                <div class="col-lg-4">
-                                    <label for="city">Yaşadığı şəhər</label>
-                                    <select data-s="address" disabled name="city" id="city">
-                                        <option value="choose">Bakı</option>
-                                        <option value="not-important">Gəncə</option>
-                                        <option value="less-important">Sumqayıt</option>
-                                    </select>
-                                </div>
-
-                                <div class="change-step">
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <input data-field="personal" type="button" name="previous"
-                                                class="previous action-button" value="Əvvəlki" />
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <input data-field="education" type="button" name="next"
-                                                class="next action-button" value="Növbəti" />
-                                        </div>
-                                    </div>
-                                </div>
                         </fieldset>
                         <!-- Education informations -->
                         <fieldset data-field="education">
@@ -346,11 +321,12 @@
                                     <label for="degree">Təhsil dərəcəsi</label>
                                     <select data-s="degree" disabled name="degree" id="degree">
                                         <option>Seç</option>
+                                        <option value="">İbtidai</option>
                                         <option value="">Orta</option>
                                         <option value="">Peşə</option>
                                         <option value="bachelor">Bakalavr</option>
                                         <option value="master">Magistr</option>
-                                        <option value="phd">PHD</option>
+                                        <option value="phd">Doktorantura</option>
                                     </select>
                                 </div>
                                 <hr>
@@ -382,7 +358,7 @@
                                     </select>
                                 </div>
                                 <div class="col-lg-6">
-                                    <input data-field="contact" type="button" name="previous"
+                                    <input data-field="personal" type="button" name="previous"
                                         class="previous action-button" value="Əvvəlki" />
                                 </div>
                                 <div class="col-lg-6">
@@ -518,7 +494,8 @@
                                     <div class="row">
                                         <div class="col-lg-4">
                                             <label for=""></label>
-                                            <select class="importance" name="language" id="language">
+                                            <select data-select="language" class="importance" name="language"
+                                                id="language">
                                                 <option>Önəmlilik dərəcəsini təyin et</option>
                                                 <option value="not-important">Önəm daşımır</option>
                                                 <option value="less-important">Az önəm daşıyır</option>
@@ -528,25 +505,24 @@
                                         </div>
                                         <div class="col-lg-4">
                                             <label for="language">Dil</label>
-                                            <select data-s="language" disabled name="language" id="language">
+                                            <select data-s="language" disabled onchange="createOtherInput()"
+                                                name="language" id="language" class="other-input">
                                                 <option>Seç</option>
-                                                <option value="english">İngilis dili</option>
-                                                <option value="russian">Rus dili</option>
+                                                <option value="english">Azərbaycan dili</option>
                                                 <option value="turkish">Türk dili</option>
-                                                <option value="german">Alman dili</option>
-                                                <option value="french">Fransız dili</option>
+                                                <option value="russian">Rus dili</option>
+                                                <option value="german">İngilis dili</option>
+                                                <option value="other">Digər</option>
                                             </select>
                                         </div>
 
                                         <div class="col-lg-4">
                                             <label for="level">Səviyyə</label>
-                                            <select ddata-s="language" disabled name="level" id="level">
+                                            <select data-s="language" disabled name="level" id="level">
                                                 <option>Seç</option>
-                                                <option value="starter">Starter</option>
-                                                <option value="beginner">Beginner</option>
-                                                <option value="pre-intermediate">Pre-intermediate</option>
-                                                <option value="intermediate">İntermediate</option>
-                                                <option value="advance">Advance</option>
+                                                <option value="beginner">Başlanğıc</option>
+                                                <option value="medium">Orta</option>
+                                                <option value="advance">Yüksək</option>
                                             </select>
                                         </div>
                                     </div>
@@ -568,7 +544,7 @@
                         </fieldset>
                         <!-- Computer informations -->
                         <fieldset data-field="computer">
-                            <h5>Təhsil məlumatları</h5>
+                            <h5>Kompyuter bilikləri</h5>
                             <div class="intro-video-play">
                                 <div class="row justify-content-center">
                                     <div class="col-lg-10 col-12">
@@ -596,10 +572,20 @@
                                         </div>
                                         <div class="col-lg-4">
                                             <label for="computer">Kompyuter bilikləri</label>
-                                            <select data-s="computer" disabled name="computer" id="computer">
+                                            <select data-s="computer" onchange="createOtherInput()" disabled
+                                                name="computer" id="computer" class="other-input">
                                                 <option>Seç</option>
                                                 <option value="">MS Office</option>
-                                                <option value="">Digər</option>
+                                                <option value="other">Digər</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <label for="level">Səviyyə</label>
+                                            <select data-s="computer" disabled name="level" id="level">
+                                                <option>Seç</option>
+                                                <option value="beginner">Başlanğıc</option>
+                                                <option value="medium">Orta</option>
+                                                <option value="advance">Yüksək</option>
                                             </select>
                                         </div>
                                     </div>
@@ -649,9 +635,11 @@
                                         </div>
                                         <div class="col-lg-4">
                                             <label for="Certificates">Sertifikat</label>
-                                            <select data-s="certificates" disabled name="certificates"
-                                                id="certificates">
+                                            <select data-s="certificates" onchange="createOtherInput()" disabled
+                                                name="certificates" id="certificates" class="other-input">
                                                 <option>Seç</option>
+                                                <option value="">ACCA</option>
+                                                <option value="other">Digər</option>
                                             </select>
                                         </div>
                                         <div class="col-lg-4">
@@ -703,6 +691,53 @@
                                     </div>
                                 </div>
                             </div>
+                        </fieldset>
+                        <!-- Contact informations -->
+                        <fieldset data-field="contact">
+                            <h5>Əlaqə məlumatları</h5>
+                            <div class="intro-video-play">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-10 col-12">
+                                        <div class="play-thumb wow zoomIn" data-wow-delay=".2s">
+                                            <a href="https://www.youtube.com/watch?v=r44RKWyfcFw&fbclid=IwAR21beSJORalzmzokxDRcGfkZA1AtRTE__l5N4r09HcGS5Y6vOluyouM9EM"
+                                                class="glightbox video"><i class="lni lni-play"></i> Video təlimatı
+                                                izlə</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <label for=""></label>
+                                    <select data-select="address" class="importance" name="address" id="address">
+                                        <option>Önəmlilik dərəcəsini təyin et</option>
+                                        <option value="not-important">Önəm daşımır</option>
+                                        <option value="less-important">Az önəm daşıyır</option>
+                                        <option value="important">Önəmlidir</option>
+                                        <option value="more-important">Mütləqdir</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-4">
+                                    <label for="city">Yaşadığı şəhər</label>
+                                    <select data-s="address" disabled name="city" id="city">
+                                        <option value="choose">Bakı</option>
+                                        <option value="not-important">Gəncə</option>
+                                        <option value="less-important">Sumqayıt</option>
+                                    </select>
+                                </div>
+
+                                <div class="change-step">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <input data-field="personal" type="button" name="previous"
+                                                class="previous action-button" value="Əvvəlki" />
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <input data-field="education" type="button" name="next"
+                                                class="next action-button" value="Növbəti" />
+                                        </div>
+                                    </div>
+                                </div>
                         </fieldset>
                     </form>
                 </div>
