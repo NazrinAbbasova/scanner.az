@@ -296,8 +296,12 @@
                                     </select>
                                 </div>
                                 <div class="col-lg-4">
-                                    <label for="birthdate">Yaşadığı şəhər</label>
-                                    <input data-s="address" disabled type="text" placeholder="Şəhər">
+                                    <label for="city">Yaşadığı şəhər</label>
+                                    <select data-s="address" disabled name="city" id="city">
+                                        <option value="choose">Bakı</option>
+                                        <option value="not-important">Gəncə</option>
+                                        <option value="less-important">Sumqayıt</option>
+                                    </select>
                                 </div>
 
                                 <div class="change-step">
@@ -457,13 +461,10 @@
                                     </select>
                                 </div>
                                 <div class="col-lg-4">
-                                    <label for="start-work">İşə qəbul tarixi</label>
-                                    <input data-s="worktime" disabled type="date">
+                                    <label for="start-work">İşləmə müddəti</label>
+                                    <input data-s="worktime" disabled type="text" placeholder="Müddət">
                                 </div>
-                                <div class="col-lg-4">
-                                    <label for="end-work">İşdən çıxma tarixi</label>
-                                    <input data-s="worktime" disabled type="date">
-                                </div>
+
                                 <div class="col-lg-6">
                                     <input data-field="work" type="button" name="previous"
                                         class="previous action-button" value="Previous" />
@@ -509,20 +510,10 @@
                                         <option value="phd">Fransız dili</option>
                                     </select>
                                 </div>
-                                <hr>
-                                <div class="col-lg-4">
-                                    <label for=""></label>
-                                    <select data-select="level" class="importance" name="level" id="level">
-                                        <option>Önəmlilik dərəcəsini təyin et</option>
-                                        <option value="not-important">Önəm daşımır</option>
-                                        <option value="less-important">Az önəm daşıyır</option>
-                                        <option value="important">Önəmlidir</option>
-                                        <option value="more-important">Mütləqdir</option>
-                                    </select>
-                                </div>
+
                                 <div class="col-lg-4">
                                     <label for="level">Səviyyə</label>
-                                    <select data-select="level" disabled name="level" id="level">
+                                    <select ddata-s="language" disabled name="level" id="level">
                                         <option>Seç</option>
                                         <option value="">Starter</option>
                                         <option value="">Beginner</option>
@@ -531,6 +522,7 @@
                                         <option value="phd">Advance</option>
                                     </select>
                                 </div>
+                                <div class="add-field"></div>
                                 <div class="col-lg-6">
                                     <input data-field="language" type="button" name="previous"
                                         class="previous action-button" value="Previous" />
@@ -625,12 +617,6 @@
                                     class="previous action-button" value="Previous" />
                         </fieldset>
                     </form>
-                    <!-- jQuery -->
-                    <script src="http://thecodeplayer.com/uploads/js/jquery-1.9.1.min.js"
-                        type="text/javascript"></script>
-                    <!-- jQuery easing plugin -->
-                    <script src="http://thecodeplayer.com/uploads/js/jquery.easing.min.js"
-                        type="text/javascript"></script>
                 </div>
             </div>
         </div>
@@ -652,9 +638,9 @@
                             <div class="footer-social">
                                 <ul>
                                     <li><a href="#"><i class="lni lni-facebook-original"></i></a></li>
-                                    <li><a href="#"><i class="lni lni-twitter-original"></i></a></li>
+
                                     <li><a href="#"><i class="lni lni-linkedin-original"></i></a></li>
-                                    <li><a href="#"><i class="lni lni-google"></i></a></li>
+
                                 </ul>
                             </div>
                         </div>
@@ -701,6 +687,55 @@
             'source': 'youtube', //vimeo, youtube or local
             'width': 900,
             'autoplayVideos': true,
+        });
+    </script>
+
+    <!-- jQuery -->
+    <script src="http://thecodeplayer.com/uploads/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <!-- jQuery easing plugin -->
+    <script src="http://thecodeplayer.com/uploads/js/jquery.easing.min.js" type="text/javascript"></script>
+
+    <script>
+        // Create vacancy steps
+
+        $("#progressbar li").on("click", function () {
+            $(this).addClass("active");
+            $(this).siblings().removeClass("active");
+            let fieldset = $(this).data("fieldset");
+            $('fieldset:not([data-field=" + fieldset + "])').fadeOut(200);
+            $("fieldset[data-field=" + fieldset + "]").fadeIn(200);
+        });
+
+
+        // $(".next.action-button").on("click", function () {
+        //   $(this).addClass("active").addClass("active");
+        //   $(this).addClass("active").siblings().removeClass("active");
+        //   let fieldset = $("#progressbar li").data("fieldset");
+        //   $('fieldset:not([data-field=" + fieldset + "])').fadeOut(200);
+        //   $("fieldset[data-field=" + fieldset + "]").fadeIn(200);
+        // });
+
+        // $(".previous.action-button").on("click", function () {
+        //   $("#progressbar li").addClass("active");
+        //   $("#progressbar li").siblings().removeClass("active");
+        //   let fieldset = $("#progressbar li").data("fieldset");
+        //   $('fieldset:not([data-field=" + fieldset + "])').fadeOut(200);
+        //   $("fieldset[data-field=" + fieldset + "]").fadeIn(200);
+        // });
+
+        // $(".submit").click(function () {
+        //   return false;
+        // });
+
+        $(".importance").on("change", function () {
+            var select = $(this).data("select");
+
+            $(this).val() == "choose"
+                ? $(`[data-s=${select}]`).prop("disabled", true)
+                : $(`[data-s=${select}]`).prop("disabled", false);
+            $(this).val() == "not-important"
+                ? $(`[data-s=${select}]`).prop("disabled", true)
+                : $(`[data-s=${select}]`).prop("disabled", false);
         });
     </script>
 </body>

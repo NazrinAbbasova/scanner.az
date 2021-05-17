@@ -75,14 +75,15 @@
     text-align: center;
 }
 
-.glightbox-open .gnext, .glightbox-open .gprev{
+.glightbox-open .gnext,
+.glightbox-open .gprev {
     display: none !important;
 }
 
 .intro-video-play a {
-    width: 40%;
+    width: 50%;
     margin-top: 20px;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
     padding: 15px 30px;
     color: #fff;
@@ -93,7 +94,7 @@
     background: white;
 }
 
-.video button:hover {
+.intro-video-play a:hover {
     background: linear-gradient(45deg, #4567f4, #3CD3AD);
     border: 1px solid #fff;
     color: white;
