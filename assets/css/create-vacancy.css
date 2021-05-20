@@ -186,6 +186,7 @@ select.importance {
     color: white;
     border: none;
 }
+
 .add-work,
 .add-education,
 .add-language,
@@ -323,17 +324,20 @@ select.importance {
     display: none;
 }
 
-.send-to-mail {
+.send-to-mail,
+.active-vacancy {
     display: flex;
     margin-top: 1rem;
 }
 
-.send-to-mail input {
+.send-to-mail input,
+.active-vacancy input {
     width: 15px !important;
     margin-right: 0.5rem;
     margin-top: 3px;
 }
 
-.send-to-mail label {
+.send-to-mail label,
+.active-vacancy label {
     color: #4567f4
 }
