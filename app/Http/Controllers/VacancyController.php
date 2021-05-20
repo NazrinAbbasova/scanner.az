@@ -6,6 +6,7 @@ use App\Models\Certificate;
 use App\Models\ComputerSkill;
 use App\Models\Field;
 use App\Models\Func;
+use App\Models\Language;
 use App\Models\Position;
 use App\Models\Region;
 use App\Models\Vacancy;
@@ -35,11 +36,12 @@ class VacancyController extends Controller
      */
     public function create()
     {
-        $regions = Region::all();
-        $fields  = Field::all();
-        $funcs   = Func::all();
-        $positions   = Position::all();
-        $skills  = ComputerSkill::all();
+        $regions      = Region::all();
+        $fields       = Field::all();
+        $funcs        = Func::all();
+        $positions    = Position::all();
+        $languges     = Language::all();
+        $skills       = ComputerSkill::all();
         $certificates = Certificate::all();
 
         return view("front.vacancy.create", compact(
@@ -102,13 +104,13 @@ class VacancyController extends Controller
             $v_lang->save();
         }
 
-        for($i = 0; $i < count($request->computer_knowledges); $i++) {
-            $v_comp_knowledge = new VacancyComputerSkill();
-            $v_comp_knowledge->vacancy_id = $v->id;
-            $v_comp_knowledge->computer_knowledge = $request->computer_knowledges[$i];
-            $v_comp_knowledge->level = $request->computer_knowledge_levels[$i];
-            $v_comp_knowledge->importance = $request->computer_knowledge_importances[$i];
-            $v_comp_knowledge->save();
+        for($i = 0; $i < count($request->computer_skills); $i++) {
+            $v_comp_skill = new VacancyComputerSkill();
+            $v_comp_skill->vacancy_id = $v->id;
+            $v_comp_skill->computer_skill = $request->computer_skills[$i];
+            $v_comp_skill->level = $request->computer_skill_levels[$i];
+            $v_comp_skill->importance = $request->computer_skill_importances[$i];
+            $v_comp_skill->save();
         }
 
         for($i = 0; $i < count($request->certificates); $i++) {

@@ -28,7 +28,7 @@
                                 <td class="date">December 15,2018</td>
                                 <td class="common-applicants">134</td>
                                 <td class="successful-applicants">
-                                    <a href="{{ route('vacancies.applicants') }}">23</a>
+                                    <a href="applicants.html">23</a>
                                 </td>
                                 <td>
                                     <a href="">
@@ -42,7 +42,6 @@
                                     </a>
                                 </td>
                             </tr>
-
                         </tbody>
                     </table>
                 </div>

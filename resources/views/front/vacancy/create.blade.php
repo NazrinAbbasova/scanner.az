@@ -10,7 +10,6 @@
                     <!-- progressbar -->
                     <ul id="progressbar">
                         <li data-fieldset="personal" class="active">Şəxsi məlumatlar</li>
-                        <li data-fieldset="contact">Əlaqə məlumatları</li>
                         <li data-fieldset="education">Təhsil məlumatları</li>
                         <li data-fieldset="work">İş təcrübəsi</li>
                         <li data-fieldset="language">Dil bilikləri</li>
@@ -18,7 +17,6 @@
                         <li data-fieldset="certificates">Sertifikatlar</li>
                     </ul>
                     @include('front.vacancy.components.personal')
-                    @include('front.vacancy.components.contact')
                     @include('front.vacancy.components.education')
                     @include('front.vacancy.components.work')
                     @include('front.vacancy.components.language')
@@ -36,6 +34,8 @@
 <script src="http://thecodeplayer.com/uploads/js/jquery-1.9.1.min.js"type="text/javascript"></script>
 <!-- jQuery easing plugin -->
 <script src="http://thecodeplayer.com/uploads/js/jquery.easing.min.js"type="text/javascript"></script>
+
+@include('front.inc.ajax')
 
 <script>
     $("#progressbar li").on("click", function () {
@@ -76,11 +76,25 @@
         const id = $(this).val()
 
         console.log(id);
+
+        $.ajax({
+            url: "{{ route('certificate.levels') }}",
+            method: "post",
+            data: {
+                id: id,
+            },
+            success: function (levels) {
+                if(levels){
+                    $('#certificate-level').html(levels)
+                }
+            },
+        });
     })
 </script>
 
 <link rel="stylesheet" href="{{ asset('static/front/css/profile.css') }}">
 <link rel="stylesheet" href="{{ asset('static/front/css/icons.min.css') }}" />
 <link rel="stylesheet" href="{{ asset('static/front/css/create-vacancy.css') }}">
+<script src="{{ asset('static/front/js/create-items.js') }}"></script>
 
 @endsection

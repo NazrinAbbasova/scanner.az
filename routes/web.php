@@ -60,6 +60,8 @@ Route::middleware(['auth'])->group(function () {
             Route::get('/applicants', 'VacancyController@applicants')->name('vacancies.applicants');
         });
     });
+
+    Route::post('/certificate/levels', 'CertificateController@levels')->name('certificate.levels');
     
 
     // Applicant profile

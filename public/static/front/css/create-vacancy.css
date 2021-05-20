@@ -1,3 +1,17 @@
+.vacancy-name {
+    margin: auto;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 6px;
+}
+
+.vacancy-name input {
+    text-align: center;
+    padding: 17.5px !important;
+    border-radius: 6px !important;
+}
+
 /*form styles*/
 #vacancy-form {
     text-align: center;
@@ -13,6 +27,10 @@
     box-sizing: border-box;
     width: 100%;
     text-align: left;
+}
+
+#vacancy-form fieldset h5 {
+    margin-bottom: 1rem;
 }
 
 /*Hide all except first fieldset*/
@@ -35,7 +53,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 3rem;
 }
 
 /*buttons*/
@@ -48,7 +65,7 @@
     border: 0 none;
     border-radius: 1px;
     cursor: pointer;
-    padding: 10px 5px;
+    margin-top: 3rem;
 }
 
 #vacancy-form .action-button:hover,
@@ -75,28 +92,34 @@
     text-align: center;
 }
 
-.glightbox-open .gnext, .glightbox-open .gprev{
+.glightbox-open .gnext,
+.glightbox-open .gprev {
     display: none !important;
 }
 
+
+
 .intro-video-play a {
-    width: 40%;
-    margin-top: 20px;
-    font-size: 14px;
+    width: 50%;
+    margin-bottom: 20px;
+    font-size: 16px;
     font-weight: 500;
     padding: 15px 30px;
     color: #fff;
     border-radius: 6px;
-    margin-bottom: 20px;
     border: 1px solid #4567f4;
     color: #4567f4;
     background: white;
 }
 
-.video button:hover {
+.intro-video-play a:hover {
     background: linear-gradient(45deg, #4567f4, #3CD3AD);
     border: 1px solid #fff;
     color: white;
+}
+
+.intro-video-play.first a {
+    width: 100%;
 }
 
 select.importance {
@@ -114,9 +137,9 @@ select.importance {
 #progressbar li {
     list-style-type: none;
     color: #222;
-    text-transform: uppercase;
-    font-size: 12px;
-    width: 14.2%;
+    font-weight: 500;
+    font-size: 16px;
+    width: 16.6%;
     float: left;
     position: relative;
     cursor: pointer;
@@ -162,4 +185,191 @@ select.importance {
     background: linear-gradient(45deg, #4567f4, #3CD3AD);
     color: white;
     border: none;
+}
+
+.add-work,
+.add-education,
+.add-language,
+.add-computer,
+.add-certificate {
+    color: #4567f4;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.save-vacancy {
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 15px 30px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    border: 1px solid #4567f4 !important;
+    color: #4567f4 !important;
+    background: white;
+    margin-top: 3rem;
+}
+
+.save-vacancy:hover {
+    background: linear-gradient(45deg, #4567f4, #3CD3AD);
+    border: 1px solid #fff !important;
+    color: white !important;
+    transition: 0.3s;
+}
+
+/* .modal-body {
+    display: flex;
+} */
+
+.modal-body input {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: 100%;
+    box-sizing: border-box;
+    color: #222;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-body i {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 20px;
+    color: #4567f4;
+    margin-top: 21px;
+    cursor: pointer;
+}
+
+.link {
+    text-align: center;
+}
+
+.link a {
+    text-decoration: underline;
+    font-size: 14px;
+}
+
+.save-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 30px;
+    color: #4567f4;
+}
+
+.save-icon i {
+    padding: 15px;
+    border: 1px solid #4567f4;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+
+.switch-field {
+    display: flex;
+    overflow: hidden;
+}
+
+.switch-field label {
+    font-size: 14px;
+    line-height: 1;
+    text-align: center;
+    padding: 10px 30px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    transition: all 0.1s ease-in-out;
+}
+
+.switch-field label:hover {
+    cursor: pointer;
+}
+
+/* 
+.switch-field input {
+    width: 5rem;
+} */
+
+.switch-field input:checked+label {
+    background: linear-gradient(45deg, #4567f4, #3CD3AD);
+    box-shadow: none;
+    color: #fff;
+}
+
+.switch-field label:first-of-type {
+    border-radius: 4px 0 0 4px;
+}
+
+.switch-field label:last-of-type {
+    border-radius: 0 4px 4px 0;
+}
+
+.modal-body .submit button {
+    display: flex;
+    background: linear-gradient(45deg, #4567f4, #3CD3AD);
+    padding: 1rem 10rem;
+    text-align: center;
+    font-size: 14px;
+    color: white;
+    margin: auto;
+    border: 0 none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 3rem;
+
+}
+
+.other {
+    display: none;
+}
+
+.send-to-mail,
+.active-vacancy {
+    display: flex;
+    margin-top: 1rem;
+}
+
+.send-to-mail input,
+.active-vacancy input {
+    width: 15px !important;
+    margin-right: 0.5rem;
+    margin-top: 3px;
+}
+
+.send-to-mail label,
+.active-vacancy label {
+    color: #4567f4
+}
+
+.share-social {
+    display: flex;
+    margin-top: 1rem;
+}
+
+.share-social li a {
+    display: block;
+    border: none;
+    color: #fff;
+    border-radius: 6px;
+    margin-right: 1rem;
+}
+
+.share-social i {
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    padding: 10px !important;
+    border-radius: 3px;
+    font-size: 20px;
+    color: #4567f4;
+    cursor: pointer;
+}
+
+.share-social li a i:hover {
+    background-color: #4567f4;
+    color: #fff;
+    border-color: transparent;
+    transition: 0.3s;
 }
