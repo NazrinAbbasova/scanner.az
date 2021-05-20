@@ -186,7 +186,8 @@ select.importance {
     color: white;
     border: none;
 }
-
+.add-work,
+.add-education,
 .add-language,
 .add-computer,
 .add-certificate {
@@ -318,7 +319,7 @@ select.importance {
 
 }
 
-#other {
+.other {
     display: none;
 }
 

@@ -20,7 +20,6 @@
     <link rel="stylesheet" href="assets/css/LineIcons.2.0.css" />
     <link rel="stylesheet" href="assets/css/animate.css" />
     <link rel="stylesheet" href="assets/css/icons.min.css" />
-    <link rel="stylesheet" href="assets/css/glightbox.min.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="assets/css/create-vacancy.css" />
 
@@ -205,129 +204,141 @@
                                         <option value="more-important">D</option>
                                     </select>
                                 </div>
+                                <input data-field="education" type="button" name="next" class="next action-button"
+                                    value="Sonrakı" />
                             </div>
                         </fieldset>
                         <!-- Education informations -->
                         <fieldset data-field="education">
                             <h5>Təhsil məlumatları</h5>
-                            <div class="intro-video-play">
-                                <div class="row justify-content-center">
-                                    <div class="col-lg-10 col-12">
-                                        <div class="play-thumb wow zoomIn" data-wow-delay=".2s">
-                                            <a href="https://www.youtube.com/watch?v=r44RKWyfcFw&fbclid=IwAR21beSJORalzmzokxDRcGfkZA1AtRTE__l5N4r09HcGS5Y6vOluyouM9EM"
-                                                class="glightbox video"><i class="lni lni-play"></i> Video təlimatı
-                                                izlə</a>
+                            <div class="dynamic-fields-education">
+                                <div class="dynamic-education">
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <label for="degree">Təhsil dərəcəsi</label>
+                                            <select data-s="degree" name="degree" id="degree">
+                                                <option>Seç</option>
+                                                <option value="">İbtidai</option>
+                                                <option value="">Orta</option>
+                                                <option value="">Peşə</option>
+                                                <option value="bachelor">Bakalavr</option>
+                                                <option value="master">Magistr</option>
+                                                <option value="phd">Doktorantura</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-lg-4">
+                                            <label for="score">Qəbul balı</label>
+                                            <input type="number" id="score" placeholder="Qəbul balınız">
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <label for="university">Təhsil müəssisəsi</label>
+                                            <select data-s="university" name="university" id="university">
+                                                <option>Seç</option>
+                                                <option value="">BMU</option>
+                                                <option value="">BDU</option>
+                                                <option value="">ADNSU</option>
+                                                <option value="bachelor">ADA</option>
+                                                <option value="master">BANM</option>
+                                                <option value="phd">ADU</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <label for="section">İxtisas istiqaməti</label>
+                                            <select data-s="section" name="section" id="section">
+                                                <option>Seç</option>
+                                                <option value="">İncəsənət</option>
+                                                <option value="">İqtisadiyyat</option>
+                                                <option value="">Komputer elmləri</option>
+                                                <option value="bachelor">Jurnalistika</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <label for="field">İxtisas</label>
+                                            <input type="text" placeholder="İxtisasınız">
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <label>Daxil olduğunuz il</label>
+                                            <input type="number" placeholder="İl">
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <label>Bitirdiyiniz il</label>
+                                            <input type="number" placeholder="İl">
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <div class="add-education">
+                                + Əlavə et
+                            </div>
                             <div class="row">
-                                <div class="col-lg-4">
-                                    <label for="degree">Təhsil dərəcəsi</label>
-                                    <select data-s="degree" name="degree" id="degree">
-                                        <option>Seç</option>
-                                        <option value="">İbtidai</option>
-                                        <option value="">Orta</option>
-                                        <option value="">Peşə</option>
-                                        <option value="bachelor">Bakalavr</option>
-                                        <option value="master">Magistr</option>
-                                        <option value="phd">Doktorantura</option>
-                                    </select>
+                                <div class="col-lg-6">
+                                    <input data-field="personal" type="button" name="previous"
+                                        class="previous action-button" value="Əvvəlki" />
                                 </div>
-
-                                <div class="col-lg-4">
-                                    <label for="score">Qəbul balı</label>
-                                    <input type="number" id="score" placeholder="Qəbul balınız">
+                                <div class="col-lg-6">
+                                    <input data-field="work" type="button" name="next" class="next action-button"
+                                        value="Sonrakı" />
                                 </div>
-                                <div class="col-lg-4">
-                                    <label for="degree">Təhsil müəssisəsi</label>
-                                    <select data-s="degree" name="degree" id="degree">
-                                        <option>Seç</option>
-                                        <option value="">BMU</option>
-                                        <option value="">BDU</option>
-                                        <option value="">ADNSU</option>
-                                        <option value="bachelor">ADA</option>
-                                        <option value="master">BANM</option>
-                                        <option value="phd">ADU</option>
-                                    </select>
-                                </div>
-                                <div class="col-lg-4">
-                                    <label for="degree">İxtisas istiqaməti</label>
-                                    <select data-s="degree" name="degree" id="degree">
-                                        <option>Seç</option>
-                                        <option value="">İncəsənət</option>
-                                        <option value="">İqtisadiyyat</option>
-                                        <option value="">Komputer elmləri</option>
-                                        <option value="bachelor">Jurnalistika</option>
-                                    </select>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <input data-field="personal" type="button" name="previous"
-                                            class="previous action-button" value="Əvvəlki" />
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <input data-field="work" type="button" name="next" class="next action-button"
-                                            value="Sonrakı" />
-                                    </div>
-                                </div>
+                            </div>
                         </fieldset>
                         <!-- Work informations -->
                         <fieldset data-field="work">
                             <h5>İş təcrübəsi</h5>
-                            <div class="intro-video-play">
-                                <div class="row justify-content-center">
-                                    <div class="col-lg-10 col-12">
-                                        <div class="play-thumb wow zoomIn" data-wow-delay=".2s">
-                                            <a href="https://www.youtube.com/watch?v=r44RKWyfcFw&fbclid=IwAR21beSJORalzmzokxDRcGfkZA1AtRTE__l5N4r09HcGS5Y6vOluyouM9EM"
-                                                class="glightbox video"><i class="lni lni-play"></i> Video təlimatı
-                                                izlə</a>
+                            <div class="dynamic-fields-work">
+                                <div class="dynamic-work">
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <label for="field">Sektor</label>
+                                            <select data-s="field" name="field" id="field">
+                                                <option>IT</option>
+                                                <option value="">Finance</option>
+                                                <option value="">Art</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <label for="company-name">Müəssisənin adı</label>
+                                            <input data-s="field" type="number" placeholder="Müəssisənin adı">
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <label for="function">Funksiya</label>
+                                            <select data-s="function" name="function" id="function">
+                                                <option>IT</option>
+                                                <option value="">Finance</option>
+                                                <option value="">Art</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <label for="category">Vəzifə kateqoriyası</label>
+                                            <select data-s="category" name="category" id="category">
+                                                <option>IT</option>
+                                                <option value="">Finance</option>
+                                                <option value="">Art</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <label for="commitment">Vəzifə öhdəlikləri</label>
+                                            <select data-s="commitment" name="commitment" id="commitment">
+                                                <option>IT</option>
+                                                <option value="">Finance</option>
+                                                <option value="">Art</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <label>İşə qəbul olduğunuz tarix</label>
+                                            <input type="date">
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <label>İşdən çıxdığınız tarix</label>
+                                            <input type="date">
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <div class="add-work">
+                                + Əlavə et
+                            </div>
                             <div class="row">
-                                <div class="col-lg-4">
-                                    <label for="field">Sektor</label>
-                                    <select data-s="field" name="field" id="field">
-                                        <option>IT</option>
-                                        <option value="">Finance</option>
-                                        <option value="">Art</option>
-                                    </select>
-                                </div>
-                                <div class="col-lg-4">
-                                    <label for="start-work">İşləmə müddəti</label>
-                                    <input data-s="field" type="number" placeholder="Müddət">
-                                </div>
-                                <div class="col-lg-4">
-                                    <label for="function">Funksiya</label>
-                                    <select data-s="function" name="function" id="function">
-                                        <option>IT</option>
-                                        <option value="">Finance</option>
-                                        <option value="">Art</option>
-                                    </select>
-                                </div>
-                                <div class="col-lg-4">
-                                    <label for="start-work">İşləmə müddəti</label>
-                                    <input data-s="function" type="number" placeholder="Müddət">
-                                </div>
-                                <div class="col-lg-4">
-                                    <label for="category">Kateqoriya</label>
-                                    <select data-s="category" name="category" id="category">
-                                        <option>IT</option>
-                                        <option value="">Finance</option>
-                                        <option value="">Art</option>
-                                    </select>
-                                </div>
-                                <div class="col-lg-4">
-                                    <label for="start-work">İşləmə müddəti</label>
-                                    <input data-s="category" type="number" placeholder="Müddət">
-                                </div>
-                                <div class="col-lg-4">
-                                    <label for="start-work">İşləmə müddəti</label>
-                                    <input data-s="worktime" type="number" placeholder="Müddət">
-                                </div>
-
                                 <div class="col-lg-6">
                                     <input data-field="education" type="button" name="previous"
                                         class="previous action-button" value="Əvvəlki" />
@@ -336,21 +347,13 @@
                                     <input data-field="language" type="button" name="next" class="next action-button"
                                         value="Sonrakı" />
                                 </div>
+                            </div>
+
                         </fieldset>
                         <!-- Language informations -->
                         <fieldset data-field="language">
                             <h5>Dil bilikləri</h5>
-                            <div class="intro-video-play">
-                                <div class="row justify-content-center">
-                                    <div class="col-lg-10 col-12">
-                                        <div class="play-thumb wow zoomIn" data-wow-delay=".2s">
-                                            <a href="https://www.youtube.com/watch?v=r44RKWyfcFw&fbclid=IwAR21beSJORalzmzokxDRcGfkZA1AtRTE__l5N4r09HcGS5Y6vOluyouM9EM"
-                                                class="glightbox video"><i class="lni lni-play"></i> Video təlimatı
-                                                izlə</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
                             <div class="dynamic-fields-language">
                                 <div class="dynamic-language">
                                     <div class="row">
@@ -396,17 +399,7 @@
                         <!-- Computer informations -->
                         <fieldset data-field="computer">
                             <h5>Kompyuter bilikləri</h5>
-                            <div class="intro-video-play">
-                                <div class="row justify-content-center">
-                                    <div class="col-lg-10 col-12">
-                                        <div class="play-thumb wow zoomIn" data-wow-delay=".2s">
-                                            <a href="https://www.youtube.com/watch?v=r44RKWyfcFw&fbclid=IwAR21beSJORalzmzokxDRcGfkZA1AtRTE__l5N4r09HcGS5Y6vOluyouM9EM"
-                                                class="glightbox video"><i class="lni lni-play"></i> Video təlimatı
-                                                izlə</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
                             <div class="dynamic-fields-computer">
                                 <div class="dynamic-computer">
                                     <div class="row">
@@ -448,17 +441,7 @@
                         <!-- Certificates informations -->
                         <fieldset data-field="certificates">
                             <h5>Sertifikat məlumatları</h5>
-                            <div class="intro-video-play">
-                                <div class="row justify-content-center">
-                                    <div class="col-lg-10 col-12">
-                                        <div class="play-thumb wow zoomIn" data-wow-delay=".2s">
-                                            <a href="https://www.youtube.com/watch?v=r44RKWyfcFw&fbclid=IwAR21beSJORalzmzokxDRcGfkZA1AtRTE__l5N4r09HcGS5Y6vOluyouM9EM"
-                                                class="glightbox video"><i class="lni lni-play"></i> Video təlimatı
-                                                izlə</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
                             <div class="dynamic-fields-certificate">
                                 <div class="dynamic-certificate">
                                     <div class="row">
@@ -484,16 +467,7 @@
                             <div class="add-certificate">
                                 + Əlavə et
                             </div>
-                            <div class="row">
-                                <div class="col-lg-4">
-                                    <label for="salary">Minimum əmək haqqı tələbi</label>
-                                    <input data-s="certificates" type="number" placeholder="Min.">
-                                </div>
-                                <div class="col-lg-4">
-                                    <label for="salary">Maksimum əmək haqqı tələbi</label>
-                                    <input data-s="certificates" type="number" placeholder="Maks.">
-                                </div>
-                            </div>
+
                             <div class="row">
                                 <div class="col-lg-6">
                                     <input data-field="computer" type="button" name="previous"
@@ -503,17 +477,6 @@
                                     <input type="button" name="save" class="save-vacancy" data-bs-toggle="modal"
                                         data-bs-target="#saveVacancy" value="Yadda saxla" />
                                 </div>
-                            </div>
-                            <div class=" row">
-                                <div class="col-lg-6">
-                                    <input class="save-vacancy" data-bs-toggle="modal" data-bs-target="#sendToMail"
-                                        type="button" name="send-to-mail" value="Uyğun CV-ləri emailə göndər" />
-                                </div>
-                                <div class="col-lg-6">
-                                    <input class="save-vacancy" data-bs-toggle="modal" data-bs-target="#shareVacancy"
-                                        type="button" name="share" value="Vakansiyanı paylaş" />
-                                </div>
-
                             </div>
                         </fieldset>
                     </form>
@@ -650,22 +613,10 @@
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/count-up.min.js"></script>
     <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/glightbox.min.js"></script>
     <script src="assets/js/imagesloaded.min.js"></script>
     <script src="assets/js/isotope.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/create-items.js"></script>
-
-    <script type="text/javascript">
-        //========= glightbox
-        GLightbox({
-            'href': 'https://www.youtube.com/watch?v=r44RKWyfcFw&fbclid=IwAR21beSJORalzmzokxDRcGfkZA1AtRTE__l5N4r09HcGS5Y6vOluyouM9EM',
-            'type': 'video',
-            'source': 'youtube', //vimeo, youtube or local
-            'width': 900,
-            'autoplayVideos': true,
-        });
-    </script>
 
     <!-- jQuery -->
     <script src="assets/js/jquery.min.js" type="text/javascript"></script>
