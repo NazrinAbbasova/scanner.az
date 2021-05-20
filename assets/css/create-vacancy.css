@@ -214,6 +214,7 @@ select.importance {
     background: linear-gradient(45deg, #4567f4, #3CD3AD);
     border: 1px solid #fff !important;
     color: white !important;
+    transition: 0.3s;
 }
 
 /* .modal-body {
@@ -340,4 +341,35 @@ select.importance {
 .send-to-mail label,
 .active-vacancy label {
     color: #4567f4
+}
+
+.share-social {
+    display: flex;
+    margin-top: 1rem;
+}
+
+.share-social li a {
+    display: block;
+    border: none;
+    color: #fff;
+    border-radius: 6px;
+    margin-right: 1rem;
+}
+
+.share-social i {
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    padding: 10px !important;
+    border-radius: 3px;
+    font-size: 20px;
+    color: #4567f4;
+    cursor: pointer;
+}
+
+.share-social li a i:hover {
+    background-color: #4567f4;
+    color: #fff;
+    border-color: transparent;
+    transition: 0.3s;
 }
