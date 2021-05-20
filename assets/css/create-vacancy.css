@@ -1,17 +1,15 @@
 .vacancy-name {
-    width: 50%;
     margin: auto;
     font-size: 16px;
     font-weight: 500;
-    padding: 15px 30px;
     color: #fff;
     border-radius: 6px;
-    margin-bottom: 10px;
 }
 
-.vacancy-name input,
-.vacancy-name label {
+.vacancy-name input {
     text-align: center;
+    padding: 17.5px !important;
+    border-radius: 6px !important;
 }
 
 /*form styles*/
@@ -29,6 +27,10 @@
     box-sizing: border-box;
     width: 100%;
     text-align: left;
+}
+
+#vacancy-form fieldset h5 {
+    margin-bottom: 1rem;
 }
 
 /*Hide all except first fieldset*/
@@ -95,15 +97,16 @@
     display: none !important;
 }
 
+
+
 .intro-video-play a {
     width: 50%;
-    margin-top: 20px;
+    margin-bottom: 20px;
     font-size: 16px;
     font-weight: 500;
     padding: 15px 30px;
     color: #fff;
     border-radius: 6px;
-    margin-bottom: 20px;
     border: 1px solid #4567f4;
     color: #4567f4;
     background: white;
@@ -113,6 +116,10 @@
     background: linear-gradient(45deg, #4567f4, #3CD3AD);
     border: 1px solid #fff;
     color: white;
+}
+
+.intro-video-play.first a {
+    width: 100%;
 }
 
 select.importance {
@@ -309,4 +316,23 @@ select.importance {
     cursor: pointer;
     margin-top: 3rem;
 
+}
+
+#other {
+    display: none;
+}
+
+.send-to-mail {
+    display: flex;
+    margin-top: 1rem;
+}
+
+.send-to-mail input {
+    width: 15px !important;
+    margin-right: 0.5rem;
+    margin-top: 3px;
+}
+
+.send-to-mail label {
+    color: #4567f4
 }

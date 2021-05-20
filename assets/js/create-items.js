@@ -33,9 +33,12 @@ if (addCertificate) {
 }
 
 // Create inputs
-function createOtherInput() {
-  const option = document.querySelector("option");
-  if (option.value == "other") {
-    console.log("salam");
+const otherInput = document.querySelector("#other");
+
+function createOtherInput(that) {
+  if (that.value == "other") {
+    otherInput.style.display = "block";
+  } else {
+    otherInput.style.display = "none";
   }
 }

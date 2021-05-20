@@ -100,14 +100,14 @@
                             </div>
                         </div>
                         <ul>
-                            <li><a class="active" href="company-profile.html"><i
-                                        class="fal fa-building"></i><span>Haqqımızda</span></a></li>
-                            <li><a href="created-vacancies.html"><i class="fal fa-id-card"></i><span>Bütün
-                                        vakansiyalar</span></a></li>
-                            <li><a href="create-vacancy.html"><i class="fal fa-file-plus"></i><span>Vakansiya
-                                        yarat</span></a>
+                            <!-- <li><a class="active" href="user-profile.html"><i
+                                        class="fal fa-user"></i><span>Profil</span></a></li> -->
+                            <li><a href=""><i class="fal fa-id-card"></i><span>CV-im</span></a></li>
+                            <li><a href="create-cv.html"><i class="fal fa-file-plus"></i><span>CV yarat</span></a>
                             </li>
-                            <li><a href="company-statistics.html"><i class="fal fa-chart-pie"></i><span>Ümumi
+                            <li><a href="applied-vacancies.html"><i
+                                        class="fal fa-file-check"></i><span>Müraciətlərim</span></a></li>
+                            <li><a href="applicant-statistics.html"><i class="fal fa-chart-pie"></i><span>Ümumi
                                         statistika</span></a>
                             </li>
                             <li><a href="change-password.html"><i class="fal fa-key"></i><span>Şifrəni dəyiş</span></a>
@@ -129,161 +129,67 @@
                         </ul>
                         <!-- Personal informations -->
                         <fieldset data-field="personal">
-                            <div class="row mb-10">
-                                <div class="col-lg-6">
-                                    <div class="vacancy-name">
-                                        <!-- <label for="vacancy-name">Vakansiyanın adı</label> -->
-                                        <input type="text" placeholder="Vakansiyanın adını daxil edin">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="intro-video-play first">
-                                        <div class="justify-content-center">
-                                            <div class="play-thumb wow zoomIn" data-wow-delay=".2s">
-                                                <a href="https://www.youtube.com/watch?v=r44RKWyfcFw&fbclid=IwAR21beSJORalzmzokxDRcGfkZA1AtRTE__l5N4r09HcGS5Y6vOluyouM9EM"
-                                                    class="glightbox video"><i class="lni lni-play"></i> Video
-                                                    təlimatı
-                                                    izlə</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
                             <h5>Şəxsi məlumatlar</h5>
                             <div class="row">
                                 <div class="col-lg-4">
-                                    <label for=""></label>
-                                    <select data-select="age" class="importance" name="birthdate" id="birthdate">
-                                        <option value="choose">Önəmlilik dərəcəsini təyin et</option>
-                                        <option value="not-important">Önəm daşımır</option>
-                                        <option value="less-important">Az önəm daşıyır</option>
-                                        <option value="important">Önəmlidir</option>
-                                        <option value="more-important">Mütləqdir</option>
-                                    </select>
+                                    <label for="name">Ad</label>
+                                    <input name="name" type="text" placeholder="Adınız">
                                 </div>
                                 <div class="col-lg-4">
-                                    <label for="birthdate"> Minimum yaş</label>
-                                    <input data-s="age" disabled type="number" placeholder="Min.">
+                                    <label for="surname">Soyad</label>
+                                    <input name="surname" type="text" placeholder="Soyadınız">
                                 </div>
                                 <div class="col-lg-4">
-                                    <label for="birthdate">Maksimum yaş</label>
-                                    <input data-s="age" disabled type="number" placeholder="Maks.">
-                                </div>
-                                <hr>
-                                <div class="col-lg-4">
-                                    <label for=""></label>
-                                    <select data-select="citizenship" class="importance" name="citizenship"
-                                        id="citizenship">
-                                        <option value="choose">Önəmlilik dərəcəsini təyin et</option>
-                                        <option value="not-important">Önəm daşımır</option>
-                                        <option value="less-important">Az önəm daşıyır</option>
-                                        <option value="important">Önəmlidir</option>
-                                        <option value="more-important">Mütləqdir</option>
-                                    </select>
+                                    <label for="middlename">Ata adı</label>
+                                    <input name="middlename" type="text" placeholder="Ata adı">
                                 </div>
                                 <div class="col-lg-4">
-                                    <label for="birthdate">Vətəndaşlıq</label>
-                                    <select data-s="citizenship" disabled name="citizenship" id="citizenship">
+                                    <label for="birthdate">Doğum tarixi</label>
+                                    <input type="date">
+                                </div>
+                                <div class="col-lg-4">
+                                    <label for="citizenship">Vətəndaşlıq</label>
+                                    <select data-s="citizenship" name="citizenship" id="citizenship">
                                         <option value="choose">Azərbaycanlı</option>
                                         <option value="not-important">Əcnəbi</option>
                                     </select>
                                 </div>
-                                <hr>
+
                                 <div class="col-lg-4">
-                                    <label for=""></label>
-                                    <select data-select="city" class="importance" name="gender" id="gender">
-                                        <option value="choose">Önəmlilik dərəcəsini təyin et</option>
-                                        <option value="not-important">Önəm daşımır</option>
-                                        <option value="less-important">Az önəm daşıyır</option>
-                                        <option value="important">Önəmlidir</option>
-                                        <option value="more-important">Mütləqdir</option>
-                                    </select>
-                                </div>
-                                <div class="col-lg-4">
-                                    <label for="city">Yaşadığı şəhər</label>
-                                    <select data-s="city" disabled name="city" id="city">
+                                    <label for="city">Yaşadığınız şəhər</label>
+                                    <select data-s="city" name="city" id="city">
                                         <option value="choose">Bakı</option>
                                         <option value="not-important">Gəncə</option>
                                         <option value="less-important">Sumqayıt</option>
                                     </select>
                                 </div>
-                                <hr>
-                                <div class="col-lg-4">
-                                    <label for=""></label>
-                                    <select data-select="gender" class="importance" name="address" id="address">
-                                        <option>Önəmlilik dərəcəsini təyin et</option>
-                                        <option value="not-important">Önəm daşımır</option>
-                                        <option value="less-important">Az önəm daşıyır</option>
-                                        <option value="important">Önəmlidir</option>
-                                        <option value="more-important">Mütləqdir</option>
-                                    </select>
-                                </div>
                                 <div class="col-lg-4">
                                     <label for="gender">Cins</label>
-                                    <select data-s="gender" disabled name="gender" id="gender">
+                                    <select data-s="gender" name="gender" id="gender">
                                         <option value="choose">Seç</option>
                                         <option value="male">Kişi</option>
                                         <option value="female">Qadın</option>
                                     </select>
                                 </div>
-
-                                <hr>
-
-                                <div class="col-lg-4">
-                                    <label for=""></label>
-                                    <select data-select="marital" class="importance" name="marital" id="marital">
-                                        <option value="choose">Önəmlilik dərəcəsini təyin et</option>
-                                        <option value="not-important">Önəm daşımır</option>
-                                        <option value="less-important">Az önəm daşıyır</option>
-                                        <option value="important">Önəmlidir</option>
-                                        <option value="more-important">Mütləqdir</option>
-                                    </select>
-                                </div>
                                 <div class="col-lg-4">
                                     <label for="marital">Ailə vəziyyəti</label>
-                                    <select data-s="marital" disabled name="marital" id="marital">
+                                    <select data-s="marital" name="marital" id="marital">
                                         <option value="choose">Seç</option>
                                         <option value="male">Evli</option>
                                         <option value="female">Subay</option>
                                     </select>
                                 </div>
-                                <hr>
-                                <div class="col-lg-4">
-                                    <label for=""></label>
-                                    <select data-select="military" class="importance" name="military" id="military">
-                                        <option value="choose">Önəmlilik dərəcəsini təyin et</option>
-                                        <option value="not-important">Önəm daşımır</option>
-                                        <option value="less-important">Az önəm daşıyır</option>
-                                        <option value="important">Önəmlidir</option>
-                                        <option value="more-important">Mütləqdir</option>
-                                    </select>
-                                </div>
                                 <div class="col-lg-4">
                                     <label for="military">Hərbi mükəlləfiyyət</label>
-                                    <select data-s="military" disabled name="military" id="military">
+                                    <select data-s="military" name="military" id="military">
                                         <option value="choose">Seç</option>
                                         <option value="not-important">Var</option>
                                         <option value="less-important">Yoxdur</option>
                                     </select>
                                 </div>
-                                <hr>
-                                <div class="col-lg-4">
-                                    <label for=""></label>
-                                    <select data-select="driving-lisence" class="importance" name="driving-lisence"
-                                        id="driving-lisence">
-                                        <option value="choose">Önəmlilik dərəcəsini təyin et</option>
-                                        <option value="not-important">Önəm daşımır</option>
-                                        <option value="less-important">Az önəm daşıyır</option>
-                                        <option value="important">Önəmlidir</option>
-                                        <option value="more-important">Mütləqdir</option>
-                                    </select>
-                                </div>
                                 <div class="col-lg-4">
                                     <label for="driving-lisence">Sürücülük vəsiqəsi</label>
-                                    <select data-s="driving-lisence" disabled name="driving-lisence"
-                                        id="driving-lisence">
+                                    <select data-s="driving-lisence" name="driving-lisence" id="driving-lisence">
                                         <option value="choose">Seç</option>
                                         <option value="not-important">Var</option>
                                         <option value="less-important">Yoxdur</option>
@@ -291,8 +197,7 @@
                                 </div>
                                 <div class="col-lg-4">
                                     <label for="driving-lisence">Sürücülük vəsiqəsinin kateqoriyası</label>
-                                    <select disabled data-s="driving-lisence" name=" lisence-category"
-                                        id="lisence-category">
+                                    <select name="lisence-category" id="lisence-category">
                                         <option value="choose">Seç</option>
                                         <option value="not-important">A</option>
                                         <option value="less-important">B</option>
@@ -301,8 +206,6 @@
                                     </select>
                                 </div>
                             </div>
-                            <input data-field="education" type="button" name="next" class="next action-button"
-                                value="Sonrakı" />
                         </fieldset>
                         <!-- Education informations -->
                         <fieldset data-field="education">
@@ -320,18 +223,8 @@
                             </div>
                             <div class="row">
                                 <div class="col-lg-4">
-                                    <label for=""></label>
-                                    <select data-select="degree" class="importance" name="degree" id="degree">
-                                        <option>Önəmlilik dərəcəsini təyin et</option>
-                                        <option value="not-important">Önəm daşımır</option>
-                                        <option value="less-important">Az önəm daşıyır</option>
-                                        <option value="important">Önəmlidir</option>
-                                        <option value="more-important">Mütləqdir</option>
-                                    </select>
-                                </div>
-                                <div class="col-lg-4">
                                     <label for="degree">Təhsil dərəcəsi</label>
-                                    <select data-s="degree" disabled name="degree" id="degree">
+                                    <select data-s="degree" name="degree" id="degree">
                                         <option>Seç</option>
                                         <option value="">İbtidai</option>
                                         <option value="">Orta</option>
@@ -341,43 +234,43 @@
                                         <option value="phd">Doktorantura</option>
                                     </select>
                                 </div>
-                                <hr>
-                                <div class="col-lg-4">
-                                    <label for=""></label>
-                                    <select data-select="score" class="importance" name="score" id="score">
-                                        <option>Önəmlilik dərəcəsini təyin et</option>
-                                        <option value="not-important">Önəm daşımır</option>
-                                        <option value="less-important">Az önəm daşıyır</option>
-                                        <option value="important">Önəmlidir</option>
-                                        <option value="more-important">Mütləqdir</option>
-                                    </select>
-                                </div>
+
                                 <div class="col-lg-4">
                                     <label for="score">Qəbul balı</label>
-                                    <select data-s="score" disabled name="score" id="score">
+                                    <input type="number" id="score" placeholder="Qəbul balınız">
+                                </div>
+                                <div class="col-lg-4">
+                                    <label for="degree">Təhsil müəssisəsi</label>
+                                    <select data-s="degree" name="degree" id="degree">
                                         <option>Seç</option>
-                                        <option value="200">200+</option>
-                                        <option value="250">250+</option>
-                                        <option value="300">300+</option>
-                                        <option value="350">350+</option>
-                                        <option value="400">400+</option>
-                                        <option value="450">450+</option>
-                                        <option value="500">500+</option>
-                                        <option value="550">550+</option>
-                                        <option value="600">600+</option>
-                                        <option value="650">650+</option>
-
+                                        <option value="">BMU</option>
+                                        <option value="">BDU</option>
+                                        <option value="">ADNSU</option>
+                                        <option value="bachelor">ADA</option>
+                                        <option value="master">BANM</option>
+                                        <option value="phd">ADU</option>
                                     </select>
                                 </div>
-                                <div class="col-lg-6">
-                                    <input data-field="personal" type="button" name="previous"
-                                        class="previous action-button" value="Əvvəlki" />
+                                <div class="col-lg-4">
+                                    <label for="degree">İxtisas istiqaməti</label>
+                                    <select data-s="degree" name="degree" id="degree">
+                                        <option>Seç</option>
+                                        <option value="">İncəsənət</option>
+                                        <option value="">İqtisadiyyat</option>
+                                        <option value="">Komputer elmləri</option>
+                                        <option value="bachelor">Jurnalistika</option>
+                                    </select>
                                 </div>
-                                <div class="col-lg-6">
-                                    <input data-field="work" type="button" name="next" class="next action-button"
-                                        value="Sonrakı" />
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <input data-field="personal" type="button" name="previous"
+                                            class="previous action-button" value="Əvvəlki" />
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <input data-field="work" type="button" name="next" class="next action-button"
+                                            value="Sonrakı" />
+                                    </div>
                                 </div>
-
                         </fieldset>
                         <!-- Work informations -->
                         <fieldset data-field="work">
@@ -395,87 +288,44 @@
                             </div>
                             <div class="row">
                                 <div class="col-lg-4">
-                                    <label for=""></label>
-                                    <select data-select="field" class="importance" name="field" id="field">
-                                        <option>Önəmlilik dərəcəsini təyin et</option>
-                                        <option value="not-important">Önəm daşımır</option>
-                                        <option value="less-important">Az önəm daşıyır</option>
-                                        <option value="important">Önəmlidir</option>
-                                        <option value="more-important">Mütləqdir</option>
-                                    </select>
-                                </div>
-                                <div class="col-lg-4">
                                     <label for="field">Sektor</label>
-                                    <select data-s="field" disabled name="field" id="field">
+                                    <select data-s="field" name="field" id="field">
                                         <option>IT</option>
                                         <option value="">Finance</option>
                                         <option value="">Art</option>
                                     </select>
                                 </div>
                                 <div class="col-lg-4">
-                                    <label for="start-work"> Minimum iş stajı</label>
-                                    <input data-s="field" disabled type="number" placeholder="Müddət">
-                                </div>
-                                <hr>
-                                <div class="col-lg-4">
-                                    <label for=""></label>
-                                    <select data-select="function" class="importance" name="function" id="function">
-                                        <option>Önəmlilik dərəcəsini təyin et</option>
-                                        <option value="not-important">Önəm daşımır</option>
-                                        <option value="less-important">Az önəm daşıyır</option>
-                                        <option value="important">Önəmlidir</option>
-                                        <option value="more-important">Mütləqdir</option>
-                                    </select>
+                                    <label for="start-work">İşləmə müddəti</label>
+                                    <input data-s="field" type="number" placeholder="Müddət">
                                 </div>
                                 <div class="col-lg-4">
                                     <label for="function">Funksiya</label>
-                                    <select data-s="function" disabled name="function" id="function">
+                                    <select data-s="function" name="function" id="function">
                                         <option>IT</option>
                                         <option value="">Finance</option>
                                         <option value="">Art</option>
                                     </select>
                                 </div>
                                 <div class="col-lg-4">
-                                    <label for="start-work"> Minimum iş stajı</label>
-                                    <input data-s="function" disabled type="number" placeholder="Müddət">
-                                </div>
-                                <hr>
-                                <div class="col-lg-4">
-                                    <label for=""></label>
-                                    <select data-select="category" class="importance" name="category" id="category">
-                                        <option>Önəmlilik dərəcəsini təyin et</option>
-                                        <option value="not-important">Önəm daşımır</option>
-                                        <option value="less-important">Az önəm daşıyır</option>
-                                        <option value="important">Önəmlidir</option>
-                                        <option value="more-important">Mütləqdir</option>
-                                    </select>
+                                    <label for="start-work">İşləmə müddəti</label>
+                                    <input data-s="function" type="number" placeholder="Müddət">
                                 </div>
                                 <div class="col-lg-4">
-                                    <label for="category">Vəzifə kateqoriyası </label>
-                                    <select data-s="category" disabled name="category" id="category">
+                                    <label for="category">Kateqoriya</label>
+                                    <select data-s="category" name="category" id="category">
                                         <option>IT</option>
                                         <option value="">Finance</option>
                                         <option value="">Art</option>
                                     </select>
                                 </div>
                                 <div class="col-lg-4">
-                                    <label for="start-work"> Minimum iş stajı</label>
-                                    <input data-s="category" disabled type="number" placeholder="Müddət">
-                                </div>
-                                <hr>
-                                <div class="col-lg-4">
-                                    <label for=""></label>
-                                    <select data-select="worktime" class="importance" name="worktime" id="worktime">
-                                        <option>Önəmlilik dərəcəsini təyin et</option>
-                                        <option value="not-important">Önəm daşımır</option>
-                                        <option value="less-important">Az önəm daşıyır</option>
-                                        <option value="important">Önəmlidir</option>
-                                        <option value="more-important">Mütləqdir</option>
-                                    </select>
+                                    <label for="start-work">İşləmə müddəti</label>
+                                    <input data-s="category" type="number" placeholder="Müddət">
                                 </div>
                                 <div class="col-lg-4">
-                                    <label for="start-work"> Minimum iş stajı</label>
-                                    <input data-s="worktime" disabled type="number" placeholder="Müddət">
+                                    <label for="start-work">İşləmə müddəti</label>
+                                    <input data-s="worktime" type="number" placeholder="Müddət">
                                 </div>
 
                                 <div class="col-lg-6">
@@ -505,20 +355,9 @@
                                 <div class="dynamic-language">
                                     <div class="row">
                                         <div class="col-lg-4">
-                                            <label for=""></label>
-                                            <select data-select="language" class="importance" name="language"
-                                                id="language">
-                                                <option>Önəmlilik dərəcəsini təyin et</option>
-                                                <option value="not-important">Önəm daşımır</option>
-                                                <option value="less-important">Az önəm daşıyır</option>
-                                                <option value="important">Önəmlidir</option>
-                                                <option value="more-important">Mütləqdir</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-lg-4">
                                             <label for="language">Dil</label>
-                                            <select data-s="language" disabled onchange="createOtherInput(this)"
-                                                name="language" id="language" class="other-input">
+                                            <select data-s="language" onchange="createOtherInput()" name="language"
+                                                id="language" class="other-input">
                                                 <option>Seç</option>
                                                 <option value="english">Azərbaycan dili</option>
                                                 <option value="turkish">Türk dili</option>
@@ -527,20 +366,15 @@
                                                 <option value="other">Digər</option>
                                             </select>
                                         </div>
+
                                         <div class="col-lg-4">
                                             <label for="level">Səviyyə</label>
-                                            <select data-s="language" disabled name="level" id="level">
+                                            <select data-s="language" name="level" id="level">
                                                 <option>Seç</option>
                                                 <option value="beginner">Başlanğıc</option>
                                                 <option value="medium">Orta</option>
                                                 <option value="advance">Yüksək</option>
                                             </select>
-                                        </div>
-                                        <div id="other">
-                                            <div class="col-lg-4">
-                                                <label for="language">Dil</label>
-                                                <input type="text" placeholder="Dili daxil edin">
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -577,20 +411,9 @@
                                 <div class="dynamic-computer">
                                     <div class="row">
                                         <div class="col-lg-4">
-                                            <label for=""></label>
-                                            <select data-select="computer" class="importance" name="computer"
-                                                id="computer">
-                                                <option>Önəmlilik dərəcəsini təyin et</option>
-                                                <option value="not-important">Önəm daşımır</option>
-                                                <option value="less-important">Az önəm daşıyır</option>
-                                                <option value="important">Önəmlidir</option>
-                                                <option value="more-important">Mütləqdir</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-lg-4">
                                             <label for="computer">Kompyuter bilikləri</label>
-                                            <select data-s="computer" onchange="createOtherInput(this)" disabled
-                                                name="computer" id="computer" class="other-input">
+                                            <select data-s="computer" onchange="createOtherInput()" name="computer"
+                                                id="computer" class="other-input">
                                                 <option>Seç</option>
                                                 <option value="">MS Office</option>
                                                 <option value="other">Digər</option>
@@ -598,20 +421,12 @@
                                         </div>
                                         <div class="col-lg-4">
                                             <label for="level">Səviyyə</label>
-                                            <select data-s="computer" disabled name="level" id="level">
+                                            <select data-s="computer" name="level" id="level">
                                                 <option>Seç</option>
                                                 <option value="beginner">Başlanğıc</option>
                                                 <option value="medium">Orta</option>
                                                 <option value="advance">Yüksək</option>
                                             </select>
-                                        </div>
-                                        <div id="other">
-                                            <div class="row">
-                                                <div class="col-lg-4">
-                                                    <label for="computer">Komputer biliyi</label>
-                                                    <input type="text" placeholder="Komputer biliyini daxil edin">
-                                                </div>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -648,19 +463,8 @@
                                 <div class="dynamic-certificate">
                                     <div class="row">
                                         <div class="col-lg-4">
-                                            <label for=""></label>
-                                            <select data-select="certificates" class="importance" name="certificates"
-                                                id="Certificates">
-                                                <option>Önəmlilik dərəcəsini təyin et</option>
-                                                <option value="not-important">Önəm daşımır</option>
-                                                <option value="less-important">Az önəm daşıyır</option>
-                                                <option value="important">Önəmlidir</option>
-                                                <option value="more-important">Mütləqdir</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-lg-4">
                                             <label for="Certificates">Sertifikat</label>
-                                            <select data-s="certificates" onchange="createOtherInput(this)" disabled
+                                            <select data-s="certificates" onchange="createOtherInput()"
                                                 name="certificates" id="certificates" class="other-input">
                                                 <option>Seç</option>
                                                 <option value="">ACCA</option>
@@ -668,17 +472,11 @@
                                             </select>
                                         </div>
                                         <div class="col-lg-4">
-                                            <label for="certificates">Sertifikat səviyyəsi</label>
-                                            <select data-s="certificates" disabled name="certificate-level"
+                                            <label for="Certificates">Sertifikat səviyyəsi</label>
+                                            <select data-s="certificates" name="certificate-level"
                                                 id="certificate-level">
                                                 <option>Seç</option>
                                             </select>
-                                        </div>
-                                        <div id="other">
-                                            <div class="col-lg-4">
-                                                <label for="certificates">Sertifikat</label>
-                                                <input type="text" placeholder="Sertifikatı daxil edin">
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -686,7 +484,6 @@
                             <div class="add-certificate">
                                 + Əlavə et
                             </div>
-                            <hr>
                             <div class="row">
                                 <div class="col-lg-4">
                                     <label for="salary">Minimum əmək haqqı tələbi</label>
@@ -696,29 +493,27 @@
                                     <label for="salary">Maksimum əmək haqqı tələbi</label>
                                     <input data-s="certificates" type="number" placeholder="Maks.">
                                 </div>
-                                <div class="col-lg-4">
-                                    <label for="salary">Vakansiyanın bitmə tarixi</label>
-                                    <input data-s="certificates" type="date">
-                                </div>
-                            </div>
-                            <div class="send-to-mail">
-                                <input type="checkbox" id="sendToMail" name="sendToMail" />
-                                <label for="sendToMail">
-                                    Uyğun CV-ləri emailə göndər</label>
                             </div>
                             <div class="row">
-                                <div class="col-lg-4">
+                                <div class="col-lg-6">
                                     <input data-field="computer" type="button" name="previous"
                                         class="previous action-button" value="Əvvəlki" />
                                 </div>
-                                <div class="col-lg-4">
+                                <div class="col-lg-6">
                                     <input type="button" name="save" class="save-vacancy" data-bs-toggle="modal"
                                         data-bs-target="#saveVacancy" value="Yadda saxla" />
                                 </div>
-                                <div class="col-lg-4">
+                            </div>
+                            <div class=" row">
+                                <div class="col-lg-6">
+                                    <input class="save-vacancy" data-bs-toggle="modal" data-bs-target="#sendToMail"
+                                        type="button" name="send-to-mail" value="Uyğun CV-ləri emailə göndər" />
+                                </div>
+                                <div class="col-lg-6">
                                     <input class="save-vacancy" data-bs-toggle="modal" data-bs-target="#shareVacancy"
                                         type="button" name="share" value="Vakansiyanı paylaş" />
                                 </div>
+
                             </div>
                         </fieldset>
                     </form>
@@ -738,7 +533,7 @@
                                 <div class="row">
                                     <div class="col-lg-10">
                                         <label for="share">Linki kopyala</label>
-                                        <input type="text" disabled value="www.scanner.az/vacancy-11">
+                                        <input type="text" value="www.scanner.az/vacancy-11">
                                     </div>
                                     <div class="col-lg-2">
                                         <i class=" fal fa-copy"></i>
@@ -766,6 +561,33 @@
                                 <hr>
                                 <div class="link">
                                     <a href="/created-vacancies.html">Vakansiyalar səhifəsinə get</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="sendToMail" tabindex="-1" aria-labelledby="sendToMailLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="sendToMailLabel">Uyğun CV-ləri emailə göndər
+                                </h4>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="save-icon">
+                                    <i class="fal fa-envelope"></i>
+                                    <div class="switch-field">
+                                        <input type="radio" id="radio-one" name="switch-one" value="yes" checked />
+                                        <label for="radio-one">Bəli</label>
+                                        <input type="radio" id="radio-two" name="switch-one" value="no" />
+                                        <label for="radio-two">Xeyr</label>
+                                    </div>
+                                </div>
+                                <div class="submit">
+                                    <button>Təsdiqlə</button>
                                 </div>
                             </div>
                         </div>
@@ -875,14 +697,14 @@
 
         $(".importance").on("change", function () {
             var select = $(this).data("select");
-            $(this).val() == "choose"
-                ? $(`[data-s=${select}]`).prop("disabled", true)
-                : $(`[data-s=${select}]`).prop("disabled", false);
-            $(this).val() == "not-important"
-                ? $(`[data-s=${select}]`).prop("disabled", true)
-                : $(`[data-s=${select}]`).prop("disabled", false);
-        });
 
+            $(this).val() == "choose"
+                ? $(`[data-s=${select}]`).prop(" ", true)
+                : $(`[data-s=${select}]`).prop(" ", false);
+            $(this).val() == "not-important"
+                ? $(`[data-s=${select}]`).prop(" ", true)
+                : $(`[data-s=${select}]`).prop(" ", false);
+        });
     </script>
 </body>
 
