@@ -23,7 +23,7 @@
                 </div>
                 <div class="col-lg-4">
                     <label for="certificates">Sertifikat səviyyəsi</label>
-                    <select data-s="certificates" disabled name="certificate-level[]" id="certificate-level">
+                    <select data-s="certificates" disabled name="certificate-levels[]" id="certificate-level">
                         <option>Seç</option>
                     </select>
                 </div>
@@ -69,7 +69,7 @@
             <input data-field="computer" type="button" name="previous" class="previous action-button" value="Əvvəlki" />
         </div>
         <div class="col-lg-4">
-            <input type="button" name="save" class="save-vacancy" data-bs-toggle="modal" data-bs-target="#saveVacancy" value="Yadda saxla" />
+            <input type="submit" class="save-vacancy" data-bs-toggle="modal" value="Yadda saxla" />
         </div>
         <div class="col-lg-4">
             <input class="save-vacancy" data-bs-toggle="modal" data-bs-target="#shareVacancy" type="button" name="share" value="Vakansiyanı paylaş" />

@@ -7,6 +7,7 @@
             @include('front.company.sidebar')
             <div class="col-xl-9 col-lg-9 m-b30">
                 <form id="vacancy-form" method="post" action="{{ route('vacancies.store') }}">
+                    @csrf
                     <!-- progressbar -->
                     <ul id="progressbar">
                         <li data-fieldset="personal" class="active">Şəxsi məlumatlar</li>
