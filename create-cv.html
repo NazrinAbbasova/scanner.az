@@ -101,7 +101,7 @@
                         <ul>
                             <!-- <li><a class="active" href="user-profile.html"><i
                                         class="fal fa-user"></i><span>Profil</span></a></li> -->
-                            <li><a href=""><i class="fal fa-id-card"></i><span>CV-im</span></a></li>
+                            <li><a href="cv.html"><i class="fal fa-id-card"></i><span>CV-im</span></a></li>
                             <li><a href="create-cv.html"><i class="fal fa-file-plus"></i><span>CV yarat</span></a>
                             </li>
                             <li><a href="applied-vacancies.html"><i
@@ -474,8 +474,9 @@
                                         class="previous action-button" value="Əvvəlki" />
                                 </div>
                                 <div class="col-lg-6">
-                                    <input type="button" name="save" class="save-vacancy" data-bs-toggle="modal"
-                                        data-bs-target="#saveVacancy" value="Yadda saxla" />
+                                    <a class="save-cv" href="cv.html">
+                                        <input type="button" name="save" class="save-vacancy" value="Yadda saxla" />
+                                    </a>
                                 </div>
                             </div>
                         </fieldset>
@@ -501,56 +502,6 @@
                                     <div class="col-lg-2">
                                         <i class=" fal fa-copy"></i>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal fade" id="saveVacancy" tabindex="-1" aria-labelledby="saveVacancyLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="modal-title" id="saveVacancyLabel">Vakansiyanı yadda saxla
-                                </h4>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="save-icon">
-                                    <i class="fal fa-check"></i>
-                                    <p>Vakansiya yadda saxlanıldı</p>
-                                </div>
-                                <hr>
-                                <div class="link">
-                                    <a href="/created-vacancies.html">Vakansiyalar səhifəsinə get</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal fade" id="sendToMail" tabindex="-1" aria-labelledby="sendToMailLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="modal-title" id="sendToMailLabel">Uyğun CV-ləri emailə göndər
-                                </h4>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="save-icon">
-                                    <i class="fal fa-envelope"></i>
-                                    <div class="switch-field">
-                                        <input type="radio" id="radio-one" name="switch-one" value="yes" checked />
-                                        <label for="radio-one">Bəli</label>
-                                        <input type="radio" id="radio-two" name="switch-one" value="no" />
-                                        <label for="radio-two">Xeyr</label>
-                                    </div>
-                                </div>
-                                <div class="submit">
-                                    <button>Təsdiqlə</button>
                                 </div>
                             </div>
                         </div>

@@ -217,6 +217,10 @@ select.importance {
     transition: 0.3s;
 }
 
+.save-cv {
+    width: 100%;
+}
+
 /* .modal-body {
     display: flex;
 } */

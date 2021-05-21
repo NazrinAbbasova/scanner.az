@@ -107,6 +107,43 @@ Author: GrayGrids
   }
   changeColor();
 
+  // Change CV color
+  const blue = document.querySelector(".colors.blue");
+  const purple = document.querySelector(".colors.purple");
+  const yellow = document.querySelector(".colors.yellow");
+  const green = document.querySelector(".colors.green");
+  const cvHead = document.querySelector(".cv-head");
+  const line = document.querySelector(".line");
+  const listHeadIcon = document.querySelector(".list-head i ");
+  const level = document.querySelector(".full");
+
+  // const cvHead = document.querySelector(".cv-head");
+  if (blue && purple && green && yellow) {
+    blue.addEventListener("click", function () {
+      cvHead.classList.add("blue");
+      line.classList.add("blue");
+      listHeadIcon.classList.add("blue");
+      level.classList.add("blue");
+    });
+    purple.addEventListener("click", function () {
+      cvHead.classList.add("purple");
+      line.classList.add("purple");
+      listHeadIcon.classList.add("purple");
+      level.classList.add("purple");
+    });
+    yellow.addEventListener("click", function () {
+      cvHead.classList.add("yellow");
+      line.classList.add("yellow");
+      listHeadIcon.classList.add("yellow");
+      level.classList.add("yellow");
+    });
+    green.addEventListener("click", function () {
+      cvHead.classList.add("green");
+      line.classList.add("green");
+      listHeadIcon.classList.add("green");
+      level.classList.add("green");
+    });
+  }
 
   /*=====================================
     Sticky
