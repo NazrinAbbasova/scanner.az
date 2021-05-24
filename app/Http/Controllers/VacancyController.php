@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\VacancyRequest;
 use App\Models\Certificate;
 use App\Models\ComputerSkill;
 use App\Models\Field;
@@ -60,10 +61,10 @@ class VacancyController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(VacancyRequest $request)
     {
         return $request->all();
-        
+
         $v = new Vacancy;
         $v->company_id                         = 1;
         $v->age_importance                     = $request->age_importance;
@@ -96,7 +97,6 @@ class VacancyController extends Controller
         $v->field                              = $request->field;
         $v->field_employment_duration          = $request->field_employment_duration;
         
-
         $v->function_importance                = $request->function_importance;
         $v->function                           = $request->function;
         $v->function_employment_duration       = $request->function_employment_duration;

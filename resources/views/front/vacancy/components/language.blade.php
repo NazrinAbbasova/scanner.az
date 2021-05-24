@@ -13,11 +13,12 @@
                 </div>
                 <div class="col-lg-4">
                     <label for="language">Dil</label>
-                    <select data-s="language" disabled onchange="createOtherInput(this)" name="languages[]" id="language" class="other-input">
+                    <select data-s="language" disabled  name="languages[]" id="language" class="other-input">
                         <option>Seç</option>
                         @foreach ($languages as $language)
                             <option value="{{ $language->id }}">{{ $language->name }}</option>
                         @endforeach
+                        <option value="Digər">Digər</option>
                     </select>
                 </div>
                 <div class="col-lg-4">
@@ -26,7 +27,7 @@
                         @include('front.vacancy.components.level')
                     </select>
                 </div>
-                <div class="other" data-s="language">
+                <div class="other" data-other="language" data-s="language">
                     <div class="row">
                         <div class="col-lg-4">
                             <label for="language">Dil</label>
