@@ -1,4 +1,4 @@
-.cv-actions {
+.cv-colors {
     margin-bottom: 2rem;
     display: flex;
 }
@@ -29,6 +29,17 @@
 
 .green {
     background: linear-gradient(45deg, #4567f4, #3CD3AD) !important;
+}
+
+.cv-actions {
+    font-size: 40px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cv-actions a {
+    margin-left: 1.5rem;
+    ;
 }
 
 .cv-head {
@@ -72,12 +83,13 @@
     background-color: #F3F3F3;
     color: #000;
     padding: 2rem;
+    height: 90%;
 }
 
 .list-head {
     display: flex;
     text-align: center;
-    margin-top: 2rem;
+    margin-top: 3rem;
 }
 
 .list-head i {
@@ -138,7 +150,59 @@
     margin-right: 5rem;
 }
 
+.cv-body>ul {
+    position: relative;
+}
+
+.cv-body>ul::after {
+    width: 2px;
+    height: 100%;
+    background: #4567f4;
+    position: absolute;
+    top: -17px;
+    left: 23px;
+    content: ""
+}
+
+.job {
+    position: relative;
+}
+
+.job h6::before {
+    content: "";
+    width: 1rem;
+    height: 1rem;
+    background: #4567f4;
+    border-radius: 50%;
+    font-weight: bold;
+    position: absolute;
+    left: -2.5rem;
+}
+
+.job h6 {
+    width: 7rem;
+}
+
+.about h6 {
+    margin-bottom: 10px;
+}
+
+.job-description {
+    width: 10.5rem;
+}
+
+.job-description a {
+    text-decoration: underline;
+}
+
 .cv-body .about .job p,
-.cv-body .about .job-description p {
+.cv-body .about .job-description li {
     margin-top: 10px;
+    list-style-type: disc;
+}
+
+.score {
+    margin-left: 3rem;
+    color: black;
+    font-weight: 500;
 }

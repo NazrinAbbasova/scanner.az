@@ -9,6 +9,10 @@ if (addEducation) {
     dynamicFieldsEducation.appendChild(cln);
   });
 }
+$(".remove-language").click(function () {
+  console.log("clicked")
+  $(this).closest(".dynamic-language").remove();
+});
 //
 const dynamicFieldsWork = document.querySelector(".dynamic-fields-work");
 const dynamicWork = document.querySelector(".dynamic-work");
@@ -57,8 +61,13 @@ if (addCertificate) {
 }
 
 // Create inputs
-const otherInput = document.querySelector("#other");
 function createOtherInput(that) {
+  const otherData = that.getAttribute("data-select");
+  console.log(otherData, "otherData");
+
+  const otherInput = document.querySelector("[data-other=" + otherData + "]");
+  console.log(otherInput, "otherInput");
+
   if (that.value == "other") {
     otherInput.style.display = "block";
   } else {
@@ -66,23 +75,17 @@ function createOtherInput(that) {
   }
 }
 
-// document.querySelector(".importance").addEventListener("change", function () {
-//   var select = document.querySelector(this).data("select");
-//   document.querySelector(this).value == "choose"
-//     ? document.querySelector(`[data-s=${select}]`).prop("disabled", true)
-//     : document.querySelector(`[data-s=${select}]`).prop("disabled", false);
-//   document.querySelector(this).value == "not-important"
-//     ? document.querySelector(`[data-s=${select}]`).prop("disabled", true)
-//     : document.querySelector(`[data-s=${select}]`).prop("disabled", false);
-// });
-
-// const otherInput = document.querySelectorAll("[data-s]");
-// function createOtherInput(that) {
-//   otherInput.forEach((inputs) => {
-//     if (that.value == "other") {
-//       inputs.style.display = "block";
-//     } else {
-//       inputs.style.display = "none";
-//     }
-//   });
-// }
+$(".other-input").on("change", function () {
+  let select = $(this).data("s");
+  let otherInput = $(`[data-other=${select}]`);
+  if ($(this).val() == "choose") {
+    $(`[data-level=${select}]`).prop("disabled", true);
+    $(otherInput).fadeOut();
+  } else if ($(this).val() == "Digər") {
+    $(otherInput).fadeIn();
+    $(`[data-level=${select}]`).prop("disabled", false);
+  } else {
+    $(`[data-level=${select}]`).prop("disabled", false);
+    $(otherInput).fadeOut();
+  }
+});

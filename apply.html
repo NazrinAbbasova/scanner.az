@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="assets/css/icons.min.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="assets/css/create-vacancy.css" />
+    <link rel="stylesheet" href="assets/css/apply.css" />
+
 
 </head>
 
@@ -94,32 +96,57 @@
                             <form class="text-center" enctype="multipart/form-data" method="post">
                                 <div class="avatar-wrapper">
                                     <label class="logo avatar-placeholder">
-                                        <img class="profile-pic" src="/assets/images/applicant.svg" />
-                                        <input name="logo" id="upload-avatar" class="file-upload d-none" type="file"
-                                            accept="image/*" />
+                                        <img class="profile-pic" src="/assets/images/company.svg" />
                                     </label>
                                 </div>
                                 <button id="save-avatar" type="submit">Yadda saxla</button>
                             </form>
                         </div>
-                        <ul>
-                            <!-- <li><a class="active" href="user-profile.html"><i
-                                        class="fal fa-user"></i><span>Profil</span></a></li> -->
-                            <li><a href="cv.html"><i class="fal fa-id-card"></i><span>CV-im</span></a></li>
-                            <li><a href="create-cv.html"><i class="fal fa-file-plus"></i><span>CV yarat</span></a>
-                            </li>
-                            <li><a href="applied-vacancies.html"><i
-                                        class="fal fa-file-check"></i><span>Müraciətlərim</span></a></li>
-                            <li><a href="applicant-statistics.html"><i class="fal fa-chart-pie"></i><span>Ümumi
-                                        statistika</span></a>
-                            </li>
-                            <li><a href="change-password.html"><i class="fal fa-key"></i><span>Şifrəni dəyiş</span></a>
-                            </li>
-                            <li><a href=""><i class="fal fa-sign-out"></i><span>Çıxış</span></a></li>
-                        </ul>
+                        <div class="company-info">
+                            <div class="list-head">
+                                <i class="fas fa-user"></i>
+                                <h6>Qısa təsvir</h6>
+                            </div>
+                            <div class="line"></div>
+                            <p>Vakansiya barədə Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos magnam
+                                vero, atque quae magni quis inventore dolor.</p>
+
+                        </div>
+                        <div class="company-info">
+                            <div class="list-head">
+                                <i class="fas fa-user"></i>
+                                <h6>Əsas öhdəliklər</h6>
+                            </div>
+                            <div class="line"></div>
+                            <p>Vakansiya barədə Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos magnam
+                                vero, atque quae magni quis inventore dolor.</p>
+                        </div>
+                        <div class="company-info">
+                            <div class="list-head">
+                                <i class="fas fa-user"></i>
+                                <h6>Təminatlar</h6>
+                            </div>
+                            <div class="line"></div>
+                            <p>Vakansiya barədə Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos magnam
+                                vero, atque quae magni quis inventore dolor.</p>
+                        </div>
+
                     </div>
                 </div>
                 <div class="col-xl-9 col-lg-9 m-b30">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="about-company">
+                                <div class="about-head">
+                                    <i class="fas fa-user"></i>
+                                    <h6>Şirkət haqqında</h6>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae eaque eius officiis
+                                    nesciunt corrupti libero quod, amet, animi doloribus et asperiores dolorum est
+                                    delectus
+                            </div>
+                        </div>
+                    </div>
                     <form id="vacancy-form">
                         <!-- progressbar -->
                         <ul class="progressbar">
@@ -506,7 +533,7 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <a class="save-cv" href="cv.html">
-                                        <input type="button" name="save" class="save-vacancy" value="Yadda saxla" />
+                                        <input type="button" name="save" class="save-vacancy" value="Müraciət elə" />
                                     </a>
                                 </div>
                             </div>

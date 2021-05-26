@@ -16,6 +16,7 @@
         rel="stylesheet">
 
     <!-- ========================= CSS here ========================= -->
+
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/css/LineIcons.2.0.css" />
     <link rel="stylesheet" href="assets/css/animate.css" />
@@ -92,12 +93,16 @@
                 <div class="col-xl-3 col-lg-3">
                     <div class="user-menu">
                         <div class="profile-img">
-                            <div class="avatar-wrapper">
-                                <img class="profile-pic" src="/assets/images/avatar.png" />
-                                <div class="upload-button">
+                            <form class="text-center" enctype="multipart/form-data" method="post">
+                                <div class="avatar-wrapper">
+                                    <label class="logo avatar-placeholder">
+                                        <img class="profile-pic" src="assets/images/company.svg" />
+                                        <input name="logo" id="upload-avatar" class="file-upload d-none" type="file"
+                                            accept="image/*" />
+                                    </label>
                                 </div>
-                                <input class="file-upload" type="file" accept="image/*" />
-                            </div>
+                                <button id="save-avatar" type="submit">Yadda saxla</button>
+                            </form>
                         </div>
                         <ul>
                             <li><a class="active" href="company-profile.html"><i
@@ -119,39 +124,67 @@
                 <div class="col-xl-9 col-lg-9 m-b30">
                     <form id="vacancy-form">
                         <!-- progressbar -->
-                        <ul id="progressbar">
-                            <li data-fieldset="personal" class="active">Şəxsi məlumatlar</li>
+                        <ul class="progressbar create-vacancy">
+                            <li data-fieldset=" about-vacancy" class="active">Vakansiya haqqında</li>
+                            <li data-fieldset="personal">Şəxsi məlumatlar</li>
                             <li data-fieldset="education">Təhsil məlumatları</li>
                             <li data-fieldset="work">İş<br> təcrübəsi</li>
                             <li data-fieldset="language">Dil bilikləri</li>
                             <li data-fieldset="computer">Kompyuter bilikləri</li>
                             <li data-fieldset="certificates">Sertifikatlar</li>
                         </ul>
-                        <!-- Personal informations -->
-                        <fieldset data-field="personal">
-                            <div class="row mb-10">
-                                <div class="col-lg-6">
-                                    <div class="vacancy-name">
-                                        <!-- <label for="vacancy-name">Vakansiyanın adı</label> -->
-                                        <input type="text" placeholder="Vakansiyanın adını daxil edin">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="intro-video-play first">
-                                        <div class="justify-content-center">
-                                            <div class="play-thumb wow zoomIn" data-wow-delay=".2s">
-                                                <a href="https://www.youtube.com/watch?v=r44RKWyfcFw&fbclid=IwAR21beSJORalzmzokxDRcGfkZA1AtRTE__l5N4r09HcGS5Y6vOluyouM9EM"
-                                                    class="glightbox video"><i class="lni lni-play"></i> Video
-                                                    təlimatı
-                                                    izlə</a>
-                                            </div>
+                        <!-- About vacancy -->
+                        <fieldset data-field="about-vacancy">
+                            <h5>Vakansiya haqqında</h5>
+                            <div class="intro-video-play">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-10 col-12">
+                                        <div class="play-thumb wow zoomIn" data-wow-delay=".2s">
+                                            <a href="https://www.youtube.com/watch?v=r44RKWyfcFw&fbclid=IwAR21beSJORalzmzokxDRcGfkZA1AtRTE__l5N4r09HcGS5Y6vOluyouM9EM"
+                                                class="glightbox video"><i class="lni lni-play"></i> Video təlimatı
+                                                izlə</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <div class="about-vacancy">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <label for="vacancy-name">Vakansiyanın adı</label>
+                                        <input type="text" placeholder="Vakansiyanın adını daxil edin">
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <label for="vacancy-about">Qısa təsvir</label>
+                                        <textarea placeholder="Qısa təsviri daxil edin"></textarea>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <label for="vacancy-commitment">Əsas öhdəliklər</label>
+                                        <textarea placeholder="Əsas öhdəlikləri daxil edin"></textarea>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <label for="vacancy-warranty">Təminatlar</label>
+                                        <textarea placeholder="Təminatları daxil edin"></textarea>
+                                    </div>
+                                </div>
+                            </div>
 
-
+                            <input data-field="personal" type="button" name="next" class="next action-button"
+                                value="Sonrakı" />
+                        </fieldset>
+                        <!-- Personal informations -->
+                        <fieldset data-field="personal">
                             <h5>Şəxsi məlumatlar</h5>
+                            <div class="intro-video-play">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-10 col-12">
+                                        <div class="play-thumb wow zoomIn" data-wow-delay=".2s">
+                                            <a href="https://www.youtube.com/watch?v=r44RKWyfcFw&fbclid=IwAR21beSJORalzmzokxDRcGfkZA1AtRTE__l5N4r09HcGS5Y6vOluyouM9EM"
+                                                class="glightbox video"><i class="lni lni-play"></i> Video təlimatı
+                                                izlə</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="row">
                                 <div class="col-lg-4">
                                     <label for=""></label>
@@ -301,8 +334,16 @@
                                     </select>
                                 </div>
                             </div>
-                            <input data-field="education" type="button" name="next" class="next action-button"
-                                value="Sonrakı" />
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <input data-field="about-vacancy" type="button" name="previous"
+                                        class="previous action-button" value="Əvvəlki" />
+                                </div>
+                                <div class="col-lg-6">
+                                    <input data-field="education" type="button" name="next" class="next action-button"
+                                        value="Sonrakı" />
+                                </div>
+                            </div>
                         </fieldset>
                         <!-- Education informations -->
                         <fieldset data-field="education">
@@ -369,15 +410,16 @@
 
                                     </select>
                                 </div>
-                                <div class="col-lg-6">
-                                    <input data-field="personal" type="button" name="previous"
-                                        class="previous action-button" value="Əvvəlki" />
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <input data-field="personal" type="button" name="previous"
+                                            class="previous action-button" value="Əvvəlki" />
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <input data-field="work" type="button" name="next" class="next action-button"
+                                            value="Sonrakı" />
+                                    </div>
                                 </div>
-                                <div class="col-lg-6">
-                                    <input data-field="work" type="button" name="next" class="next action-button"
-                                        value="Sonrakı" />
-                                </div>
-
                         </fieldset>
                         <!-- Work informations -->
                         <fieldset data-field="work">
@@ -412,10 +454,6 @@
                                         <option value="">Art</option>
                                     </select>
                                 </div>
-                                <div class="col-lg-4">
-                                    <label for="start-work"> Minimum iş stajı</label>
-                                    <input data-s="field" disabled type="number" placeholder="Müddət">
-                                </div>
                                 <hr>
                                 <div class="col-lg-4">
                                     <label for=""></label>
@@ -435,10 +473,6 @@
                                         <option value="">Art</option>
                                     </select>
                                 </div>
-                                <div class="col-lg-4">
-                                    <label for="start-work"> Minimum iş stajı</label>
-                                    <input data-s="function" disabled type="number" placeholder="Müddət">
-                                </div>
                                 <hr>
                                 <div class="col-lg-4">
                                     <label for=""></label>
@@ -457,25 +491,6 @@
                                         <option value="">Finance</option>
                                         <option value="">Art</option>
                                     </select>
-                                </div>
-                                <div class="col-lg-4">
-                                    <label for="start-work"> Minimum iş stajı</label>
-                                    <input data-s="category" disabled type="number" placeholder="Müddət">
-                                </div>
-                                <hr>
-                                <div class="col-lg-4">
-                                    <label for=""></label>
-                                    <select data-select="worktime" class="importance" name="worktime" id="worktime">
-                                        <option>Önəmlilik dərəcəsini təyin et</option>
-                                        <option value="not-important">Önəm daşımır</option>
-                                        <option value="less-important">Az önəm daşıyır</option>
-                                        <option value="important">Önəmlidir</option>
-                                        <option value="more-important">Mütləqdir</option>
-                                    </select>
-                                </div>
-                                <div class="col-lg-4">
-                                    <label for="start-work"> Minimum iş stajı</label>
-                                    <input data-s="worktime" disabled type="number" placeholder="Müddət">
                                 </div>
 
                                 <div class="col-lg-6">
@@ -517,26 +532,26 @@
                                         </div>
                                         <div class="col-lg-4">
                                             <label for="language">Dil</label>
-                                            <select data-s="language" disabled onchange="createOtherInput(this)"
-                                                name="language" id="language" class="other-input">
-                                                <option>Seç</option>
+                                            <select data-s="language" disabled name="language" id="language"
+                                                class="other-input">
+                                                <option value="choose">Seç</option>
                                                 <option value="english">Azərbaycan dili</option>
                                                 <option value="turkish">Türk dili</option>
                                                 <option value="russian">Rus dili</option>
                                                 <option value="german">İngilis dili</option>
-                                                <option value="other">Digər</option>
+                                                <option value="Digər">Digər</option>
                                             </select>
                                         </div>
                                         <div class="col-lg-4">
                                             <label for="level">Səviyyə</label>
-                                            <select data-s="language" disabled name="level" id="level">
+                                            <select data-level="language" disabled name="level" id="level">
                                                 <option>Seç</option>
                                                 <option value="beginner">Başlanğıc</option>
                                                 <option value="medium">Orta</option>
                                                 <option value="advance">Yüksək</option>
                                             </select>
                                         </div>
-                                        <div class="other" data-s="language">
+                                        <div class="other" data-other="language">
                                             <div class="row">
                                                 <div class="col-lg-4">
                                                     <label for="language">Dil</label>
@@ -547,8 +562,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="add-language">
-                                + Əlavə et
+                            <div class="add-remove">
+                                <div class="add-language">
+                                    + Əlavə et
+                                </div>
+                                <div class="remove-language">
+                                    Sil
+                                </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-6">
@@ -591,23 +611,23 @@
                                         </div>
                                         <div class="col-lg-4">
                                             <label for="computer">Kompyuter bilikləri</label>
-                                            <select data-s="computer" disabled onchange="createOtherInput(this)"
-                                                name="computer" id="computer" class="other-input">
-                                                <option>Seç</option>
+                                            <select data-s="computer" disabled name="computer" id="computer"
+                                                class="other-input">
+                                                <option value="choose">Seç</option>
                                                 <option value="">MS Office</option>
-                                                <option value="other">Digər</option>
+                                                <option value="Digər">Digər</option>
                                             </select>
                                         </div>
                                         <div class="col-lg-4">
                                             <label for="level">Səviyyə</label>
-                                            <select data-s="computer" disabled name="level" id="level">
+                                            <select data-level="computer" disabled name="level" id="level">
                                                 <option>Seç</option>
                                                 <option value="beginner">Başlanğıc</option>
                                                 <option value="medium">Orta</option>
                                                 <option value="advance">Yüksək</option>
                                             </select>
                                         </div>
-                                        <div class="other" data-s="computer">
+                                        <div class="other" data-other="computer">
                                             <div class="row">
                                                 <div class="col-lg-4">
                                                     <label for="computer">Komputer biliyi</label>
@@ -662,21 +682,21 @@
                                         </div>
                                         <div class="col-lg-4">
                                             <label for="Certificates">Sertifikat</label>
-                                            <select data-s="certificates" disabled onchange="createOtherInput(this)"
-                                                name="certificates" id="certificates" class="other-input">
-                                                <option>Seç</option>
+                                            <select data-s="certificates" disabled name="certificates" id="certificates"
+                                                class="other-input">
+                                                <option value="choose">Seç</option>
                                                 <option value="">ACCA</option>
-                                                <option value="other">Digər</option>
+                                                <option value="Digər">Digər</option>
                                             </select>
                                         </div>
                                         <div class="col-lg-4">
                                             <label for="certificates">Sertifikat səviyyəsi</label>
-                                            <select data-s="certificates" disabled name="certificate-level"
+                                            <select data-level="certificates" disabled name="certificate-level"
                                                 id="certificate-level">
-                                                <option>Seç</option>
+                                                <option value="choose">Seç</option>
                                             </select>
                                         </div>
-                                        <div class="other" data-s="certificates">
+                                        <div class="other" data-other="certificates">
                                             <div class="row">
                                                 <div class="col-lg-4">
                                                     <label for="certificates">Sertifikat</label>
@@ -731,63 +751,63 @@
                         </fieldset>
                     </form>
                 </div>
-                <!-- Modal -->
-                <div class="modal fade" id="shareVacancy" tabindex="-1" aria-labelledby="shareVacancyLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="modal-title" id="shareVacancyLabel">Vakansiyanı paylaş
-                                </h4>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="row">
-                                    <div class="col-lg-10">
-                                        <label for="share">Linki kopyala</label>
-                                        <input type="text" disabled value="www.scanner.az/vacancy-11">
-                                    </div>
-                                    <div class="col-lg-2">
-                                        <i class=" fal fa-copy"></i>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <ul class="share-social">
-                                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-whatsapp"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-telegram-plane"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="shareVacancy" tabindex="-1" aria-labelledby="shareVacancyLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="shareVacancyLabel">Vakansiyanı paylaş
+                            </h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                    </div>
-                </div>
-                <div class="modal fade" id="saveVacancy" tabindex="-1" aria-labelledby="saveVacancyLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="modal-title" id="saveVacancyLabel">Vakansiyanı yadda saxla
-                                </h4>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="save-icon">
-                                    <i class="fal fa-check"></i>
-                                    <p>Vakansiya yadda saxlanıldı</p>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-lg-10">
+                                    <label for="share">Linki kopyala</label>
+                                    <input type="text" disabled value="www.scanner.az/vacancy-11">
                                 </div>
-                                <hr>
-                                <div class="link">
-                                    <a href="/created-vacancies.html">Vakansiyalar səhifəsinə get</a>
+                                <div class="col-lg-2">
+                                    <i class=" fal fa-copy"></i>
+                                </div>
+                                <div class="col-lg-6">
+                                    <ul class="share-social">
+                                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                                        <li><a href="#"><i class="fab fa-whatsapp"></i></a></li>
+                                        <li><a href="#"><i class="fab fa-telegram-plane"></i></a></li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="modal fade" id="saveVacancy" tabindex="-1" aria-labelledby="saveVacancyLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="saveVacancyLabel">Vakansiyanı yadda saxla
+                            </h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="save-icon">
+                                <i class="fal fa-check"></i>
+                                <p>Vakansiya yadda saxlanıldı</p>
+                            </div>
+                            <hr>
+                            <div class="link">
+                                <a href="/created-vacancies.html">Vakansiyalar səhifəsinə get</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         </div>
     </section>
 
@@ -841,6 +861,7 @@
     <!--/ End Footer Area -->
 
     <!-- ========================= JS here ========================= -->
+    <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/count-up.min.js"></script>
     <script src="assets/js/wow.min.js"></script>
@@ -861,13 +882,10 @@
         });
     </script>
 
-    <!-- jQuery -->
-    <script src="assets/js/jquery.min.js" type="text/javascript"></script>
-
     <script>
         // Create vacancy steps
 
-        $("#progressbar li").on("click", function () {
+        $(".progressbar li").on("click", function () {
             $(this).addClass("active");
             $(this).siblings().removeClass("active");
             let fieldset = $(this).data("fieldset");
@@ -881,8 +899,8 @@
             $(`fieldset:not([data-field=${field}])`).fadeOut(200);
             $(`fieldset[data-field=${field}]`).fadeIn(200);
             // List active indicator
-            $(`#progressbar li[data-fieldset=${field}]`).addClass("active");
-            $(`#progressbar li[data-fieldset=${field}]`).siblings().removeClass("active");
+            $(`.progressbar li[data-fieldset=${field}]`).addClass("active");
+            $(`.progressbar li[data-fieldset=${field}]`).siblings().removeClass("active");
         });
 
         // $(".submit").click(function () {
@@ -898,6 +916,7 @@
                 ? $(`[data-s=${select}]`).prop("disabled", true)
                 : $(`[data-s=${select}]`).prop("disabled", false);
         });
+
 
     </script>
 </body>

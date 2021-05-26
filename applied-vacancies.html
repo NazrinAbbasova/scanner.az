@@ -92,12 +92,16 @@
                 <div class="col-xl-3 col-lg-3">
                     <div class="user-menu">
                         <div class="profile-img">
-                            <div class="avatar-wrapper">
-                                <img class="profile-pic" src="/assets/images/avatar.png" />
-                                <div class="upload-button">
+                            <form class="text-center" enctype="multipart/form-data" method="post">
+                                <div class="avatar-wrapper">
+                                    <label class="logo avatar-placeholder">
+                                        <img class="profile-pic" src="/assets/images/applicant.svg" />
+                                        <input name="logo" id="upload-avatar" class="file-upload d-none" type="file"
+                                            accept="image/*" />
+                                    </label>
                                 </div>
-                                <input class="file-upload" type="file" accept="image/*" />
-                            </div>
+                                <button id="save-avatar" type="submit">Yadda saxla</button>
+                            </form>
                         </div>
                         <ul>
                             <!-- <li><a class="active" href="user-profile.html"><i

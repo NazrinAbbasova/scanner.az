@@ -40,30 +40,27 @@ Author: GrayGrids
 
   //Chane profile picture
 
-  function changePicture() {
-    var readURL = function (input) {
-      if (input.files && input.files[0]) {
-        var reader = new FileReader();
-        const profilePic = document.querySelector(".profile-pic");
-        reader.onload = function (e) {
-          profilePic.setAttribute("src", e.target.result);
-        };
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
 
-        reader.readAsDataURL(input.files[0]);
-      }
-    };
-    const fileUpload = document.querySelector(".file-upload");
-    const uploadButton = document.querySelector(".upload-button");
-    if (fileUpload && uploadButton) {
-      fileUpload.addEventListener("change", function () {
-        readURL(this);
-      });
-      uploadButton.addEventListener("click", function () {
-        fileUpload.click();
-      });
+      reader.onload = function (e) {
+        document
+          .querySelector(".profile-pic")
+          .setAttribute("src", e.target.result);
+      };
+
+      reader.readAsDataURL(input.files[0]); // convert to base64 string
     }
   }
-  changePicture();
+  const avatar = document.getElementById("upload-avatar");
+  if (avatar) {
+    avatar.addEventListener("change", function () {
+      readURL(this);
+      document.querySelector(".avatar-wrapper label").style.padding = 0;
+      document.getElementById("save-avatar").style.display = "inline-block";
+    });
+  }
 
   // Calculate saved budget
   const calculate = document.querySelector(".calculate");
@@ -100,7 +97,6 @@ Author: GrayGrids
   function changeColor() {
     if (percentage) {
       percentage.addEventListener("click", () => {
-        console.log("sald");
         percentage.classList.add("selected");
       });
     }

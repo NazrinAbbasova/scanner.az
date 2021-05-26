@@ -1,0 +1,50 @@
+.list-head {
+    display: flex;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.list-head i,
+.about-company i {
+    background: linear-gradient(45deg, #4567f4, #3CD3AD);
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    line-height: 2rem;
+    font-size: 16px;
+    color: white;
+}
+
+.list-head h6,
+.about-company h6 {
+    line-height: 1rem;
+    margin: 8px;
+}
+
+.company-info p {
+    margin-top: 10px;
+}
+
+.about-company {
+    padding: 2rem;
+    box-shadow: 0 0 10px 0 rgba(0, 24, 128, .1);
+    margin-bottom: 2rem;
+}
+
+.about-head {
+    display: flex;
+    text-align: center;
+    width: 100%;
+}
+
+.about-company p {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.line {
+    background: linear-gradient(45deg, #4567f4, #3CD3AD);
+    width: 75%;
+    height: 1px;
+    margin-left: 3rem;
+}
