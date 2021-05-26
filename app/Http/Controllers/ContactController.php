@@ -54,7 +54,7 @@ class ContactController extends Controller
         
         $this->validate($request, $rules, $messages);
 
-        Mail::to('info@scanner.az')->send(new Contact($request));
+        Mail::to($request->email)->send(new Contact($request));
 
         return redirect()->back()->with('success', 'Sorğunuz qeydə alındı');
     }

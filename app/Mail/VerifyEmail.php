@@ -31,7 +31,7 @@ class VerifyEmail extends Mailable
     public function build()
     {
         return $this->markdown('emails.verify')
-                    ->from('no-repyly@scanner.az')
+                    ->from('no-reply@scanner.az')
                     ->with(['token' => $this->token]);
     }
 }

@@ -16,7 +16,7 @@
                   Əgər siz də bizə qoşulmaq istəyirsinizsə elə indi qeydiyyatdan keçin
                 </p>
                 <div class="button wow fadeInUp" data-wow-delay=".9s">
-                  <a href="register.html" class="btn">Qeydiyyatdan keç</a>
+                  <a href="{{ route('register') }}" class="btn">Qeydiyyatdan keç</a>
                 </div>
               </div>
             </div>
