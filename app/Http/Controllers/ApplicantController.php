@@ -62,9 +62,10 @@ class ApplicantController extends Controller
 
             $file_name = 'applicant-'.$request->id.'.'.$photo->extension();
 
-            $photo->storeAs('public/applicants', $file_name);
+            $path = public_path('uploads/applicants/');
+            $url = '/uploads/applicants/'.$file_name;
+            $photo->move($path, $url);
 
-            $url  = '/storage/applicants/'.$file_name;
             $user = User::find($request->id);
             $user->photo = $url;
             $user->save();

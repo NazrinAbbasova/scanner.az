@@ -32,6 +32,7 @@ class VerifyEmail extends Mailable
     {
         return $this->markdown('emails.verify')
                     ->from('no-reply@scanner.az')
+                    ->subject(env('APP_NAME'))
                     ->with(['token' => $this->token]);
     }
 }

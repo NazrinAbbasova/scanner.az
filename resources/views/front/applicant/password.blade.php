@@ -7,7 +7,7 @@
         <div class="row">
             @include('front.applicant.sidebar')
             
-            <div class="col-xl-9 col-lg-8">
+            <div class="col-lg-8">
                 <div class="profile-content">
                     <div class="content-title">
                         <h5 class="font-weight-700 pull-left text-uppercase">Şifrəni dəyiş</h5>

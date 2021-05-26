@@ -77,6 +77,6 @@ class RegisterController extends Controller
 
         Mail::to($user->email)->send(new VerifyEmail($user->remember_token));
 
-        return redirect()->route('home');
+        return redirect()->route('home')->with('success', 'text');
     }
 }

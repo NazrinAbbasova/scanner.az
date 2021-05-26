@@ -7,7 +7,7 @@
                     <input type="hidden" name="company" value="{{ auth()->user()->company }}">
                     <input type="hidden" name="id" value="{{ auth()->user()->id }}">
                     <label class="{{ auth()->user()->logo ? '' : 'avatar-placeholder' }}">
-                        <img class="profile-pic" src="{{ auth()->user()->logo ?? asset('static/front/images/company.svg') }}" />
+                        <img class="profile-pic" src="{{ auth()->user()->logo ? asset(auth()->user()->photo) : asset('static/front/images/company.svg') }}" />
                         <input name="logo" id="upload-avatar" class="file-upload d-none" type="file" accept="image/*" />
                     </label>
                 </div>

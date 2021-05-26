@@ -31,7 +31,7 @@ class PasswordReset extends Mailable
     public function build()
     {
         return $this->markdown('emails.reset')
-                    ->from('smylmrz@gmail.com')
+                    ->subject(env('APP_NAME'))
                     ->with(['token' => $this->token]);
     }
 }

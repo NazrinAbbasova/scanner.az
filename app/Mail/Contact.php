@@ -31,7 +31,7 @@ class Contact extends Mailable
     public function build()
     {
         return $this->markdown('emails.contact')
-                    ->subject($this->data->subject ?? "")
+                    ->subject($this->data->subject ?? env('APP_NAME'))
                     ->with(['data' => $this->data]);
     }
 }

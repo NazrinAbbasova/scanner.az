@@ -6,7 +6,7 @@
                     @csrf
                     <input type="hidden" name="id" value="{{ auth()->user()->id }}">
                     <label class="{{ auth()->user()->photo ? '' : 'avatar-placeholder' }}">
-                        <img class="profile-pic" src="{{ auth()->user()->photo ?? asset('static/front/images/applicant.svg') }}" />
+                        <img class="profile-pic" src="{{ auth()->user()->photo ? asset(auth()->user()->photo) : asset('static/front/images/applicant.svg') }}" />
                         <input name="photo" id="upload-avatar" class="file-upload d-none" type="file" accept="image/*" />
                     </label>
                 </div>

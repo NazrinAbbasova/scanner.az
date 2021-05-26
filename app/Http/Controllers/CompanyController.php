@@ -115,8 +115,11 @@ class CompanyController extends Controller
             $slug = Str::slug($request->company, '-');
 
             $file_name = $slug.'-logo.'.$logo->extension();
-            $logo->storeAs('public/companies', $file_name);
-            $url  = '/storage/companies/'.$file_name;
+
+            $path = public_path('uploads/companies/');
+            $url = '/uploads/companies/'.$file_name;
+            $logo->move($path, $url);
+
             $user->logo = $url;
             $user->save();
 

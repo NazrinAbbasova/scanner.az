@@ -9,8 +9,7 @@
               <div class="logo">
                 <a href="{{ route('home') }}"><img src="{{ asset('static/front/images/logo/logo-white.svg') }}" alt="Logo"></a>
               </div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                incididunt.</p>
+              <p>Biz birlikdə daha yaxşı işə qəbul sistemi yaradacağımıza inanırıq</p>
               <div class="footer-social">
                 <ul>
                   <li><a href="#"><i class="lni lni-facebook-original"></i></a></li>
@@ -27,7 +26,7 @@
               <div class="col-lg-4 col-md-4 col-12">
                 <!-- Single Widget -->
                 <div class="single-footer md-custom-border sm-custom-border f-contact">
-                  <h3>Contact Info</h3>
+                  <h3>Əlaqə Məlumatları</h3>
                   <ul>
                     <!-- <li><i class="lni lni-map-marker"></i> 113 Sassnex, White House, New Jercy, USA
                                         </li> -->

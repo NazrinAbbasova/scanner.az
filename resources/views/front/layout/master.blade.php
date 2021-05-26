@@ -37,6 +37,7 @@
 
   
   @include('front.inc.scripts')
+  @include('front.inc.swal')
 </body>
 
 </html>
