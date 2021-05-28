@@ -8,10 +8,10 @@
 }
 
 .colors {
-    width: 3rem;
-    height: 3rem;
+    width: 2rem;
+    height: 2rem;
     border-radius: 50%;
-    margin-left: 2rem;
+    margin-left: 1.2rem;
     cursor: pointer;
 }
 
@@ -23,12 +23,18 @@
     background: linear-gradient(45deg, #6831e3, #f528cb) !important;
 }
 
-.yellow {
+.green {
     background: linear-gradient(45deg, #DCE35B, #45B649) !important;
 }
 
-.green {
+.primary {
     background: linear-gradient(45deg, #4567f4, #3CD3AD) !important;
+}
+.red {
+    background: linear-gradient(45deg, #f44545, #d35f3c) !important;
+}
+.yellow {
+    background: linear-gradient(45deg, #fae900, #d38c3c) !important;
 }
 
 .cv-actions {
@@ -42,11 +48,39 @@
     ;
 }
 
+.share-socials {
+    display: none;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
 .cv-head {
     background: linear-gradient(45deg, #4567f4, #3CD3AD);
     padding: 2rem;
     color: #fff;
     text-align: center;
+    height: 10rem;
 }
 
 .cv-head h5 {
@@ -72,6 +106,10 @@
     width: 80%;
     height: 1px;
     margin-left: 3.5rem;
+}
+
+.contact-info i {
+    margin-bottom: 10px;
 }
 
 .contact-info a {
@@ -117,6 +155,7 @@
 .skills,
 .about {
     display: flex;
+    line-height: 1rem;
 }
 
 .skills .field {
@@ -191,17 +230,14 @@
     width: 10.5rem;
 }
 
-.job-description a {
-    text-decoration: underline;
-}
-
 .cv-body .about .job p,
 .cv-body .about .job-description li {
     margin-top: 10px;
     list-style-type: disc;
 }
 
-.score {
+.download-certificate {
+    font-size: 22px;
     margin-left: 3rem;
     color: black;
     font-weight: 500;

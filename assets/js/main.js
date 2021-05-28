@@ -106,14 +106,15 @@ Author: GrayGrids
   // Change CV color
   const blue = document.querySelector(".colors.blue");
   const purple = document.querySelector(".colors.purple");
-  const yellow = document.querySelector(".colors.yellow");
   const green = document.querySelector(".colors.green");
+  const primary = document.querySelector(".colors.primary");
+  const red = document.querySelector(".colors.red");
+  const yellow = document.querySelector(".colors.yellow");
   const cvHead = document.querySelector(".cv-head");
   const line = document.querySelector(".line");
   const listHeadIcon = document.querySelector(".list-head i ");
   const level = document.querySelector(".full");
 
-  // const cvHead = document.querySelector(".cv-head");
   if (blue && purple && green && yellow) {
     blue.addEventListener("click", function () {
       cvHead.classList.add("blue");
@@ -121,17 +122,12 @@ Author: GrayGrids
       listHeadIcon.classList.add("blue");
       level.classList.add("blue");
     });
+
     purple.addEventListener("click", function () {
       cvHead.classList.add("purple");
       line.classList.add("purple");
       listHeadIcon.classList.add("purple");
       level.classList.add("purple");
-    });
-    yellow.addEventListener("click", function () {
-      cvHead.classList.add("yellow");
-      line.classList.add("yellow");
-      listHeadIcon.classList.add("yellow");
-      level.classList.add("yellow");
     });
     green.addEventListener("click", function () {
       cvHead.classList.add("green");
@@ -139,8 +135,36 @@ Author: GrayGrids
       listHeadIcon.classList.add("green");
       level.classList.add("green");
     });
+    primary.addEventListener("click", function () {
+      cvHead.classList.add("primary");
+      line.classList.add("primary");
+      listHeadIcon.classList.add("primary");
+      level.classList.add("primary");
+    });
+    red.addEventListener("click", function () {
+      cvHead.classList.add("red");
+      line.classList.add("red");
+      listHeadIcon.classList.add("red");
+      level.classList.add("red");
+    });
+    yellow.addEventListener("click", function () {
+      cvHead.classList.add("yellow");
+      line.classList.add("yellow");
+      listHeadIcon.classList.add("yellow");
+      level.classList.add("yellow");
+    });
   }
 
+  // Share socials
+
+  const share = document.querySelector(".share");
+  const shareSocials = document.querySelector(".share-socials");
+
+  if (share) {
+    share.addEventListener("click", function () {
+      shareSocials.style.display = "block";
+    });
+  }
   /*=====================================
     Sticky
     ======================================= */

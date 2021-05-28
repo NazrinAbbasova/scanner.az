@@ -204,7 +204,8 @@
                                 </div>
                                 <div class="col-lg-4">
                                     <label for="driving-lisence">Sürücülük vəsiqəsinin kateqoriyası</label>
-                                    <select name="lisence-category" id="lisence-category">
+                                    <select data-level="driving-lisence" disabled name="lisence-category"
+                                        id="lisence-category">
                                         <option value="choose">Seç</option>
                                         <option value="not-important">A</option>
                                         <option value="less-important">B</option>
@@ -223,8 +224,8 @@
                         <!-- Education informations -->
                         <fieldset data-field="education">
                             <h5>Təhsil məlumatları</h5>
-                            <div class="dynamic-fields-education">
-                                <div class="dynamic-education">
+                            <div class="dynamic-fields-education" data-f-parent='education'>
+                                <div class="dynamic-education" data-f="education">
                                     <div class="row">
                                         <div class="col-lg-4">
                                             <label for="degree">Təhsil dərəcəsi</label>
@@ -269,6 +270,7 @@
                                             <label for="field">İxtisas</label>
                                             <input type="text" placeholder="İxtisasınız">
                                         </div>
+                                        <div class="col-lg-4"></div>
                                         <div class="col-lg-4">
                                             <label>Daxil olduğunuz il</label>
                                             <input type="number" placeholder="İl">
@@ -280,8 +282,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="add-education">
-                                + Əlavə et
+                            <div class="add-remove">
+                                <div class="add-education add-input" data-type='education'>
+                                    + Əlavə et
+                                </div>
+                                <!-- <div class="remove-education">
+                                    Sil
+                                </div> -->
                             </div>
                             <div class="row">
                                 <div class="col-lg-6">
@@ -297,36 +304,48 @@
                         <!-- Work informations -->
                         <fieldset data-field="work">
                             <h5>İş təcrübəsi</h5>
-                            <div class="dynamic-fields-work">
-                                <div class="dynamic-work">
+                            <div class="dynamic-fields-work" data-f-parent='work'>
+                                <div class="dynamic-work" data-f="work">
                                     <div class="row">
                                         <div class="col-lg-4">
                                             <label for="company-name">Müəssisənin adı</label>
-                                            <input data-s="field" type="number" placeholder="Müəssisənin adı">
+                                            <input type="number" placeholder="Müəssisənin adı">
                                         </div>
                                         <div class="col-lg-4">
                                             <label for="function">Funksiya</label>
-                                            <select data-s="function" name="function" id="function">
+                                            <select name="function" id="function">
                                                 <option>IT</option>
                                                 <option value="">Finance</option>
                                                 <option value="">Art</option>
                                             </select>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <label for="function">İşləmə müddəti</label>
+                                            <input type="number" placeholder="Funksiya üzrə işləmə müddəti">
                                         </div>
                                         <div class="col-lg-4">
                                             <label for="category">Vəzifə kateqoriyası</label>
-                                            <select data-s="category" name="category" id="category">
+                                            <select name="category" id="category">
                                                 <option>IT</option>
                                                 <option value="">Finance</option>
                                                 <option value="">Art</option>
                                             </select>
                                         </div>
                                         <div class="col-lg-4">
+                                            <label for="function">İşləmə müddəti</label>
+                                            <input type="number" placeholder="Vəzifə üzrə işləmə müddəti">
+                                        </div>
+                                        <div class="col-lg-4">
                                             <label for="field">Sektor</label>
-                                            <select data-s="field" name="field" id="field">
+                                            <select name="field" id="field">
                                                 <option>IT</option>
                                                 <option value="">Finance</option>
                                                 <option value="">Art</option>
                                             </select>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <label for="function">İşləmə müddəti</label>
+                                            <input type="number" placeholder="Sektor üzrə işləmə müddəti">
                                         </div>
                                         <div class="col-lg-4">
                                             <label>İşə qəbul olduğunuz tarix</label>
@@ -336,19 +355,23 @@
                                             <label>İşdən çıxdığınız tarix</label>
                                             <input type="date">
                                         </div>
-                                        <div class="col-lg-4">
+                                        <div class="col-lg-10">
                                             <label for="commitment">Vəzifə öhdəlikləri</label>
-                                            <select data-s="commitment" name="commitment" id="commitment">
-                                                <option>IT</option>
-                                                <option value="">Finance</option>
-                                                <option value="">Art</option>
-                                            </select>
+                                            <input type="text" placeholder="Öhdəliyi daxil et">
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <div class="add-commitment"><i class="fal fa-plus-square"></i></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="add-work">
-                                + Əlavə et
+                            <div class="add-remove">
+                                <div class="add-work add-input" data-type='work'>
+                                    + Əlavə et
+                                </div>
+                                <!-- <div class="remove-work">
+                                    Sil
+                                </div> -->
                             </div>
                             <div class="row">
                                 <div class="col-lg-6">
@@ -365,9 +388,8 @@
                         <!-- Language informations -->
                         <fieldset data-field="language">
                             <h5>Dil bilikləri</h5>
-
-                            <div class="dynamic-fields-language">
-                                <div class="dynamic-language">
+                            <div class="dynamic-fields-language" data-f-parent='language'>
+                                <div class="dynamic-language" data-f="language">
                                     <div class="row">
                                         <div class="col-lg-4">
                                             <label for="language">Dil</label>
@@ -377,32 +399,28 @@
                                                 <option value="turkish">Türk dili</option>
                                                 <option value="russian">Rus dili</option>
                                                 <option value="german">İngilis dili</option>
-                                                <option value="other">Digər</option>
+                                                <option value="Digər">Digər</option>
                                             </select>
                                         </div>
-
                                         <div class="col-lg-4">
                                             <label for="level">Səviyyə</label>
                                             <select data-level="language" disabled name="level" id="level">
-                                                <option>Seç</option>
+                                                <option value="choose">Seç</option>
                                                 <option value="beginner">Başlanğıc</option>
                                                 <option value="medium">Orta</option>
                                                 <option value="advance">Yüksək</option>
                                             </select>
                                         </div>
-                                        <div class="other" data-other="language">
-                                            <div class="row">
-                                                <div class="col-lg-4">
-                                                    <label for="language">Dil</label>
-                                                    <input type="text" placeholder="Dili daxil edin">
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="add-language">
-                                + Əlavə et
+                            <div class="add-remove">
+                                <div class="add-language add-input" data-type='language'>
+                                    + Əlavə et
+                                </div>
+                                <div class="remove-language">
+                                    Sil
+                                </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-6">
@@ -419,21 +437,21 @@
                         <fieldset data-field="computer">
                             <h5>Kompyuter bilikləri</h5>
 
-                            <div class="dynamic-fields-computer">
-                                <div class="dynamic-computer">
+                            <div class="dynamic-fields-computer" data-f-parent="computer">
+                                <div class="dynamic-computer" data-f="computer">
                                     <div class="row">
                                         <div class="col-lg-4">
                                             <label for="computer">Kompyuter bilikləri</label>
                                             <select data-s="computer" name="computer" id="computer" class="other-input">
-                                                <option>Seç</option>
+                                                <option value="choose">Seç</option>
                                                 <option value="">MS Office</option>
-                                                <option value="other">Digər</option>
+                                                <option value="Digər">Digər</option>
                                             </select>
                                         </div>
                                         <div class="col-lg-4">
                                             <label for="level">Səviyyə</label>
-                                            <select data-s="computer" name="level" id="level">
-                                                <option>Seç</option>
+                                            <select data-level="computer" disabled name="level" id="level">
+                                                <option value="choose">Seç</option>
                                                 <option value="beginner">Başlanğıc</option>
                                                 <option value="medium">Orta</option>
                                                 <option value="advance">Yüksək</option>
@@ -442,8 +460,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="add-computer">
-                                + Əlavə et
+                            <div class="add-remove">
+                                <div class="add-computer add-input" data-type="computer">
+                                    + Əlavə et
+                                </div>
+                                <!-- <div class="remove-language">
+                                    Sil
+                                </div> -->
                             </div>
                             <div class="row">
                                 <div class="col-lg-6">
@@ -460,43 +483,50 @@
                         <fieldset data-field="certificates">
                             <h5>Sertifikat məlumatları</h5>
 
-                            <div class="dynamic-fields-certificate">
-                                <div class="dynamic-certificate">
+                            <div class="dynamic-fields-certificates" data-f-parent="certificates">
+                                <div class="dynamic-certificate" data-f="certificates">
                                     <div class="row">
                                         <div class="col-lg-4">
-                                            <label for="Certificates">Sertifikat</label>
+                                            <label for="certificates">Sertifikat</label>
                                             <select data-s="certificates" name="certificates" id="certificates"
                                                 class="other-input">
-                                                <option>Seç</option>
+                                                <option value="choose">Seç</option>
                                                 <option value="">ACCA</option>
-                                                <option value="other">Digər</option>
+                                                <option value="Digər">Digər</option>
                                             </select>
                                         </div>
                                         <div class="col-lg-4">
                                             <label for="certificates">Sertifikat səviyyəsi</label>
-                                            <select data-s="certificates" name="certificate-level"
+                                            <select data-level="certificates" disabled name="certificate-level"
                                                 id="certificate-level">
-                                                <option>Seç</option>
+                                                <option value="choose">Seç</option>
                                             </select>
                                         </div>
                                         <div class="col-lg-4">
                                             <label for="certificates">Sertifikat file</label>
                                             <div class="certificate-file">
                                                 <label class="btn btn-outline-primary">
-                                                    <i class="fa fa-file"></i> Sertifikat seç<input type="file"
+                                                    <i class="fa fa-file"></i> Sertifikat yüklə<input
+                                                        data-level="certificates" disabled type="file"
                                                         style="display: none;" name="image">
                                                 </label>
                                             </div>
                                         </div>
-                                        <div class="col-lg-4">
+                                        <div class="col-lg-12">
                                             <label for="certificates">Sertifikat URL</label>
-                                            <input type="text" placeholder="URL daxil edin">
+                                            <input data-level="certificates" disabled type="text"
+                                                placeholder="URL daxil edin">
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="add-certificate">
-                                + Əlavə et
+                            <div class="add-remove">
+                                <div class="add-certificate add-input" data-type="certificates">
+                                    + Əlavə et
+                                </div>
+                                <!-- <div class="remove-language">
+                                    Sil
+                                </div> -->
                             </div>
 
                             <div class="row">
@@ -623,21 +653,6 @@
             // List active indicator
             $(`.progressbar li[data-fieldset=${field}]`).addClass("active");
             $(`.progressbar li[data-fieldset=${field}]`).siblings().removeClass("active");
-        });
-
-        // $(".submit").click(function () {
-        //   return false;
-        // });
-
-        $(".importance").on("change", function () {
-            var select = $(this).data("select");
-
-            $(this).val() == "choose"
-                ? $(`[data-s=${select}]`).prop(" ", true)
-                : $(`[data-s=${select}]`).prop(" ", false);
-            $(this).val() == "not-important"
-                ? $(`[data-s=${select}]`).prop(" ", true)
-                : $(`[data-s=${select}]`).prop(" ", false);
         });
     </script>
 </body>

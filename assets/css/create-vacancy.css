@@ -201,6 +201,7 @@ select.importance {
 .remove-language {
     font-weight: 500;
     cursor: pointer;
+    display: none;
 }
 
 .save-vacancy {
@@ -331,9 +332,6 @@ select.importance {
 
 }
 
-.other {
-    display: none;
-}
 
 .send-to-mail,
 .active-vacancy {
@@ -391,4 +389,11 @@ select.importance {
 
 .certificate-file label:hover {
     background-color: #4567f4;
+}
+
+.add-commitment {
+    font-size: 30px;
+    margin-top: 1.5rem;
+    color: #4567f4;
+    cursor: pointer;
 }

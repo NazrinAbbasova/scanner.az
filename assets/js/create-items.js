@@ -1,91 +1,135 @@
-const addEducation = document.querySelector(".add-education");
-const dynamicFieldsEducation = document.querySelector(
-  ".dynamic-fields-education"
-);
-const dynamicEducation = document.querySelector(".dynamic-education");
-if (addEducation) {
-  addEducation.addEventListener("click", () => {
-    var cln = dynamicEducation.cloneNode(true);
-    dynamicFieldsEducation.appendChild(cln);
-  });
-}
+// const addEducation = document.querySelector(".add-education");
+// const dynamicFieldsEducation = document.querySelector(
+//   ".dynamic-fields-education"
+// );
+// const dynamicEducation = document.querySelector(".dynamic-education");
+// if (addEducation) {
+//   addEducation.addEventListener("click", () => {
+//     var cln = dynamicEducation.cloneNode(true);
+//     dynamicFieldsEducation.appendChild(cln);
+//   });
+// }
+
+// const dynamicFieldsWork = document.querySelector(".dynamic-fields-work");
+// const dynamicWork = document.querySelector(".dynamic-work");
+// const addWork = document.querySelector(".add-work");
+// if (addWork) {
+//   addWork.addEventListener("click", () => {
+//     var cln = dynamicWork.cloneNode(true);
+//     dynamicFieldsWork.appendChild(cln);
+//   });
+// }
+
 $(".remove-language").click(function () {
-  console.log("clicked")
+  console.log("clicked");
   $(this).closest(".dynamic-language").remove();
 });
 //
-const dynamicFieldsWork = document.querySelector(".dynamic-fields-work");
-const dynamicWork = document.querySelector(".dynamic-work");
-const addWork = document.querySelector(".add-work");
-if (addWork) {
-  addWork.addEventListener("click", () => {
-    var cln = dynamicWork.cloneNode(true);
-    dynamicFieldsWork.appendChild(cln);
-  });
-}
+// -- Create a new option
 
-//
-const dynamicFields = document.querySelector(".dynamic-fields-language");
-const dynamicLanguage = document.querySelector(".dynamic-language");
-const addLanguage = document.querySelector(".add-language");
-if (addLanguage) {
-  addLanguage.addEventListener("click", () => {
-    var cln = dynamicLanguage.cloneNode(true);
-    dynamicFields.appendChild(cln);
-  });
-}
+$(".add-input").on("click", function () {
+  const input = $(this).data("type");
+  const parent_field = document.querySelector(`[data-f-parent=${input}]`);
+  const field = document.querySelector(`[data-f=${input}]`);
 
-//
-const addComputer = document.querySelector(".add-computer");
-const dynamicFieldsComputer = document.querySelector(
-  ".dynamic-fields-computer"
-);
-const dynamicComputer = document.querySelector(".dynamic-computer");
-if (addComputer) {
-  addComputer.addEventListener("click", () => {
-    var cln = dynamicComputer.cloneNode(true);
-    dynamicFieldsComputer.appendChild(cln);
-  });
-}
-//
-const addCertificate = document.querySelector(".add-certificate");
-const dynamicFieldsCertificate = document.querySelector(
-  ".dynamic-fields-certificate"
-);
-const dynamicCertificate = document.querySelector(".dynamic-certificate");
-if (addCertificate) {
-  addCertificate.addEventListener("click", () => {
-    var cln = dynamicCertificate.cloneNode(true);
-    dynamicFieldsCertificate.appendChild(cln);
-  });
-}
+  const cln = field.cloneNode(true);
 
-// Create inputs
-function createOtherInput(that) {
-  const otherData = that.getAttribute("data-select");
-  console.log(otherData, "otherData");
+  $(cln).find(`[data-s=${input}]`).attr("disabled", true);
+  $(cln).find(`[data-level=${input}]`).attr("disabled", true);
 
-  const otherInput = document.querySelector("[data-other=" + otherData + "]");
-  console.log(otherInput, "otherInput");
+  $(parent_field).append(cln);
+});
 
-  if (that.value == "other") {
-    otherInput.style.display = "block";
-  } else {
-    otherInput.style.display = "none";
-  }
-}
+// Add other options
 
-$(".other-input").on("change", function () {
+$(document).on("change", ".other-input", function () {
   let select = $(this).data("s");
-  let otherInput = $(`[data-other=${select}]`);
-  if ($(this).val() == "choose") {
-    $(`[data-level=${select}]`).prop("disabled", true);
-    $(otherInput).fadeOut();
-  } else if ($(this).val() == "Digər") {
-    $(otherInput).fadeIn();
-    $(`[data-level=${select}]`).prop("disabled", false);
-  } else {
-    $(`[data-level=${select}]`).prop("disabled", false);
-    $(otherInput).fadeOut();
+
+  let label = "";
+  let placeholder = "";
+  let selector = "";
+
+  if (select == "language") {
+    label = "Dil";
+    placeholder = "Dili daxil edin";
+    selector = ".dynamic-fields-language";
+  } else if (select == "computer") {
+    label = "Kompüter biliyi";
+    placeholder = "Komputer biliyini daxil edin";
+    selector = ".dynamic-fields-computer";
+  } else if (select == "certificates") {
+    label = "Sertifikat";
+    placeholder = "Sertifikatı daxil edin";
+    selector = ".dynamic-fields-certificates";
   }
+
+  const otherInput =
+    '<div class="other" data-other="' +
+    select +
+    '">' +
+    '<div class="row">' +
+    '<div class="col-lg-4">' +
+    '<label for="language">' +
+    label +
+    "</label>" +
+    '<input type="text" placeholder="' +
+    placeholder +
+    '">' +
+    "</div>" +
+    "</div>" +
+    "</div>";
+
+  if ($(this).val() == "choose") {
+    $(this)
+      .parents(".col-lg-4")
+      .siblings(".col-lg-4")
+      .find(`[data-level=${select}]`)
+      .prop("disabled", true);
+  } else if ($(this).val() == "Digər") {
+    $(selector).append(otherInput);
+    $(this)
+      .parents(".col-lg-4")
+      .siblings(".col-lg-4")
+      .find(`[data-level=${select}]`)
+      .prop("disabled", false);
+  } else {
+    $(this)
+      .parents(".col-lg-4")
+      .siblings(".col-lg-4")
+      .find(`[data-level=${select}]`)
+      .prop("disabled", false);
+    let others = $(selector).find(".other");
+
+    $(others).each(function () {
+      $(this).remove();
+    });
+  }
+});
+
+// Importance
+
+$(document).on("change", ".importance", function () {
+  var select = $(this).data("select");
+  $(this).val() == "choose"
+    ? $(this)
+        .parents(".col-lg-4")
+        .siblings(".col-lg-4")
+        .find(`[data-s=${select}]`)
+        .prop("disabled", true)
+    : $(this)
+        .parents(".col-lg-4")
+        .siblings(".col-lg-4")
+        .find(`[data-s=${select}]`)
+        .prop("disabled", false);
+  $(this).val() == "not-important"
+    ? $(this)
+        .parents(".col-lg-4")
+        .siblings(".col-lg-4")
+        .find(`[data-s=${select}]`)
+        .prop("disabled", true)
+    : $(this)
+        .parents(".col-lg-4")
+        .siblings(".col-lg-4")
+        .find(`[data-s=${select}]`)
+        .prop("disabled", false);
 });

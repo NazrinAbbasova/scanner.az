@@ -516,14 +516,14 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="dynamic-fields-language">
-                                <div class="dynamic-language">
+                            <div class="dynamic-fields-language" data-f-parent='language'>
+                                <div class="dynamic-language" data-f="language">
                                     <div class="row">
                                         <div class="col-lg-4">
                                             <label for=""></label>
                                             <select data-select="language" class="importance" name="language"
                                                 id="language">
-                                                <option>Önəmlilik dərəcəsini təyin et</option>
+                                                <option value="choose">Önəmlilik dərəcəsini təyin et</option>
                                                 <option value="not-important">Önəm daşımır</option>
                                                 <option value="less-important">Az önəm daşıyır</option>
                                                 <option value="important">Önəmlidir</option>
@@ -551,19 +551,11 @@
                                                 <option value="advance">Yüksək</option>
                                             </select>
                                         </div>
-                                        <div class="other" data-other="language">
-                                            <div class="row">
-                                                <div class="col-lg-4">
-                                                    <label for="language">Dil</label>
-                                                    <input type="text" placeholder="Dili daxil edin">
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="add-remove">
-                                <div class="add-language">
+                                <div class="add-language add-input" data-type='language'>
                                     + Əlavə et
                                 </div>
                                 <div class="remove-language">
@@ -595,8 +587,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="dynamic-fields-computer">
-                                <div class="dynamic-computer">
+                            <div class="dynamic-fields-computer" data-f-parent="computer">
+                                <div class="dynamic-computer" data-f="computer">
                                     <div class="row">
                                         <div class="col-lg-4">
                                             <label for=""></label>
@@ -627,19 +619,16 @@
                                                 <option value="advance">Yüksək</option>
                                             </select>
                                         </div>
-                                        <div class="other" data-other="computer">
-                                            <div class="row">
-                                                <div class="col-lg-4">
-                                                    <label for="computer">Komputer biliyi</label>
-                                                    <input type="text" placeholder="Komputer biliyini daxil edin">
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="add-computer">
-                                + Əlavə et
+                            <div class="add-remove">
+                                <div class="add-computer add-input" data-type="computer">
+                                    + Əlavə et
+                                </div>
+                                <div class="remove-language">
+                                    Sil
+                                </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-6">
@@ -666,14 +655,14 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="dynamic-fields-certificate">
-                                <div class="dynamic-certificate">
+                            <div class="dynamic-fields-certificates" data-f-parent="certificates">
+                                <div class="dynamic-certificates" data-f="certificates">
                                     <div class="row">
                                         <div class="col-lg-4">
                                             <label for=""></label>
                                             <select data-select="certificates" class="importance" name="certificates"
                                                 id="Certificates">
-                                                <option>Önəmlilik dərəcəsini təyin et</option>
+                                                <option value="choose">Önəmlilik dərəcəsini təyin et</option>
                                                 <option value="not-important">Önəm daşımır</option>
                                                 <option value="less-important">Az önəm daşıyır</option>
                                                 <option value="important">Önəmlidir</option>
@@ -696,28 +685,25 @@
                                                 <option value="choose">Seç</option>
                                             </select>
                                         </div>
-                                        <div class="other" data-other="certificates">
-                                            <div class="row">
-                                                <div class="col-lg-4">
-                                                    <label for="certificates">Sertifikat</label>
-                                                    <input type="text" placeholder="Sertifikatı daxil edin">
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="add-certificate">
-                                + Əlavə et
+                            <div class="add-remove">
+                                <div class="add-certificate add-input" data-type="certificates">
+                                    + Əlavə et
+                                </div>
+                                <div class="remove-language">
+                                    Sil
+                                </div>
                             </div>
                             <hr>
                             <div class="row">
                                 <div class="col-lg-4">
-                                    <label for="salary">Minimum əmək haqqı tələbi</label>
+                                    <label for="salary">Minimum əmək haqqı gözləntisi</label>
                                     <input data-s="certificates" type="number" placeholder="Min.">
                                 </div>
                                 <div class="col-lg-4">
-                                    <label for="salary">Maksimum əmək haqqı tələbi</label>
+                                    <label for="salary">Maksimum əmək haqqı gözləntisi</label>
                                     <input data-s="certificates" type="number" placeholder="Maks.">
                                 </div>
                                 <div class="col-lg-4">
@@ -906,18 +892,6 @@
         // $(".submit").click(function () {
         //   return false;
         // });
-
-        $(".importance").on("change", function () {
-            var select = $(this).data("select");
-            $(this).val() == "choose"
-                ? $(`[data-s=${select}]`).prop("disabled", true)
-                : $(`[data-s=${select}]`).prop("disabled", false);
-            $(this).val() == "not-important"
-                ? $(`[data-s=${select}]`).prop("disabled", true)
-                : $(`[data-s=${select}]`).prop("disabled", false);
-        });
-
-
     </script>
 </body>
 
