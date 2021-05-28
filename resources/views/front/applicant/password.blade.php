@@ -10,7 +10,7 @@
             <div class="col-lg-8">
                 <div class="profile-content">
                     <div class="content-title">
-                        <h5 class="font-weight-700 pull-left text-uppercase">Şifrəni dəyiş</h5>
+                        <h5 class="font-weight-700 pull-left">Şifrəni dəyiş</h5>
                     </div>
                     <form method="post" action="{{ route('password.update') }}">
                         @csrf

@@ -18,15 +18,17 @@
                   <label for="password">Şifrə *</label>
                   <input type="password" name="password" placeholder="Şifrənizi daxil edin">
                   <button type="submit">Daxil ol</button>
-                  <a href="{{ route('forgot') }}">
-                    <div class="forgot-password">Şifrəni unutdum</div>
-                  </a>
+                  <div class="forgot-password">
+                    <a href="forgot-pass.html">Şifrəni unutdum</a>
+                  </div>
                 </form>
               </div>
             </div>
           </div>
           <div class="col-md-6">
-            @include('front.auth.imagebox')
+            <div class="overlay-container">
+              <img src="{{ asset('static/front/images/login.jpg') }}" alt="auth">
+            </div>
           </div>
         </div>
       </div>

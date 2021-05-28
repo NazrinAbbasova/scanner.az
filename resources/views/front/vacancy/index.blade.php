@@ -22,26 +22,29 @@
                             </tr>
                         </thead>
                         <tbody>
+
+                            @foreach ($company->vacancies as $vacancy)
                             <tr>
-                                <td class="job-name">Front-end developer</td>
+                                <td class="job-name">{{ $vacancy->title }}</td>
                                 <td class="profession-name">Proqramlaşdırma</td>
-                                <td class="date">December 15,2018</td>
+                                <td class="date">{{ date('d-m-Y', strtotime($vacancy->created_at)) }}</td>
                                 <td class="common-applicants">134</td>
                                 <td class="successful-applicants">
                                     <a href="applicants.html">23</a>
                                 </td>
                                 <td>
-                                    <a href="">
+                                    <a href="" data-toggle="tooltip" title="Kopyala">
                                         <i class=" fal fa-copy"></i>
                                     </a>
-                                    <a href="">
+                                    <a href="{{ route('vacancies.edit', $vacancy->id) }}" data-toggle="tooltip" title="Düzəliş et">
                                         <i class="fal fa-edit"></i>
                                     </a>
-                                    <a href="">
+                                    <a href="{{ route('vacancies.destroy', $vacancy->id) }}" data-toggle="tooltip" title="Sil">
                                         <i class="fal fa-trash-alt"></i>
                                     </a>
                                 </td>
                             </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

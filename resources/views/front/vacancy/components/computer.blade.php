@@ -2,8 +2,8 @@
 <fieldset data-field="computer">
     <h5>Kompyuter bilikləri</h5>
     @include('front.vacancy.components.video')
-    <div class="dynamic-fields-computer">
-        <div class="dynamic-computer">
+    <div class="dynamic-fields-computer" data-f-parent="computer">
+        <div class="dynamic-computer" data-f="computer">
             <div class="row">
                 <div class="col-lg-4">
                     <label for=""></label>
@@ -26,19 +26,16 @@
                         @include('front.vacancy.components.level')
                     </select>
                 </div>
-                <div class="other" data-s="computer">
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <label for="computer">Komputer biliyi</label>
-                            <input type="text" name="computer_skill" placeholder="Komputer biliyini daxil edin">
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
-    <div class="add-computer">
-        + Əlavə et
+    <div class="add-remove">
+        <div class="add-computer add-input" data-type="computer">
+            + Əlavə et
+        </div>
+        <div class="remove-language">
+            Sil
+        </div>
     </div>
     <div class="row">
         <div class="col-lg-6">

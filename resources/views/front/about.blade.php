@@ -3,7 +3,7 @@
 @section('content')
 <!-- Start About Area -->
 
-<section id="explore" class="app-description startup-page-style section white-bg about-section">
+<section id="explore" class="app-description startup-page-style section white-bg mt-100 about-section">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6 col-12">

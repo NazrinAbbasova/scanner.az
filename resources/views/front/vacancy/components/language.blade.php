@@ -2,8 +2,8 @@
 <fieldset data-field="language">
     <h5>Dil bilikləri</h5>
     @include('front.vacancy.components.video')
-    <div class="dynamic-fields-language">
-        <div class="dynamic-language">
+    <div class="dynamic-fields-language" data-f-parent='language'>
+        <div class="dynamic-language" data-f="language">
             <div class="row">
                 <div class="col-lg-4">
                     <label for=""></label>
@@ -27,19 +27,16 @@
                         @include('front.vacancy.components.level')
                     </select>
                 </div>
-                <div class="other" data-other="language" data-s="language">
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <label for="language">Dil</label>
-                            <input type="text" name="language" placeholder="Dili daxil edin">
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
-    <div class="add-language">
-        + Əlavə et
+    <div class="add-remove">
+        <div class="add-language add-input" data-type="language">
+            + Əlavə et
+        </div>
+        <div class="remove-language">
+            Sil
+        </div>
     </div>
     <div class="row">
         <div class="col-lg-6">

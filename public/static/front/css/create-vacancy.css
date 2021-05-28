@@ -1,15 +1,6 @@
-.vacancy-name {
-    margin: auto;
-    font-size: 16px;
-    font-weight: 500;
-    color: #fff;
-    border-radius: 6px;
-}
-
-.vacancy-name input {
-    text-align: center;
-    padding: 17.5px !important;
-    border-radius: 6px !important;
+.about-vacancy textarea {
+    height: 6rem;
+    resize: none;
 }
 
 /*form styles*/
@@ -22,7 +13,7 @@
     background: white;
     border: 0 none;
     border-radius: 3px;
-    box-shadow: 0 0 10px 0 rgba(0, 24, 128, .1);
+    box-shadow: 0 0 10px 0 rgba(0, 24, 128, 0.1);
     padding: 20px 30px;
     box-sizing: border-box;
     width: 100%;
@@ -59,7 +50,7 @@
 #vacancy-form .action-button {
     width: 100%;
     display: flex;
-    background: linear-gradient(45deg, #4567f4, #3CD3AD);
+    background: linear-gradient(45deg, #4567f4, #3cd3ad);
     font-weight: bold;
     color: white;
     border: 0 none;
@@ -70,7 +61,8 @@
 
 #vacancy-form .action-button:hover,
 #vacancy-form .action-button:focus {
-    box-shadow: 0 0 0 2px white, 0 0 0 3px linear-gradient(45deg, #4567f4, #3CD3AD);
+    box-shadow: 0 0 0 2px white,
+        0 0 0 3px linear-gradient(45deg, #4567f4, #3cd3ad);
 }
 
 /*headings*/
@@ -97,8 +89,6 @@
     display: none !important;
 }
 
-
-
 .intro-video-play a {
     width: 50%;
     margin-bottom: 20px;
@@ -110,10 +100,405 @@
     border: 1px solid #4567f4;
     color: #4567f4;
     background: white;
+    .about-vacancy textarea {
+        height: 6rem;
+        resize: none;
+    }
+
+    /*form styles*/
+    #vacancy-form {
+        text-align: center;
+        position: relative;
+    }
+
+    #vacancy-form fieldset {
+        background: white;
+        border: 0 none;
+        border-radius: 3px;
+        box-shadow: 0 0 10px 0 rgba(0, 24, 128, 0.1);
+        padding: 20px 30px;
+        box-sizing: border-box;
+        width: 100%;
+        text-align: left;
+    }
+
+    #vacancy-form fieldset h5 {
+        margin-bottom: 1rem;
+    }
+
+    /*Hide all except first fieldset*/
+    #vacancy-form fieldset:not(:first-of-type) {
+        display: none;
+    }
+
+    /*inputs*/
+    #vacancy-form input,
+    #vacancy-form textarea,
+    #vacancy-form select {
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        margin-bottom: 10px;
+        width: 100%;
+        box-sizing: border-box;
+        color: #222;
+        font-size: 13px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /*buttons*/
+    #vacancy-form .action-button {
+        width: 100%;
+        display: flex;
+        background: linear-gradient(45deg, #4567f4, #3cd3ad);
+        font-weight: bold;
+        color: white;
+        border: 0 none;
+        border-radius: 1px;
+        cursor: pointer;
+        margin-top: 3rem;
+    }
+
+    #vacancy-form .action-button:hover,
+    #vacancy-form .action-button:focus {
+        box-shadow: 0 0 0 2px white,
+            0 0 0 3px linear-gradient(45deg, #4567f4, #3cd3ad);
+    }
+
+    /*headings*/
+    .fs-title {
+        font-size: 15px;
+        text-transform: uppercase;
+        color: #222;
+        margin-bottom: 10px;
+    }
+
+    .fs-subtitle {
+        font-weight: normal;
+        font-size: 13px;
+        color: #666;
+        margin-top: 10px;
+    }
+
+    .intro-video-play {
+        text-align: center;
+    }
+
+    .glightbox-open .gnext,
+    .glightbox-open .gprev {
+        display: none !important;
+    }
+
+    .intro-video-play a {
+        width: 50%;
+        margin-bottom: 20px;
+        font-size: 16px;
+        font-weight: 500;
+        padding: 15px 30px;
+        color: #fff;
+        border-radius: 6px;
+        border: 1px solid #4567f4;
+        color: #4567f4;
+        background: white;
+    }
+
+    .intro-video-play a:hover {
+        background: linear-gradient(45deg, #4567f4, #3cd3ad);
+        border: 1px solid #fff;
+        color: white;
+    }
+
+    .intro-video-play.first a {
+        width: 100%;
+    }
+
+    select.importance {
+        color: #4964d6 !important;
+    }
+
+    /*progressbar*/
+    .progressbar {
+        margin-bottom: 30px;
+        overflow: hidden;
+        /*CSS counters to number the steps*/
+        counter-reset: step;
+    }
+
+    .progressbar li {
+        list-style-type: none;
+        color: #222;
+        font-weight: 500;
+        font-size: 16px;
+        width: 16.6%;
+        float: left;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .progressbar.create-vacancy li {
+        width: 14.2%;
+    }
+
+    .progressbar li:before {
+        content: counter(step);
+        counter-increment: step;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        display: block;
+        font-size: 14px;
+        color: #222;
+        background: #fff;
+        border-radius: 50%;
+        border: 1px solid #4567f4;
+        margin: 0 auto 5px auto;
+    }
+
+    /*progressbar connectors*/
+    .progressbar li:after {
+        content: "";
+        width: 100%;
+        height: 2px;
+        background: #4567f4;
+        position: absolute;
+        left: -50%;
+        top: 25px;
+        z-index: -1;
+        /*put it behind the numbers*/
+    }
+
+    .progressbar li:first-child:after {
+        /*connector not needed before the first step*/
+        content: none;
+    }
+
+    /*marking active/completed steps green*/
+    /*The number of the step and the connector before it = green*/
+    .progressbar li.active:before,
+    .progressbar li.active:after {
+        background: linear-gradient(45deg, #4567f4, #3cd3ad);
+        color: white;
+        border: none;
+    }
+
+    .add-remove {
+        display: flex;
+    }
+
+    .add-work,
+    .add-education,
+    .add-language,
+    .add-computer,
+    .add-certificate {
+        color: #4567f4;
+        cursor: pointer;
+        font-weight: 600;
+        width: 5rem;
+    }
+
+    .remove-language {
+        font-weight: 500;
+        cursor: pointer;
+        display: none;
+    }
+
+    .save-vacancy {
+        margin-top: 20px;
+        font-size: 16px;
+        font-weight: 500;
+        padding: 15px 30px;
+        border-radius: 6px;
+        margin-bottom: 20px;
+        border: 1px solid #4567f4 !important;
+        color: #4567f4 !important;
+        background: white;
+        margin-top: 3rem;
+    }
+
+    .save-vacancy:hover {
+        background: linear-gradient(45deg, #4567f4, #3cd3ad);
+        border: 1px solid #fff !important;
+        color: white !important;
+        transition: 0.3s;
+    }
+
+    .save-cv {
+        width: 100%;
+    }
+
+    /* .modal-body {
+        display: flex;
+    } */
+
+    .modal-body input {
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        width: 100%;
+        box-sizing: border-box;
+        color: #222;
+        font-size: 14px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-body i {
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        font-size: 20px;
+        color: #4567f4;
+        margin-top: 21px;
+        cursor: pointer;
+    }
+
+    .link {
+        text-align: center;
+    }
+
+    .link a {
+        text-decoration: underline;
+        font-size: 14px;
+    }
+
+    .save-icon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 30px;
+        color: #4567f4;
+    }
+
+    .save-icon i {
+        padding: 15px;
+        border: 1px solid #4567f4;
+        border-radius: 50%;
+        cursor: pointer;
+        margin-bottom: 1rem;
+    }
+
+    .switch-field {
+        display: flex;
+        overflow: hidden;
+    }
+
+    .switch-field label {
+        font-size: 14px;
+        line-height: 1;
+        text-align: center;
+        padding: 10px 30px;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        transition: all 0.1s ease-in-out;
+    }
+
+    .switch-field label:hover {
+        cursor: pointer;
+    }
+
+    /* 
+    .switch-field input {
+        width: 5rem;
+    } */
+
+    .switch-field input:checked + label {
+        background: linear-gradient(45deg, #4567f4, #3cd3ad);
+        box-shadow: none;
+        color: #fff;
+    }
+
+    .switch-field label:first-of-type {
+        border-radius: 4px 0 0 4px;
+    }
+
+    .switch-field label:last-of-type {
+        border-radius: 0 4px 4px 0;
+    }
+
+    .modal-body .submit button {
+        display: flex;
+        background: linear-gradient(45deg, #4567f4, #3cd3ad);
+        padding: 1rem 10rem;
+        text-align: center;
+        font-size: 14px;
+        color: white;
+        margin: auto;
+        border: 0 none;
+        border-radius: 3px;
+        cursor: pointer;
+        margin-top: 3rem;
+    }
+
+    .send-to-mail,
+    .active-vacancy {
+        display: flex;
+        margin-top: 1rem;
+    }
+
+    .send-to-mail input,
+    .active-vacancy input {
+        width: 15px !important;
+        margin-right: 0.5rem;
+        margin-top: 3px;
+    }
+
+    .send-to-mail label,
+    .active-vacancy label {
+        color: #4567f4;
+    }
+
+    .share-social {
+        display: flex;
+        margin-top: 1rem;
+    }
+
+    .share-social li a {
+        display: block;
+        border: none;
+        color: #fff;
+        border-radius: 6px;
+        margin-right: 1rem;
+    }
+
+    .share-social i {
+        width: 40px;
+        height: 40px;
+        margin: 0;
+        padding: 10px !important;
+        border-radius: 3px;
+        font-size: 20px;
+        color: #4567f4;
+        cursor: pointer;
+    }
+
+    .share-social li a i:hover {
+        background-color: #4567f4;
+        color: #fff;
+        border-color: transparent;
+        transition: 0.3s;
+    }
+
+    .certificate-file label {
+        width: 100% !important;
+        padding: 14px !important;
+    }
+
+    .certificate-file label:hover {
+        background-color: #4567f4;
+    }
+
+    .add-commitment {
+        font-size: 30px;
+        margin-top: 1.5rem;
+        color: #4567f4;
+        cursor: pointer;
+    }
 }
 
 .intro-video-play a:hover {
-    background: linear-gradient(45deg, #4567f4, #3CD3AD);
+    background: linear-gradient(45deg, #4567f4, #3cd3ad);
     border: 1px solid #fff;
     color: white;
 }
@@ -127,14 +512,14 @@ select.importance {
 }
 
 /*progressbar*/
-#progressbar {
+.progressbar {
     margin-bottom: 30px;
     overflow: hidden;
     /*CSS counters to number the steps*/
     counter-reset: step;
 }
 
-#progressbar li {
+.progressbar li {
     list-style-type: none;
     color: #222;
     font-weight: 500;
@@ -145,7 +530,11 @@ select.importance {
     cursor: pointer;
 }
 
-#progressbar li:before {
+.progressbar.create-vacancy li {
+    width: 14.2%;
+}
+
+.progressbar li:before {
     content: counter(step);
     counter-increment: step;
     width: 50px;
@@ -161,8 +550,8 @@ select.importance {
 }
 
 /*progressbar connectors*/
-#progressbar li:after {
-    content: '';
+.progressbar li:after {
+    content: "";
     width: 100%;
     height: 2px;
     background: #4567f4;
@@ -173,18 +562,22 @@ select.importance {
     /*put it behind the numbers*/
 }
 
-#progressbar li:first-child:after {
+.progressbar li:first-child:after {
     /*connector not needed before the first step*/
     content: none;
 }
 
 /*marking active/completed steps green*/
 /*The number of the step and the connector before it = green*/
-#progressbar li.active:before,
-#progressbar li.active:after {
-    background: linear-gradient(45deg, #4567f4, #3CD3AD);
+.progressbar li.active:before,
+.progressbar li.active:after {
+    background: linear-gradient(45deg, #4567f4, #3cd3ad);
     color: white;
     border: none;
+}
+
+.add-remove {
+    display: flex;
 }
 
 .add-work,
@@ -195,6 +588,13 @@ select.importance {
     color: #4567f4;
     cursor: pointer;
     font-weight: 600;
+    width: 5rem;
+}
+
+.remove-language {
+    font-weight: 500;
+    cursor: pointer;
+    display: none;
 }
 
 .save-vacancy {
@@ -211,10 +611,14 @@ select.importance {
 }
 
 .save-vacancy:hover {
-    background: linear-gradient(45deg, #4567f4, #3CD3AD);
+    background: linear-gradient(45deg, #4567f4, #3cd3ad);
     border: 1px solid #fff !important;
     color: white !important;
     transition: 0.3s;
+}
+
+.save-cv {
+    width: 100%;
 }
 
 /* .modal-body {
@@ -292,8 +696,8 @@ select.importance {
     width: 5rem;
 } */
 
-.switch-field input:checked+label {
-    background: linear-gradient(45deg, #4567f4, #3CD3AD);
+.switch-field input:checked + label {
+    background: linear-gradient(45deg, #4567f4, #3cd3ad);
     box-shadow: none;
     color: #fff;
 }
@@ -308,7 +712,7 @@ select.importance {
 
 .modal-body .submit button {
     display: flex;
-    background: linear-gradient(45deg, #4567f4, #3CD3AD);
+    background: linear-gradient(45deg, #4567f4, #3cd3ad);
     padding: 1rem 10rem;
     text-align: center;
     font-size: 14px;
@@ -318,11 +722,6 @@ select.importance {
     border-radius: 3px;
     cursor: pointer;
     margin-top: 3rem;
-
-}
-
-.other {
-    display: none;
 }
 
 .send-to-mail,
@@ -340,7 +739,7 @@ select.importance {
 
 .send-to-mail label,
 .active-vacancy label {
-    color: #4567f4
+    color: #4567f4;
 }
 
 .share-social {
@@ -372,4 +771,20 @@ select.importance {
     color: #fff;
     border-color: transparent;
     transition: 0.3s;
+}
+
+.certificate-file label {
+    width: 100% !important;
+    padding: 14px !important;
+}
+
+.certificate-file label:hover {
+    background-color: #4567f4;
+}
+
+.add-commitment {
+    font-size: 30px;
+    margin-top: 1.5rem;
+    color: #4567f4;
+    cursor: pointer;
 }

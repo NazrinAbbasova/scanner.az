@@ -1,39 +1,21 @@
 <!-- Personal informations -->
 <fieldset data-field="personal">
-    <div class="row mb-10">
-        <div class="col-lg-6">
-            <div class="vacancy-name">
-                <!-- <label for="vacancy-name">Vakansiyanın adı</label> -->
-                <input type="text" placeholder="Vakansiyanın adını daxil edin">
-            </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="intro-video-play first">
-                <div class="justify-content-center">
-                    <div class="play-thumb wow zoomIn" data-wow-delay=".2s">
-                        <a href="https://www.youtube.com/watch?v=r44RKWyfcFw&fbclid=IwAR21beSJORalzmzokxDRcGfkZA1AtRTE__l5N4r09HcGS5Y6vOluyouM9EM" class="glightbox video"><i class="lni lni-play"></i> Videotəlimatı izlə</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
     <h5>Şəxsi məlumatlar</h5>
+    @include('front.vacancy.components.video')
     <div class="row">
         <div class="col-lg-4">
             <label for=""></label>
-            <select data-select="age" class="importance" name="birthdate" id="birthdate">
+            <select data-select="age" class="importance" name="age_importance" id="birthdate">
                 @include('front.vacancy.components.importance')
             </select>
         </div>
         <div class="col-lg-4">
             <label for="birthdate"> Minimum yaş</label>
-            <input data-s="age" disabled type="number" placeholder="Min.">
+            <input data-s="age" value="{{ isset($vacancy) ? $vacancy->min_age : old('min_age') }}" name="min_age" disabled type="number" placeholder="Min.">
         </div>
         <div class="col-lg-4">
             <label for="birthdate">Maksimum yaş</label>
-            <input data-s="age" disabled type="number" placeholder="Maks.">
+            <input data-s="age" value="{{ isset($vacancy) ? $vacancy->max_age : old('max_age') }}" name="max_age" disabled type="number" placeholder="Maks.">
         </div>
         <hr>
         <div class="col-lg-4">
@@ -45,8 +27,9 @@
         <div class="col-lg-4">
             <label for="birthdate">Vətəndaşlıq</label>
             <select data-s="citizenship" disabled name="nationality" id="citizenship">
-                <option value="choose">Azərbaycanlı</option>
-                <option value="not-important">Əcnəbi</option>
+                <option value="choose">Seç</option>
+                <option value="Azərbaycanlı" {{ isset($vacancy) && $vacancy->nationality ==  'Azərbaycanlı' ? 'selected' : ''}}>Azərbaycanlı</option>
+                <option value="Əcnəbi" {{ isset($vacancy) && $vacancy->nationality ==  'Əcnəbi' ? 'selected' : ''}}>Əcnəbi</option>
             </select>
         </div>
         <hr>
@@ -61,7 +44,7 @@
             <select data-s="city" disabled name="region" id="city">
                 <option value="choose">Seç</option>
                 @foreach ($regions as $region)
-                    <option value="{{ $region->name }}">{{ $region->name }}</option>
+                    <option {{ isset($vacancy) && $vacancy->region ==  $region->name ? 'selected' : ''}} value="{{ $region->name }}">{{ $region->name }}</option>
                 @endforeach
             </select>
         </div>
@@ -76,8 +59,8 @@
             <label for="gender">Cins</label>
             <select data-s="gender" disabled name="importance" id="gender">
                 <option value="choose">Seç</option>
-                <option value="male">Kişi</option>
-                <option value="female">Qadın</option>
+                <option value="Kişi" {{ isset($vacancy) && $vacancy->gender ==  "Kişi" ? 'selected' : ''}}>Kişi</option>
+                <option value="Qadın" {{ isset($vacancy) && $vacancy->gender ==  "Qadın" ? 'selected' : ''}}>Qadın</option>
             </select>
         </div>
 
@@ -93,8 +76,8 @@
             <label for="marital">Ailə vəziyyəti</label>
             <select data-s="marital" disabled name="marital" id="marital">
                 <option value="choose">Seç</option>
-                <option value="male">Evli</option>
-                <option value="female">Subay</option>
+                <option value="Evli" {{ isset($vacancy) && $vacancy->marital ==  "Evli" ? 'selected' : ''}}>Evli</option>
+                <option value="Subay" {{ isset($vacancy) && $vacancy->marital ==  "Subay" ? 'selected' : ''}}>Subay</option>
             </select>
         </div>
         <hr>
@@ -108,29 +91,33 @@
             <label for="military">Hərbi mükəlləfiyyət</label>
             <select data-s="military" disabled name="military" id="military">
                 <option value="choose">Seç</option>
-                <option value="not-important">Var</option>
-                <option value="less-important">Yoxdur</option>
+                <option value="Var" {{ isset($vacancy) && $vacancy->military ==  "Var" ? 'selected' : ''}}>Var</option>
+                <option value="Yoxdur" {{ isset($vacancy) && $vacancy->military ==  "Yoxdur" ? 'selected' : ''}}>Yoxdur</option>
             </select>
         </div>
         <hr>
         <div class="col-lg-4">
             <label for=""></label>
-            <select data-select="driving-lisence" class="importance" name="driving_license_importance" id="driving-lisence">
+            <select data-select="driving-lisence" class="importance" name="driver_license_importance" id="driving-lisence">
                 @include('front.vacancy.components.importance')
             </select>
         </div>
         <div class="col-lg-4">
             <label for="driving-lisence">Sürücülük vəsiqəsi</label>
-            <select data-s="driving-lisence" disabled name="driving_license" id="driving-lisence">
+            <select data-s="driving-lisence" disabled name="driver_license" id="driving-lisence">
                 <option value="choose">Seç</option>
-                <option value="not-important">Var</option>
-                <option value="less-important">Yoxdur</option>
+                <option value="Var" {{ isset($vacancy) && $vacancy->driver_license ==  "Var" ? 'selected' : ''}}>Var</option>
+                <option value="Yoxdur" {{ isset($vacancy) && $vacancy->driver_license ==  "Yoxdur" ? 'selected' : ''}}>Yoxdur</option>
             </select>
         </div>
         <div class="col-lg-4">
             <label for="driving-lisence">Sürücülük vəsiqəsinin kateqoriyası</label>
-            <select disabled data-s="driving-lisence" name=" driving_license_category" id="lisence-category">
-                <option value="choose">Seç</option>
+            <select disabled data-s="driving-lisence" name="driver_license_category" id="lisence-category">
+                @if(isset($vacancy) && $vacancy->driver_licence_category)
+                    <option value="{{ $vacancy->driver_license_category }}">{{ $vacancy->driver_license_category }}</option>
+                @else
+                    <option value="choose">Seç</option>
+                @endif
                 <option value="A1">A1</option>
                 <option value="A">A</option>
                 <option value="B1">B1</option>
@@ -147,5 +134,12 @@
             </select>
         </div>
     </div>
-    <input data-field="education" type="button" name="next" class="next action-button" value="Sonrakı" />
+    <div class="row">
+        <div class="col-lg-6">
+            <input data-field="about" type="button" name="previous" class="previous action-button" value="Əvvəlki" />
+        </div>
+        <div class="col-lg-6">
+            <input data-field="education" type="button" name="next" class="next action-button" value="Sonrakı" />
+        </div>
+    </div>
 </fieldset>

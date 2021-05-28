@@ -7,7 +7,7 @@
                     <input type="hidden" name="company" value="{{ auth()->user()->company }}">
                     <input type="hidden" name="id" value="{{ auth()->user()->id }}">
                     <label class="{{ auth()->user()->logo ? '' : 'avatar-placeholder' }}">
-                        <img class="profile-pic" src="{{ auth()->user()->logo ? asset(auth()->user()->photo) : asset('static/front/images/company.svg') }}" />
+                        <img class="profile-pic" src="{{ auth()->user()->logo ? asset(auth()->user()->logo) : asset('static/front/images/company.svg') }}" />
                         <input name="logo" id="upload-avatar" class="file-upload d-none" type="file" accept="image/*" />
                     </label>
                 </div>
@@ -24,7 +24,7 @@
             <li>
                 <a href="{{ route('vacancies') }}">
                     <i class="fal fa-id-card"></i>
-                    <span>Vakansiyalara bax</span>
+                    <span>Bütün vakansiyalar</span>
                 </a>
             </li>
             <li>
@@ -34,7 +34,7 @@
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="{{ route('company.stats') }}">
                     <i class="fal fa-chart-pie"></i>
                     <span>Ümumi statistika</span>
                 </a>

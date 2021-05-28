@@ -20,4 +20,8 @@ class Vacancy extends Model
     public function computer_skills(){
         return $this->hasMany(VacancyComputerSkill::class);
     }
+
+    public function company(){
+        return $this->belongsTo(User::class)->where('type', 'company');
+    }
 }

@@ -78,25 +78,30 @@ class CompanyController extends Controller
     {
         $rules = [
             'company' => 'required',
-            'company' => 'required',
+            'phone' => 'required',
+            'description' => 'required',
         ];
 
         $user = User::find($request->id);
 
         $messages = [
-            'company.required'       => 'Şirkət adını daxil edin.',
-            'description.required'   => 'Şirkət haqqında məlumat daxil edin.',
+            'company.required'     => 'Şirkət adını daxil edin.',
+            'phone.required'       => 'Şirkət adını daxil edin.',
+            'description.required' => 'Əlaqə telefonu daxil edin.',
         ];
 
         $this->validate($request, $rules, $messages);
 
-        $user->company      = $request->company;
-        $user->description  = $request->description;
-        $user->phone        = $request->phone;
-        $user->address      = $request->address;
-        $user->website      = $request->website;
-        $user->linkedin     = $request->linkedin;
-        $user->facebook     = $request->facebook;
+        $user->company        = $request->company;
+        $user->field          = $request->field;
+        $user->description    = $request->description;
+        $user->phone          = $request->phone;
+        $user->address        = $request->address;
+        $user->website        = $request->website;
+        $user->linkedin       = $request->linkedin;
+        $user->facebook       = $request->facebook;
+        $user->success_email  = $request->success_email;
+        $user->fail_email     = $request->fail_email;
         $user->save();
 
         return redirect()->back()->with('success', 'Dəyişikliklər yadda saxlanıldı');
@@ -138,5 +143,10 @@ class CompanyController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function stats(){
+        $company = User::with('vacancies')->find(auth()->user()->id);
+        return view('front.company.stats', compact('company'));
     }
 }

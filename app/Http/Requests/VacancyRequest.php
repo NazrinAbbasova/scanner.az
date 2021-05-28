@@ -13,7 +13,7 @@ class VacancyRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return false;
     }
 
     /**
@@ -24,14 +24,20 @@ class VacancyRequest extends FormRequest
     public function rules()
     {
         return [
-            
+            'title' => 'required',
+            'description' => 'required',
+            'obligations' => 'required',
+            'guarantees' => 'required'
         ];
     }
 
     public function messages()
     {
         return [
-            
+            'title.required' => 'Vakansiya başlığını daxil edin',
+            'description.required' => 'Vakansiyanın qısa təsvirini daxil edin',
+            'obligations.required' => 'Vakansiya üçün öhdəlikləri daxil edin',
+            'guarantees.required' => 'Vakansiyanın təminatlarını daxil edin',
         ];
     }
 }

@@ -50,12 +50,16 @@ Route::middleware(['auth'])->group(function () {
             Route::get('/profile',     'CompanyController@edit')->name('company.edit');
             Route::post('/update',     'CompanyController@update')->name('company.update');
             Route::post('/logo',       'CompanyController@logo')->name('company.logo');
+            Route::get('/statistics',  'CompanyController@stats')->name('company.stats');
         });
 
         Route::prefix('/vacancies')->group(function () {
-            Route::get('/',        'VacancyController@index')->name('vacancies');
-            Route::get('/new',     'VacancyController@create')->name('vacancies.create');
-            Route::post('/store',  'VacancyController@store')->name('vacancies.store');
+            Route::get('/',            'VacancyController@index')->name('vacancies');
+            Route::get('/new',         'VacancyController@create')->name('vacancies.create');
+            Route::post('/store',      'VacancyController@store')->name('vacancies.store');
+            Route::get('/edit/{v}',    'VacancyController@edit')->name('vacancies.edit');
+            Route::post('/update/{v}', 'VacancyController@update')->name('vacancies.update');
+            Route::get('/delete/{v}', 'VacancyController@destroy')->name('vacancies.destroy');
 
             Route::get('/applicants', 'VacancyController@applicants')->name('vacancies.applicants');
         });

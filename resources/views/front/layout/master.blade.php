@@ -20,14 +20,6 @@
       </ul>
   @endif
 
-  @if (session('error'))
-      {{ session('error') }}
-  @endif
-
-  @if (session('success'))
-      {{ session('success') }}
-  @endif
-
   @include('front.inc.footer')
 
   <!-- ========================= scroll-top ========================= -->

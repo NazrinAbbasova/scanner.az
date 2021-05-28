@@ -71,20 +71,6 @@
             <label for="start-work"> Minimum iş stajı</label>
             <input data-s="category" disabled type="number" placeholder="Müddət" name="position_employment_duration">
         </div>
-        <hr>
-
-
-
-        <div class="col-lg-4">
-            <label for=""></label>
-            <select data-select="worktime" class="importance" name="employment_duration_importance" id="worktime">
-                @include('front.vacancy.components.importance')
-            </select>
-        </div>
-        <div class="col-lg-4">
-            <label for="start-work">Minimum iş stajı</label>
-            <input data-s="worktime" disabled type="number" placeholder="Müddət" name="employment_duration">
-        </div>
 
         <div class="col-lg-6">
             <input data-field="education" type="button" name="previous"  class="previous action-button" value="Əvvəlki" />

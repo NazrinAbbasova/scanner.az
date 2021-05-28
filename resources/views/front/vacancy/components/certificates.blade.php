@@ -2,8 +2,8 @@
 <fieldset data-field="certificates">
     <h5>Sertifikat məlumatları</h5>
     @include('front.vacancy.components.video')
-    <div class="dynamic-fields-certificate">
-        <div class="dynamic-certificate">
+    <div class="dynamic-fields-certificates" data-f-parent="certificates">
+        <div class="dynamic-certificates" data-f="certificates">
             <div class="row">
                 <div class="col-lg-4">
                     <label for=""></label>
@@ -23,28 +23,25 @@
                 </div>
                 <div class="col-lg-4">
                     <label for="certificates">Sertifikat səviyyəsi</label>
-                    <select data-s="certificates" disabled name="certificate-levels[]" id="certificate-level">
+                    <select data-s="certificates" disabled name="certificate_levels[]" id="certificate-level">
                         <option>Seç</option>
                     </select>
-                </div>
-                <div class="other" data-s="certificates">
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <label for="certificates">Sertifikat</label>
-                            <input type="text" name="certificate" placeholder="Sertifikatı daxil edin">
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="add-certificate">
-        + Əlavə et
+    <div class="add-remove">
+        <div class="add-certificate add-input" data-type="certificates">
+            + Əlavə et
+        </div>
+        <div class="remove-language">
+            Sil
+        </div>
     </div>
     <hr>
     <div class="row">
         <div class="col-lg-4">
-            <label for="salary">Minimum əmək haqqı tələbi</label>
+            <label for="salary">Minimum əmək haqqı tələbi*</label>
             <input name="min_salary_expectation" type="number" placeholder="Min.">
         </div>
         <div class="col-lg-4">
@@ -57,11 +54,11 @@
         </div>
     </div>
     <div class="send-to-mail">
-        <input type="checkbox" id="sendToMail" name="sendToMail" />
+        <input type="checkbox" id="sendToMail" name="send_resumes" />
         <label for="sendToMail">Uyğun CV-ləri emailə göndər</label>
     </div>
     <div class="active-vacancy">
-        <input checked type="checkbox" id="active-vacancy" name="active-vacancy" />
+        <input checked type="checkbox" id="active-vacancy" name="isActive" />
         <label for="active-vacancy">Vakansiyanı aktiv et</label>
     </div>
     <div class="row">
