@@ -1,31 +1,56 @@
 @extends('front.layout.master')
-@section('title', 'Yeni vakansiya')
+@section('title', 'CV yarat')
 @section('content')
 <section class="profile margin-page">
     <div class="container">
         <div class="row">
-            @include('front.company.sidebar')
-            <div class="col-xl-9 col-lg-9 m-b30">
-                <form id="vacancy-form" method="post" action="{{ route('vacancies.store') }}">
-                    @csrf
+            @include('front.applicant.sidebar')
+            <div class="col-lg-9 m-b30">
+                <form id="vacancy-form">
                     <!-- progressbar -->
-                    <ul class="progressbar create-vacancy">
-                        <li data-fieldset="about-vacancy" class="active">Vakansiya haqqında</li>
-                        <li data-fieldset="personal">Şəxsi məlumatlar</li>
+                    <ul class="progressbar">
+                        <li data-fieldset=" personal" class="active">Şəxsi məlumatlar</li>
                         <li data-fieldset="education">Təhsil məlumatları</li>
                         <li data-fieldset="work">İş<br> təcrübəsi</li>
                         <li data-fieldset="language">Dil bilikləri</li>
                         <li data-fieldset="computer">Kompyuter bilikləri</li>
                         <li data-fieldset="certificates">Sertifikatlar</li>
                     </ul>
-                    @include('front.vacancy.components.about')
-                    @include('front.vacancy.components.personal')
-                    @include('front.vacancy.components.education')
-                    @include('front.vacancy.components.work')
-                    @include('front.vacancy.components.language')
-                    @include('front.vacancy.components.computer')
-                    @include('front.vacancy.components.certificates')
+                    
+                    @include('front.cv.components.personal')
+                    @include('front.cv.components.education')
+                    @include('front.cv.components.work')
+                    @include('front.cv.components.language')
+                    @include('front.cv.components.computer')
+                    @include('front.cv.components.certificates')                 
+                    
+                    
                 </form>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="shareVacancy" tabindex="-1" aria-labelledby="shareVacancyLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="shareVacancyLabel">Vakansiyanı paylaş
+                            </h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-lg-10">
+                                    <label for="share">Linki kopyala</label>
+                                    <input type="text" value="www.scanner.az/vacancy-11">
+                                </div>
+                                <div class="col-lg-2">
+                                    <i class=" fal fa-copy"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -77,8 +102,8 @@
     })
 </script>
 
+<link rel="stylesheet" href="{{ asset('static/front/css/profile.css') }}">
 <link rel="stylesheet" href="{{ asset('static/front/css/icons.min.css') }}" />
 <link rel="stylesheet" href="{{ asset('static/front/css/create-vacancy.css') }}">
 <script src="{{ asset('static/front/js/create-items.js') }}"></script>
-
 @endsection

@@ -76,4 +76,18 @@ class ApplicantController extends Controller
         return back();
     }
 
+
+    public function stats(){
+        $applicant = User::find(auth()->user()->id);
+        return view('front.applicant.stats', compact('applicant'));
+    }
+
+    public function cv(){
+        return view('front.cv.show');
+    }
+
+    public function vacancies(){
+        return view('front.applicant.vacancies');
+    }
+
 }

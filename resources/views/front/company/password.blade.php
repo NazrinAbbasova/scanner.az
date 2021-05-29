@@ -1,5 +1,5 @@
 @extends('front.layout.master')
-@section('title', auth()->user()->company)
+@section('title', 'Şifrəni dəyiş')
 
 @section('content')
 <section class="profile margin-page">

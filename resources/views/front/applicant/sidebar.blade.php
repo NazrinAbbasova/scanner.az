@@ -1,4 +1,4 @@
-<div class="col-lg-4">
+<div class="col-lg-3">
     <div class="user-menu">
         <div class="profile-img">
             <form class="text-center" action="{{ route('applicant.photo') }}" enctype="multipart/form-data" method="post">
@@ -15,29 +15,28 @@
         </div>
         <ul>
             <li>
-                <a class="active" href="{{ route('applicant.edit') }}">
-                    <i class="fal fa-user"></i>
-                    <span>Profil</span>
-                    </a>
-                </li>
-            <li>
-                <a href="">
+                <a href="{{ route('applicant.cv') }}">
                     <i class="fal fa-id-card"></i>
                     <span>CV-im</span>
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="{{ route('cv.create') }}">
                     <i class="fal fa-file-plus"></i>
                     <span>CV yarat</span>
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="{{ route('applicant.vacancies') }}">
                     <i class="fal fa-file-check"></i>
-                    <span>Müraciət olunmuş vakansiyalar</span>
+                    <span>Müraciətlərim</span>
                 </a>
             </li>
+            <li>
+                <a href="{{ route('applicant.stats') }}">
+                    <i class="fal fa-chart-pie"></i>
+                    <span>Ümumi statistika</span>
+                </a>
             <li>
                 <a href="{{ route('password.edit', ['type' => 'applicant']) }}">
                     <i class="fal fa-key"></i>

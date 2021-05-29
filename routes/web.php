@@ -75,7 +75,19 @@ Route::middleware(['auth'])->group(function () {
             Route::get('/profile',        'ApplicantController@edit')->name('applicant.edit');
             Route::post('/update',        'ApplicantController@update')->name('applicant.update');
             Route::post('/photo',         'ApplicantController@photo')->name('applicant.photo');
+
+            Route::get('/statistics',     'ApplicantController@stats')->name('applicant.stats');
+            Route::get('/vacancies',      'ApplicantController@vacancies')->name('applicant.vacancies');
+            
+
+            Route::prefix('cv')->group(function () {
+                Route::get('/',      'ApplicantController@cv')->name('applicant.cv');
+                Route::get('/new',   'CVController@create')->name('cv.create');
+                Route::get('/edit',  'CVController@edit')->name('cv.edit');
+            });
         });
+
+        
     });
 
     Route::prefix('password')->group(function () {
