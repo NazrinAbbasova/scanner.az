@@ -22,11 +22,11 @@
         </div>
         <div class="col-lg-4">
             <label for="birthdate"> Minimum yaş</label>
-            <input data-s="age" value="{{ isset($vacancy) ? $vacancy->min_age : old('min_age') }}" name="min_age" disabled type="number" placeholder="Min.">
+            <input data-s="age" value="{{ isset($vacancy) ? $vacancy->min_age : old('min_age') }}" name="min_age" {{ isset($vacancy) ? '' : 'disabled' }} type="number" placeholder="Min.">
         </div>
         <div class="col-lg-4">
             <label for="birthdate">Maksimum yaş</label>
-            <input data-s="age" value="{{ isset($vacancy) ? $vacancy->max_age : old('max_age') }}" name="max_age" disabled type="number" placeholder="Maks.">
+            <input data-s="age" value="{{ isset($vacancy) ? $vacancy->max_age : old('max_age') }}" name="max_age" {{ isset($vacancy) ? '' : 'disabled' }} type="number" placeholder="Maks.">
         </div>
         <hr>
         <div class="col-lg-4">
@@ -46,7 +46,7 @@
         </div>
         <div class="col-lg-4">
             <label for="birthdate">Vətəndaşlıq</label>
-            <select data-s="citizenship" disabled name="nationality" id="citizenship">
+            <select data-s="citizenship" {{ isset($vacancy) ? '' : 'disabled' }} name="nationality" id="citizenship">
                 <option value="choose">Seç</option>
                 <option value="Azərbaycanlı" {{ isset($vacancy) && $vacancy->nationality ==  'Azərbaycanlı' ? 'selected' : ''}}>Azərbaycanlı</option>
                 <option value="Əcnəbi" {{ isset($vacancy) && $vacancy->nationality ==  'Əcnəbi' ? 'selected' : ''}}>Əcnəbi</option>
@@ -70,7 +70,7 @@
         </div>
         <div class="col-lg-4">
             <label for="city">Yaşadığı şəhər</label>
-            <select data-s="city" disabled name="region" id="city">
+            <select data-s="city" {{ isset($vacancy) ? '' : 'disabled' }} name="region" id="city">
                 <option value="choose">Seç</option>
                 @foreach ($regions as $region)
                     <option {{ isset($vacancy) && $vacancy->region ==  $region->name ? 'selected' : ''}} value="{{ $region->name }}">{{ $region->name }}</option>
@@ -95,7 +95,7 @@
         </div>
         <div class="col-lg-4">
             <label for="gender">Cins</label>
-            <select data-s="gender" disabled name="importance" id="gender">
+            <select data-s="gender" {{ isset($vacancy) ? '' : 'disabled' }} name="importance" id="gender">
                 <option value="choose">Seç</option>
                 <option value="Kişi" {{ isset($vacancy) && $vacancy->gender ==  "Kişi" ? 'selected' : ''}}>Kişi</option>
                 <option value="Qadın" {{ isset($vacancy) && $vacancy->gender ==  "Qadın" ? 'selected' : ''}}>Qadın</option>
@@ -121,7 +121,7 @@
         </div>
         <div class="col-lg-4">
             <label for="marital">Ailə vəziyyəti</label>
-            <select data-s="marital" disabled name="marital" id="marital">
+            <select data-s="marital" {{ isset($vacancy) ? '' : 'disabled' }} name="marital" id="marital">
                 <option value="choose">Seç</option>
                 <option value="Evli" {{ isset($vacancy) && $vacancy->marital ==  "Evli" ? 'selected' : ''}}>Evli</option>
                 <option value="Subay" {{ isset($vacancy) && $vacancy->marital ==  "Subay" ? 'selected' : ''}}>Subay</option>
@@ -145,7 +145,7 @@
         </div>
         <div class="col-lg-4">
             <label for="military">Hərbi mükəlləfiyyət</label>
-            <select data-s="military" disabled name="military" id="military">
+            <select data-s="military" {{ isset($vacancy) ? '' : 'disabled' }} name="military" id="military">
                 <option value="choose">Seç</option>
                 <option value="Var" {{ isset($vacancy) && $vacancy->military ==  "Var" ? 'selected' : ''}}>Var</option>
                 <option value="Yoxdur" {{ isset($vacancy) && $vacancy->military ==  "Yoxdur" ? 'selected' : ''}}>Yoxdur</option>
@@ -169,7 +169,7 @@
         </div>
         <div class="col-lg-4">
             <label for="driving-lisence">Sürücülük vəsiqəsi</label>
-            <select data-s="driving-lisence" disabled name="driver_license" id="driving-lisence">
+            <select data-s="driving-lisence" {{ isset($vacancy) ? '' : 'disabled' }} name="driver_license" id="driving-lisence">
                 <option value="choose">Seç</option>
                 <option value="Var" {{ isset($vacancy) && $vacancy->driver_license ==  "Var" ? 'selected' : ''}}>Var</option>
                 <option value="Yoxdur" {{ isset($vacancy) && $vacancy->driver_license ==  "Yoxdur" ? 'selected' : ''}}>Yoxdur</option>

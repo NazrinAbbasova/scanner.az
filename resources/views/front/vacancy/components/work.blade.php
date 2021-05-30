@@ -22,7 +22,7 @@
         </div>
         <div class="col-lg-4">
             <label for="field">Sektor</label>
-            <select data-s="field" disabled name="field" id="field">
+            <select data-s="field" {{ isset($vacancy) &&  $vacancy->field ? '' : 'disabled' }} name="field" id="field">
                 @if(isset($vacancy) && $vacancy->field)
                     <option value="{{ $vacancy->field }}">{{ $vacancy->field }}</option>
                 @else
@@ -35,7 +35,7 @@
         </div>
         <div class="col-lg-4">
             <label for="start-work">Minimum iş stajı</label>
-            <input data-s="field" disabled type="number" value="{{ isset($vacancy) ? $vacancy->field_employment_duration : old('field_employment_duration') }}" name="field_employment_duration" placeholder="Müddət">
+            <input data-s="field" {{ isset($vacancy) &&  $vacancy->field_employment_duration ? '' : 'disabled' }} type="number" value="{{ isset($vacancy) ? $vacancy->field_employment_duration : old('field_employment_duration') }}" name="field_employment_duration" placeholder="Müddət">
         </div>
         <hr>
 
@@ -58,7 +58,7 @@
         </div>
         <div class="col-lg-4">
             <label for="function">Funksiya</label>
-            <select data-s="function" disabled name="function" id="function">
+            <select data-s="function" {{ isset($vacancy) &&  $vacancy->function ? '' : 'disabled' }} name="function" id="function">
                 @if(isset($vacancy) && $vacancy->function)
                     <option value="{{ $vacancy->function }}">{{ $vacancy->function }}</option>
                 @else
@@ -71,7 +71,7 @@
         </div>
         <div class="col-lg-4">
             <label for="start-work">Minimum iş stajı</label>
-            <input data-s="function" disabled type="number" value="{{ isset($vacancy) ? $vacancy->function_employment_duration : old('function_employment_duration') }}" placeholder="Müddət" name="function_employment_duration">
+            <input data-s="function" {{ isset($vacancy) &&  $vacancy->function_employment_duration ? '' : 'disabled' }} type="number" value="{{ isset($vacancy) ? $vacancy->function_employment_duration : old('function_employment_duration') }}" placeholder="Müddət" name="function_employment_duration">
         </div>
         <hr>
 
@@ -95,7 +95,7 @@
         </div>
         <div class="col-lg-4">
             <label for="category">Vəzifə kateqoriyası </label>
-            <select data-s="category" disabled name="position" id="category">
+            <select data-s="category" {{ isset($vacancy) &&  $vacancy->position ? '' : 'disabled' }} name="position" id="category">
                 @if(isset($vacancy) && $vacancy->position)
                     <option value="{{ $vacancy->position }}">{{ $vacancy->position }}</option>
                 @else
@@ -108,7 +108,7 @@
         </div>
         <div class="col-lg-4">
             <label for="start-work"> Minimum iş stajı</label>
-            <input data-s="category" disabled type="number" placeholder="Müddət" value="{{ isset($vacancy) ? $vacancy->position_employment_duration : old('position_employment_duration') }}" name="position_employment_duration">
+            <input data-s="category" {{ isset($vacancy) &&  $vacancy->position_employment_duration ? '' : 'disabled' }} type="number" placeholder="Müddət" value="{{ isset($vacancy) ? $vacancy->position_employment_duration : old('position_employment_duration') }}" name="position_employment_duration">
         </div>
 
         <div class="col-lg-6">

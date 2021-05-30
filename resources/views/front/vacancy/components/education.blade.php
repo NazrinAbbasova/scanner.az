@@ -20,7 +20,7 @@
         </div>
         <div class="col-lg-4">
             <label for="degree">Təhsil dərəcəsi</label>
-            <select data-s="degree" disabled name="education" id="degree">
+            <select data-s="degree" {{ isset($vacancy) ? '' : 'disabled' }} name="education" id="degree">
                 @if(isset($vacancy) && $vacancy->education)
                     <option value="{{ $vacancy->education }}">{{ $vacancy->education }}</option>
                 @else
@@ -39,10 +39,10 @@
             <label for=""></label>
             <select data-select="score" class="importance" name="score_importance" id="score">
                 @isset($vacancy)
-                <option value="{{ $vacancy->score_importance }}">
-                    @if ($vacancy->score_importance == 0) Önəm daşımır
-                    @elseif ($vacancy->score_importance == 1) Az önəm daşıyır
-                    @elseif ($vacancy->score_importance == 3)Önəmlidir
+                <option value="{{ $vacancy->exam_score_importance }}">
+                    @if ($vacancy->exam_score_importance == 0) Önəm daşımır
+                    @elseif ($vacancy->exam_score_importance == 1) Az önəm daşıyır
+                    @elseif ($vacancy->exam_score_importance == 3)Önəmlidir
                     @else Mütləqdir
                     @endif    
                 </option>
@@ -52,7 +52,7 @@
         </div>
         <div class="col-lg-4">
             <label for="score">Qəbul balı</label>
-            <select data-s="score" disabled name="score" id="score">
+            <select data-s="score" {{ isset($vacancy) ? '' : 'disabled' }} name="score" id="score">
                 @if(isset($vacancy) && $vacancy->exam_score)
                     <option value="{{ $vacancy->exam_score }}">{{ $vacancy->exam_score }}+</option>
                 @else

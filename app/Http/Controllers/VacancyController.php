@@ -180,157 +180,163 @@ public function store(Request $request)
 
         // Languages
 
-        $other_language_importances = [];
-        $other_language_levels = [];
-        $other_languages = [];
+        if($request->has('languages')){
+            $other_language_importances = [];
+            $other_language_levels = [];
+            $other_languages = [];
 
-        for($i = 0; $i < count($request->languages); $i++) {
-            if($request->languages[$i] == 'Digər') {
+            for($i = 0; $i < count($request->languages); $i++) {
+                if($request->languages[$i] == 'Digər') {
 
-                array_push($other_language_importances, $request->language_importances[$i]);
-                array_push($other_language_levels,      $request->language_levels[$i]);
-                array_push($other_languages,            $request->languages[$i]);
+                    array_push($other_language_importances, $request->language_importances[$i]);
+                    array_push($other_language_levels,      $request->language_levels[$i]);
+                    array_push($other_languages,            $request->languages[$i]);
 
-            } else {
+                } else {
 
-                $v_lang              = new VacancyLanguage;
-                $v_lang->vacancy_id  = $v->id;
-                $v_lang->importance  = $request->language_importances[$i];
-                $v_lang->level       = $request->language_levels[$i];
-                $v_lang->language_id = $request->languages[$i];
-                $v_lang->save();
+                    $v_lang              = new VacancyLanguage;
+                    $v_lang->vacancy_id  = $v->id;
+                    $v_lang->importance  = $request->language_importances[$i];
+                    $v_lang->level       = $request->language_levels[$i];
+                    $v_lang->language_id = $request->languages[$i];
+                    $v_lang->save();
 
-                $max_score += $request->language_importances[$i];
+                    $max_score += $request->language_importances[$i];
 
+                }
             }
-        }
 
-        // If new languages need to be created
+            // If new languages need to be created
 
-        if($request->has('new_languages')) {
-            for($i = 0; $i < count($request->new_languages); $i++){
+            if($request->has('new_languages')) {
+                for($i = 0; $i < count($request->new_languages); $i++){
 
-                // Create new language
-                $l = new Language;
-                $l->name = $request->new_languages[$i];
-                $l->save();
+                    // Create new language
+                    $l = new Language;
+                    $l->name = $request->new_languages[$i];
+                    $l->save();
 
-                // Create new vacancy language relation
-                $v_lang              = new VacancyLanguage;
-                $v_lang->vacancy_id  = $v->id;
-                $v_lang->importance  = $other_language_importances[$i];
-                $v_lang->level       = $other_language_levels[$i];
-                $v_lang->language_id = $l->id;
-                $v_lang->save();
+                    // Create new vacancy language relation
+                    $v_lang              = new VacancyLanguage;
+                    $v_lang->vacancy_id  = $v->id;
+                    $v_lang->importance  = $other_language_importances[$i];
+                    $v_lang->level       = $other_language_levels[$i];
+                    $v_lang->language_id = $l->id;
+                    $v_lang->save();
 
-                $request->other_language_importances[$i];
+                    $request->other_language_importances[$i];
+                }
             }
         }
 
         // Computer skills
 
-        $other_skill_importances = [];
-        $other_skill_levels = [];
-        $other_skills = [];
-        
+        if($request->has('computer_skills')){
+            $other_skill_importances = [];
+            $other_skill_levels = [];
+            $other_skills = [];
             
-        for($i = 0; $i < count($request->computer_skills); $i++) {
-            if($request->computer_skills[$i] == 'Digər') {
+                
+            for($i = 0; $i < count($request->computer_skills); $i++) {
+                if($request->computer_skills[$i] == 'Digər') {
 
-                array_push($other_skill_importances, $request->computer_skill_importances[$i]);
-                array_push($other_skill_levels,      $request->computer_skill_levels[$i]);
-                array_push($other_skills,            $request->computer_skills[$i]);
+                    array_push($other_skill_importances, $request->computer_skill_importances[$i]);
+                    array_push($other_skill_levels,      $request->computer_skill_levels[$i]);
+                    array_push($other_skills,            $request->computer_skills[$i]);
 
-            } else {
+                } else {
 
-                $v_comp_skill                    = new VacancyComputerSkill;
-                $v_comp_skill->vacancy_id        = $v->id;
-                $v_comp_skill->importance        = $request->computer_skill_importances[$i];
-                $v_comp_skill->level             = $request->computer_skill_levels[$i];
-                $v_comp_skill->computer_skill_id = $request->computer_skills[$i];
-                $v_comp_skill->save();
+                    $v_comp_skill                    = new VacancyComputerSkill;
+                    $v_comp_skill->vacancy_id        = $v->id;
+                    $v_comp_skill->importance        = $request->computer_skill_importances[$i];
+                    $v_comp_skill->level             = $request->computer_skill_levels[$i];
+                    $v_comp_skill->computer_skill_id = $request->computer_skills[$i];
+                    $v_comp_skill->save();
 
-                $max_score += $request->computer_skill_importances[$i];
+                    $max_score += $request->computer_skill_importances[$i];
 
+                }
             }
-        }
 
-        // If new computer skills need to be created
+            // If new computer skills need to be created
 
-        if($request->has('new_computer_skills')) {
-            for($i = 0; $i < count($request->new_computer_skills); $i++){
+            if($request->has('new_computer_skills')) {
+                for($i = 0; $i < count($request->new_computer_skills); $i++){
 
-                // Create new language
-                $skill = new ComputerSkill;
-                $skill->name = $request->new_computer_skills[$i];
-                $skill->save();
+                    // Create new language
+                    $skill = new ComputerSkill;
+                    $skill->name = $request->new_computer_skills[$i];
+                    $skill->save();
 
-                // Create new vacancy language relation
-                $v_skill                    = new VacancyComputerSkill;
-                $v_skill->vacancy_id        = $v->id;
-                $v_skill->importance        = $other_skill_importances[$i];
-                $v_skill->level             = $other_skill_levels[$i];
-                $v_skill->computer_skill_id = $skill->id;
-                $v_skill->save();
+                    // Create new vacancy language relation
+                    $v_skill                    = new VacancyComputerSkill;
+                    $v_skill->vacancy_id        = $v->id;
+                    $v_skill->importance        = $other_skill_importances[$i];
+                    $v_skill->level             = $other_skill_levels[$i];
+                    $v_skill->computer_skill_id = $skill->id;
+                    $v_skill->save();
 
-                $max_score += $other_skill_importances[$i];
+                    $max_score += $other_skill_importances[$i];
+                }
             }
         }
 
         // Certificates
 
-        $other_certificate_importances = [];
-        $other_certificate_levels = [];
-        $other_certificates = [];
+        if($request->has('certificates')){
+            $other_certificate_importances = [];
+            $other_certificate_levels = [];
+            $other_certificates = [];
 
-        for($i = 0; $i < count($request->certificates); $i++) {
+            for($i = 0; $i < count($request->certificates); $i++) {
 
-            if($request->certificates[$i] == 'Digər') {
+                if($request->certificates[$i] == 'Digər') {
 
-                array_push($other_certificate_importances, $request->certificate_importances[$i]);
-                array_push($other_certificate_levels,      $request->certificate_levels[$i]);
-                array_push($other_certificates,            $request->certificates[$i]);
+                    array_push($other_certificate_importances, $request->certificate_importances[$i]);
+                    array_push($other_certificate_levels,      $request->certificate_levels[$i]);
+                    array_push($other_certificates,            $request->certificates[$i]);
 
-            } else {
+                } else {
 
-                $v_cert                 = new VacancyCertificate;
-                $v_cert->vacancy_id     = $v->id;
-                $v_cert->importance     = $request->certificate_importances[$i];
-                $v_cert->level          = $request->certificate_levels[$i];
-                $v_cert->certificate_id = $request->certificates[$i];
-                $v_cert->save();
+                    $v_cert                 = new VacancyCertificate;
+                    $v_cert->vacancy_id     = $v->id;
+                    $v_cert->importance     = $request->certificate_importances[$i];
+                    $v_cert->level          = $request->certificate_levels[$i];
+                    $v_cert->certificate_id = $request->certificates[$i];
+                    $v_cert->save();
 
-                $max_score += $request->certificate_importances[$i];
+                    $max_score += $request->certificate_importances[$i];
 
+                }
+                
             }
-            
-        }
 
-        // If new certificate and it's level need to be created
+            // If new certificate and it's level need to be created
 
-        if($request->has('new_certificates')) {
-            for($i = 0; $i < count($request->new_certificates); $i++){
+            if($request->has('new_certificates')) {
+                for($i = 0; $i < count($request->new_certificates); $i++){
 
-                // Create new language
-                $cert = new Certificate;
-                $cert->name = $request->new_certificates[$i];
-                $cert->save();
+                    // Create new language
+                    $cert = new Certificate;
+                    $cert->name = $request->new_certificates[$i];
+                    $cert->save();
 
-                // Create new certificate level
-                $level = new CertificateLevel;
-                $level->certificate_id = $cert->id;
-                $level->name = $request->new_certificate_levels[$i];
-                $level->save();
+                    // Create new certificate level
+                    $level = new CertificateLevel;
+                    $level->certificate_id = $cert->id;
+                    $level->name = $request->new_certificate_levels[$i];
+                    $level->save();
 
-                // Create new vacancy language relation
-                $v_cert                    = new VacancyCertificate;
-                $v_cert->vacancy_id        = $v->id;
-                $v_cert->importance        = $other_certificate_importances[$i];
-                $v_cert->level             = $level->name;
-                $v_cert->certificate_id = $cert->id;
-                $v_cert->save();
+                    // Create new vacancy language relation
+                    $v_cert                    = new VacancyCertificate;
+                    $v_cert->vacancy_id        = $v->id;
+                    $v_cert->importance        = $other_certificate_importances[$i];
+                    $v_cert->level             = $level->name;
+                    $v_cert->certificate_id = $cert->id;
+                    $v_cert->save();
 
-                $max_score += $other_certificate_importances[$i];
+                    $max_score += $other_certificate_importances[$i];
+                }
             }
         }
 
