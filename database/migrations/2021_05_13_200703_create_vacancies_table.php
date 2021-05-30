@@ -57,6 +57,7 @@ class CreateVacanciesTable extends Migration
             $table->string('expiration_date')->nullable();
             $table->boolean('isActive')->default(1);
             $table->boolean('send_resumes')->default(0);
+            $table->integer('max_score');
             $table->timestamps();
 
             $table->foreign('company_id')

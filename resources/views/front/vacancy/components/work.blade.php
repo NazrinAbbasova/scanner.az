@@ -8,13 +8,26 @@
         <div class="col-lg-4">
             <label for=""></label>
             <select data-select="field" class="importance" name="field_importance" id="field">
+                @isset($vacancy)
+                <option value="{{ $vacancy->field_importance }}">
+                    @if ($vacancy->field_importance == 0) Önəm daşımır
+                    @elseif ($vacancy->field_importance == 1) Az önəm daşıyır
+                    @elseif ($vacancy->field_importance == 3)Önəmlidir
+                    @else Mütləqdir
+                    @endif    
+                </option>
+                @endisset
                 @include('front.vacancy.components.importance')
             </select>
         </div>
         <div class="col-lg-4">
             <label for="field">Sektor</label>
             <select data-s="field" disabled name="field" id="field">
-                <option>Seç</option>
+                @if(isset($vacancy) && $vacancy->field)
+                    <option value="{{ $vacancy->field }}">{{ $vacancy->field }}</option>
+                @else
+                    <option value="choose">Seç</option>
+                @endif
                 @foreach ($fields as $field)
                     <option value="{{ $field->name }}">{{ $field->name }}</option>
                 @endforeach
@@ -22,7 +35,7 @@
         </div>
         <div class="col-lg-4">
             <label for="start-work">Minimum iş stajı</label>
-            <input data-s="field" disabled type="number" name="field_employment_duration" placeholder="Müddət">
+            <input data-s="field" disabled type="number" value="{{ isset($vacancy) ? $vacancy->field_employment_duration : old('field_employment_duration') }}" name="field_employment_duration" placeholder="Müddət">
         </div>
         <hr>
 
@@ -31,13 +44,26 @@
         <div class="col-lg-4">
             <label for=""></label>
             <select data-select="function" class="importance" name="function_importance" id="function">
+                @isset($vacancy)
+                <option value="{{ $vacancy->function_importance }}">
+                    @if ($vacancy->function_importance == 0) Önəm daşımır
+                    @elseif ($vacancy->function_importance == 1) Az önəm daşıyır
+                    @elseif ($vacancy->function_importance == 3)Önəmlidir
+                    @else Mütləqdir
+                    @endif    
+                </option>
+                @endisset
                 @include('front.vacancy.components.importance')
             </select>
         </div>
         <div class="col-lg-4">
             <label for="function">Funksiya</label>
             <select data-s="function" disabled name="function" id="function">
-                <option>Seç</option>
+                @if(isset($vacancy) && $vacancy->function)
+                    <option value="{{ $vacancy->function }}">{{ $vacancy->function }}</option>
+                @else
+                    <option value="choose">Seç</option>
+                @endif
                 @foreach ($funcs as $function)
                     <option value="{{ $function->name }}">{{ $function->name }}</option>
                 @endforeach
@@ -45,7 +71,7 @@
         </div>
         <div class="col-lg-4">
             <label for="start-work">Minimum iş stajı</label>
-            <input data-s="function" disabled type="number" placeholder="Müddət" name="function_employment_duration">
+            <input data-s="function" disabled type="number" value="{{ isset($vacancy) ? $vacancy->function_employment_duration : old('function_employment_duration') }}" placeholder="Müddət" name="function_employment_duration">
         </div>
         <hr>
 
@@ -55,13 +81,26 @@
         <div class="col-lg-4">
             <label for=""></label>
             <select data-select="category" class="importance" name="position_importance" id="category">
+                @isset($vacancy)
+                <option value="{{ $vacancy->position_importance }}">
+                    @if ($vacancy->position_importance == 0) Önəm daşımır
+                    @elseif ($vacancy->position_importance == 1) Az önəm daşıyır
+                    @elseif ($vacancy->position_importance == 3)Önəmlidir
+                    @else Mütləqdir
+                    @endif    
+                </option>
+                @endisset
                 @include('front.vacancy.components.importance')
             </select>
         </div>
         <div class="col-lg-4">
             <label for="category">Vəzifə kateqoriyası </label>
             <select data-s="category" disabled name="position" id="category">
-                <option>Seç</option>
+                @if(isset($vacancy) && $vacancy->position)
+                    <option value="{{ $vacancy->position }}">{{ $vacancy->position }}</option>
+                @else
+                    <option value="choose">Seç</option>
+                @endif
                 @foreach ($positions as $position)
                     <option value="{{ $position->name }}">{{ $position->name }}</option>
                 @endforeach
@@ -69,7 +108,7 @@
         </div>
         <div class="col-lg-4">
             <label for="start-work"> Minimum iş stajı</label>
-            <input data-s="category" disabled type="number" placeholder="Müddət" name="position_employment_duration">
+            <input data-s="category" disabled type="number" placeholder="Müddət" value="{{ isset($vacancy) ? $vacancy->position_employment_duration : old('position_employment_duration') }}" name="position_employment_duration">
         </div>
 
         <div class="col-lg-6">

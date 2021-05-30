@@ -6,13 +6,26 @@
         <div class="col-lg-4">
             <label for=""></label>
             <select data-select="degree" class="importance" name="education_importance" id="degree">
+                @isset($vacancy)
+                <option value="{{ $vacancy->education_importance }}">
+                    @if ($vacancy->education_importance == 0) Önəm daşımır
+                    @elseif ($vacancy->education_importance == 1) Az önəm daşıyır
+                    @elseif ($vacancy->education_importance == 3)Önəmlidir
+                    @else Mütləqdir
+                    @endif    
+                </option>
+                @endisset
                 @include('front.vacancy.components.importance')
             </select>
         </div>
         <div class="col-lg-4">
             <label for="degree">Təhsil dərəcəsi</label>
             <select data-s="degree" disabled name="education" id="degree">
-                <option>Seç</option>
+                @if(isset($vacancy) && $vacancy->education)
+                    <option value="{{ $vacancy->education }}">{{ $vacancy->education }}</option>
+                @else
+                    <option value="choose">Seç</option>
+                @endif
                 <option value="İbtidai təhsil">İbtidai təhsil</option>
                 <option value="Orta təhsil">Orta təhsil</option>
                 <option value="Peşə təhsili">Peşə təhsili</option>
@@ -25,13 +38,26 @@
         <div class="col-lg-4">
             <label for=""></label>
             <select data-select="score" class="importance" name="score_importance" id="score">
+                @isset($vacancy)
+                <option value="{{ $vacancy->score_importance }}">
+                    @if ($vacancy->score_importance == 0) Önəm daşımır
+                    @elseif ($vacancy->score_importance == 1) Az önəm daşıyır
+                    @elseif ($vacancy->score_importance == 3)Önəmlidir
+                    @else Mütləqdir
+                    @endif    
+                </option>
+                @endisset
                 @include('front.vacancy.components.importance')
             </select>
         </div>
         <div class="col-lg-4">
             <label for="score">Qəbul balı</label>
             <select data-s="score" disabled name="score" id="score">
-                <option>Seç</option>
+                @if(isset($vacancy) && $vacancy->exam_score)
+                    <option value="{{ $vacancy->exam_score }}">{{ $vacancy->exam_score }}+</option>
+                @else
+                    <option value="choose">Seç</option>
+                @endif
                 <option value="200">200+</option>
                 <option value="250">250+</option>
                 <option value="300">300+</option>

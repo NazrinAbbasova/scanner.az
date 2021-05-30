@@ -4,6 +4,46 @@
     @include('front.vacancy.components.video')
     <div class="dynamic-fields-language" data-f-parent='language'>
         <div class="dynamic-language" data-f="language">
+            @if (isset($vacancy) && count($vacancy->languages))
+                @foreach ($vacancy->languages as $l)
+                <div class="row">
+                    <div class="col-lg-4">
+                        <label for=""></label>
+                        <select data-select="language" class="importance" name="language_importances[]" id="language">
+                            <option value="{{ $l->importance }}">
+                                @if ($l->importance == 0) Önəm daşımır
+                                @elseif ($l->importance == 1) Az önəm daşıyır
+                                @elseif ($l->importance == 3)Önəmlidir
+                                @else Mütləqdir
+                                @endif    
+                            </option>
+                            @include('front.vacancy.components.importance')
+                        </select>
+                    </div>
+                    <div class="col-lg-4">
+                        <label for="language">Dil</label>
+                        <select data-s="language"  name="languages[]" id="language" class="other-input">
+                            @foreach ($languages as $language)
+                                <option {{ $language->id == $l->language_id ? 'selected' : '' }} value="{{ $language->id }}">{{ $language->name }}</option>
+                            @endforeach
+                            <option value="Digər">Digər</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-4">
+                        <label for="level">Səviyyə</label>
+                        <select data-s="language" name="language_levels[]" id="level">
+                            <option value="{{ $l->level }}">
+                                @if ($l->level == 'Başlanğıc') Başlanğıc
+                                @elseif ($l->level == 'Orta')  Orta
+                                @else Yüksək
+                                @endif    
+                            </option>
+                            @include('front.vacancy.components.level')
+                        </select>
+                    </div>
+                </div>
+                @endforeach
+            @else
             <div class="row">
                 <div class="col-lg-4">
                     <label for=""></label>
@@ -28,6 +68,7 @@
                     </select>
                 </div>
             </div>
+            @endif
         </div>
     </div>
     <div class="add-remove">

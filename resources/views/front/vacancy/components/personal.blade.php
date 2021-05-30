@@ -6,6 +6,17 @@
         <div class="col-lg-4">
             <label for=""></label>
             <select data-select="age" class="importance" name="age_importance" id="birthdate">
+
+                @isset($vacancy)
+                    <option value="{{ $vacancy->age_importance }}">
+                    @if ($vacancy->age_importance == 0) Önəm daşımır
+                    @elseif ($vacancy->age_importance == 1) Az önəm daşıyır
+                    @elseif ($vacancy->age_importance == 3)Önəmlidir
+                    @else Mütləqdir
+                    @endif    
+                    </option>
+                @endisset
+
                 @include('front.vacancy.components.importance')
             </select>
         </div>
@@ -21,6 +32,15 @@
         <div class="col-lg-4">
             <label for=""></label>
             <select data-select="citizenship" class="importance" name="nationality_importance" id="citizenship">
+                @isset($vacancy)
+                <option value="{{ $vacancy->nationality_importance }}">
+                    @if ($vacancy->nationality_importance == 0) Önəm daşımır
+                    @elseif ($vacancy->nationality_importance == 1) Az önəm daşıyır
+                    @elseif ($vacancy->nationality_importance == 3)Önəmlidir
+                    @else Mütləqdir
+                    @endif    
+                </option>
+                @endisset
                 @include('front.vacancy.components.importance')
             </select>
         </div>
@@ -36,6 +56,15 @@
         <div class="col-lg-4">
             <label for=""></label>
             <select data-select="city" class="importance" name="region_importance" id="gender">
+                @isset($vacancy)
+                <option value="{{ $vacancy->region_importance }}">
+                    @if ($vacancy->region_importance == 0) Önəm daşımır
+                    @elseif ($vacancy->region_importance == 1) Az önəm daşıyır
+                    @elseif ($vacancy->region_importance == 3)Önəmlidir
+                    @else Mütləqdir
+                    @endif    
+                </option>
+                @endisset
                 @include('front.vacancy.components.importance')
             </select>
         </div>
@@ -52,6 +81,15 @@
         <div class="col-lg-4">
             <label for=""></label>
             <select data-select="gender" class="importance" name="gender_importance" id="address">
+                @isset($vacancy)
+                <option value="{{ $vacancy->gender_importance }}">
+                    @if ($vacancy->gender_importance == 0) Önəm daşımır
+                    @elseif ($vacancy->gender_importance == 1) Az önəm daşıyır
+                    @elseif ($vacancy->gender_importance == 3)Önəmlidir
+                    @else Mütləqdir
+                    @endif    
+                </option>
+                @endisset
                 @include('front.vacancy.components.importance')
             </select>
         </div>
@@ -69,6 +107,15 @@
         <div class="col-lg-4">
             <label for=""></label>
             <select data-select="marital" class="importance" name="marital_importance" id="marital">
+                @isset($vacancy)
+                <option value="{{ $vacancy->marital_importance }}">
+                    @if ($vacancy->marital_importance == 0) Önəm daşımır
+                    @elseif ($vacancy->marital_importance == 1) Az önəm daşıyır
+                    @elseif ($vacancy->marital_importance == 3)Önəmlidir
+                    @else Mütləqdir
+                    @endif    
+                </option>
+                @endisset
                 @include('front.vacancy.components.importance')
             </select>
         </div>
@@ -84,6 +131,15 @@
         <div class="col-lg-4">
             <label for=""></label>
             <select data-select="military" class="importance" name="military_importance" id="military">
+                @isset($vacancy)
+                <option value="{{ $vacancy->military_importance }}">
+                    @if ($vacancy->military_importance == 0) Önəm daşımır
+                    @elseif ($vacancy->military_importance == 1) Az önəm daşıyır
+                    @elseif ($vacancy->military_importance == 3)Önəmlidir
+                    @else Mütləqdir
+                    @endif    
+                </option>
+                @endisset
                 @include('front.vacancy.components.importance')
             </select>
         </div>
@@ -99,6 +155,15 @@
         <div class="col-lg-4">
             <label for=""></label>
             <select data-select="driving-lisence" class="importance" name="driver_license_importance" id="driving-lisence">
+                @isset($vacancy)
+                <option value="{{ $vacancy->driver_license_importance }}">
+                    @if ($vacancy->driver_license_importance == 0) Önəm daşımır
+                    @elseif ($vacancy->driver_license_importance == 1) Az önəm daşıyır
+                    @elseif ($vacancy->driver_license_importance == 3)Önəmlidir
+                    @else Mütləqdir
+                    @endif    
+                </option>
+                @endisset
                 @include('front.vacancy.components.importance')
             </select>
         </div>

@@ -33,10 +33,7 @@
 @endsection
 
 @section('load')
-<!-- jQuery -->
-<script src="http://thecodeplayer.com/uploads/js/jquery-1.9.1.min.js"type="text/javascript"></script>
-<!-- jQuery easing plugin -->
-<script src="http://thecodeplayer.com/uploads/js/jquery.easing.min.js"type="text/javascript"></script>
+@include('front.vacancy.scripts')
 
 @include('front.inc.ajax')
 
@@ -79,6 +76,39 @@
         });
     })
 </script>
+
+<!-- Modal -->
+<div class="modal fade" id="shareVacancy" tabindex="-1" aria-labelledby="shareVacancyLabel"
+aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title" id="shareVacancyLabel">Vakansiyanı paylaş
+            </h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-lg-10">
+                    <label for="share">Linki kopyala</label>
+                    <input type="text" disabled value="{{ Request::url() }}">
+                </div>
+                <div class="col-lg-2">
+                    <i class=" fal fa-copy"></i>
+                </div>
+                <div class="col-lg-6">
+                    <ul class="share-social">
+                        <li><a target="_blank" href="https://www.linkedin.com/sharing/share-offsite/?url={{ Request::url() }}"><i class="fab fa-linkedin-in"></i></a></li>
+                        <li><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ Request::url() }}"><i class="fab fa-facebook"></i></a></li>
+                        <li><a target="_blank" href="https://api.whatsapp.com/send?text={{ Request::url() }}"><i class="fab fa-whatsapp"></i></a></li>
+                        <li><a target="_blank" href="https://t.me/share/url?url={{ Request::url() }}"><i class="fab fa-telegram-plane"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
 
 <link rel="stylesheet" href="{{ asset('static/front/css/profile.css') }}">
 <link rel="stylesheet" href="{{ asset('static/front/css/icons.min.css') }}" />

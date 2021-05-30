@@ -65,25 +65,61 @@ $(document).on("change", ".other-input", function () {
         placeholder = "Sertifikatı daxil edin";
         selector = ".dynamic-fields-certificates";
         name = "new_certificates[]";
+
+        level_label = "Sertifikat səviyyəsi";
+        level_placeholder = "Sertifikat səviyyəsini daxil edin";
+        level_name = "new_certificate_levels[]";
     }
 
-    const otherInput =
-        '<div class="other" data-other="' +
-        select +
-        '">' +
-        '<div class="row">' +
-        '<div class="col-lg-4">' +
-        '<label for="language">' +
-        label +
-        "</label>" +
-        '<input name="' +
-        name +
-        '" type="text" placeholder="' +
-        placeholder +
-        '">' +
-        "</div>" +
-        "</div>" +
-        "</div>";
+    console.log(select);
+
+    if (select != "certificates") {
+        var otherInput =
+            '<div class="other" data-other="' +
+            select +
+            '">' +
+            '<div class="row">' +
+            '<div class="col-lg-4">' +
+            '<label for="language">' +
+            label +
+            "</label>" +
+            '<input name="' +
+            name +
+            '" type="text" placeholder="' +
+            placeholder +
+            '">' +
+            "</div>" +
+            "</div>" +
+            "</div>";
+    } else {
+        var otherInput =
+            '<div class="other" data-other="' +
+            select +
+            '">' +
+            '<div class="row">' +
+            '<div class="col-lg-4">' +
+            '<label for="language">' +
+            label +
+            "</label>" +
+            '<input name="' +
+            name +
+            '" type="text" placeholder="' +
+            placeholder +
+            '">' +
+            "</div>" +
+            '<div class="col-lg-4">' +
+            '<label for="language">' +
+            level_label +
+            "</label>" +
+            '<input name="' +
+            level_name +
+            '" type="text" placeholder="' +
+            level_placeholder +
+            '">' +
+            "</div>" +
+            "</div>" +
+            "</div>";
+    }
 
     if ($(this).val() == "choose") {
         $(this)
