@@ -8,7 +8,7 @@
             <div class="col-lg-8">
                 <div class="profile-content">
                     <div class="content-title">
-                        <h5 class="font-weight-700 pull-left text-uppercase">İstifadəçi profili</h5>
+                        <h5 class="font-weight-700 pull-left">İstifadəçi profili</h5>
                     </div>
                     <form method="post" action="{{ route('applicant.update') }}">
                         @csrf

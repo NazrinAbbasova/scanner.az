@@ -84,6 +84,8 @@ Route::middleware(['auth'])->group(function () {
                 Route::get('/',      'ApplicantController@cv')->name('applicant.cv');
                 Route::get('/new',   'CVController@create')->name('cv.create');
                 Route::get('/edit',  'CVController@edit')->name('cv.edit');
+
+                Route::post('/store', 'CVController@store')->name('cv.store');
             });
         });
 

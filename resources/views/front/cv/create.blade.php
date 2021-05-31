@@ -6,7 +6,8 @@
         <div class="row">
             @include('front.applicant.sidebar')
             <div class="col-lg-9 m-b30">
-                <form id="vacancy-form">
+                <form id="vacancy-form" action="{{ route('cv.store') }}" enctype="multipart/form-data" method="post">
+                    @csrf
                     <!-- progressbar -->
                     <ul class="progressbar">
                         <li data-fieldset=" personal" class="active">Şəxsi məlumatlar</li>
@@ -58,10 +59,8 @@
 @endsection
 
 @section('load')
-<!-- jQuery -->
-<script src="http://thecodeplayer.com/uploads/js/jquery-1.9.1.min.js"type="text/javascript"></script>
-<!-- jQuery easing plugin -->
-<script src="http://thecodeplayer.com/uploads/js/jquery.easing.min.js"type="text/javascript"></script>
+
+@include('front.cv.scripts')
 
 @include('front.inc.ajax')
 

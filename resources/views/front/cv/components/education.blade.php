@@ -6,24 +6,24 @@
             <div class="row">
                 <div class="col-lg-4">
                     <label for="degree">Təhsil dərəcəsi</label>
-                    <select data-s="degree" name="degree" id="degree">
+                    <select data-s="degree" name="educations[]" id="degree">
                         <option>Seç</option>
-                        <option value="">İbtidai</option>
-                        <option value="">Orta</option>
-                        <option value="">Peşə</option>
-                        <option value="bachelor">Bakalavr</option>
-                        <option value="master">Magistr</option>
-                        <option value="phd">Doktorantura</option>
+                        <option value="İbtidai">İbtidai</option>
+                        <option value="Orta">Orta</option>
+                        <option value="Peşə">Peşə</option>
+                        <option value="Bakalavr">Bakalavr</option>
+                        <option value="Magistr">Magistr</option>
+                        <option value="Doktorantura">Doktorantura</option>
                     </select>
                 </div>
 
                 <div class="col-lg-4">
                     <label for="score">Qəbul balı</label>
-                    <input type="number" id="score" placeholder="Qəbul balınız">
+                    <input type="number" name="scores[]" placeholder="Qəbul balınız">
                 </div>
                 <div class="col-lg-4">
                     <label for="university">Təhsil müəssisəsi</label>
-                    <select data-s="university" name="university" id="university">
+                    <select data-s="university" name="universities[]" id="university">
                         <option>Seç</option>
                         @foreach ($unis as $uni)
                             <option value="{{ $uni->name }}">{{ $uni->name }}</option>
@@ -32,26 +32,25 @@
                 </div>
                 <div class="col-lg-4">
                     <label for="section">İxtisas istiqaməti</label>
-                    <select data-s="section" name="section" id="section">
-                        <option>Seç</option>
-                        <option value="">İncəsənət</option>
-                        <option value="">İqtisadiyyat</option>
-                        <option value="">Komputer elmləri</option>
-                        <option value="bachelor">Jurnalistika</option>
+                    <select data-s="section" name="specialties[]" id="section">
+                        <option value="choose">Seç</option>
+                        @foreach ($specialties as $sp)
+                            <option value="{{ $sp->name }}">{{ $sp->name }}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="col-lg-4">
                     <label for="field">İxtisas</label>
-                    <input type="text" placeholder="İxtisasınız">
+                    <input type="text" name="professions[]" placeholder="İxtisasınız">
                 </div>
                 <div class="col-lg-4"></div>
                 <div class="col-lg-4">
                     <label>Daxil olduğunuz il</label>
-                    <input type="number" placeholder="İl">
+                    <input type="number" name="admission_years[]" placeholder="İl">
                 </div>
                 <div class="col-lg-4">
                     <label>Bitirdiyiniz il</label>
-                    <input type="number" placeholder="İl">
+                    <input type="number" name="graduation_years[]" placeholder="İl">
                 </div>
             </div>
         </div>

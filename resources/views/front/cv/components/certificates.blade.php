@@ -7,17 +7,18 @@
             <div class="row">
                 <div class="col-lg-4">
                     <label for="certificates">Sertifikat</label>
-                    <select data-s="certificates" name="certificates" id="certificates"
+                    <select data-s="certificates" name="certificates[]" id="certificates"
                         class="other-input">
                         <option value="choose">Seç</option>
                         @foreach ($certificates as $certificate)
-                            <option value="{{ $certificate->id }}">{{ $certificate->name }}</option>
+                            <option value="{{ $certificate->name }}">{{ $certificate->name }}</option>
                         @endforeach
+                        <option value="Digər">Digər</option>
                     </select>
                 </div>
                 <div class="col-lg-4">
                     <label for="certificates">Sertifikat səviyyəsi</label>
-                    <select data-level="certificates" disabled name="certificate-level" id="certificate-level">
+                    <select data-level="certificates" disabled name="certificate_levels[]" id="certificate-level">
                         <option value="choose">Seç</option>
                     </select>
                 </div>
@@ -25,13 +26,13 @@
                     <label for="certificates">Fayl</label>
                     <div class="certificate-file">
                         <label class="btn btn-outline-primary">
-                            <i class="fa fa-file"></i> Sertifikat yüklə <input data-level="certificates" disabled type="file" style="display: none;" name="image">
+                            <i class="fa fa-file"></i> Sertifikat yüklə <input data-level="certificates" disabled type="file" style="display: none;" name="certificate_files[]">
                         </label>
                     </div>
                 </div>
                 <div class="col-lg-12">
                     <label for="certificates">Sertifikat URL</label>
-                    <input data-level="certificates" disabled type="text" placeholder="URL daxil edin">
+                    <input data-level="certificates" disabled type="text" name="certificate_urls[]" placeholder="URL daxil edin">
                 </div>
             </div>
         </div>
@@ -51,9 +52,7 @@
                 class="previous action-button" value="Əvvəlki" />
         </div>
         <div class="col-lg-6">
-            <a class="save-cv" href="cv.html">
-                <input type="button" name="save" class="save-vacancy" value="Yadda saxla" />
-            </a>
+            <input type="submit" name="save" class="save-vacancy" value="Yadda saxla" />
         </div>
     </div>
 </fieldset>

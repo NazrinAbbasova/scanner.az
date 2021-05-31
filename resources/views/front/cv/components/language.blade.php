@@ -6,17 +6,17 @@
             <div class="row">
                 <div class="col-lg-4">
                     <label for="language">Dil</label>
-                    <select data-s="language" name="language" id="language" class="other-input">
+                    <select data-s="language" name="languages[]" id="language" class="other-input">
                         <option value="choose">Seç</option>
                         @foreach ($languages as $language)
-                            <option value="{{ $language->name }}"></option>
+                            <option value="{{ $language->name }}">{{ $language->name }}</option>
                         @endforeach
                         <option value="Digər">Digər</option>
                     </select>
                 </div>
                 <div class="col-lg-4">
                     <label for="level">Səviyyə</label>
-                    <select data-level="language" disabled name="level" id="level">
+                    <select data-level="language" disabled name="language_levels[]" id="level">
                         <option value="choose">Seç</option>
                         @include('front.cv.components.level')
                     </select>

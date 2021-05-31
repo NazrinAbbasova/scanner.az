@@ -4,15 +4,15 @@
     <div class="row">
         <div class="col-lg-4">
             <label for="name">Ad</label>
-            <input name="firstname" type="text" placeholder="Adınız">
+            <input name="firstname" value="{{ auth()->user()->firstname }}" type="text" placeholder="Adınız">
         </div>
         <div class="col-lg-4">
             <label for="surname">Soyad</label>
-            <input name="lastname" type="text" placeholder="Soyadınız">
+            <input name="lastname" value="{{ auth()->user()->lastname }}" type="text" placeholder="Soyadınız">
         </div>
         <div class="col-lg-4">
             <label for="middlename">Ata adı</label>
-            <input name="father" type="text" placeholder="Ata adı">
+            <input name="middlename" type="text" placeholder="Ata adı">
         </div>
         <div class="col-lg-4">
             <label for="birthdate">Doğum tarixi</label>
@@ -20,7 +20,7 @@
         </div>
         <div class="col-lg-4">
             <label for="citizenship">Vətəndaşlıq</label>
-            <select data-s="citizenship" name="citizenship" id="citizenship">
+            <select data-s="citizenship" name="nationality" id="citizenship">
                 <option value="choose">Seç</option>
                 <option value="Azərbaycanlı">Azərbaycanlı</option>
                 <option value="Əcnəbi">Əcnəbi</option>
@@ -29,7 +29,7 @@
 
         <div class="col-lg-4">
             <label for="city">Yaşadığınız şəhər</label>
-            <select data-s="city" name="city" id="city">
+            <select data-s="city" name="region" id="city">
                 <option value="choose">Seç</option>
                 @foreach ($regions as $region)
                     <option value="{{ $region->name }}">{{ $region->name }}</option>
