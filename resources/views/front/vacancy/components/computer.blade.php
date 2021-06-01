@@ -4,7 +4,7 @@
     @include('front.vacancy.components.video')
     <div class="dynamic-fields-computer" data-f-parent="computer">
         <div class="dynamic-computer" data-f="computer">
-            @if (isset($vacancy) && $vacancy->computer_skills)
+            @if (isset($vacancy) && count($vacancy->computer_skills))
             @foreach ($vacancy->computer_skills as $c_skill)
             <div class="row">
                 <div class="col-lg-4">

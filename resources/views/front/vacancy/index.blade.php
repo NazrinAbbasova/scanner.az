@@ -14,7 +14,6 @@
                         <thead class="jobs-head">
                             <tr>
                                 <th scope="col">Vakansiyanın adı</th>
-                                <th scope="col">Aid olduğu sahə</th>
                                 <th scope="col">Elan olunma tarixi</th>
                                 <th scope="col">Müraciət edənlərin sayı</th>
                                 <th scope="col">Uğurlu namizədlərin sayı</th>
@@ -26,7 +25,6 @@
                             @foreach ($company->vacancies as $vacancy)
                             <tr>
                                 <td class="job-name">{{ $vacancy->title }}</td>
-                                <td class="profession-name">Proqramlaşdırma</td>
                                 <td class="date">{{ date('d-m-Y', strtotime($vacancy->created_at)) }}</td>
                                 <td class="common-applicants">134</td>
                                 <td class="successful-applicants">

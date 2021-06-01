@@ -114,14 +114,11 @@ class CVController extends Controller
                 $cv_exp->cv_id                          = $cv->id;
                 $cv_exp->company                        = $request->companies[$i];
                 $cv_exp->function                       = $request->functions[$i];
-                $cv_exp->function_employment_duration   = $request->function_employment_durations[$i];
                 $cv_exp->position                       = $request->positions[$i];
-                $cv_exp->position_employment_duration   = $request->position_employment_durations[$i];
                 $cv_exp->field                          = $request->fields[$i];
-                $cv_exp->field_employment_duration      = $request->field_employment_durations[$i];
-                $cv_exp->employment_date                    = $request->employment_dates[$i];
-                $cv_exp->unemployment_date                  = $request->unemployment_dates[$i];
-                $cv_exp->obligation                         = $request->obligations[$i];
+                $cv_exp->employment_date                = $request->employment_dates[$i];
+                $cv_exp->unemployment_date              = $request->unemployment_dates[$i];
+                $cv_exp->obligation                     = $request->obligations[$i];
                 $cv_exp->save();
             }
         }

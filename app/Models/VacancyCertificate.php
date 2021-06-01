@@ -12,4 +12,6 @@ class VacancyCertificate extends Model
     public function certificate(){
         return $this->belongsTo(Certificate::class);
     }
+
+    protected $fillable = ['vacancy_id', 'certificate_id', 'level'];
 }

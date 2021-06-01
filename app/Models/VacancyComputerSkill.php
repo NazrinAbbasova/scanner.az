@@ -12,4 +12,6 @@ class VacancyComputerSkill extends Model
     public function computer_skill(){
         return $this->belongsTo(ComputerSkill::class);
     }
+
+    protected $fillable = ['vacancy_id', 'computer_skill_id', 'level'];
 }

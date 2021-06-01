@@ -18,10 +18,6 @@
                     </select>
                 </div>
                 <div class="col-lg-4">
-                    <label for="function">İşləmə müddəti</label>
-                    <input type="number" name="function_employment_durations[]" placeholder="Funksiya üzrə işləmə müddəti">
-                </div>
-                <div class="col-lg-4">
                     <label for="category">Vəzifə kateqoriyası</label>
                     <select name="positions[]" id="category">
                         <option value="choose">Seç</option>
@@ -31,10 +27,6 @@
                     </select>
                 </div>
                 <div class="col-lg-4">
-                    <label for="function">İşləmə müddəti</label>
-                    <input type="number" name="position_employment_durations[]" placeholder="Vəzifə üzrə işləmə müddəti">
-                </div>
-                <div class="col-lg-4">
                     <label for="field">Sektor</label>
                     <select name="fields[]" id="field">
                         <option value="choose">Seç</option>
@@ -42,10 +34,6 @@
                             <option value="{{ $field->name }}">{{ $field->name }}</option>
                         @endforeach
                     </select>
-                </div>
-                <div class="col-lg-4">
-                    <label for="function">İşləmə müddəti</label>
-                    <input type="number" name="field_employment_durations[]" placeholder="Sektor üzrə işləmə müddəti">
                 </div>
                 <div class="col-lg-4">
                     <label>İşə qəbul olduğunuz tarix</label>

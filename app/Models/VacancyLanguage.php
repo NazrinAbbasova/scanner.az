@@ -12,4 +12,6 @@ class VacancyLanguage extends Model
     public function language(){
         return $this->belongsTo(Language::class);
     }
+
+    protected $fillable = ['vacancy_id', 'language_id', 'level'];
 }

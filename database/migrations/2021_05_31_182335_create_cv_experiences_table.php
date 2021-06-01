@@ -18,11 +18,8 @@ class CreateCvExperiencesTable extends Migration
             $table->unsignedBigInteger('cv_id');
             $table->string('company')->nullable();
             $table->string('function')->nullable();
-            $table->string('function_employment_duration')->nullable();
             $table->string('field')->nullable();
-            $table->string('field_employment_duration')->nullable();
             $table->string('position')->nullable();
-            $table->string('position_employment_duration')->nullable();
             $table->string('employment_date')->nullable();
             $table->string('unemployment_date')->nullable();
             $table->text('obligations')->nullable();

@@ -1,5 +1,5 @@
 @extends('front.layout.master')
-@section('title', 'Yeni vakansiya')
+@section('title', $vacancy->title)
 @section('content')
 <section class="profile margin-page">
     <div class="container">

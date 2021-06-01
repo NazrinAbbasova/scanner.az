@@ -4,7 +4,7 @@
     @include('front.vacancy.components.video')
     <div class="dynamic-fields-certificates" data-f-parent="certificates">
         <div class="dynamic-certificates" data-f="certificates">
-            @if (isset($vacancy) && $vacancy->certificates)
+            @if (isset($vacancy) && count($vacancy->certificates))
                 @foreach ($vacancy->certificates as $cert)
                 <div class="row">
                     <div class="col-lg-4">
