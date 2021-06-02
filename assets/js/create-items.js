@@ -1,30 +1,3 @@
-// const addEducation = document.querySelector(".add-education");
-// const dynamicFieldsEducation = document.querySelector(
-//   ".dynamic-fields-education"
-// );
-// const dynamicEducation = document.querySelector(".dynamic-education");
-// if (addEducation) {
-//   addEducation.addEventListener("click", () => {
-//     var cln = dynamicEducation.cloneNode(true);
-//     dynamicFieldsEducation.appendChild(cln);
-//   });
-// }
-
-// const dynamicFieldsWork = document.querySelector(".dynamic-fields-work");
-// const dynamicWork = document.querySelector(".dynamic-work");
-// const addWork = document.querySelector(".add-work");
-// if (addWork) {
-//   addWork.addEventListener("click", () => {
-//     var cln = dynamicWork.cloneNode(true);
-//     dynamicFieldsWork.appendChild(cln);
-//   });
-// }
-
-$(".remove-language").click(function () {
-  console.log("clicked");
-  $(this).closest(".dynamic-language").remove();
-});
-//
 // -- Create a new option
 
 $(".add-input").on("click", function () {
@@ -40,7 +13,13 @@ $(".add-input").on("click", function () {
   $(parent_field).append(cln);
 });
 
-// Add other options
+$(".remove-input").click(function () {
+  const input = $(this).data("type");
+  if ($(`[data-f=${input}]`).length != 1) {
+    $(`[data-f=${input}]`).last().remove();
+    // Bu hisse ishlemir 19cu setir
+  }
+});
 
 $(document).on("change", ".other-input", function () {
   let select = $(this).data("s");
@@ -69,11 +48,35 @@ $(document).on("change", ".other-input", function () {
     '">' +
     '<div class="row">' +
     '<div class="col-lg-4">' +
-    '<label for="language">' +
+    "<label>" +
     label +
     "</label>" +
     '<input type="text" placeholder="' +
     placeholder +
+    '">' +
+    "</div>" +
+    "</div>" +
+    "</div>";
+
+  const otherCertificate =
+    '<div class="other" data-other="' +
+    select +
+    '">' +
+    '<div class="row">' +
+    '<div class="col-lg-4">' +
+    '<label for="certificate">' +
+    label +
+    "</label>" +
+    '<input type="text" placeholder="' +
+    placeholder +
+    '">' +
+    "</div>" +
+    '<div class="col-lg-4">' +
+    '<label for="certificate-level">' +
+    "Sertifikat səviyyəsi" +
+    "</label>" +
+    '<input type="text" placeholder="' +
+    "Səviyyəni daxil edin" +
     '">' +
     "</div>" +
     "</div>" +
@@ -87,6 +90,13 @@ $(document).on("change", ".other-input", function () {
       .prop("disabled", true);
   } else if ($(this).val() == "Digər") {
     $(selector).append(otherInput);
+    $(this)
+      .parents(".col-lg-4")
+      .siblings(".col-lg-4")
+      .find(`[data-level=${select}]`)
+      .prop("disabled", false);
+  } else if ($(this).val() == "Digər-sertifikat") {
+    $(selector).append(otherCertificate);
     $(this)
       .parents(".col-lg-4")
       .siblings(".col-lg-4")

@@ -18,7 +18,7 @@
 .list-head h6,
 .about-company h6 {
     line-height: 1rem;
-    margin: 8px;
+    margin-bottom: 8px;
 }
 
 .company-info p {
@@ -37,6 +37,11 @@
     width: 100%;
 }
 
+.about-head h6 {
+    line-height: 2rem;
+    margin-left: 10px;
+}
+
 .about-company p {
     margin-top: 20px;
     margin-bottom: 40px;
@@ -46,5 +51,5 @@
     background: linear-gradient(45deg, #4567f4, #3CD3AD);
     width: 75%;
     height: 1px;
-    margin-left: 3rem;
+    /* margin-left: 3rem; */
 }

@@ -30,9 +30,11 @@
 .primary {
     background: linear-gradient(45deg, #4567f4, #3CD3AD) !important;
 }
+
 .red {
     background: linear-gradient(45deg, #f44545, #d35f3c) !important;
 }
+
 .yellow {
     background: linear-gradient(45deg, #fae900, #d38c3c) !important;
 }
@@ -241,4 +243,22 @@
     margin-left: 3rem;
     color: black;
     font-weight: 500;
+}
+
+.actions a,
+.actions input {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    border: none;
+    width: 100%;
+    border-radius: 3px;
+    cursor: pointer;
+    outline: none;
+    color: white;
+    font-size: 15px;
+}
+
+.actions input {
+    padding: 1rem;
+    background: linear-gradient(45deg, #4567f4, #3cd3ad);
 }

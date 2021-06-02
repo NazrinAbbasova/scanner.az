@@ -47,7 +47,7 @@
 }
 
 .selected {
-    background: linear-gradient(45deg, #4567f4, #3CD3AD);
+    /* background: linear-gradient(45deg, #4567f4, #3CD3AD); */
     color: #fff;
     border: none !important;
 }
@@ -64,6 +64,7 @@
     border: none;
     border-radius: 6px;
     margin-left: 1rem;
+    margin-top: 0;
 }
 
 /* .filter-fails {

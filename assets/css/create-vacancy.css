@@ -187,21 +187,17 @@ select.importance {
     display: flex;
 }
 
-.add-work,
-.add-education,
-.add-language,
-.add-computer,
-.add-certificate {
+.add-input {
     color: #4567f4;
     cursor: pointer;
     font-weight: 600;
     width: 5rem;
 }
 
-.remove-language {
+.remove-input {
     font-weight: 500;
     cursor: pointer;
-    display: none;
+    /* display: none; */
 }
 
 .save-vacancy {
