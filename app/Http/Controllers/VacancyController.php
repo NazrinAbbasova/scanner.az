@@ -576,16 +576,21 @@ public function store(Request $request)
                 array_push($other_languages,            $request->languages[$i]);
 
             } else {
+                
+                $v_lang = VacancyLanguage::where('vacancy_id', $v->id)->where('language_id', $request->languages[$i])->first();
+                
+                if($v_lang) {
+                    $v_lang->importance = $request->language_importances[$i];
+                    $v_lang->level      = $request->language_levels[$i];
+                } else {
+                    $v_lang = new VacancyLanguage;
+                    $v_lang->vacancy_id  = $v->id;
+                    $v_lang->language_id = $request->languages[$i];
+                    $v_lang->importance  = $request->language_importances[$i];
+                    $v_lang->level       = $request->language_levels[$i];
+                }
 
-                $v_lang = VacancyLanguage::updateOrCreate([
-                    'vacancy_id' => $v->id,
-                    'language_id'   => $request->languages[$i],
-                ],[
-                    'vacancy_id'   => $v->id,
-                    'importance'   => $request->language_importances[$i],
-                    'level'        => $request->language_levels[$i],
-                    'language_id'  => $request->languages[$i],
-                ]);
+                $v_lang->save();
 
                 $max_score += $request->language_importances[$i];
 
@@ -634,15 +639,19 @@ public function store(Request $request)
 
             } else {
 
-                $v_comp_skill = VacancyComputerSkill::updateOrCreate([
-                    'vacancy_id' => $v->id,
-                    'computer_skill_id'   => $request->computer_skills[$i],
-                ],[
-                    'vacancy_id'         => $v->id,
-                    'computer_skill_id'  => $request->computer_skills[$i],
-                    'level'              => $request->computer_skill_levels[$i],
-                    'importance'         => $request->computer_skill_importances[$i],
-                ]);
+                $v_comp_skill = VacancyComputerSkill::where('vacancy_id', $v->id)->where('computer_skill_id', $request->computer_skills[$i])->first();
+                if($v_comp_skill) {
+                    $v_comp_skill->importance = $request->computer_skill_importances[$i];
+                    $v_comp_skill->level = $request->computer_skill_levels[$i];
+                } else {
+                    $v_comp_skill = new VacancyComputerSkill;
+                    $v_comp_skill->vacancy_id = $v->id;
+                    $v_comp_skill->computer_skill_id = $request->computer_skills[$i];
+                    $v_comp_skill->importance = $request->computer_skill_importances[$i];
+                    $v_comp_skill->level = $request->computer_skill_levels[$i];
+                }
+
+                $v_comp_skill->save();
 
                 $max_score += $request->computer_skill_importances[$i];
 
@@ -694,15 +703,20 @@ public function store(Request $request)
 
             } else {
 
-                $v_cert = VacancyCertificate::updageOrCreate([
-                    'vacancy_id' => $v->id,
-                    'certificate_id'   => $request->certificates[$i],
-                ],[
-                    'vacancy_id'         => $v->id,
-                    'importance'         => $request->certificate_importances[$i],
-                    'level'              => $request->certificate_levels[$i],
-                    'certificate_id'     => $request->certificates[$i],
-                ]);
+                $v_cert = VacancyCertificate::where('vacancy_id', $v->id)->where('certificate_id', $request->certificates[$i])->first();
+
+                if($v_cert) {
+                    $v_cert->importance = $request->certificate_importances[$i];
+                    $v_cert->level      = $request->certificate_levels[$i];
+                } else {
+                    $v_cert = new VacancyCertificate;
+                    $v_cert->vacancy_id     = $v->id;
+                    $v_cert->certificate_id = $request->certificates[$i];
+                    $v_cert->importance     = $request->certificate_importances[$i];
+                    $v_cert->level          = $request->certificate_levels[$i];
+                }
+                
+                $v_cert->save();
 
                 $max_score += $request->certificate_importances[$i];
 
@@ -710,7 +724,7 @@ public function store(Request $request)
             
         }
 
-        // If new certificate and it's level need to be created
+        // If new certificate and its level need to be created
 
         if($request->has('new_certificates')) {
             for($i = 0; $i < count($request->new_certificates); $i++){
