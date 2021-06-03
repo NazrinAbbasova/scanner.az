@@ -79,11 +79,11 @@
     <hr>
     <div class="row">
         <div class="col-lg-4">
-            <label for="salary">Minimum əmək haqqı tələbi*</label>
+            <label for="salary">Minimum təklif olunan əmək haqqı</label>
             <input name="min_salary_expectation" value="{{ isset($vacancy) ? $vacancy->min_salary_expectation : old('min_salary_expectation') }}" type="number" placeholder="Min.">
         </div>
         <div class="col-lg-4">
-            <label for="salary">Maksimum əmək haqqı tələbi</label>
+            <label for="salary">Maksimum təklif olunan əmək haqqı</label>
             <input name="max_salary_expectation" value="{{ isset($vacancy) ? $vacancy->max_salary_expectation : old('max_salary_expectation') }}" type="number" placeholder="Maks.">
         </div>
         <div class="col-lg-4">
