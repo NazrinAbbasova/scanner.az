@@ -6,7 +6,7 @@
         <div class="row">
             @include('front.applicant.sidebar')
             <div class="col-lg-9 m-b30">
-                <form id="vacancy-form" action="{{ route('cv.store') }}" enctype="multipart/form-data" method="post">
+                <form id="vacancy-form" action="{{ route('cv.update', $cv->id) }}" enctype="multipart/form-data" method="post">
                     @csrf
                     <!-- progressbar -->
                     <ul class="progressbar">

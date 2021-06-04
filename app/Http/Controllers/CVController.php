@@ -73,7 +73,6 @@ class CVController extends Controller
      */
     public function store(Request $request)
     {
-        
         $diff = Carbon::parse($request->birthdate)->diff(Carbon::now())->format('%y years, %m months and %d days');
         $age =  explode(' ', $diff)[0];
         $cv                          = new Cv;
@@ -101,16 +100,18 @@ class CVController extends Controller
 
             for($i = 0; $i < count($request->educations); $i++) {
 
-                $cv_edu                  = new CvEducation;
-                $cv_edu->cv_id           = $cv->id;
-                $cv_edu->education       = $request->educations[$i];
-                $cv_edu->exam_score      = $request->scores[$i];
-                $cv_edu->university      = $request->universities[$i];
-                $cv_edu->specialty       = $request->specialties[$i];
-                $cv_edu->profession      = $request->professions[$i];
-                $cv_edu->admission_year  = $request->admission_years[$i];
-                $cv_edu->graduation_year = $request->graduation_years[$i];
-                $cv_edu->save();
+                if($request->educations[$i] != 'choose'){
+                    $cv_edu                  = new CvEducation;
+                    $cv_edu->cv_id           = $cv->id;
+                    $cv_edu->education       = $request->educations[$i];
+                    $cv_edu->exam_score      = $request->scores[$i];
+                    $cv_edu->university      = $request->universities[$i];
+                    $cv_edu->specialty       = $request->specialties[$i];
+                    $cv_edu->profession      = $request->professions[$i];
+                    $cv_edu->admission_year  = $request->admission_years[$i];
+                    $cv_edu->graduation_year = $request->graduation_years[$i];
+                    $cv_edu->save();
+                }
             }
         }
 
@@ -119,17 +120,18 @@ class CVController extends Controller
         if($request->has('companies')){
 
             for($i = 0; $i < count($request->companies); $i++) {
-
-                $cv_exp                      = new CvExperience;
-                $cv_exp->cv_id               = $cv->id;
-                $cv_exp->company             = $request->companies[$i];
-                $cv_exp->function            = $request->functions[$i];
-                $cv_exp->position            = $request->positions[$i];
-                $cv_exp->field               = $request->fields[$i];
-                $cv_exp->employment_date     = $request->employment_dates[$i];
-                $cv_exp->unemployment_date   = $request->unemployment_dates[$i];
-                $cv_exp->obligations         = $request->obligations[$i];
-                $cv_exp->save();
+                if($request->companies[$i] != 'choose'){
+                    $cv_exp                      = new CvExperience;
+                    $cv_exp->cv_id               = $cv->id;
+                    $cv_exp->company             = $request->companies[$i];
+                    $cv_exp->function            = $request->functions[$i];
+                    $cv_exp->position            = $request->positions[$i];
+                    $cv_exp->field               = $request->fields[$i];
+                    $cv_exp->employment_date     = $request->employment_dates[$i];
+                    $cv_exp->unemployment_date   = $request->unemployment_dates[$i];
+                    $cv_exp->obligations         = $request->obligations[$i];
+                    $cv_exp->save();
+                }
             }
         }
 
@@ -140,7 +142,7 @@ class CVController extends Controller
             $other_language_levels = [];
 
             for($i = 0; $i < count($request->languages); $i++) {
-                if($request->languages[$i] != 'Choose'){
+                if($request->languages[$i] != 'choose'){
                     if($request->languages[$i] == 'Digər') {
 
                         array_push($other_languages,            $request->languages[$i]);
@@ -184,7 +186,7 @@ class CVController extends Controller
             
                 
             for($i = 0; $i < count($request->computer_skills); $i++) {
-                if($request->computer_skills[$i] != 'Choose'){
+                if($request->computer_skills[$i] != ' choose'){
                     if($request->computer_skills[$i] == 'Digər') {
 
                         array_push($other_skills,            $request->computer_skills[$i]);
@@ -334,7 +336,7 @@ class CVController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return $request->all();
     }
 
     /**

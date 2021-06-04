@@ -30,6 +30,7 @@ class CreateCvsTable extends Migration
             $table->string('driver_license');
             $table->string('driver_license_category')->nullable();
             $table->string('linkedin')->nullable();
+            $table->string('style')->nullable();
 
             $table->foreign('user_id')
                     ->references('id')

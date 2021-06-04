@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cv;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -83,7 +84,10 @@ class ApplicantController extends Controller
     }
 
     public function cv(){
-        return view('front.cv.show');
+        $cv = Cv::where('user_id', auth()->user()->id)->with('educations', 'experiences', 'languages', 'computer_skills', 'certificates')->first();
+        if($cv) return view('front.cv.show', compact('cv'));
+        else return redirect()->route('cv.create');
+        
     }
 
     public function vacancies(){
