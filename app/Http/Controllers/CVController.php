@@ -18,6 +18,7 @@ use App\Models\Position;
 use App\Models\Region;
 use App\Models\Specialty;
 use App\Models\University;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class CVController extends Controller
@@ -39,6 +40,9 @@ class CVController extends Controller
      */
     public function create()
     {
+        if(auth()->user()->cv) {
+            return redirect()->route('cv.edit', auth()->user()->cv->id)->with('success', 'Cv uğurla yaradıldı');
+        }
         $regions      = Region::all();
         $fields       = Field::all();
         $funcs        = Func::all();
@@ -69,21 +73,27 @@ class CVController extends Controller
      */
     public function store(Request $request)
     {
-        return $request->all();
-
+        
+        $diff = Carbon::parse($request->birthdate)->diff(Carbon::now())->format('%y years, %m months and %d days');
+        $age =  explode(' ', $diff)[0];
         $cv                          = new Cv;
+        $cv->user_id                 = auth()->user()->id;
         $cv->firstname               = $request->firstname;
         $cv->lastname                = $request->lastname;
         $cv->middlename              = $request->middlename;
+        $cv->age                     = $age;
+        $cv->birthdate               = $request->birthdate;
         $cv->nationality             = $request->nationality;
         $cv->region                  = $request->region;
-        $cv->address                 = $request->address;
+        $cv->address                 = $request->address ?? 'address';
         $cv->gender                  = $request->gender;
         $cv->marital                 = $request->marital;
         $cv->military                = $request->military;
         $cv->driver_license          = $request->driver_license;
         $cv->driver_license_category = $request->driver_license_category;
         $cv->linkedin                = $request->linkedin;
+
+        $cv->save();
 
         // Educations
 
@@ -110,15 +120,15 @@ class CVController extends Controller
 
             for($i = 0; $i < count($request->companies); $i++) {
 
-                $cv_exp                                 = new CvExperience;
-                $cv_exp->cv_id                          = $cv->id;
-                $cv_exp->company                        = $request->companies[$i];
-                $cv_exp->function                       = $request->functions[$i];
-                $cv_exp->position                       = $request->positions[$i];
-                $cv_exp->field                          = $request->fields[$i];
-                $cv_exp->employment_date                = $request->employment_dates[$i];
-                $cv_exp->unemployment_date              = $request->unemployment_dates[$i];
-                $cv_exp->obligation                     = $request->obligations[$i];
+                $cv_exp                      = new CvExperience;
+                $cv_exp->cv_id               = $cv->id;
+                $cv_exp->company             = $request->companies[$i];
+                $cv_exp->function            = $request->functions[$i];
+                $cv_exp->position            = $request->positions[$i];
+                $cv_exp->field               = $request->fields[$i];
+                $cv_exp->employment_date     = $request->employment_dates[$i];
+                $cv_exp->unemployment_date   = $request->unemployment_dates[$i];
+                $cv_exp->obligations         = $request->obligations[$i];
                 $cv_exp->save();
             }
         }
@@ -130,17 +140,19 @@ class CVController extends Controller
             $other_language_levels = [];
 
             for($i = 0; $i < count($request->languages); $i++) {
-                if($request->languages[$i] == 'Digər') {
+                if($request->languages[$i] != 'Choose'){
+                    if($request->languages[$i] == 'Digər') {
 
-                    array_push($other_languages,            $request->languages[$i]);
-                    array_push($other_language_levels,      $request->language_levels[$i]);
-
-                } else {
-                    $cv_lang                    = new CvLanguage;
-                    $cv_lang->cv_id             = $cv->id;
-                    $cv_lang->language          = $request->languages[$i];
-                    $cv_lang->language_level    = $request->language_levels[$i];
-                    $cv_lang->save();
+                        array_push($other_languages,            $request->languages[$i]);
+                        array_push($other_language_levels,      $request->language_levels[$i]);
+    
+                    } else {
+                        $cv_lang                    = new CvLanguage;
+                        $cv_lang->cv_id             = $cv->id;
+                        $cv_lang->language          = $request->languages[$i];
+                        $cv_lang->level             = $request->language_levels[$i];
+                        $cv_lang->save();
+                    }
                 }
             }
 
@@ -172,19 +184,21 @@ class CVController extends Controller
             
                 
             for($i = 0; $i < count($request->computer_skills); $i++) {
-                if($request->computer_skills[$i] == 'Digər') {
+                if($request->computer_skills[$i] != 'Choose'){
+                    if($request->computer_skills[$i] == 'Digər') {
 
-                    array_push($other_skills,            $request->computer_skills[$i]);
-                    array_push($other_skill_levels,      $request->computer_skill_levels[$i]);
-
-                } else {
-
-                    $cv_comp_skill                         = new CvComputerSkill;
-                    $cv_comp_skill->cv_id                  = $cv->id;
-                    $cv_comp_skill->computer_skill         = $request->computer_skills[$i];
-                    $cv_comp_skill->computer_skill_level   = $request->computer_skill_levels[$i];
-                    $cv_comp_skill->save();
-
+                        array_push($other_skills,            $request->computer_skills[$i]);
+                        array_push($other_skill_levels,      $request->computer_skill_levels[$i]);
+    
+                    } else {
+    
+                        $cv_comp_skill                         = new CvComputerSkill;
+                        $cv_comp_skill->cv_id                  = $cv->id;
+                        $cv_comp_skill->computer_skill         = $request->computer_skills[$i];
+                        $cv_comp_skill->computer_skill_level   = $request->computer_skill_levels[$i];
+                        $cv_comp_skill->save();
+    
+                    }
                 }
             }
 
@@ -217,19 +231,21 @@ class CVController extends Controller
 
             for($i = 0; $i < count($request->certificates); $i++) {
 
-                if($request->certificates[$i] == 'Digər') {
+                if($request->certificates[$i] != 'choose'){
+                    if($request->certificates[$i] == 'Digər') {
 
-                    array_push($other_certificate_levels,      $request->certificate_levels[$i]);
-                    array_push($other_certificates,            $request->certificates[$i]);
-
-                } else {
-
-                    $cv_cert                 = new CvCertificate;
-                    $cv_cert->cv_id          = $cv->id;
-                    $cv_cert->level          = $request->certificate_levels[$i];
-                    $cv_cert->certificate_id = $request->certificates[$i];
-                    $cv_cert->save();
-
+                        array_push($other_certificate_levels,      $request->certificate_levels[$i]);
+                        array_push($other_certificates,            $request->certificates[$i]);
+    
+                    } else {
+    
+                        $cv_cert                 = new CvCertificate;
+                        $cv_cert->cv_id          = $cv->id;
+                        $cv_cert->level          = $request->certificate_levels[$i];
+                        $cv_cert->certificate_id = $request->certificates[$i];
+                        $cv_cert->save();
+    
+                    }
                 }
                 
             }
@@ -283,8 +299,9 @@ class CVController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Cv $cv)
+    public function edit($id)
     {
+        $cv = Cv::with('educations', 'languages', 'computer_skills', 'experiences', 'certificates')->findOrFail($id);
         $regions      = Region::all();
         $fields       = Field::all();
         $funcs        = Func::all();
@@ -293,6 +310,7 @@ class CVController extends Controller
         $skills       = ComputerSkill::all();
         $certificates = Certificate::all();
         $unis         = University::all();
+        $specialties  = Specialty::all();
 
         return view('front.cv.edit', compact(
             'cv',
@@ -302,7 +320,8 @@ class CVController extends Controller
             'positions',
             'skills',
             'certificates',
-            'unis'
+            'unis',
+            'specialties'
         ));
     }
 

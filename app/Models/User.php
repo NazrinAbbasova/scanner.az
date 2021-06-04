@@ -44,4 +44,8 @@ class User extends Authenticatable
     public function vacancies(){
         return $this->hasMany(Vacancy::class, 'company_id');
     }
+
+    public function cv(){
+        return $this->hasOne(Cv::class);
+    }
 }

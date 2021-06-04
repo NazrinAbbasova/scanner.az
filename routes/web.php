@@ -81,9 +81,9 @@ Route::middleware(['auth'])->group(function () {
             
 
             Route::prefix('cv')->group(function () {
-                Route::get('/',      'ApplicantController@cv')->name('applicant.cv');
-                Route::get('/new',   'CVController@create')->name('cv.create');
-                Route::get('/edit',  'CVController@edit')->name('cv.edit');
+                Route::get('/',           'ApplicantController@cv')->name('applicant.cv');
+                Route::get('/new',        'CVController@create')->name('cv.create');
+                Route::get('/edit/{id}',  'CVController@edit')->name('cv.edit');
 
                 Route::post('/store', 'CVController@store')->name('cv.store');
             });

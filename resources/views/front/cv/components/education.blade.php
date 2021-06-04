@@ -1,13 +1,16 @@
 <!-- Education informations -->
+@if (isset($cv) && count($cv->educations))
 <fieldset data-field="education">
     <h5>Təhsil məlumatları</h5>
     <div class="dynamic-fields-education" data-f-parent='education'>
+        @foreach ($cv->educations as $edu)
         <div class="dynamic-education" data-f="education">
             <div class="row">
                 <div class="col-lg-4">
                     <label for="degree">Təhsil dərəcəsi</label>
                     <select data-s="degree" name="educations[]" id="degree">
-                        <option>Seç</option>
+                        <option value="{{ $edu->education }}">{{ $edu->education }}</option>
+                        <option value="choose">Seç</option>
                         <option value="İbtidai">İbtidai</option>
                         <option value="Orta">Orta</option>
                         <option value="Peşə">Peşə</option>
@@ -19,12 +22,13 @@
 
                 <div class="col-lg-4">
                     <label for="score">Qəbul balı</label>
-                    <input type="number" name="scores[]" placeholder="Qəbul balınız">
+                    <input type="number" value="{{ $edu->exam_score }}" name="scores[]" placeholder="Qəbul balınız">
                 </div>
                 <div class="col-lg-4">
                     <label for="university">Təhsil müəssisəsi</label>
                     <select data-s="university" name="universities[]" id="university">
-                        <option>Seç</option>
+                        <option value="{{ $edu->university }}">{{ $edu->university }}</option>
+                        <option value="choose">Seç</option>
                         @foreach ($unis as $uni)
                             <option value="{{ $uni->name }}">{{ $uni->name }}</option>
                         @endforeach
@@ -33,6 +37,7 @@
                 <div class="col-lg-4">
                     <label for="section">İxtisas istiqaməti</label>
                     <select data-s="section" name="specialties[]" id="section">
+                        <option value="{{ $edu->specialty }}">{{ $edu->specialty }}</option>
                         <option value="choose">Seç</option>
                         @foreach ($specialties as $sp)
                             <option value="{{ $sp->name }}">{{ $sp->name }}</option>
@@ -41,17 +46,95 @@
                 </div>
                 <div class="col-lg-4">
                     <label for="field">İxtisas</label>
-                    <input type="text" name="professions[]" placeholder="İxtisasınız">
+                    <input type="text" value="{{ $edu->profession }}" name="professions[]" placeholder="İxtisasınız">
                 </div>
                 <div class="col-lg-4"></div>
                 <div class="col-lg-4">
                     <label>Daxil olduğunuz il</label>
-                    <input type="number" name="admission_years[]" placeholder="İl">
+                    <input type="number" value="{{ $edu->admission_year }}" name="admission_years[]" placeholder="İl">
                 </div>
                 <div class="col-lg-4">
                     <label>Bitirdiyiniz il</label>
-                    <input type="number" name="graduation_years[]" placeholder="İl">
+                    <input type="number" value="{{ $edu->graduation_year }}" name="graduation_years[]" placeholder="İl">
                 </div>
+            </div>
+        </div>
+        @endforeach
+        
+    </div>
+    <div class="add-remove">
+        <div class="add-education add-input" data-type='education'>
+            + Əlavə et
+        </div>
+        <!-- <div class="remove-education">
+            Sil
+        </div> -->
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <input data-field="personal" type="button" name="previous"
+                class="previous action-button" value="Əvvəlki" />
+        </div>
+        <div class="col-lg-6">
+            <input data-field="work" type="button" name="next" class="next action-button"
+                value="Sonrakı" />
+        </div>
+    </div>
+</fieldset>
+
+@else
+
+<fieldset data-field="education">
+    <h5>Təhsil məlumatları</h5>
+    <div class="dynamic-education" data-f="education">
+        <div class="row">
+            <div class="col-lg-4">
+                <label for="degree">Təhsil dərəcəsi</label>
+                <select data-s="degree" name="educations[]" id="degree">
+                    <option>Seç</option>
+                    <option value="İbtidai">İbtidai</option>
+                    <option value="Orta">Orta</option>
+                    <option value="Peşə">Peşə</option>
+                    <option value="Bakalavr">Bakalavr</option>
+                    <option value="Magistr">Magistr</option>
+                    <option value="Doktorantura">Doktorantura</option>
+                </select>
+            </div>
+
+            <div class="col-lg-4">
+                <label for="score">Qəbul balı</label>
+                <input type="number" name="scores[]" placeholder="Qəbul balınız">
+            </div>
+            <div class="col-lg-4">
+                <label for="university">Təhsil müəssisəsi</label>
+                <select data-s="university" name="universities[]" id="university">
+                    <option>Seç</option>
+                    @foreach ($unis as $uni)
+                        <option value="{{ $uni->name }}">{{ $uni->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="col-lg-4">
+                <label for="section">İxtisas istiqaməti</label>
+                <select data-s="section" name="specialties[]" id="section">
+                    <option value="choose">Seç</option>
+                    @foreach ($specialties as $sp)
+                        <option value="{{ $sp->name }}">{{ $sp->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="col-lg-4">
+                <label for="field">İxtisas</label>
+                <input type="text" name="professions[]" placeholder="İxtisasınız">
+            </div>
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
+                <label>Daxil olduğunuz il</label>
+                <input type="number" name="admission_years[]" placeholder="İl">
+            </div>
+            <div class="col-lg-4">
+                <label>Bitirdiyiniz il</label>
+                <input type="number" name="graduation_years[]" placeholder="İl">
             </div>
         </div>
     </div>
@@ -74,3 +157,5 @@
         </div>
     </div>
 </fieldset>
+
+@endif

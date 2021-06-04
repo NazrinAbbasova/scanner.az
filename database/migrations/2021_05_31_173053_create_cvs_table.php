@@ -15,6 +15,7 @@ class CreateCvsTable extends Migration
     {
         Schema::create('cvs', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
             $table->string('firstname');
             $table->string('lastname');
             $table->string('middlename');
@@ -27,8 +28,13 @@ class CreateCvsTable extends Migration
             $table->string('marital');
             $table->string('military');
             $table->string('driver_license');
-            $table->string('driver_license_category');
+            $table->string('driver_license_category')->nullable();
             $table->string('linkedin')->nullable();
+
+            $table->foreign('user_id')
+                    ->references('id')
+                    ->on('users')
+                    ->onDelete('cascade');
 
             $table->timestamps();
         });

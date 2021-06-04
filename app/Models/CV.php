@@ -28,4 +28,8 @@ class Cv extends Model
     public function certificates(){
         return $this->hasMany(CvCertificate::class);
     }
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }
