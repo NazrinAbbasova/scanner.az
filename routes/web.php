@@ -42,6 +42,9 @@ Route::get('/about',          'PageController@about')->name('about');
 
 Route::post('/contact',       'ContactController@store')->name('contact.store'); // Sending contact email
 
+Route::get('/cv/{id?}',        'ApplicantController@cv')->name('applicant.cv');
+Route::get('/cv/export/{id}',  'CvController@export')->name('cv.export');
+
 Route::middleware(['auth'])->group(function () {
 
     // Company profile
@@ -81,7 +84,6 @@ Route::middleware(['auth'])->group(function () {
             
 
             Route::prefix('cv')->group(function () {
-                Route::get('/',             'ApplicantController@cv')->name('applicant.cv');
                 Route::get('/new',          'CVController@create')->name('cv.create');
                 Route::get('/edit/{id}',    'CVController@edit')->name('cv.edit');
                 Route::post('/update/{id}', 'CVController@update')->name('cv.update');

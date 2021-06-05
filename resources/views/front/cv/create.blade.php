@@ -99,6 +99,18 @@
             },
         });
     })
+
+    $(".add-input").on("click", function () {
+        const input = $(this).data("type");
+        const parent_field = document.querySelector(`[data-f-parent=${input}]`);
+        const field = document.querySelector(`[data-f=${input}]`);
+
+        const cln = field.cloneNode(true);
+
+        $(cln).find(`[data-level=${input}]`).attr("disabled", true);
+
+        $(parent_field).append(cln);
+    });
 </script>
 
 <link rel="stylesheet" href="{{ asset('static/front/css/profile.css') }}">

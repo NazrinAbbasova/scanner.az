@@ -20,6 +20,7 @@ use App\Models\Specialty;
 use App\Models\University;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class CVController extends Controller
 {
@@ -41,7 +42,7 @@ class CVController extends Controller
     public function create()
     {
         if(auth()->user()->cv) {
-            return redirect()->route('cv.edit', auth()->user()->cv->id)->with('success', 'Cv uğurla yaradıldı');
+            return redirect()->route('cv.edit', auth()->user()->cv->id);
         }
         $regions      = Region::all();
         $fields       = Field::all();
@@ -73,6 +74,39 @@ class CVController extends Controller
      */
     public function store(Request $request)
     {
+        $rules = [
+            'firstname'      => 'required',
+            'lastname'       => 'required',
+            'middlename'     => 'required',
+            'birthdate'      => 'required',
+            'nationality'    => 'required',
+            'region'         => 'required',
+            'address'        => 'required',
+            'gender'         => 'required',
+            'marital'        => 'required',
+            'military'       => 'required',
+            'driver_license' => 'required',
+            'phone'          => 'required'
+        ];
+
+        $messages = [
+            'firstname.required'      => 'Adınızı daxil edin',
+            'lastname.required'       => 'Soyadınızı daxil edin',
+            'middlename.required'     => 'Ata adını daxil edin',
+            'birthdate.required'      => 'Doğum tarixinizi daxil edin',
+            'nationality.required'    => 'Vətəndaşlığınızı seçin',
+            'region.required'         => 'Region seçin',
+            'address.required'        => 'Adresinizi daxil edin',
+            'gender.required'         => 'Cinsiyyətinizi seçin',
+            'marital.required'        => 'Ailə vəziyyəti statusunuzu seçin',
+            'military.required'       => 'Hərbi mükəlləfiyyət statusunuzu seçin',
+            'driver_license.required' => 'Sürücülük vəsiqəsi statusunuzu seçin',
+            'phone.required'          => 'Əlaqə telefonunuzu daxil edin'
+        ];
+        $request->flash();
+        $this->validate($request, $rules, $messages);
+
+
         $diff = Carbon::parse($request->birthdate)->diff(Carbon::now())->format('%y years, %m months and %d days');
         $age =  explode(' ', $diff)[0];
         $cv                          = new Cv;
@@ -84,13 +118,14 @@ class CVController extends Controller
         $cv->birthdate               = $request->birthdate;
         $cv->nationality             = $request->nationality;
         $cv->region                  = $request->region;
-        $cv->address                 = $request->address ?? 'address';
+        $cv->address                 = $request->address;
         $cv->gender                  = $request->gender;
         $cv->marital                 = $request->marital;
         $cv->military                = $request->military;
         $cv->driver_license          = $request->driver_license;
         $cv->driver_license_category = $request->driver_license_category;
         $cv->linkedin                = $request->linkedin;
+        $cv->phone                   = $request->phone;
 
         $cv->save();
 
@@ -241,10 +276,21 @@ class CVController extends Controller
     
                     } else {
     
-                        $cv_cert                 = new CvCertificate;
-                        $cv_cert->cv_id          = $cv->id;
-                        $cv_cert->level          = $request->certificate_levels[$i];
-                        $cv_cert->certificate_id = $request->certificates[$i];
+                        $cv_cert                      = new CvCertificate;
+                        $cv_cert->cv_id               = $cv->id;
+                        $cv_cert->certificate_level   = $request->certificate_levels[$i];
+                        $cv_cert->certificate         = $request->certificates[$i];
+                        $cv_cert->certificate_url     = $request->certificate_urls[$i];
+
+                        if(count($request->certificate_files)){
+                            $file     = $request->certificate_files[$i];
+                            $ext      = $file->extension();
+                            $filename = $request->name.'-'.$request->lastname.'-'.$request->middlename.'-'.$request->certificates[$i].'-'.$request->certificate_levels[$i].'.'.$ext;
+                            $path     = public_path('uploads/cv');
+                            $url      = '/uploads/cv/'.$filename;
+                            $file->move($path, $url);
+                            $cv_cert->certificate_file = $url;
+                        }
                         $cv_cert->save();
     
                     }
@@ -270,10 +316,23 @@ class CVController extends Controller
 
                     // Create new vacancy language relation
                     $cv_cert                    = new CvCertificate;
-                    $cv_cert->cv          = $cv->id;
-                    $cv_cert->level       = $level->name;
-                    $cv_cert->certificate = $cert->name;
+                    $cv_cert->cv_id             = $cv->id;
+                    $cv_cert->certificate_level = $level->name;
+                    $cv_cert->certificate       = $cert->name;
+                    $cv_cert->certificate_url   = $request->certificate_urls[$i];
+
+                    if(count($request->certificate_files)){
+                        $file     = $request->certificate_files[$i];
+                        $ext      = $file->extension();
+                        $filename = $request->name.'-'.$request->lastname.'-'.$request->middlename.'-'.$request->certificates[$i].'-'.$request->certificate_levels[$i].'.'.$ext;
+                        $path     = public_path('uploads/cv');
+                        $url      = '/uploads/cv/'.$filename;
+                        $file->move($path, $url);
+                        $cv_cert->certificate_file = $url;
+                    }
                     $cv_cert->save();
+
+                    
 
                 }
             }
@@ -303,28 +362,33 @@ class CVController extends Controller
      */
     public function edit($id)
     {
-        $cv = Cv::with('educations', 'languages', 'computer_skills', 'experiences', 'certificates')->findOrFail($id);
-        $regions      = Region::all();
-        $fields       = Field::all();
-        $funcs        = Func::all();
-        $positions    = Position::all();
-        $languges     = Language::all();
-        $skills       = ComputerSkill::all();
-        $certificates = Certificate::all();
-        $unis         = University::all();
-        $specialties  = Specialty::all();
-
-        return view('front.cv.edit', compact(
-            'cv',
-            'regions',
-            'fields',
-            'funcs',
-            'positions',
-            'skills',
-            'certificates',
-            'unis',
-            'specialties'
-        ));
+        $cv = Cv::with('educations', 'languages', 'computer_skills', 'experiences', 'certificates')->find($id);
+        if(!$cv) {
+            return redirect()->route('cv.create');
+        } else {
+            $regions      = Region::all();
+            $fields       = Field::all();
+            $funcs        = Func::all();
+            $positions    = Position::all();
+            $languges     = Language::all();
+            $skills       = ComputerSkill::all();
+            $certificates = Certificate::all();
+            $unis         = University::all();
+            $specialties  = Specialty::all();
+    
+            return view('front.cv.edit', compact(
+                'cv',
+                'regions',
+                'fields',
+                'funcs',
+                'positions',
+                'skills',
+                'certificates',
+                'unis',
+                'specialties'
+            ));
+        }
+        
     }
 
     /**
@@ -349,4 +413,12 @@ class CVController extends Controller
     {
         //
     }
+
+    public function export($id){
+        $cv = Cv::with('educations', 'languages', 'computer_skills', 'experiences', 'certificates')->find($id);
+        $pdf = PDF::loadView('front.cv.export', ['cv' => $cv]);
+        $file_name = $cv->firstname.'-'.$cv->lastname.'-'.$cv->middlename;
+        return $pdf->download($file_name.'.pdf');
+    }
+
 }

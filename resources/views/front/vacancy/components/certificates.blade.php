@@ -14,7 +14,7 @@
                             <option value="{{ $cert->importance }}">
                                 @if ($cert->importance == 0) Önəm daşımır
                                 @elseif ($cert->importance == 1) Az önəm daşıyır
-                                @elseif ($cert->importance == 3)Önəmlidir
+                                @elseif ($cert->importance == 2) Önəmlidir
                                 @else Mütləqdir
                                 @endif    
                             </option>

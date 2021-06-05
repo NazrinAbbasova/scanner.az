@@ -11,7 +11,7 @@
                     <option value="{{ $vacancy->age_importance }}">
                     @if ($vacancy->age_importance == 0) Önəm daşımır
                     @elseif ($vacancy->age_importance == 1) Az önəm daşıyır
-                    @elseif ($vacancy->age_importance == 3)Önəmlidir
+                    @elseif ($vacancy->age_importance == 2)Önəmlidir
                     @else Mütləqdir
                     @endif    
                     </option>
@@ -36,7 +36,7 @@
                 <option value="{{ $vacancy->nationality_importance }}">
                     @if ($vacancy->nationality_importance == 0) Önəm daşımır
                     @elseif ($vacancy->nationality_importance == 1) Az önəm daşıyır
-                    @elseif ($vacancy->nationality_importance == 3)Önəmlidir
+                    @elseif ($vacancy->nationality_importance == 2)Önəmlidir
                     @else Mütləqdir
                     @endif    
                 </option>
@@ -60,7 +60,7 @@
                 <option value="{{ $vacancy->region_importance }}">
                     @if ($vacancy->region_importance == 0) Önəm daşımır
                     @elseif ($vacancy->region_importance == 1) Az önəm daşıyır
-                    @elseif ($vacancy->region_importance == 3)Önəmlidir
+                    @elseif ($vacancy->region_importance == 2)Önəmlidir
                     @else Mütləqdir
                     @endif    
                 </option>
@@ -85,7 +85,7 @@
                 <option value="{{ $vacancy->gender_importance }}">
                     @if ($vacancy->gender_importance == 0) Önəm daşımır
                     @elseif ($vacancy->gender_importance == 1) Az önəm daşıyır
-                    @elseif ($vacancy->gender_importance == 3)Önəmlidir
+                    @elseif ($vacancy->gender_importance == 2)Önəmlidir
                     @else Mütləqdir
                     @endif    
                 </option>
@@ -111,7 +111,7 @@
                 <option value="{{ $vacancy->marital_importance }}">
                     @if ($vacancy->marital_importance == 0) Önəm daşımır
                     @elseif ($vacancy->marital_importance == 1) Az önəm daşıyır
-                    @elseif ($vacancy->marital_importance == 3)Önəmlidir
+                    @elseif ($vacancy->marital_importance == 2)Önəmlidir
                     @else Mütləqdir
                     @endif    
                 </option>
@@ -135,7 +135,7 @@
                 <option value="{{ $vacancy->military_importance }}">
                     @if ($vacancy->military_importance == 0) Önəm daşımır
                     @elseif ($vacancy->military_importance == 1) Az önəm daşıyır
-                    @elseif ($vacancy->military_importance == 3)Önəmlidir
+                    @elseif ($vacancy->military_importance == 2)Önəmlidir
                     @else Mütləqdir
                     @endif    
                 </option>
@@ -159,7 +159,7 @@
                 <option value="{{ $vacancy->driver_license_importance }}">
                     @if ($vacancy->driver_license_importance == 0) Önəm daşımır
                     @elseif ($vacancy->driver_license_importance == 1) Az önəm daşıyır
-                    @elseif ($vacancy->driver_license_importance == 3)Önəmlidir
+                    @elseif ($vacancy->driver_license_importance == 2)Önəmlidir
                     @else Mütləqdir
                     @endif    
                 </option>

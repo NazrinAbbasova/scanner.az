@@ -13,7 +13,7 @@
                             <option value="{{ $l->importance }}">
                                 @if ($l->importance == 0) Önəm daşımır
                                 @elseif ($l->importance == 1) Az önəm daşıyır
-                                @elseif ($l->importance == 3)Önəmlidir
+                                @elseif ($l->importance == 2)Önəmlidir
                                 @else Mütləqdir
                                 @endif    
                             </option>

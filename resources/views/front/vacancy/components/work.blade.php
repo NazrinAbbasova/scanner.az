@@ -12,7 +12,7 @@
                 <option value="{{ $vacancy->field_importance }}">
                     @if ($vacancy->field_importance == 0) Önəm daşımır
                     @elseif ($vacancy->field_importance == 1) Az önəm daşıyır
-                    @elseif ($vacancy->field_importance == 3)Önəmlidir
+                    @elseif ($vacancy->field_importance == 2)Önəmlidir
                     @else Mütləqdir
                     @endif    
                 </option>
@@ -48,7 +48,7 @@
                 <option value="{{ $vacancy->function_importance }}">
                     @if ($vacancy->function_importance == 0) Önəm daşımır
                     @elseif ($vacancy->function_importance == 1) Az önəm daşıyır
-                    @elseif ($vacancy->function_importance == 3)Önəmlidir
+                    @elseif ($vacancy->function_importance == 2)Önəmlidir
                     @else Mütləqdir
                     @endif    
                 </option>
@@ -85,7 +85,7 @@
                 <option value="{{ $vacancy->position_importance }}">
                     @if ($vacancy->position_importance == 0) Önəm daşımır
                     @elseif ($vacancy->position_importance == 1) Az önəm daşıyır
-                    @elseif ($vacancy->position_importance == 3)Önəmlidir
+                    @elseif ($vacancy->position_importance == 2)Önəmlidir
                     @else Mütləqdir
                     @endif    
                 </option>

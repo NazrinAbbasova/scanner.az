@@ -22,7 +22,7 @@
             <div class="col-lg-8">
                 <div class="cv-actions">
                     <a href="{{ route('cv.edit', $cv->id) }}" data-toggle="tooltip" title="Düzəliş et"><i class="fal fa-pencil-alt"></i></a>
-                    <a href="" data-toggle="tooltip" title="Yüklə"><i class="fal fa-arrow-circle-down"></i></a>
+                    <a href="{{ route('cv.export', $cv->id) }}" data-toggle="tooltip" title="Yüklə"><i class="fal fa-arrow-circle-down"></i></a>
                     <div class="share">
                         <a href="#" data-toggle="tooltip" title="Paylaş"><i class="fal fa-share"></i></a>
                     </div>
@@ -61,7 +61,7 @@
                         </div>
                         <div class="line"></div>
                         <ul>
-                            <li>Doğum tarixi: {{ $cv->birthdate }}</li>
+                            <li>Doğum tarixi: {{ date('d.m.Y', strtotime($cv->birthdate)) }}</li>
                             <li>Vətəndaşlıq: {{ $cv->nationality }}</li>
                             <li>Ailə vəziyyəti: {{ $cv->marital }}</li>
                             <li>Hərbi mükəlləfiyyət: {{ $cv->military }}</li>
@@ -79,7 +79,7 @@
                             <li class="skills">
                                 <div class="field">{{ $l->language }}</div>
                                 <div class="level full"></div>
-                                <div class="level {{ $l->level == 'Orta' || 'Yüksək' ? 'full' : '' }}"></div>
+                                <div class="level {{ $l->level == 'Orta' || $l->level == 'Yüksək' ? 'full' : '' }}"></div>
                                 <div class="level {{ $l->level == 'Yüksək' ? 'full' : '' }}"></div>
                             </li>
                             @endforeach
@@ -97,7 +97,7 @@
                             <li class="skills">
                                 <div class="field">{{ $s->computer_skill }}</div>
                                 <div class="level full"></div>
-                                <div class="level {{ $s->computer_skill_level == 'Orta' || 'Yüksək' ? 'full' : '' }}"></div>
+                                <div class="level {{ $s->computer_skill_level == 'Orta' || $s->computer_skill_level == 'Yüksək' ? 'full' : '' }}"></div>
                                 <div class="level {{ $s->computer_skill_level == 'Yüksək' ? 'full' : '' }}"></div>
                             </li>
                             @endforeach
@@ -111,8 +111,7 @@
                             <div class="col-lg-4">
                                 <div class="contact-info">
                                     <i class="fas fa-phone"></i>
-                                    <p>+994 51 595 66 55</p>
-                                    <p>012 555 55 55</p>
+                                    <p>{{ $cv->phone }}</p>
                                 </div>
                             </div>
                             <div class="col-lg-4">
@@ -125,8 +124,7 @@
                             <div class="col-lg-4">
                                 <div class="contact-info">
                                     <i class="fab fa-linkedin-in"></i>
-                                    <a
-                                        href="{{ $cv->linkedin }}">{{ $cv->linkedin }}</a>
+                                    <a target="_blank" rel="noreferrer" href="{{ $cv->linkedin }}">{{ $cv->linkedin }}</a>
                                 </div>
                             </div>
                             @endif
@@ -145,7 +143,7 @@
                             <li class="about">
                                 <div class="job">
                                     <h6>{{ $exp->company }}</h6>
-                                    {{-- <p>2018-2020</p> --}}
+                                    <p>{{ date('d.m.Y', strtotime($exp->employment_date)) }}-{{ $exp->unemployment_date ? date('d.m.Y', strtotime($exp->unemployment_date)) : 'Davam edir' }}</p>
                                 </div>
                                 <div class="job-description">
                                     <h6>Vəzifə</h6>

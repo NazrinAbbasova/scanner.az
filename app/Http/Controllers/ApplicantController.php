@@ -83,8 +83,13 @@ class ApplicantController extends Controller
         return view('front.applicant.stats', compact('applicant'));
     }
 
-    public function cv(){
-        $cv = Cv::where('user_id', auth()->user()->id)->with('educations', 'experiences', 'languages', 'computer_skills', 'certificates')->first();
+    public function cv($id = null){
+        if($id) {
+            $cv = Cv::with('educations', 'experiences', 'languages', 'computer_skills', 'certificates')->find($id);
+        } else {
+            $cv = Cv::where('user_id', auth()->user()->id)->with('educations', 'experiences', 'languages', 'computer_skills', 'certificates')->first();
+        }
+        
         if($cv) return view('front.cv.show', compact('cv'));
         else return redirect()->route('cv.create');
         

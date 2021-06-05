@@ -42,7 +42,7 @@
                 <option value="{{ $vacancy->exam_score_importance }}">
                     @if ($vacancy->exam_score_importance == 0) Önəm daşımır
                     @elseif ($vacancy->exam_score_importance == 1) Az önəm daşıyır
-                    @elseif ($vacancy->exam_score_importance == 3)Önəmlidir
+                    @elseif ($vacancy->exam_score_importance == 2)Önəmlidir
                     @else Mütləqdir
                     @endif    
                 </option>

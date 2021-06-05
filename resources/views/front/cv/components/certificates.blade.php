@@ -7,8 +7,7 @@
             <div class="row">
                 <div class="col-lg-4">
                     <label for="certificates">Sertifikat</label>
-                    <select data-s="certificates" name="certificates[]" id="certificates"
-                        class="other-input">
+                    <select data-s="certificates" name="certificates[]" id="certificates" class="other-input">
                         <option value="choose">Seç</option>
                         @foreach ($certificates as $certificate)
                             <option value="{{ $certificate->name }}">{{ $certificate->name }}</option>
@@ -32,7 +31,7 @@
                 </div>
                 <div class="col-lg-12">
                     <label for="certificates">Sertifikat URL</label>
-                    <input data-level="certificates" disabled type="text" name="certificate_urls[]" placeholder="URL daxil edin">
+                    <input data-level="certificates" type="text" name="certificate_urls[]" placeholder="URL daxil edin">
                 </div>
             </div>
         </div>

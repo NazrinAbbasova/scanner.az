@@ -1,5 +1,5 @@
 @extends('front.layout.master')
-@section('title', 'CV yarat')
+@section('title', 'CV-ni redaktə et')
 @section('content')
 <section class="profile margin-page">
     <div class="container">
@@ -34,10 +34,8 @@
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title" id="shareVacancyLabel">Vakansiyanı paylaş
-                            </h4>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                aria-label="Close"></button>
+                            <h4 class="modal-title" id="shareVacancyLabel">Vakansiyanı paylaş</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
                             <div class="row">
@@ -86,6 +84,7 @@
 
     $('#certificates').on('change', function(){ 
         const id = $(this).val()
+        console.log(val);
         $.ajax({
             url: "{{ route('certificate.levels') }}",
             method: "post",
@@ -99,6 +98,7 @@
             },
         });
     })
+
 </script>
 
 <link rel="stylesheet" href="{{ asset('static/front/css/profile.css') }}">

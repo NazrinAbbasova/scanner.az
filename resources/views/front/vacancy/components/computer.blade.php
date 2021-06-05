@@ -13,7 +13,7 @@
                         <option value="{{ $c_skill->importance }}">
                             @if ($c_skill->importance == 0) Önəm daşımır
                             @elseif ($c_skill->importance == 1) Az önəm daşıyır
-                            @elseif ($c_skill->importance == 3)Önəmlidir
+                            @elseif ($c_skill->importance == 2)Önəmlidir
                             @else Mütləqdir
                             @endif    
                         </option>

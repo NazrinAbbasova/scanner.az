@@ -4,23 +4,23 @@
     <div class="row">
         <div class="col-lg-4">
             <label for="name">Ad</label>
-            <input name="firstname" value="{{ isset($cv) ? $cv->firstname : auth()->user()->firstname }}" type="text" placeholder="Adınız">
+            <input name="firstname" required value="{{ isset($cv) ? $cv->firstname : auth()->user()->firstname }}" type="text" placeholder="Adınız">
         </div>
         <div class="col-lg-4">
             <label for="surname">Soyad</label>
-            <input name="lastname" value="{{ isset($cv) ? $cv->lastname : auth()->user()->lastname }}" type="text" placeholder="Soyadınız">
+            <input name="lastname" required value="{{ isset($cv) ? $cv->lastname : auth()->user()->lastname }}" type="text" placeholder="Soyadınız">
         </div>
         <div class="col-lg-4">
             <label for="middlename">Ata adı</label>
-            <input name="middlename" type="text" value="{{ isset($cv) ? $cv->middlename : old('middlename') }}" placeholder="Ata adı">
+            <input name="middlename" required type="text" value="{{ isset($cv) ? $cv->middlename : old('middlename') }}" placeholder="Ata adı">
         </div>
         <div class="col-lg-4">
             <label for="birthdate">Doğum tarixi</label>
-            <input name="birthdate" type="date">
+            <input name="birthdate" value="{{ isset($cv) ? $cv->birthdate : old('birthdate') }}" required type="date">
         </div>
         <div class="col-lg-4">
             <label for="citizenship">Vətəndaşlıq</label>
-            <select data-s="citizenship" name="nationality" id="citizenship">
+            <select data-s="citizenship" required name="nationality" id="citizenship">
                 <option value="choose">Seç</option>
                 <option {{ isset($cv) && $cv->nationality == 'Azərbaycanlı' ? 'selected' : '' }} value="Azərbaycanlı">Azərbaycanlı</option>
                 <option {{ isset($cv) && $cv->nationality == 'Əcnəbi' ? 'selected' : '' }} value="Əcnəbi">Əcnəbi</option>
@@ -29,7 +29,7 @@
 
         <div class="col-lg-4">
             <label for="city">Yaşadığınız şəhər</label>
-            <select data-s="city" name="region" id="city">
+            <select data-s="city" required name="region" id="city">
                 @if (isset($cv))
                     <option value="{{ $cv->region }}">{{ $cv->region }}</option>
                 @endif
@@ -41,11 +41,11 @@
         </div>
         <div class="col-lg-4">
             <label for="address">Qeydiyyat ünvanı</label>
-            <input name="address" value="{{ isset($cv) ? $cv->address : old('address') }}" type="text" placeholder="Ünvanınız">
+            <input name="address" required value="{{ isset($cv) ? $cv->address : old('address') }}" type="text" placeholder="Ünvanınız">
         </div>
         <div class="col-lg-4">
             <label for="gender">Cins</label>
-            <select data-s="gender" name="gender" id="gender">
+            <select data-s="gender" required name="gender" id="gender">
                 <option value="choose">Seç</option>
                 <option {{ isset($cv) && $cv->gender == 'Kişi' ? 'selected' : '' }} value="Kişi">Kişi</option>
                 <option {{ isset($cv) && $cv->gender == 'Qadın' ? 'selected' : '' }} value="Qadın">Qadın</option>
@@ -53,7 +53,7 @@
         </div>
         <div class="col-lg-4">
             <label for="marital">Ailə vəziyyəti</label>
-            <select data-s="marital" name="marital" id="marital">
+            <select data-s="marital" required name="marital" id="marital">
                 <option value="choose">Seç</option>
                 <option {{ isset($cv) && $cv->marital == 'Evli' ? 'selected' : '' }} value="Evli">Evli</option>
                 <option {{ isset($cv) && $cv->marital == 'Subay' ? 'selected' : '' }} value="Subay">Subay</option>
@@ -61,7 +61,7 @@
         </div>
         <div class="col-lg-4">
             <label for="military">Hərbi mükəlləfiyyət</label>
-            <select data-s="military" name="military" id="military">
+            <select data-s="military" required name="military" id="military">
                 <option value="choose">Seç</option>
                 <option {{ isset($cv) && $cv->military == 'Var' ? 'selected' : '' }} value="Var">Var</option>
                 <option {{ isset($cv) && $cv->military == 'Yoxdur' ? 'selected' : '' }} value="Yoxdur">Yoxdur</option>
@@ -69,7 +69,7 @@
         </div>
         <div class="col-lg-4">
             <label for="driving-lisence">Sürücülük vəsiqəsi</label>
-            <select data-s="driving-lisence" name="driver_license" id="driving-lisence">
+            <select data-s="driving-lisence" required name="driver_license" id="driving-lisence">
                 <option value="choose">Seç</option>
                 <option {{ isset($cv) && $cv->driver_license == 'Var' ? 'selected' : '' }} value="Var">Var</option>
                 <option {{ isset($cv) && $cv->driver_license == 'Yoxdur' ? 'selected' : '' }} value="Yoxdur">Yoxdur</option>
@@ -101,6 +101,10 @@
         <div class="col-lg-4">
             <label for="linkedin">Linkedin profiliniz</label>
             <input name="linkedin" value="{{ isset($cv) ? $cv->linkedin : old('linkedin') }}" type="text" placeholder="Linkedin URL">
+        </div>
+        <div class="col-lg-4">
+            <label for="linkedin">Əlaqə telefonu</label>
+            <input name="phone" required value="{{ isset($cv) ? $cv->phone : old('phone') }}" type="text" placeholder="Telefon nömrəsi">
         </div>
         <input data-field="education" type="button" name="next" class="next action-button" value="Sonrakı" />
     </div>

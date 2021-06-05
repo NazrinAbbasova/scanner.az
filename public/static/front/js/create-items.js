@@ -1,44 +1,21 @@
-// const addEducation = document.querySelector(".add-education");
-// const dynamicFieldsEducation = document.querySelector(
-//   ".dynamic-fields-education"
-// );
-// const dynamicEducation = document.querySelector(".dynamic-education");
-// if (addEducation) {
-//   addEducation.addEventListener("click", () => {
-//     var cln = dynamicEducation.cloneNode(true);
-//     dynamicFieldsEducation.appendChild(cln);
-//   });
-// }
-
-// const dynamicFieldsWork = document.querySelector(".dynamic-fields-work");
-// const dynamicWork = document.querySelector(".dynamic-work");
-// const addWork = document.querySelector(".add-work");
-// if (addWork) {
-//   addWork.addEventListener("click", () => {
-//     var cln = dynamicWork.cloneNode(true);
-//     dynamicFieldsWork.appendChild(cln);
-//   });
-// }
-
 $(".remove-language").click(function () {
-    console.log("clicked");
     $(this).closest(".dynamic-language").remove();
 });
 //
 // -- Create a new option
 
-$(".add-input").on("click", function () {
-    const input = $(this).data("type");
-    const parent_field = document.querySelector(`[data-f-parent=${input}]`);
-    const field = document.querySelector(`[data-f=${input}]`);
+// $(".add-input").on("click", function () {
+//     const input = $(this).data("type");
+//     const parent_field = document.querySelector(`[data-f-parent=${input}]`);
+//     const field = document.querySelector(`[data-f=${input}]`);
 
-    const cln = field.cloneNode(true);
+//     const cln = field.cloneNode(true);
 
-    $(cln).find(`[data-s=${input}]`).attr("disabled", true);
-    $(cln).find(`[data-level=${input}]`).attr("disabled", true);
+//     $(cln).find(`[data-s=${input}]`).attr("disabled", true);
+//     $(cln).find(`[data-level=${input}]`).attr("disabled", true);
 
-    $(parent_field).append(cln);
-});
+//     $(parent_field).append(cln);
+// });
 
 // Add other options
 
@@ -70,8 +47,6 @@ $(document).on("change", ".other-input", function () {
         level_placeholder = "Sertifikat səviyyəsini daxil edin";
         level_name = "new_certificate_levels[]";
     }
-
-    console.log(select);
 
     if (select != "certificates") {
         var otherInput =
