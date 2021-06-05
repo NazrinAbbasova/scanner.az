@@ -213,6 +213,7 @@ public function store(Request $request)
 
                     $v_lang = VacancyLanguage::updateOrCreate([
                         'language_id'   => $request->languages[$i],
+                        'vacancy_id'    => $v->id
                     ],[
                         'vacancy_id'   => $v->id,
                         'importance'   => $request->language_importances[$i],
@@ -269,6 +270,7 @@ public function store(Request $request)
 
                     $v_comp_skill = VacancyComputerSkill::updateOrCreate([
                         'computer_skill_id'   => $request->computer_skills[$i],
+                        'vacancy_id'          => $v->id
                     ],[
                         'vacancy_id'         => $v->id,
                         'importance'         => $request->computer_skill_importances[$i],
@@ -326,8 +328,9 @@ public function store(Request $request)
 
                 } else {
 
-                    $v_cert = VacancyCertificate::updageOrCreate([
+                    $v_cert = VacancyCertificate::updateOrCreate([
                         'certificate_id'   => $request->certificates[$i],
+                        'vacancy_id'       => $v->id
                     ],[
                         'vacancy_id'         => $v->id,
                         'importance'         => $request->certificate_importances[$i],
@@ -434,7 +437,6 @@ public function store(Request $request)
      */
     public function update(Request $request, Vacancy $v)
     {
-        // return $request->all();
         $max_score = 0;
 
         $v->title       = $request->title;
@@ -583,7 +585,7 @@ public function store(Request $request)
                     $v_lang->importance = $request->language_importances[$i];
                     $v_lang->level      = $request->language_levels[$i];
                 } else {
-                    $v_lang = new VacancyLanguage;
+                    $v_lang              = new VacancyLanguage;
                     $v_lang->vacancy_id  = $v->id;
                     $v_lang->language_id = $request->languages[$i];
                     $v_lang->importance  = $request->language_importances[$i];

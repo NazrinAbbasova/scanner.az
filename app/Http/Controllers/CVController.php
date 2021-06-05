@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CvRequest;
 use App\Models\Certificate;
 use App\Models\CertificateLevel;
 use App\Models\ComputerSkill;
@@ -72,40 +73,9 @@ class CVController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CvRequest $request)
     {
-        $rules = [
-            'firstname'      => 'required',
-            'lastname'       => 'required',
-            'middlename'     => 'required',
-            'birthdate'      => 'required',
-            'nationality'    => 'required',
-            'region'         => 'required',
-            'address'        => 'required',
-            'gender'         => 'required',
-            'marital'        => 'required',
-            'military'       => 'required',
-            'driver_license' => 'required',
-            'phone'          => 'required'
-        ];
-
-        $messages = [
-            'firstname.required'      => 'Adınızı daxil edin',
-            'lastname.required'       => 'Soyadınızı daxil edin',
-            'middlename.required'     => 'Ata adını daxil edin',
-            'birthdate.required'      => 'Doğum tarixinizi daxil edin',
-            'nationality.required'    => 'Vətəndaşlığınızı seçin',
-            'region.required'         => 'Region seçin',
-            'address.required'        => 'Adresinizi daxil edin',
-            'gender.required'         => 'Cinsiyyətinizi seçin',
-            'marital.required'        => 'Ailə vəziyyəti statusunuzu seçin',
-            'military.required'       => 'Hərbi mükəlləfiyyət statusunuzu seçin',
-            'driver_license.required' => 'Sürücülük vəsiqəsi statusunuzu seçin',
-            'phone.required'          => 'Əlaqə telefonunuzu daxil edin'
-        ];
         $request->flash();
-        $this->validate($request, $rules, $messages);
-
 
         $diff = Carbon::parse($request->birthdate)->diff(Carbon::now())->format('%y years, %m months and %d days');
         $age =  explode(' ', $diff)[0];
@@ -400,7 +370,302 @@ class CVController extends Controller
      */
     public function update(Request $request, $id)
     {
-        return $request->all();
+        $cv = Cv::find($id);
+        $request->flash();
+
+        $diff = Carbon::parse($request->birthdate)->diff(Carbon::now())->format('%y years, %m months and %d days');
+        $age =  explode(' ', $diff)[0];
+        $cv->user_id                 = auth()->user()->id;
+        $cv->firstname               = $request->firstname;
+        $cv->lastname                = $request->lastname;
+        $cv->middlename              = $request->middlename;
+        $cv->age                     = $age;
+        $cv->birthdate               = $request->birthdate;
+        $cv->nationality             = $request->nationality;
+        $cv->region                  = $request->region;
+        $cv->address                 = $request->address;
+        $cv->gender                  = $request->gender;
+        $cv->marital                 = $request->marital;
+        $cv->military                = $request->military;
+        $cv->driver_license          = $request->driver_license;
+        $cv->driver_license_category = $request->driver_license_category;
+        $cv->linkedin                = $request->linkedin;
+        $cv->phone                   = $request->phone;
+
+        $cv->save();
+
+        // Educations
+
+        if($request->has('educations')){
+
+            for($i = 0; $i < count($request->educations); $i++) {
+
+                if($request->educations[$i] != 'choose'){
+
+                    $cv_edu = CvEducation::updateOrCreate([
+                        'education' => $request->educations[$i],
+                        'cv_id'     => $cv->id
+                    ], 
+                    [
+                        'cv_id'           => $cv->id,
+                        'education'       => $request->educations[$i],
+                        'exam_score'      => $request->scores[$i],
+                        'university'      => $request->universities[$i],
+                        'specialty'       => $request->specialties[$i],
+                        'profession'      => $request->professions[$i],
+                        'admission_year'  => $request->admission_years[$i],
+                        'graduation_year' => $request->graduation_years[$i]
+                    ]
+                    );
+                }
+            }
+        }
+
+        // Experiences
+
+        if($request->has('companies')){
+
+            for($i = 0; $i < count($request->companies); $i++) {
+                if($request->companies[$i] != 'choose'){
+                    $cv_exp = CvExperience::updateOrCreate(
+                        [
+                            'company' => $request->companies[$i],
+                            'cv_id'   => $cv->id
+                        ],
+                        [
+                            'cv_id'             => $cv->id,
+                            'company'           => $request->companies[$i],
+                            'position'          => $request->positions[$i],
+                            'field'             => $request->fields[$i],
+                            'employment_date'   => $request->employment_dates[$i],
+                            'unemployment_date' => $request->unemployment_dates[$i],
+                            'obligations'       => $request->obligations[$i],
+                        ]
+                    );
+                }
+            }
+        }
+
+        // Languages
+
+        if($request->has('languages')){
+            $other_languages = [];
+            $other_language_levels = [];
+
+            for($i = 0; $i < count($request->languages); $i++) {
+                if($request->languages[$i] != 'choose'){
+                    if($request->languages[$i] == 'Digər') {
+
+                        array_push($other_languages,            $request->languages[$i]);
+                        array_push($other_language_levels,      $request->language_levels[$i]);
+    
+                    } else {
+                        $cv_lang = CvLanguage::updateOrCreate([
+                            'language' => $request->languages[$i],
+                            'cv_id'   => $cv->id
+                            ],
+                            [
+                                'cv_id' => $cv->id,
+                                'language' => $request->languages[$i],
+                                'level'    => $request->language_levels[$i]
+                            ]
+                        );
+                    }
+                }
+            }
+
+            // If new languages need to be created
+
+            if($request->has('new_languages')) {
+                for($i = 0; $i < count($request->new_languages); $i++){
+
+                    // Create new language
+                    $check = Language::where('name', 'LIKE', "%{$request->new_languages[$i]}%") ->first();
+                    if($check) $l = $check;
+                    else {
+                        // Create new language
+                        $l = new Language;
+                        $l->name = $request->new_languages[$i];
+                        $l->save();
+                    }
+
+                    // Create new cv language relation
+                    $cv_lang              = new CvLanguage();
+                    $cv_lang->cv_id       = $cv->id;
+                    $cv_lang->level       = $other_language_levels[$i];
+                    $cv_lang->language    = $l->name;
+                    $cv_lang->save();
+                }
+            }
+        }
+
+        // Computer skills
+
+        if($request->has('computer_skills')){
+            $other_skills = [];
+            $other_skill_levels = [];
+            
+                
+            for($i = 0; $i < count($request->computer_skills); $i++) {
+                if($request->computer_skills[$i] != ' choose'){
+                    if($request->computer_skills[$i] == 'Digər') {
+
+                        array_push($other_skills,            $request->computer_skills[$i]);
+                        array_push($other_skill_levels,      $request->computer_skill_levels[$i]);
+    
+                    } else {
+                        $cv_comp_skill = CvComputerSkill::updateOrCreate([
+                            'computer_skill' => $request->computer_skills[$i],
+                            'cv_id'          => $cv->id
+                            ],
+                            [
+                                'cv_id'                 => $cv->id,
+                                'computer_skill'        => $request->computer_skills[$i],
+                                'computer_skill_level'  => $request->computer_skill_levels[$i]
+                            ]
+                        );
+                    }
+                }
+            }
+
+            // If new computer skills need to be created
+
+            if($request->has('new_computer_skills')) {
+                for($i = 0; $i < count($request->new_computer_skills); $i++){
+
+                    $check = ComputerSkill::where('name', 'LIKE', "%{$request->new_computer_skills[$i]}%") ->first();
+                    if($check) $skill = $check;
+                    else {
+                        // Create new ComputerSkill
+                        $skill = new ComputerSkill;
+                        $skill->name = $request->new_computer_skills[$i];
+                        $skill->save();
+                    }
+
+                    // Create new cv computer skill relation
+                    $cv_skill                 = new CvComputerSkill;
+                    $cv_skill->cv_id          = $cv->id;
+                    $cv_skill->computer_skill_level          = $other_skill_levels[$i];
+                    $cv_skill->computer_skill = $skill->name;
+                    $cv_skill->save();
+
+                }
+            }
+        }
+
+        // Certificates
+
+        if($request->has('certificates')){
+            $other_certificate_levels = [];
+            $other_certificates = [];
+
+            for($i = 0; $i < count($request->certificates); $i++) {
+
+                if($request->certificates[$i] != 'choose'){
+                    if($request->certificates[$i] == 'Digər') {
+
+                        array_push($other_certificate_levels,      $request->certificate_levels[$i]);
+                        array_push($other_certificates,            $request->certificates[$i]);
+    
+                    } else {
+                        $cv_cert = CvCertificate::updateOrCreate([
+                            'certtficate' => $request->certificates[$i],
+                            'cv_id'       => $cv->id
+                        ],
+                        [   
+                            'cv_id'             => $cv->id,
+                            'certtficate'       => $request->certificates[$i],
+                            'certificate_level' => $request->certificate_levels[$i],
+                            'certificate_url'   => $request->certificate_urls[$i],
+                        ]
+                        );
+
+                        if(count($request->certificate_files)){
+                            $file     = $request->certificate_files[$i];
+                            $ext      = $file->extension();
+                            $filename = $request->name.'-'.$request->lastname.'-'.$request->middlename.'-'.$request->certificates[$i].'-'.$request->certificate_levels[$i].'.'.$ext;
+                            $path     = public_path('uploads/cv');
+                            $url      = '/uploads/cv/'.$filename;
+                            $file->move($path, $url);
+
+                            $cv_cert = CvCertificate::updateOrCreate([
+                                'certtficate' => $request->certificates[$i],
+                                'cv_id'       => $cv->id
+                            ],
+                            [   
+                                'cv_id'              => $cv->id,
+                                'certtficate'        => $request->certificates[$i],
+                                'certificate_level'  => $request->certificate_levels[$i],
+                                'certificate_url'    => $request->certificate_urls[$i],
+                                'certificate_file'   => $url
+                            ]);
+                        } else {
+                            $cv_cert = CvCertificate::updateOrCreate([
+                                'certtficate' => $request->certificates[$i],
+                                'cv_id'       => $cv->id
+                            ],
+                            [   
+                                'cv_id'             => $cv->id,
+                                'certtficate'       => $request->certificates[$i],
+                                'certificate_level' => $request->certificate_levels[$i],
+                                'certificate_url'   => $request->certificate_urls[$i],
+                            ]
+                            );
+                        }
+                    }
+                }
+            }
+
+            // If new certificate and it's level need to be created
+
+            if($request->has('new_certificates')) {
+                for($i = 0; $i < count($request->new_certificates); $i++){
+
+                    $check = Certificate::where('name', 'LIKE', "%{$request->new_certificates[$i]}%") ->first();
+
+                    if($check) $cert = $check;
+                    else {
+                        // Create new certificate
+                        $cert = new Certificate;
+                        $cert->name = $request->new_certificates[$i];
+                        $cert->save();
+                    }
+
+                    $check = CertificateLevel::where('name', 'LIKE', "%{$request->new_certificate_levels[$i]}%") ->first();
+
+                    if($check) $level = $check;
+                    else {   
+                        // Create new certificate level
+                        $level = new CertificateLevel;
+                        $level->certificate_id = $cert->id;
+                        $level->name = $request->new_certificate_levels[$i];
+                        $level->save();
+                    }
+
+                    // Create new cv certificate relation
+                    $cv_cert                    = new CvCertificate;
+                    $cv_cert->cv_id             = $cv->id;
+                    $cv_cert->certificate       = $cert->name;
+                    $cv_cert->certificate_level = $level->name;
+                    $cv_cert->certificate_url   = $request->certificate_urls[$i];
+
+                    if(count($request->certificate_files)){
+                        $file     = $request->certificate_files[$i];
+                        $ext      = $file->extension();
+                        $filename = $request->name.'-'.$request->lastname.'-'.$request->middlename.'-'.$request->certificates[$i].'-'.$request->certificate_levels[$i].'.'.$ext;
+                        $path     = public_path('uploads/cv');
+                        $url      = '/uploads/cv/'.$filename;
+                        $file->move($path, $url);
+                        $cv_cert->certificate_file = $url;
+                    }
+                    $cv_cert->save();
+                }
+            }
+        }
+
+        $cv->save();
+
+        return redirect()->route('cv.edit', $cv->id)->with('success', 'Cv uğurla yeniləndi');
     }
 
     /**

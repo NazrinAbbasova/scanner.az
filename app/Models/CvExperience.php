@@ -12,4 +12,15 @@ class CvExperience extends Model
     public function cv(){
         return $this->belongsTo(Cv::class);
     }
+
+    protected $fillable = [
+        'cv_id',
+        'company',
+        'function',
+        'position',
+        'field',
+        'employment_date',
+        'unemployment_date',
+        'obligations',
+    ];
 }

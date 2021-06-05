@@ -22,7 +22,6 @@
                     <label for="level">Səviyyə</label>
                     <select data-level="computer" name="computer_skill_levels[]" id="level">
                         <option value="{{ $skill->computer_skill_level }}">{{ $skill->computer_skill_level }}</option>
-                        <option value="choose">Seç</option>
                         @include('front.cv.components.level')
                     </select>
                 </div>

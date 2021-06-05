@@ -12,4 +12,10 @@ class CvLanguage extends Model
     public function cv(){
         return $this->belongsTo(Cv::class);
     }
+
+    protected $fillable = [
+        'cv_id',
+        'language',
+        'level',
+    ];
 }

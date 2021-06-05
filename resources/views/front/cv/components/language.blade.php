@@ -21,7 +21,6 @@
                     <label for="level">Səviyyə</label>
                     <select data-level="language" name="language_levels[]" id="level">
                         <option value="{{ $l->level }}">{{ $l->level }}</option>
-                        <option value="choose">Seç</option>
                         @include('front.cv.components.level')
                     </select>
                 </div>

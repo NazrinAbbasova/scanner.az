@@ -12,4 +12,15 @@ class CvEducation extends Model
     public function cv(){
         return $this->belongsTo(Cv::class);
     }
+
+    protected $fillable = [
+        'cv_id',
+        'education',
+        'exam_score',
+        'university',
+        'specialty',
+        'profession',
+        'admission_year',
+        'graduation_year'
+    ];
 }

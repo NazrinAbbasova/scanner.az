@@ -12,4 +12,12 @@ class CvCertificate extends Model
     public function cv(){
         return $this->belongsTo(Cv::class);
     }
+
+    protected $fillable = [
+        'cv_id',
+        'certificate',
+        'certificate_level',
+        'certificate_url',
+        'certificate_file',
+    ];
 }

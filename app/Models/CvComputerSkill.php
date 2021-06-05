@@ -12,4 +12,10 @@ class CvComputerSkill extends Model
     public function cv(){
         return $this->belongsTo(Cv::class);
     }
+
+    protected $fillable = [
+        'cv_id',
+        'computer_skill',
+        'computer_skill_level',
+    ];
 }
