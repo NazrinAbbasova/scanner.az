@@ -4,6 +4,9 @@ $(".add-input").on("click", function () {
   const input = $(this).data("type");
   const parent_field = document.querySelector(`[data-f-parent=${input}]`);
   const field = document.querySelector(`[data-f=${input}]`);
+  const removeLanguage = document.querySelector(".remove-language");
+  const removeComputer = document.querySelector(".remove-computer");
+  const removeCertificate = document.querySelector(".remove-certificate");
 
   const cln = field.cloneNode(true);
 
@@ -11,15 +14,41 @@ $(".add-input").on("click", function () {
   $(cln).find(`[data-level=${input}]`).attr("disabled", true);
 
   $(parent_field).append(cln);
+
+  if (removeLanguage) removeLanguage.style.display = "block";
+  if (removeComputer) removeComputer.style.display = "block";
+  if (removeCertificate) removeCertificate.style.display = "block";
+});
+$(".add-commitment").on("click", function () {
+  const parent_field = document.querySelector(`[data-f-parent=work]`);
+  const field = document.querySelector(`[data-commitment]`);
+
+  const cln = field.cloneNode(true);
+
+  $(parent_field).append(cln);
 });
 
-$(".remove-input").click(function () {
-  const input = $(this).data("type");
-  if ($(`[data-f=${input}]`).length != 1) {
-    $(`[data-f=${input}]`).last().remove();
-    // Bu hisse ishlemir 19cu setir
+$(".remove-language").click(function () {
+  if ($(".dynamic-language").length != 1) {
+    $(".dynamic-language:last").remove();
   }
 });
+$(".remove-computer").click(function () {
+  if ($(".dynamic-computer").length != 1) {
+    $(".dynamic-computer:last").remove();
+  }
+});
+$(".remove-certificate").click(function () {
+  if ($(".dynamic-certificates").length != 1) {
+    $(".dynamic-certificates:last").remove();
+  }
+});
+const remove = document.querySelector(".remove-input");
+
+if ($(".dynamic-language").length == 1) {
+  $(".remove-language").css("display", "none!important");
+  console.log("salam");
+}
 
 $(document).on("change", ".other-input", function () {
   let select = $(this).data("s");
@@ -120,26 +149,18 @@ $(document).on("change", ".other-input", function () {
 
 $(document).on("change", ".importance", function () {
   var select = $(this).data("select");
-  $(this).val() == "choose"
-    ? $(this)
-        .parents(".col-lg-4")
-        .siblings(".col-lg-4")
-        .find(`[data-s=${select}]`)
-        .prop("disabled", true)
-    : $(this)
-        .parents(".col-lg-4")
-        .siblings(".col-lg-4")
-        .find(`[data-s=${select}]`)
-        .prop("disabled", false);
-  $(this).val() == "not-important"
-    ? $(this)
-        .parents(".col-lg-4")
-        .siblings(".col-lg-4")
-        .find(`[data-s=${select}]`)
-        .prop("disabled", true)
-    : $(this)
-        .parents(".col-lg-4")
-        .siblings(".col-lg-4")
-        .find(`[data-s=${select}]`)
-        .prop("disabled", false);
+
+  if ($(this).val() == "choose" || $(this).val() == 0) {
+    $(this)
+      .parents(".col-lg-4")
+      .siblings(".col-lg-4")
+      .find(`[data-s=${select}]`)
+      .prop("disabled", true);
+  } else {
+    $(this)
+      .parents(".col-lg-4")
+      .siblings(".col-lg-4")
+      .find(`[data-s=${select}]`)
+      .prop("disabled", false);
+  }
 });

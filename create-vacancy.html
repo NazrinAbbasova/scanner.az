@@ -517,7 +517,7 @@
                                 </div>
                             </div>
                             <div class="dynamic-fields-language" data-f-parent='language'>
-                                <div class="dynamic-field" data-f="language">
+                                <div class="dynamic-language" data-f="language">
                                     <div class="row">
                                         <div class="col-lg-4">
                                             <label for=""></label>
@@ -559,7 +559,7 @@
                                 <div class="add-language add-input" data-type='language'>
                                     + Əlavə et
                                 </div>
-                                <div class="remove-input">
+                                <div class="remove-language">
                                     Sil
                                 </div>
                             </div>
@@ -590,7 +590,7 @@
                                 </div>
                             </div>
                             <div class="dynamic-fields-computer" data-f-parent="computer">
-                                <div class="dynamic-field" data-f="computer">
+                                <div class="dynamic-computer" data-f="computer">
                                     <div class="row">
                                         <div class="col-lg-4">
                                             <label for=""></label>
@@ -628,7 +628,7 @@
                                 <div class="add-input" data-type='computer'>
                                     + Əlavə et
                                 </div>
-                                <div class="remove-input">
+                                <div class="remove-computer">
                                     Sil
                                 </div>
                             </div>
@@ -694,21 +694,17 @@
                                 <div class="add-certificate add-input" data-type="certificates">
                                     + Əlavə et
                                 </div>
-                                <div class="remove-language">
+                                <div class="remove-certificate">
                                     Sil
                                 </div>
                             </div>
                             <hr>
                             <div class="row">
-                                <div class="col-lg-4">
-                                    <label for="salary">Minimum əmək haqqı gözləntisi</label>
-                                    <input data-s="certificates" type="number" placeholder="Min.">
+                                <div class="col-lg-6">
+                                    <label for="salary">Təklif edilən maksimal əmək haqqı</label>
+                                    <input data-s="certificates" type="number" placeholder="Məbləği daxil edin">
                                 </div>
-                                <div class="col-lg-4">
-                                    <label for="salary">Maksimum əmək haqqı gözləntisi</label>
-                                    <input data-s="certificates" type="number" placeholder="Maks.">
-                                </div>
-                                <div class="col-lg-4">
+                                <div class="col-lg-6">
                                     <label for="salary">Vakansiyanın bitmə tarixi</label>
                                     <input data-s="certificates" type="date">
                                 </div>
@@ -758,7 +754,9 @@
                                     <input type="text" disabled value="www.scanner.az/vacancy-11">
                                 </div>
                                 <div class="col-lg-2">
-                                    <i class=" fal fa-copy"></i>
+                                    <div class="copy-url" data-bs-toggle="tooltip" data-placement="top" title="Kopyala">
+                                        <i class=" fal fa-copy"></i>
+                                    </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <ul class="share-social">

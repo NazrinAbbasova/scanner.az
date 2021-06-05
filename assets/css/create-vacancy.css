@@ -194,10 +194,12 @@ select.importance {
     width: 5rem;
 }
 
-.remove-input {
+.remove-language,
+.remove-computer,
+.remove-certificate {
     font-weight: 500;
     cursor: pointer;
-    /* display: none; */
+    display: none;
 }
 
 .save-vacancy {
@@ -392,4 +394,8 @@ select.importance {
     margin-top: 1.5rem;
     color: #4567f4;
     cursor: pointer;
+}
+
+.copy-url i:hover {
+    background-color: #e5e5e5;
 }
