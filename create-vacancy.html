@@ -359,67 +359,80 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-lg-4">
-                                    <label for=""></label>
-                                    <select data-select="degree" class="importance" name="degree" id="degree">
-                                        <option>Önəmlilik dərəcəsini təyin et</option>
-                                        <option value="not-important">Önəm daşımır</option>
-                                        <option value="less-important">Az önəm daşıyır</option>
-                                        <option value="important">Önəmlidir</option>
-                                        <option value="more-important">Mütləqdir</option>
-                                    </select>
-                                </div>
-                                <div class="col-lg-4">
-                                    <label for="degree">Təhsil dərəcəsi</label>
-                                    <select data-s="degree" disabled name="degree" id="degree">
-                                        <option>Seç</option>
-                                        <option value="">İbtidai</option>
-                                        <option value="">Orta</option>
-                                        <option value="">Peşə</option>
-                                        <option value="bachelor">Bakalavr</option>
-                                        <option value="master">Magistr</option>
-                                        <option value="phd">Doktorantura</option>
-                                    </select>
-                                </div>
-                                <hr>
-                                <div class="col-lg-4">
-                                    <label for=""></label>
-                                    <select data-select="score" class="importance" name="score" id="score">
-                                        <option>Önəmlilik dərəcəsini təyin et</option>
-                                        <option value="not-important">Önəm daşımır</option>
-                                        <option value="less-important">Az önəm daşıyır</option>
-                                        <option value="important">Önəmlidir</option>
-                                        <option value="more-important">Mütləqdir</option>
-                                    </select>
-                                </div>
-                                <div class="col-lg-4">
-                                    <label for="score">Qəbul balı</label>
-                                    <select data-s="score" disabled name="score" id="score">
-                                        <option>Seç</option>
-                                        <option value="200">200+</option>
-                                        <option value="250">250+</option>
-                                        <option value="300">300+</option>
-                                        <option value="350">350+</option>
-                                        <option value="400">400+</option>
-                                        <option value="450">450+</option>
-                                        <option value="500">500+</option>
-                                        <option value="550">550+</option>
-                                        <option value="600">600+</option>
-                                        <option value="650">650+</option>
+                            <div class="dynamic-fields-education" data-f-parent="education">
+                                <div class="dynamic-education" data-f="education">
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <label for=""></label>
+                                            <select data-select="degree" class="importance" name="degree" id="degree">
+                                                <option>Önəmlilik dərəcəsini təyin et</option>
+                                                <option value="not-important">Önəm daşımır</option>
+                                                <option value="less-important">Az önəm daşıyır</option>
+                                                <option value="important">Önəmlidir</option>
+                                                <option value="more-important">Mütləqdir</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <label for="degree">Təhsil dərəcəsi</label>
+                                            <select data-s="degree" disabled name="degree" id="degree">
+                                                <option>Seç</option>
+                                                <option value="">İbtidai</option>
+                                                <option value="">Orta</option>
+                                                <option value="">Peşə</option>
+                                                <option value="bachelor">Bakalavr</option>
+                                                <option value="master">Magistr</option>
+                                                <option value="phd">Doktorantura</option>
+                                            </select>
+                                        </div>
+                                        <hr>
+                                        <div class="col-lg-4">
+                                            <label for=""></label>
+                                            <select data-select="score" class="importance" name="score" id="score">
+                                                <option>Önəmlilik dərəcəsini təyin et</option>
+                                                <option value="not-important">Önəm daşımır</option>
+                                                <option value="less-important">Az önəm daşıyır</option>
+                                                <option value="important">Önəmlidir</option>
+                                                <option value="more-important">Mütləqdir</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <label for="score">Qəbul balı</label>
+                                            <select data-s="score" disabled name="score" id="score">
+                                                <option>Seç</option>
+                                                <option value="200">200+</option>
+                                                <option value="250">250+</option>
+                                                <option value="300">300+</option>
+                                                <option value="350">350+</option>
+                                                <option value="400">400+</option>
+                                                <option value="450">450+</option>
+                                                <option value="500">500+</option>
+                                                <option value="550">550+</option>
+                                                <option value="600">600+</option>
+                                                <option value="650">650+</option>
 
-                                    </select>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <input data-field="personal" type="button" name="previous"
-                                            class="previous action-button" value="Əvvəlki" />
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <input data-field="work" type="button" name="next" class="next action-button"
-                                            value="Sonrakı" />
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="add-remove">
+                                <div class="add-education add-input" data-type="education">
+                                    + Əlavə et
+                                </div>
+                                <div class="remove-education">
+                                    Sil
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <input data-field="personal" type="button" name="previous"
+                                        class="previous action-button" value="Əvvəlki" />
+                                </div>
+                                <div class="col-lg-6">
+                                    <input data-field="work" type="button" name="next" class="next action-button"
+                                        value="Sonrakı" />
+                                </div>
+                            </div>
                         </fieldset>
                         <!-- Work informations -->
                         <fieldset data-field="work">
@@ -751,7 +764,8 @@
                             <div class="row">
                                 <div class="col-lg-10">
                                     <label for="share">Linki kopyala</label>
-                                    <input type="text" disabled value="www.scanner.az/vacancy-11">
+                                    <input type="text" class="copied-url" readonly=readonly
+                                        value="www.scanner.az/vacancy-11">
                                 </div>
                                 <div class="col-lg-2">
                                     <div class="copy-url" data-bs-toggle="tooltip" data-placement="top" title="Kopyala">

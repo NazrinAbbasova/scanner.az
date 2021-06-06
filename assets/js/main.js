@@ -162,7 +162,11 @@ Author: GrayGrids
 
   if (share) {
     share.addEventListener("click", function () {
-      shareSocials.style.display = "block";
+      if (shareSocials.style.display === "none") {
+        shareSocials.style.display = "block";
+      } else {
+        shareSocials.style.display = "none";
+      }
     });
   }
   /*=====================================

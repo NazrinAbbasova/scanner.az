@@ -7,6 +7,7 @@ $(".add-input").on("click", function () {
   const removeLanguage = document.querySelector(".remove-language");
   const removeComputer = document.querySelector(".remove-computer");
   const removeCertificate = document.querySelector(".remove-certificate");
+  const removeEducation = document.querySelector(".remove-education");
 
   const cln = field.cloneNode(true);
 
@@ -18,16 +19,19 @@ $(".add-input").on("click", function () {
   if (removeLanguage) removeLanguage.style.display = "block";
   if (removeComputer) removeComputer.style.display = "block";
   if (removeCertificate) removeCertificate.style.display = "block";
+  if (removeEducation) removeEducation.style.display = "block";
 });
 $(".add-commitment").on("click", function () {
   const parent_field = document.querySelector(`[data-f-parent=work]`);
   const field = document.querySelector(`[data-commitment]`);
-
   const cln = field.cloneNode(true);
-
   $(parent_field).append(cln);
 });
-
+$(".remove-education").click(function () {
+  if ($(".dynamic-education").length != 1) {
+    $(".dynamic-education:last").remove();
+  }
+});
 $(".remove-language").click(function () {
   if ($(".dynamic-language").length != 1) {
     $(".dynamic-language:last").remove();
@@ -163,4 +167,11 @@ $(document).on("change", ".importance", function () {
       .find(`[data-s=${select}]`)
       .prop("disabled", false);
   }
+});
+
+$(".copy-url").on("click", function () {
+  const copyText = document.querySelector(".copied-url");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999);
+  document.execCommand("copy");
 });

@@ -40,18 +40,20 @@
 }
 
 .cv-actions {
-    font-size: 40px;
+    font-size: 25px;
     display: flex;
     justify-content: flex-end;
+    position: relative;
 }
 
 .cv-actions a {
     margin-left: 1.5rem;
-    ;
 }
 
 .share-socials {
     display: none;
+    position: absolute;
+    top: 40px;
 }
 
 .tooltip {

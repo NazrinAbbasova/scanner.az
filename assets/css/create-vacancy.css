@@ -194,6 +194,7 @@ select.importance {
     width: 5rem;
 }
 
+.remove-education,
 .remove-language,
 .remove-computer,
 .remove-certificate {
