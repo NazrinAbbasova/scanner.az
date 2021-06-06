@@ -16,7 +16,10 @@
         rel="stylesheet">
 
     <!-- ========================= CSS here ========================= -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" href="assets/css/bootstrap.min.css" /> -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/icons.min.css" />
 
 </head>
@@ -52,11 +55,13 @@
     }
 
     .profile-img {
-        display: flex;
-        justify-content: center;
+        /* display: flex; */
+        float: unset;
+        /* justify-content: center; */
     }
 
     .avatar-wrapper {
+        margin: auto;
         position: relative;
         height: 180px;
         width: 180px;
@@ -94,7 +99,7 @@
         padding: 2rem;
         color: #fff;
         text-align: center;
-        height: 10rem;
+        height: 12rem;
     }
 
     .cv-head h5 {
@@ -107,10 +112,10 @@
     .cv-head i {
         text-align: center;
         background: white;
-        width: 3rem;
-        height: 3rem;
+        width: 4rem;
+        height: 4rem;
         border-radius: 50%;
-        line-height: 3rem;
+        line-height: 4rem;
         font-size: 20px;
         color: #4567f4;
     }
@@ -119,13 +124,14 @@
         background: linear-gradient(45deg, #4567f4, #3CD3AD);
         width: 80%;
         height: 1px;
-        margin-left: 3.5rem;
+        margin-left: 5rem;
     }
 
     .contact-info {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        /* display: flex; */
+        float: unset;
+        /* flex-direction: column;
+        align-items: center; */
     }
 
     .contact-info p {
@@ -150,16 +156,17 @@
 
     .list-head {
         display: flex;
+        /* float: left; */
         text-align: center;
         margin-top: 3rem;
     }
 
     .list-head i {
         background: linear-gradient(45deg, #4567f4, #3CD3AD);
-        width: 3rem;
-        height: 3rem;
+        width: 4rem;
+        height: 4rem;
         border-radius: 50%;
-        line-height: 3rem;
+        line-height: 4rem;
         font-size: 20px;
         color: white;
     }
@@ -179,11 +186,12 @@
     .skills,
     .about {
         display: flex;
+        /* float: left; */
         line-height: 1rem;
     }
 
     .skills .field {
-        width: 8rem;
+        width: 14rem;
     }
 
     .skills .level {
@@ -205,7 +213,7 @@
 
     .cv-body .about {
         margin-top: 1rem;
-        margin-left: 3.5rem;
+        margin-left: 5rem;
         margin-bottom: 2rem;
     }
 
@@ -222,8 +230,8 @@
         height: 100%;
         background: #4567f4;
         position: absolute;
-        top: -17px;
-        left: 23px;
+        top: -12px;
+        left: 19px;
         content: ""
     }
 
@@ -239,11 +247,11 @@
         border-radius: 50%;
         font-weight: bold;
         position: absolute;
-        left: -2.5rem;
+        left: -7.5rem;
     }
 
     .job h6 {
-        width: 7rem;
+        width: 14rem;
     }
 
     .about h6 {
@@ -251,50 +259,17 @@
     }
 
     .job-description {
-        width: 10.5rem;
+        width: 20rem;
+    }
+
+    .download-certificate {
+        margin-top: 1rem;
     }
 
     .cv-body .about .job p,
     .cv-body .about .job-description li {
         margin-top: 10px;
         list-style-type: disc;
-    }
-
-    .container {
-        width: 100%;
-        padding-right: var(--bs-gutter-x, .75rem);
-        padding-left: var(--bs-gutter-x, .75rem);
-        margin-right: auto;
-        margin-left: auto
-    }
-
-    .row {
-        --bs-gutter-x: 1.5rem;
-        --bs-gutter-y: 0;
-        display: flex;
-        flex-wrap: wrap;
-        margin-top: calc(var(--bs-gutter-y) * -1);
-        margin-right: calc(var(--bs-gutter-x)/ -2);
-        margin-left: calc(var(--bs-gutter-x)/ -2)
-    }
-
-    .row>* {
-        flex-shrink: 0;
-        width: 100%;
-        max-width: 100%;
-        padding-right: calc(var(--bs-gutter-x)/ 2);
-        padding-left: calc(var(--bs-gutter-x)/ 2);
-        margin-top: var(--bs-gutter-y)
-    }
-
-    .col-lg-4 {
-        flex: 0 0 auto;
-        width: 33.3333333333%
-    }
-
-    .col-lg-8 {
-        flex: 0 0 auto;
-        width: 66.6666666667%
     }
 </style>
 
@@ -313,11 +288,8 @@
                                     <div class="avatar-wrapper">
                                         <label class="logo avatar-placeholder">
                                             <img class="profile-pic" src="/assets/images/applicant.svg" />
-                                            <input name="logo" id="upload-avatar" class="file-upload d-none" type="file"
-                                                accept="image/*" />
                                         </label>
                                     </div>
-                                    <button id="save-avatar" type="submit">Yadda saxla</button>
                                 </form>
                             </div>
                             <div class="list-head">
@@ -407,8 +379,11 @@
                                 <div class="col-lg-4">
                                     <div class="contact-info">
                                         <i class="fab fa-linkedin-in"></i>
-                                        <a
-                                            href="https://www.linkedin.com/in/nazrin-abbasova/">https://www.linkedin.com/in/nazrin-abbasova/</a>
+                                        <p>
+                                            <a
+                                                href="https://www.linkedin.com/in/nazrin-abbasova/">https://www.linkedin.com/in/nazrin-abbasova/</a>
+                                        </p>
+
                                     </div>
                                 </div>
                             </div>
