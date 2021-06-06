@@ -84,6 +84,25 @@
         $(cln).find(`[data-level=${input}]`).attr("disabled", true);
 
         $(parent_field).append(cln);
+
+        $(".remove-language").click(() => {
+            if ($(".dynamic-language").length != 1) $(".dynamic-language:last").remove();
+            
+        });
+        $(".remove-computer").click(() => {
+            if ($(".dynamic-computer").length != 1) $(".dynamic-computer:last").remove();
+        });
+        $(".remove-certificate").click( () => {
+            if ($(".dynamic-certificates").length != 1)  $(".dynamic-certificates:last").remove();
+        });
+
+        const removeLanguage = document.querySelector(".remove-language");
+        const removeComputer = document.querySelector(".remove-computer");
+        const removeCertificate = document.querySelector(".remove-certificate");
+        
+        if (removeLanguage) removeLanguage.style.display = "block";
+        if (removeComputer) removeComputer.style.display = "block";
+        if (removeCertificate) removeCertificate.style.display = "block";
     });
 </script>
 

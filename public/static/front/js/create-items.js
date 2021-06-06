@@ -4,19 +4,6 @@ $(".remove-language").click(function () {
 //
 // -- Create a new option
 
-// $(".add-input").on("click", function () {
-//     const input = $(this).data("type");
-//     const parent_field = document.querySelector(`[data-f-parent=${input}]`);
-//     const field = document.querySelector(`[data-f=${input}]`);
-
-//     const cln = field.cloneNode(true);
-
-//     $(cln).find(`[data-s=${input}]`).attr("disabled", true);
-//     $(cln).find(`[data-level=${input}]`).attr("disabled", true);
-
-//     $(parent_field).append(cln);
-// });
-
 // Add other options
 
 $(document).on("change", ".other-input", function () {

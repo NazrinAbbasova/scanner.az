@@ -76,7 +76,7 @@
         <div class="add-computer add-input" data-type="computer">
             + Əlavə et
         </div>
-        <div class="remove-language">
+        <div class="remove-computer">
             Sil
         </div>
     </div>

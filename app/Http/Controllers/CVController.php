@@ -680,7 +680,8 @@ class CVController extends Controller
     }
 
     public function export($id){
-        $cv = Cv::with('educations', 'languages', 'computer_skills', 'experiences', 'certificates')->find($id);
+        $cv = Cv::with('educations', 'languages', 'computer_skills', 'experiences', 'certificates', 'user')->find($id);
+        return view('front.cv.export', compact('cv'));
         $pdf = PDF::loadView('front.cv.export', ['cv' => $cv]);
         $file_name = $cv->firstname.'-'.$cv->lastname.'-'.$cv->middlename;
         return $pdf->download($file_name.'.pdf');

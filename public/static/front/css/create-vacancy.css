@@ -100,7 +100,8 @@
     border: 1px solid #4567f4;
     color: #4567f4;
     background: white;
-    .about-vacancy textarea {
+}
+.about-vacancy textarea {
         height: 6rem;
         resize: none;
     }
@@ -298,7 +299,9 @@
         width: 5rem;
     }
 
-    .remove-language {
+    .remove-language,
+    .remove-computer,
+    .remove-certificate {
         font-weight: 500;
         cursor: pointer;
         display: none;

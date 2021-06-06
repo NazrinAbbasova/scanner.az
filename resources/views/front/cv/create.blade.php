@@ -111,6 +111,15 @@
 
         $(parent_field).append(cln);
     });
+
+    $(".add-commitment").on("click", function () {
+        const parent_field = document.querySelector(`[data-f-parent=work]`);
+        const field = document.querySelector(`[data-commitment]`);
+
+        const cln = field.cloneNode(true);
+
+        $(parent_field).append(cln);
+    });
 </script>
 
 <link rel="stylesheet" href="{{ asset('static/front/css/profile.css') }}">
