@@ -194,13 +194,46 @@ select.importance {
     width: 5rem;
 }
 
+.remove-work,
 .remove-education,
 .remove-language,
 .remove-computer,
 .remove-certificate {
+    color: red;
     font-weight: 500;
     cursor: pointer;
     display: none;
+}
+
+.common-button {
+    display: none
+}
+
+.detailed-button,
+.common-button {
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 13px;
+    color: #fff;
+    border-radius: 6px;
+    border: 1px solid #4567f4;
+    color: #4567f4;
+    background: white;
+    text-align: center;
+    cursor: pointer;
+}
+
+.detailed-button:hover,
+.common-button:hover {
+    background: linear-gradient(45deg, #4567f4, #3CD3AD);
+    border: 1px solid #fff;
+    color: white;
+    transition: 0.3s ease;
+}
+
+.detailed-work {
+    display: none
 }
 
 .save-vacancy {
@@ -390,7 +423,8 @@ select.importance {
     background-color: #4567f4;
 }
 
-.add-commitment {
+.add-commitment,
+.remove-commitment {
     font-size: 30px;
     margin-top: 1.5rem;
     color: #4567f4;

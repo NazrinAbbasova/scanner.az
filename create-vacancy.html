@@ -315,17 +315,16 @@
                                 </div>
                                 <div class="col-lg-4">
                                     <label for="driving-lisence">Sürücülük vəsiqəsi</label>
-                                    <select data-s="driving-lisence" disabled name="driving-lisence"
-                                        id="driving-lisence">
+                                    <select disabled data-s="driving-lisence" data-category="category"
+                                        name="driving-lisence" id="driving-lisence" class="driving-lisence">
                                         <option value="choose">Seç</option>
-                                        <option value="not-important">Var</option>
-                                        <option value="less-important">Yoxdur</option>
+                                        <option value="yes">Var</option>
+                                        <option value="not">Yoxdur</option>
                                     </select>
                                 </div>
                                 <div class="col-lg-4">
                                     <label for="driving-lisence">Sürücülük vəsiqəsinin kateqoriyası</label>
-                                    <select disabled data-s="driving-lisence" name=" lisence-category"
-                                        id="lisence-category">
+                                    <select disabled data-l="category" name="lisence-category" id="lisence-category">
                                         <option value="choose">Seç</option>
                                         <option value="not-important">A</option>
                                         <option value="less-important">B</option>
@@ -374,7 +373,8 @@
                                         </div>
                                         <div class="col-lg-4">
                                             <label for="degree">Təhsil dərəcəsi</label>
-                                            <select data-s="degree" disabled name="degree" id="degree">
+                                            <select data-s="degree" data-degree="degree" class="education-degree"
+                                                disabled name="degree" id="degree">
                                                 <option>Seç</option>
                                                 <option value="">İbtidai</option>
                                                 <option value="">Orta</option>
@@ -387,7 +387,8 @@
                                         <hr>
                                         <div class="col-lg-4">
                                             <label for=""></label>
-                                            <select data-select="score" class="importance" name="score" id="score">
+                                            <select data-select="score" data-d="degree" disabled class="importance"
+                                                name="score" id="score">
                                                 <option>Önəmlilik dərəcəsini təyin et</option>
                                                 <option value="not-important">Önəm daşımır</option>
                                                 <option value="less-important">Az önəm daşıyır</option>
@@ -397,7 +398,7 @@
                                         </div>
                                         <div class="col-lg-4">
                                             <label for="score">Qəbul balı</label>
-                                            <select data-s="score" disabled name="score" id="score">
+                                            <select data-s="score" data-d="degree" disabled name="score" id="score">
                                                 <option>Seç</option>
                                                 <option value="200">200+</option>
                                                 <option value="250">250+</option>
@@ -413,14 +414,6 @@
                                             </select>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="add-remove">
-                                <div class="add-education add-input" data-type="education">
-                                    + Əlavə et
-                                </div>
-                                <div class="remove-education">
-                                    Sil
                                 </div>
                             </div>
                             <div class="row">
@@ -460,50 +453,55 @@
                                     </select>
                                 </div>
                                 <div class="col-lg-4">
-                                    <label for="field">Sektor</label>
-                                    <select data-s="field" disabled name="field" id="field">
-                                        <option>IT</option>
-                                        <option value="">Finance</option>
-                                        <option value="">Art</option>
-                                    </select>
-                                </div>
-                                <hr>
-                                <div class="col-lg-4">
-                                    <label for=""></label>
-                                    <select data-select="function" class="importance" name="function" id="function">
-                                        <option>Önəmlilik dərəcəsini təyin et</option>
-                                        <option value="not-important">Önəm daşımır</option>
-                                        <option value="less-important">Az önəm daşıyır</option>
-                                        <option value="important">Önəmlidir</option>
-                                        <option value="more-important">Mütləqdir</option>
-                                    </select>
+                                    <label for="field">Sahə üzrə ümumi iş təcrübəsi</label>
+                                    <input type="number" placeholder="Müddəti qeyd edin">
                                 </div>
                                 <div class="col-lg-4">
-                                    <label for="function">Funksiya</label>
-                                    <select data-s="function" disabled name="function" id="function">
-                                        <option>IT</option>
-                                        <option value="">Finance</option>
-                                        <option value="">Art</option>
-                                    </select>
+                                    <div class="detailed-button">Detallı İş təcrübəsini aç</div>
+                                    <div class="common-button">Ümumi İş təcrübəsini aç</div>
                                 </div>
-                                <hr>
-                                <div class="col-lg-4">
-                                    <label for=""></label>
-                                    <select data-select="category" class="importance" name="category" id="category">
-                                        <option>Önəmlilik dərəcəsini təyin et</option>
-                                        <option value="not-important">Önəm daşımır</option>
-                                        <option value="less-important">Az önəm daşıyır</option>
-                                        <option value="important">Önəmlidir</option>
-                                        <option value="more-important">Mütləqdir</option>
-                                    </select>
-                                </div>
-                                <div class="col-lg-4">
-                                    <label for="category">Vəzifə kateqoriyası </label>
-                                    <select data-s="category" disabled name="category" id="category">
-                                        <option>IT</option>
-                                        <option value="">Finance</option>
-                                        <option value="">Art</option>
-                                    </select>
+                                <div class="detailed-work">
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <label for=""></label>
+                                            <select data-select="sector" class="importance" name="sector" id="sector">
+                                                <option>Önəmlilik dərəcəsini təyin et</option>
+                                                <option value="not-important">Önəm daşımır</option>
+                                                <option value="less-important">Az önəm daşıyır</option>
+                                                <option value="important">Önəmlidir</option>
+                                                <option value="more-important">Mütləqdir</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <label for="sector">Sektor kateqoriyası</label>
+                                            <select data-s="sector" disabled name="sector" id="sector">
+                                                <option>IT</option>
+                                                <option value="">Finance</option>
+                                                <option value="">Art</option>
+                                            </select>
+                                        </div>
+                                        <hr>
+                                        <div class="col-lg-4">
+                                            <label for=""></label>
+                                            <select data-select="category" class="importance" name="category"
+                                                id="category">
+                                                <option>Önəmlilik dərəcəsini təyin et</option>
+                                                <option value="not-important">Önəm daşımır</option>
+                                                <option value="less-important">Az önəm daşıyır</option>
+                                                <option value="important">Önəmlidir</option>
+                                                <option value="more-important">Mütləqdir</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <label for="category">Vəzifə kateqoriyası </label>
+                                            <select data-s="category" disabled name="category" id="category">
+                                                <option>IT</option>
+                                                <option value="">Finance</option>
+                                                <option value="">Art</option>
+                                            </select>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <div class="col-lg-6">
@@ -883,6 +881,48 @@
     </script>
 
     <script>
+
+        // Importance
+
+        $(document).on("change", ".importance", function () {
+            var select = $(this).data("select");
+
+            if ($(this).val() == "choose" || $(this).val() == 0) {
+                $(this)
+                    .parents(".col-lg-4")
+                    .siblings(".col-lg-4")
+                    .find(`[data-s=${select}]`)
+                    .prop("disabled", true);
+            } else {
+                $(this)
+                    .parents(".col-lg-4")
+                    .siblings(".col-lg-4")
+                    .find(`[data-s=${select}]`)
+                    .prop("disabled", false);
+            }
+        });
+
+        $(".add-input").on("click", function () {
+            const input = $(this).data("type");
+            const parent_field = document.querySelector(`[data-f-parent=${input}]`);
+            const field = document.querySelector(`[data-f=${input}]`);
+            const removeLanguage = document.querySelector(".remove-language");
+            const removeComputer = document.querySelector(".remove-computer");
+            const removeCertificate = document.querySelector(".remove-certificate");
+            const removeEducation = document.querySelector(".remove-education");
+
+            const cln = field.cloneNode(true);
+
+            $(cln).find(`[data-s=${input}]`).attr("disabled", true);
+            $(cln).find(`[data-level=${input}]`).attr("disabled", true);
+
+            $(parent_field).append(cln);
+
+            if (removeLanguage) removeLanguage.style.display = "block";
+            if (removeComputer) removeComputer.style.display = "block";
+            if (removeCertificate) removeCertificate.style.display = "block";
+            if (removeEducation) removeEducation.style.display = "block";
+        });
         // Create vacancy steps
 
         $(".progressbar li").on("click", function () {

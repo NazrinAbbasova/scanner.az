@@ -234,6 +234,10 @@
     width: 10.5rem;
 }
 
+.score {
+    margin-left: 3rem;
+}
+
 .cv-body .about .job p,
 .cv-body .about .job-description li {
     margin-top: 10px;

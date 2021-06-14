@@ -143,16 +143,16 @@
                                     <td class="successful-applicants">
                                         <a href="applicants.html">23</a>
                                     </td>
-                                    <td>
+                                    <td class="vacancy-actions">
                                         <a href="" data-toggle="tooltip" title="Kopyala">
                                             <i class=" fal fa-copy"></i>
                                         </a>
                                         <a href="" data-toggle="tooltip" title="Düzəliş et">
                                             <i class="fal fa-edit"></i>
                                         </a>
-                                        <a href="" data-toggle="tooltip" title="Sil">
-                                            <i class="fal fa-trash-alt"></i>
-                                        </a>
+
+                                        <i data-bs-toggle="modal" data-bs-target="#deleteVacancy"
+                                            class="fal fa-trash-alt"></i>
                                     </td>
                                 </tr>
                                 <tr>
@@ -323,6 +323,22 @@
             </div>
         </div>
     </section>
+
+    <!-- Modal -->
+    <div class="modal fade" id="deleteVacancy" tabindex="-1" role="dialog-modal-center"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    Vakansiyanı silmək istədiyinzdən əminsinizmi?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Xeyr</button>
+                    <button type="button" class="btn btn-primary">Bəli</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Start Footer Area -->
     <footer class="footer style3">
         <div class="footer-middle">

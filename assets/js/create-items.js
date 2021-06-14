@@ -1,58 +1,83 @@
-// -- Create a new option
+// Add and remove commitment
 
-$(".add-input").on("click", function () {
-  const input = $(this).data("type");
-  const parent_field = document.querySelector(`[data-f-parent=${input}]`);
-  const field = document.querySelector(`[data-f=${input}]`);
-  const removeLanguage = document.querySelector(".remove-language");
-  const removeComputer = document.querySelector(".remove-computer");
-  const removeCertificate = document.querySelector(".remove-certificate");
-  const removeEducation = document.querySelector(".remove-education");
-
-  const cln = field.cloneNode(true);
-
-  $(cln).find(`[data-s=${input}]`).attr("disabled", true);
-  $(cln).find(`[data-level=${input}]`).attr("disabled", true);
-
-  $(parent_field).append(cln);
-
-  if (removeLanguage) removeLanguage.style.display = "block";
-  if (removeComputer) removeComputer.style.display = "block";
-  if (removeCertificate) removeCertificate.style.display = "block";
-  if (removeEducation) removeEducation.style.display = "block";
-});
 $(".add-commitment").on("click", function () {
-  const parent_field = document.querySelector(`[data-f-parent=work]`);
+  const commitment = document.querySelector(".commitment .row");
   const field = document.querySelector(`[data-commitment]`);
   const cln = field.cloneNode(true);
-  $(parent_field).append(cln);
+  commitment.appendChild(cln);
+  const divCol = document.createElement("div");
+  divCol.setAttribute("class", "col-lg-2");
+  const removeCommitment = document.createElement("div");
+  removeCommitment.setAttribute("class", "remove-commitment");
+  const removeIcon = document.createElement("i");
+  removeIcon.setAttribute("class", "fal fa-minus-square");
+
+  commitment.appendChild(divCol);
+  divCol.appendChild(removeCommitment);
+  removeCommitment.appendChild(removeIcon);
+  $(".remove-commitment").on("click", function () {
+    console.log("clicked");
+    $(removeIcon).remove();
+
+    $(cln).remove();
+  });
 });
+
+// Remove added new fields (Needs to refactor)
+
+$(".remove-work").click(function () {
+  let count1 = $(".dynamic-work").length;
+  if (count1 > 1) {
+    $(".dynamic-work:last").remove();
+    count1 = $(".dynamic-work").length;
+  }
+  if (count1 == 1) {
+    $(this).hide();
+  }
+});
+
 $(".remove-education").click(function () {
-  if ($(".dynamic-education").length != 1) {
+  let count2 = $(".dynamic-education").length;
+  if (count2 > 1) {
     $(".dynamic-education:last").remove();
+    count2 = $(".dynamic-education").length;
+  }
+  if (count2 == 1) {
+    $(this).hide();
   }
 });
 $(".remove-language").click(function () {
-  if ($(".dynamic-language").length != 1) {
+  let count3 = $(".dynamic-language").length;
+  if (count3 > 1) {
     $(".dynamic-language:last").remove();
+    count3 = $(".dynamic-language").length;
+  }
+  if (count3 == 1) {
+    $(this).hide();
   }
 });
 $(".remove-computer").click(function () {
-  if ($(".dynamic-computer").length != 1) {
+  let count4 = $(".dynamic-computer").length;
+  if (count4 > 1) {
     $(".dynamic-computer:last").remove();
+    count4 = $(".dynamic-computer").length;
+  }
+  if (count4 == 1) {
+    $(this).hide();
   }
 });
 $(".remove-certificate").click(function () {
-  if ($(".dynamic-certificates").length != 1) {
+  let count5 = $(".dynamic-certificates").length;
+
+  if (count5 > 1) {
     $(".dynamic-certificates:last").remove();
+    count5 = $(".dynamic-certificates").length;
+  }
+  if (count5 == 1) {
+    $(this).hide();
   }
 });
-const remove = document.querySelector(".remove-input");
-
-if ($(".dynamic-language").length == 1) {
-  $(".remove-language").css("display", "none!important");
-  console.log("salam");
-}
+// Add new input on other option
 
 $(document).on("change", ".other-input", function () {
   let select = $(this).data("s");
@@ -149,29 +174,75 @@ $(document).on("change", ".other-input", function () {
   }
 });
 
-// Importance
+// Enable driving lisence category input
 
-$(document).on("change", ".importance", function () {
-  var select = $(this).data("select");
-
-  if ($(this).val() == "choose" || $(this).val() == 0) {
+$(document).on("change", ".driving-lisence", function () {
+  var select = $(this).data("category");
+  if ($(this).val() == "choose" || $(this).val() == "not") {
     $(this)
       .parents(".col-lg-4")
       .siblings(".col-lg-4")
-      .find(`[data-s=${select}]`)
+      .find(`[data-l=${select}]`)
       .prop("disabled", true);
   } else {
     $(this)
       .parents(".col-lg-4")
       .siblings(".col-lg-4")
-      .find(`[data-s=${select}]`)
+      .find(`[data-l=${select}]`)
       .prop("disabled", false);
   }
 });
+
+// Enable education degree input
+
+$(document).on("change", ".education-degree", function () {
+  var select = $(this).data("degree");
+  if (
+    $(this).val() == "choose" ||
+    $(this).val() == "bachelor" ||
+    $(this).val() == "master"
+  ) {
+    $(this)
+      .parents(".col-lg-4")
+      .siblings(".col-lg-4")
+      .find(`[data-d=${select}]`)
+      .prop("disabled", false);
+  } else {
+    $(this)
+      .parents(".col-lg-4")
+      .siblings(".col-lg-4")
+      .find(`[data-d=${select}]`)
+      .prop("disabled", true);
+  }
+});
+
+// Copy URL
 
 $(".copy-url").on("click", function () {
   const copyText = document.querySelector(".copied-url");
   copyText.select();
   copyText.setSelectionRange(0, 99999);
   document.execCommand("copy");
+});
+
+// Detailed work on create vacancy
+
+$(".detailed-button").on("click", function () {
+  const detailedWork = document.querySelector(".detailed-work");
+  const detailedButton = document.querySelector(".detailed-button");
+  const commonButton = document.querySelector(".common-button");
+
+  detailedWork.style.display = "block";
+  commonButton.style.display = "block";
+  detailedButton.style.display = "none";
+});
+
+$(".common-button").on("click", function () {
+  const detailedWork = document.querySelector(".detailed-work");
+  const detailedButton = document.querySelector(".detailed-button");
+  const commonButton = document.querySelector(".common-button");
+
+  detailedWork.style.display = "none";
+  commonButton.style.display = "none";
+  detailedButton.style.display = "block";
 });

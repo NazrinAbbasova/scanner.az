@@ -128,7 +128,7 @@
                             <div class="filter">
                                 <ul>
                                     <li class="filter-fails">Tələbi ödəməyənlər</li>
-                                    <li class="filter-percentage">80%+</li>
+                                    <li class="filter-percentage selected">80%+</li>
                                     <li class="filter-percentage">90%+</li>
                                     <li class="filter-percentage">100%+</li>
                                 </ul>
@@ -300,12 +300,22 @@
     <!--/ End Footer Area -->
 
     <!-- ========================= JS here ========================= -->
+    <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/count-up.min.js"></script>
     <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/imagesloaded.min.js"></script>
     <script src="assets/js/isotope.min.js"></script>
     <script src="assets/js/main.js"></script>
+
+    <script>
+        $(function () {
+            $(".filter-percentage").click(function () {
+                $(this).addClass("selected");
+            });
+        });
+
+    </script>
 </body>
 
 </html>

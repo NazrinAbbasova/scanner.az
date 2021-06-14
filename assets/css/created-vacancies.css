@@ -69,11 +69,12 @@
     cursor: pointer;
 }
 
-.modal-title {
-    font-size: 20px;
+.modal button {
+    border: none;
 }
 
-.modal-body {
-    text-align: center;
-    padding: 2rem;
+
+.vacancy-actions i {
+    color: #4567f4;
+    cursor: pointer;
 }

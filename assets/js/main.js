@@ -92,66 +92,112 @@ Author: GrayGrids
 
   // Filter applicants
 
-  const percentage = document.querySelector(".percentage");
+  // const percentage = document.querySelector(".filter-percentage");
 
-  function changeColor() {
-    if (percentage) {
-      percentage.addEventListener("click", () => {
-        percentage.classList.add("selected");
-      });
-    }
-  }
-  changeColor();
+  // if (percentage) {
+  //   percentage.addEventListener("click", () => {
+  //     percentage.classList.add("selected");
+  //   });
+  // }
 
-  // Change CV color
+
+  // Change CV color  (Needs to refactor)
   const blue = document.querySelector(".colors.blue");
   const purple = document.querySelector(".colors.purple");
   const green = document.querySelector(".colors.green");
   const primary = document.querySelector(".colors.primary");
   const red = document.querySelector(".colors.red");
   const yellow = document.querySelector(".colors.yellow");
-  const cvHead = document.querySelector(".cv-head");
-  const line = document.querySelector(".line");
-  const listHeadIcon = document.querySelector(".list-head i ");
-  const level = document.querySelector(".full");
+  const cvHead = document.querySelectorAll(".cv-head");
+  const line = document.querySelectorAll(".line");
+  const listHeadIcon = document.querySelectorAll(".list-head i ");
+  const level = document.querySelectorAll(".full");
+  const dataColor = document.querySelectorAll("[data-color]");
 
   if (blue && purple && green && yellow) {
     blue.addEventListener("click", function () {
-      cvHead.classList.add("blue");
-      line.classList.add("blue");
-      listHeadIcon.classList.add("blue");
-      level.classList.add("blue");
+      for (let i = 0; i < cvHead.length; i++) {
+        cvHead[i].classList.add("blue");
+      }
+      for (let i = 0; i < line.length; i++) {
+        line[i].classList.add("blue");
+      }
+      for (let i = 0; i < listHeadIcon.length; i++) {
+        listHeadIcon[i].classList.add("blue");
+      }
+      for (let i = 0; i < level.length; i++) {
+        level[i].classList.add("blue");
+      }
     });
-
     purple.addEventListener("click", function () {
-      cvHead.classList.add("purple");
-      line.classList.add("purple");
-      listHeadIcon.classList.add("purple");
-      level.classList.add("purple");
+      for (let i = 0; i < cvHead.length; i++) {
+        cvHead[i].classList.add("purple");
+      }
+      for (let i = 0; i < line.length; i++) {
+        line[i].classList.add("purple");
+      }
+      for (let i = 0; i < listHeadIcon.length; i++) {
+        listHeadIcon[i].classList.add("purple");
+      }
+      for (let i = 0; i < level.length; i++) {
+        level[i].classList.add("purple");
+      }
     });
     green.addEventListener("click", function () {
-      cvHead.classList.add("green");
-      line.classList.add("green");
-      listHeadIcon.classList.add("green");
-      level.classList.add("green");
+      for (let i = 0; i < cvHead.length; i++) {
+        cvHead[i].classList.add("green");
+      }
+      for (let i = 0; i < line.length; i++) {
+        line[i].classList.add("green");
+      }
+      for (let i = 0; i < listHeadIcon.length; i++) {
+        listHeadIcon[i].classList.add("green");
+      }
+      for (let i = 0; i < level.length; i++) {
+        level[i].classList.add("green");
+      }
     });
     primary.addEventListener("click", function () {
-      cvHead.classList.add("primary");
-      line.classList.add("primary");
-      listHeadIcon.classList.add("primary");
-      level.classList.add("primary");
+      for (let i = 0; i < cvHead.length; i++) {
+        cvHead[i].classList.add("primary");
+      }
+      for (let i = 0; i < line.length; i++) {
+        line[i].classList.add("primary");
+      }
+      for (let i = 0; i < listHeadIcon.length; i++) {
+        listHeadIcon[i].classList.add("primary");
+      }
+      for (let i = 0; i < level.length; i++) {
+        level[i].classList.add("primary");
+      }
     });
     red.addEventListener("click", function () {
-      cvHead.classList.add("red");
-      line.classList.add("red");
-      listHeadIcon.classList.add("red");
-      level.classList.add("red");
+      for (let i = 0; i < cvHead.length; i++) {
+        cvHead[i].classList.add("red");
+      }
+      for (let i = 0; i < line.length; i++) {
+        line[i].classList.add("red");
+      }
+      for (let i = 0; i < listHeadIcon.length; i++) {
+        listHeadIcon[i].classList.add("red");
+      }
+      for (let i = 0; i < level.length; i++) {
+        level[i].classList.add("red");
+      }
     });
     yellow.addEventListener("click", function () {
-      cvHead.classList.add("yellow");
-      line.classList.add("yellow");
-      listHeadIcon.classList.add("yellow");
-      level.classList.add("yellow");
+      for (let i = 0; i < cvHead.length; i++) {
+        cvHead[i].classList.add("yellow");
+      }
+      for (let i = 0; i < line.length; i++) {
+        line[i].classList.add("yellow");
+      }
+      for (let i = 0; i < listHeadIcon.length; i++) {
+        listHeadIcon[i].classList.add("yellow");
+      }
+      for (let i = 0; i < level.length; i++) {
+        level[i].classList.add("yellow");
+      }
     });
   }
 

@@ -210,15 +210,16 @@
                                 </div>
                                 <div class="col-lg-4">
                                     <label for="driving-lisence">Sürücülük vəsiqəsi</label>
-                                    <select data-s="driving-lisence" name="driving-lisence" id="driving-lisence">
+                                    <select data-s="driving-lisence" data-category="category" name="driving-lisence"
+                                        id="driving-lisence" class="driving-lisence">
                                         <option value="choose">Seç</option>
-                                        <option value="not-important">Var</option>
-                                        <option value="less-important">Yoxdur</option>
+                                        <option value="yes">Var</option>
+                                        <option value="not">Yoxdur</option>
                                     </select>
                                 </div>
                                 <div class="col-lg-4">
                                     <label for="driving-lisence">Sürücülük vəsiqəsinin kateqoriyası</label>
-                                    <select data-level="driving-lisence" name="lisence-category" id="lisence-category">
+                                    <select disabled data-l="category" name="lisence-category" id="lisence-category">
                                         <option value="choose">Seç</option>
                                         <option value="not-important">A</option>
                                         <option value="less-important">B</option>
@@ -228,7 +229,7 @@
                                 </div>
                                 <div class="col-lg-4">
                                     <label for="mobile">Mobil nömrəniz</label>
-                                    <input name="mobile" type="text" placeholder="Nömrənizi daxil edin">
+                                    <input name="mobile" type="number" placeholder="Nömrənizi daxil edin">
                                 </div>
                                 <div class="col-lg-4">
                                     <label for="linkedin">Linkedin profiliniz</label>
@@ -246,20 +247,22 @@
                                     <div class="row">
                                         <div class="col-lg-4">
                                             <label for="degree">Təhsil dərəcəsi</label>
-                                            <select data-s="degree" name="degree" id="degree">
-                                                <option>Seç</option>
+                                            <select class="education-degree" data-s="degree" data-degree="degree"
+                                                name="degree" id="degree">
+                                                <option value="choose">Seç</option>
                                                 <option value="">İbtidai</option>
                                                 <option value="">Orta</option>
                                                 <option value="">Peşə</option>
                                                 <option value="bachelor">Bakalavr</option>
                                                 <option value="master">Magistr</option>
-                                                <option value="phd">Doktorantura</option>
+                                                <option value="">Doktorantura</option>
                                             </select>
                                         </div>
 
                                         <div class="col-lg-4">
                                             <label for="score">Bakalavr üzrə qəbul balı</label>
-                                            <input type="number" id="score" placeholder="Qəbul balınız">
+                                            <input type="number" disabled data-d="degree" id="score"
+                                                placeholder="Qəbul balınız">
                                         </div>
                                         <div class="col-lg-4">
                                             <label for="university">Təhsil müəssisəsi</label>
@@ -337,10 +340,6 @@
                                             </select>
                                         </div>
                                         <div class="col-lg-4">
-                                            <label for="function">İşləmə müddəti</label>
-                                            <input type="number" placeholder="Funksiya üzrə işləmə müddəti">
-                                        </div>
-                                        <div class="col-lg-4">
                                             <label for="category">Vəzifə kateqoriyası</label>
                                             <select name="category" id="category">
                                                 <option>IT</option>
@@ -349,20 +348,12 @@
                                             </select>
                                         </div>
                                         <div class="col-lg-4">
-                                            <label for="function">İşləmə müddəti</label>
-                                            <input type="number" placeholder="Vəzifə üzrə işləmə müddəti">
-                                        </div>
-                                        <div class="col-lg-4">
                                             <label for="field">Sektor</label>
                                             <select name="field" id="field">
                                                 <option>IT</option>
                                                 <option value="">Finance</option>
                                                 <option value="">Art</option>
                                             </select>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <label for="function">İşləmə müddəti</label>
-                                            <input type="number" placeholder="Sektor üzrə işləmə müddəti">
                                         </div>
                                         <div class="col-lg-4">
                                             <label>İşə qəbul olduğunuz tarix</label>
@@ -552,7 +543,7 @@
                                         class="previous action-button" value="Əvvəlki" />
                                 </div>
                                 <div class="col-lg-6">
-                                    <a class="save-cv" href="cv.html">
+                                    <a class="save-cv" href="apply-cv.html">
                                         <input type="button" name="save" class="save-vacancy" value="Yadda saxla" />
                                     </a>
                                 </div>
