@@ -95,12 +95,12 @@
                                 <i class="fal fa-arrow-square-left"></i>
                             </a>
                         </div>
-                        <div class="colors blue"></div>
-                        <div class="colors purple"></div>
-                        <div class="colors green"></div>
-                        <div class="colors primary"></div>
-                        <div class="colors red"></div>
-                        <div class="colors yellow"></div>
+                        <div data-style="blue" class="colors style-picker blue"></div>
+                        <div data-style="purple" class="colors style-picker purple"></div>
+                        <div data-style="green" class="colors style-picker green"></div>
+                        <div data-style="red" class="colors style-picker red"></div>
+                        <div data-style="yellow" class="colors style-picker yellow"></div>
+                        <div data-style="no-color" class="colors style-picker no-color"></div>
                     </div>
                 </div>
                 <div class="col-lg-8">
@@ -123,7 +123,7 @@
             <div id="cv">
                 <div class="row">
                     <div class="col-lg-4 mb-30">
-                        <div class="cv-head" data-color>
+                        <div class="cv-head">
                             <h5>Nazrin Abbasova Oktay</h5>
                         </div>
                         <div class="personal-info">
@@ -140,7 +140,9 @@
                                 </form>
                             </div>
                             <div class="list-head">
-                                <i class="fas fa-user"></i>
+                                <span>
+                                    <i class="fas fa-user"></i>
+                                </span>
                                 <h4>Şəxsi məlumatlar</h4>
                             </div>
                             <div class="line"></div>
@@ -153,7 +155,9 @@
                             </ul>
 
                             <div class="list-head">
-                                <i class="fal fa-language"></i>
+                                <span>
+                                    <i class="fal fa-language"></i>
+                                </span>
                                 <h4>Dil bilikləri</h4>
                             </div>
                             <div class="line"></div>
@@ -180,7 +184,9 @@
                             </ul>
 
                             <div class="list-head">
-                                <i class="fal fa-laptop"></i>
+                                <span>
+                                    <i class="fal fa-laptop"></i>
+                                </span>
                                 <h4>Komputer bilikləri</h4>
                             </div>
                             <div class="line"></div>
@@ -208,7 +214,7 @@
                         </div>
                     </div>
                     <div class="col-lg-8">
-                        <div class="cv-head" data-color>
+                        <div class="cv-head">
                             <div class="row">
                                 <div class="col-lg-4">
                                     <div class="contact-info">
@@ -234,8 +240,9 @@
                         </div>
                         <div class="cv-body">
                             <div class="list-head">
-                                <i class="fas fa-briefcase"></i>
-
+                                <span>
+                                    <i class="fas fa-briefcase"></i>
+                                </span>
                                 <h4>İş təcrübəsi</h4>
                             </div>
                             <div class="line"></div>
@@ -274,7 +281,9 @@
                                 </li>
                             </ul>
                             <div class="list-head">
-                                <i class="fas fa-university"></i>
+                                <span>
+                                    <i class="fas fa-university"></i>
+                                </span>
                                 <h4>Təhsil</h4>
                             </div>
                             <div class="line"></div>
@@ -307,7 +316,9 @@
                                 </li>
                             </ul>
                             <div class="list-head">
-                                <i class="fas fa-file-alt"></i>
+                                <span>
+                                    <i class="fas fa-file-alt"></i>
+                                </span>
                                 <h4>Sertifikatlar</h4>
                             </div>
                             <div class="line"></div>
@@ -359,9 +370,9 @@
                             <div class="footer-social">
                                 <ul>
                                     <li><a href="#"><i class="lni lni-facebook-original"></i></a></li>
-
                                     <li><a href="#"><i class="lni lni-linkedin-original"></i></a></li>
-
+                                    <li><a href="#"><i class="fab fa-whatsapp"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-telegram-plane"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -394,11 +405,29 @@
 
     <!-- ========================= JS here ========================= -->
     <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/count-up.min.js"></script>
     <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/imagesloaded.min.js"></script>
     <script src="assets/js/isotope.min.js"></script>
     <script src="assets/js/main.js"></script>
+
+    <script>
+
+        $(".style-picker").on("click", function () {
+            console.log("clicked")
+            let style = $(this).data("style");
+            $(".cv-head").each(function () {
+                $(this).attr("class", `cv-head ${style}`);
+            })
+            $(".line").each(function () {
+                $(this).attr("class", `line ${style}`);
+            })
+            $(".list-head").each(function () {
+                $(this).find("span").attr("class", `${style}`);
+            })
+        });
+    </script>
 
 </body>
 

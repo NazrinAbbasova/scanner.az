@@ -26,7 +26,8 @@
     color: #4567f4;
 }
 
-.filter-fails {
+.fails {
+    margin-left: 0;
     width: 14rem;
     padding: 1rem;
     cursor: pointer;
@@ -132,6 +133,10 @@
 .table-applicants tbody tr td i {
     font-size: 16px;
     padding: 5px;
+}
+
+.applicant-fullname {
+    cursor: pointer;
 }
 
 .applicant-cv {

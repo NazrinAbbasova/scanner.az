@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="assets/css/animate.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="assets/css/applicants.css" />
+    <link rel="stylesheet" href="assets/css/cv.css" />
+
 
 </head>
 
@@ -127,7 +129,7 @@
                         <div class="actions">
                             <div class="filter">
                                 <ul>
-                                    <li class="filter-fails">Tələbi ödəməyənlər</li>
+                                    <li class="filter-percentage fails">Tələbi ödəməyənlər</li>
                                     <li class="filter-percentage selected">80%+</li>
                                     <li class="filter-percentage">90%+</li>
                                     <li class="filter-percentage">100%+</li>
@@ -151,56 +153,64 @@
                                 <tr>
                                     <td><img class="applicant-img" style="width:20%" src="assets/images/avatar.png"
                                             alt=""></td>
-                                    <td class="applicant-fullname">Nəzrin Abbasova</td>
+                                    <td class="applicant-fullname" data-bs-toggle="modal" data-bs-target="#cvModal">
+                                        Nəzrin Abbasova</td>
                                     <td class="percentage">70%</td>
                                     <td class="percentage"><input type="checkbox"></td>
                                 </tr>
                                 <tr>
                                     <td><img class="applicant-img" style="width:20%" src="assets/images/avatar.png"
                                             alt=""></td>
-                                    <td class="applicant-fullname">Nəzrin Abbasova</td>
+                                    <td class="applicant-fullname" data-bs-toggle="modal" data-bs-target="#cvModal">
+                                        Nəzrin Abbasova</td>
                                     <td class="percentage">70%</td>
                                     <td class="percentage"><input type="checkbox"></td>
                                 </tr>
                                 <tr>
                                     <td><img class="applicant-img" style="width:20%" src="assets/images/avatar.png"
                                             alt=""></td>
-                                    <td class="applicant-fullname">Nəzrin Abbasova</td>
+                                    <td class="applicant-fullname" data-bs-toggle="modal" data-bs-target="#cvModal">
+                                        Nəzrin Abbasova</td>
                                     <td class="percentage">70%</td>
                                     <td class="percentage"><input type="checkbox"></td>
                                 </tr>
                                 <tr>
                                     <td><img class="applicant-img" style="width:20%" src="assets/images/avatar.png"
                                             alt=""></td>
-                                    <td class="applicant-fullname">Nəzrin Abbasova</td>
+                                    <td class="applicant-fullname" data-bs-toggle="modal" data-bs-target="#cvModal">
+                                        Nəzrin Abbasova</td>
                                     <td class="percentage">70%</td>
                                     <td class="percentage"><input type="checkbox"></td>
                                 </tr>
                                 <tr>
                                     <td><img class="applicant-img" style="width:20%" src="assets/images/avatar.png"
                                             alt=""></td>
-                                    <td class="applicant-fullname">Nəzrin Abbasova</td>
+                                    <td class="applicant-fullname" data-bs-toggle="modal" data-bs-target="#cvModal">
+                                        Nəzrin Abbasova</td>
                                     <td class="percentage">70%</td>
                                     <td class="percentage"><input type="checkbox"></td>
                                 </tr>
                                 <tr>
                                     <td><img class="applicant-img" style="width:20%" src="assets/images/avatar.png"
                                             alt=""></td>
-                                    <td class="applicant-fullname">Nəzrin Abbasova</td>
+                                    <td class="applicant-fullname" data-bs-toggle="modal" data-bs-target="#cvModal">
+                                        Nəzrin Abbasova</td>
                                     <td class="percentage">70%</td>
                                     <td class="percentage"><input type="checkbox"></td>
                                 </tr>
                                 <tr>
                                     <td><img class="applicant-img" style="width:20%" src="assets/images/avatar.png"
                                             alt=""></td>
-                                    <td class="applicant-fullname">Nəzrin Abbasova</td>
+                                    <td class="applicant-fullname" data-bs-toggle="modal" data-bs-target="#cvModal">
+                                        Nəzrin Abbasova</td>
                                     <td class="percentage">70%</td>
                                     <td class="percentage"><input type="checkbox"></td>
                                 </tr>
                                 <tr>
                                     <td><img class="applicant-img" style="width:20%" src="assets/images/avatar.png"
                                             alt=""></td>
-                                    <td class="applicant-fullname">Nəzrin Abbasova</td>
+                                    <td class="applicant-fullname" data-bs-toggle="modal" data-bs-target="#cvModal">
+                                        Nəzrin Abbasova</td>
                                     <td class="percentage">70%</td>
                                     <td class="percentage"><input type="checkbox"></td>
                                 </tr>
@@ -229,6 +239,256 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Applicant's CV -->
+                <div class="modal fade" id="cvModal" tabindex="-1" aria-labelledby="cvModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="cvModalLabel">Namizədin CV-si
+                                </h4>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div id="cv">
+                                    <div class="row">
+                                        <div class="col-lg-4 mb-30">
+                                            <div class="cv-head">
+                                                <h5>Nazrin Abbasova Oktay</h5>
+                                            </div>
+                                            <div class="personal-info">
+                                                <div class="profile-img">
+                                                    <form class="text-center" enctype="multipart/form-data"
+                                                        method="post">
+                                                        <div class="avatar-wrapper">
+                                                            <label class="logo avatar-placeholder">
+                                                                <img class="profile-pic"
+                                                                    src="/assets/images/applicant.svg" />
+                                                                <input name="logo" id="upload-avatar"
+                                                                    class="file-upload d-none" type="file"
+                                                                    accept="image/*" />
+                                                            </label>
+                                                        </div>
+                                                        <button id="save-avatar" type="submit">Yadda saxla</button>
+                                                    </form>
+                                                </div>
+                                                <div class="list-head">
+                                                    <span>
+                                                        <i class="fas fa-user"></i>
+                                                    </span>
+                                                    <h4>Şəxsi məlumatlar</h4>
+                                                </div>
+                                                <div class="line"></div>
+                                                <ul>
+                                                    <li>Doğum tarixi: 18.03.1998</li>
+                                                    <li>Vətəndaşlıq: Azərbaycanlı</li>
+                                                    <li>Ailə vəziyyəti: Subay</li>
+                                                    <li>Hərbi mükəlləfiyyət: Yoxdur</li>
+                                                    <li>Sürücülük vəsiqəsi: Kateqoriya (B)</li>
+                                                </ul>
+
+                                                <div class="list-head">
+                                                    <span>
+                                                        <i class="fal fa-language"></i>
+                                                    </span>
+                                                    <h4>Dil bilikləri</h4>
+                                                </div>
+                                                <div class="line"></div>
+                                                <ul>
+                                                    <li class="skills">
+                                                        <div class="field">Azərbaycan dili</div>
+                                                        <div class="level full"></div>
+                                                        <div class="level full"></div>
+                                                        <div class="level full"></div>
+
+                                                    </li>
+                                                    <li class="skills">
+                                                        <div class="field">İngilis dili</div>
+                                                        <div class="level full"></div>
+                                                        <div class="level full"></div>
+                                                        <div class="level"></div>
+                                                    </li>
+                                                    <li class="skills">
+                                                        <div class="field">Rus dili</div>
+                                                        <div class="level full"></div>
+                                                        <div class="level"></div>
+                                                        <div class="level"></div>
+                                                    </li>
+                                                </ul>
+
+                                                <div class="list-head">
+                                                    <span>
+                                                        <i class="fal fa-laptop"></i>
+                                                    </span>
+                                                    <h4>Komputer bilikləri</h4>
+                                                </div>
+                                                <div class="line"></div>
+                                                <ul>
+                                                    <li class="skills">
+                                                        <div class="field">Azərbaycan dili</div>
+                                                        <div class="level full"></div>
+                                                        <div class="level full"></div>
+                                                        <div class="level full"></div>
+
+                                                    </li>
+                                                    <li class="skills">
+                                                        <div class="field">İngilis dili</div>
+                                                        <div class="level full"></div>
+                                                        <div class="level full"></div>
+                                                        <div class="level"></div>
+                                                    </li>
+                                                    <li class="skills">
+                                                        <div class="field">Rus dili</div>
+                                                        <div class="level full"></div>
+                                                        <div class="level"></div>
+                                                        <div class="level"></div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <div class="cv-head">
+                                                <div class="row">
+                                                    <div class="col-lg-4">
+                                                        <div class="contact-info">
+                                                            <i class="fas fa-phone"></i>
+                                                            <p>+994 51 595 66 55</p>
+                                                            <p>012 555 55 55</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-4">
+                                                        <div class="contact-info">
+                                                            <i class="fas fa-map-marker-alt"></i>
+                                                            <p>Bakı, Azərbaycan</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-4">
+                                                        <div class="contact-info">
+                                                            <i class="fab fa-linkedin-in"></i>
+                                                            <a
+                                                                href="https://www.linkedin.com/in/nazrin-abbasova/">https://www.linkedin.com/in/nazrin-abbasova/</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cv-body">
+                                                <div class="list-head">
+                                                    <span>
+                                                        <i class="fas fa-briefcase"></i>
+                                                    </span>
+                                                    <h4>İş təcrübəsi</h4>
+                                                </div>
+                                                <div class="line"></div>
+                                                <ul>
+                                                    <li class="about">
+                                                        <div class="job">
+                                                            <h6>Kapital Bank</h6>
+                                                            <p>2018-2020</p>
+                                                        </div>
+                                                        <div class="job-description">
+                                                            <h6>Vəzifə</h6>
+                                                            <ul>
+                                                                <li>Vəzifə öhdəliyi</li>
+                                                                <li>Vəzifə öhdəliyi</li>
+                                                                <li>Vəzifə öhdəliyi</li>
+                                                                <li>Vəzifə öhdəliyi</li>
+                                                                <li>Vəzifə öhdəliyi</li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                    <li class="about">
+                                                        <div class="job">
+                                                            <h6>Kapital Bank</h6>
+                                                            <p>2018-2020</p>
+                                                        </div>
+                                                        <div class="job-description">
+                                                            <h6>Vəzifə</h6>
+                                                            <ul>
+                                                                <li>Vəzifə öhdəliyi</li>
+                                                                <li>Vəzifə öhdəliyi</li>
+                                                                <li>Vəzifə öhdəliyi</li>
+                                                                <li>Vəzifə öhdəliyi</li>
+                                                                <li>Vəzifə öhdəliyi</li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                                <div class="list-head">
+                                                    <span>
+                                                        <i class="fas fa-university"></i>
+                                                    </span>
+                                                    <h4>Təhsil</h4>
+                                                </div>
+                                                <div class="line"></div>
+                                                <ul>
+                                                    <li class="about">
+                                                        <div class="job">
+                                                            <h6>Bakalavr</h6>
+                                                            <p>2018-2020</p>
+                                                        </div>
+                                                        <div class="job-description">
+                                                            <h6>Ali təhsil müəssisəsi</h6>
+                                                            <p>İxtisas</p>
+                                                        </div>
+                                                        <div class="score">
+                                                            <h6>Qəbul balı: 666</h6>
+                                                        </div>
+                                                    </li>
+                                                    <li class="about">
+                                                        <div class="job">
+                                                            <h6>Magistr</h6>
+                                                            <p>2018-2020</p>
+                                                        </div>
+                                                        <div class="job-description">
+                                                            <h6>Ali təhsil müəssisəsi</h6>
+                                                            <p>İxtisas</p>
+                                                        </div>
+                                                        <div class="score">
+                                                            <h6>Qəbul balı: 100</h6>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                                <div class="list-head">
+                                                    <span>
+                                                        <i class="fas fa-file-alt"></i>
+                                                    </span>
+                                                    <h4>Sertifikatlar</h4>
+                                                </div>
+                                                <div class="line"></div>
+                                                <ul>
+                                                    <li class="about">
+                                                        <div class="job">
+                                                            <h6>IELTS</h6>
+                                                        </div>
+                                                        <div class="job-description">
+                                                            <h6>8.0</h6>
+                                                        </div>
+                                                        <div class="download-certificate">
+                                                            <a href=""><i class="fal fa-arrow-circle-down"></i></a>
+
+                                                        </div>
+                                                    </li>
+                                                    <li class="about">
+                                                        <div class="job">
+                                                            <h6>IELTS</h6>
+                                                        </div>
+                                                        <div class="job-description">
+                                                            <h6>8.0</h6>
+                                                        </div>
+                                                        <div class="download-certificate">
+                                                            <a href=""><i class="fal fa-arrow-circle-down"></i></a>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -249,9 +509,9 @@
                             <div class="footer-social">
                                 <ul>
                                     <li><a href="#"><i class="lni lni-facebook-original"></i></a></li>
-
                                     <li><a href="#"><i class="lni lni-linkedin-original"></i></a></li>
-
+                                    <li><a href="#"><i class="fab fa-whatsapp"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-telegram-plane"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -309,11 +569,13 @@
     <script src="assets/js/main.js"></script>
 
     <script>
-        $(function () {
-            $(".filter-percentage").click(function () {
+        if ($(".filter-percentage")) {
+            $(".filter-percentage").click(function (event) {
+                event.preventDefault();
+                $(".filter-percentage").removeClass("selected");
                 $(this).addClass("selected");
             });
-        });
+        }
 
     </script>
 </body>

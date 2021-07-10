@@ -198,11 +198,15 @@
                                 </div>
                                 <div class="col-lg-4">
                                     <label for="birthdate"> Minimum yaş</label>
-                                    <input data-s="age" disabled type="number" placeholder="Min.">
+                                    <input data-s="age" id="min-age" disabled type="number" placeholder="Min.">
                                 </div>
                                 <div class="col-lg-4">
                                     <label for="birthdate">Maksimum yaş</label>
-                                    <input data-s="age" disabled type="number" placeholder="Maks.">
+                                    <input data-s="age" id="max-age" disabled type="number" placeholder="Maks.">
+                                    <!-- <span class="error text-danger">Some Errors related to something</span> -->
+                                    <div class="invalid-feedback">
+                                        Maksimum yaş minimum yaşdan böyük olmalıdır
+                                    </div>
                                 </div>
                                 <hr>
                                 <div class="col-lg-4">
@@ -246,7 +250,7 @@
                                 <div class="col-lg-4">
                                     <label for=""></label>
                                     <select data-select="gender" class="importance" name="address" id="address">
-                                        <option>Önəmlilik dərəcəsini təyin et</option>
+                                        <option value="choose">Önəmlilik dərəcəsini təyin et</option>
                                         <option value="not-important">Önəm daşımır</option>
                                         <option value="less-important">Az önəm daşıyır</option>
                                         <option value="important">Önəmlidir</option>
@@ -364,7 +368,7 @@
                                         <div class="col-lg-4">
                                             <label for=""></label>
                                             <select data-select="degree" class="importance" name="degree" id="degree">
-                                                <option>Önəmlilik dərəcəsini təyin et</option>
+                                                <option value="choose">Önəmlilik dərəcəsini təyin et</option>
                                                 <option value="not-important">Önəm daşımır</option>
                                                 <option value="less-important">Az önəm daşıyır</option>
                                                 <option value="important">Önəmlidir</option>
@@ -389,7 +393,7 @@
                                             <label for=""></label>
                                             <select data-select="score" data-d="degree" disabled class="importance"
                                                 name="score" id="score">
-                                                <option>Önəmlilik dərəcəsini təyin et</option>
+                                                <option value="choose">Önəmlilik dərəcəsini təyin et</option>
                                                 <option value="not-important">Önəm daşımır</option>
                                                 <option value="less-important">Az önəm daşıyır</option>
                                                 <option value="important">Önəmlidir</option>
@@ -445,7 +449,7 @@
                                 <div class="col-lg-4">
                                     <label for=""></label>
                                     <select data-select="field" class="importance" name="field" id="field">
-                                        <option>Önəmlilik dərəcəsini təyin et</option>
+                                        <option value="choose">Önəmlilik dərəcəsini təyin et</option>
                                         <option value="not-important">Önəm daşımır</option>
                                         <option value="less-important">Az önəm daşıyır</option>
                                         <option value="important">Önəmlidir</option>
@@ -466,7 +470,7 @@
                                         <div class="col-lg-4">
                                             <label for=""></label>
                                             <select data-select="sector" class="importance" name="sector" id="sector">
-                                                <option>Önəmlilik dərəcəsini təyin et</option>
+                                                <option value="choose">Önəmlilik dərəcəsini təyin et</option>
                                                 <option value="not-important">Önəm daşımır</option>
                                                 <option value="less-important">Az önəm daşıyır</option>
                                                 <option value="important">Önəmlidir</option>
@@ -486,7 +490,7 @@
                                             <label for=""></label>
                                             <select data-select="category" class="importance" name="category"
                                                 id="category">
-                                                <option>Önəmlilik dərəcəsini təyin et</option>
+                                                <option value="choose">Önəmlilik dərəcəsini təyin et</option>
                                                 <option value="not-important">Önəm daşımır</option>
                                                 <option value="less-important">Az önəm daşıyır</option>
                                                 <option value="important">Önəmlidir</option>
@@ -607,7 +611,7 @@
                                             <label for=""></label>
                                             <select data-select="computer" class="importance" name="computer"
                                                 id="computer">
-                                                <option>Önəmlilik dərəcəsini təyin et</option>
+                                                <option value="choose">Önəmlilik dərəcəsini təyin et</option>
                                                 <option value="not-important">Önəm daşımır</option>
                                                 <option value="less-important">Az önəm daşıyır</option>
                                                 <option value="important">Önəmlidir</option>
@@ -729,6 +733,11 @@
                                 <input checked type="checkbox" id="active-vacancy" name="active-vacancy" />
                                 <label for="active-vacancy">Vakansiyanı aktiv et</label>
                             </div>
+                            <div class="compliance-percentage">
+                                <input checked type="checkbox" id="compliance-percentage"
+                                    name="compliance-percentage" />
+                                <label for="compliance-percentage">Namizəd uyğunluq faizini görə bilsin</label>
+                            </div>
                             <div class="row">
                                 <div class="col-lg-4">
                                     <input data-field="computer" type="button" name="previous"
@@ -825,9 +834,9 @@
                             <div class="footer-social">
                                 <ul>
                                     <li><a href="#"><i class="lni lni-facebook-original"></i></a></li>
-
                                     <li><a href="#"><i class="lni lni-linkedin-original"></i></a></li>
-
+                                    <li><a href="#"><i class="fab fa-whatsapp"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-telegram-plane"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -881,13 +890,25 @@
     </script>
 
     <script>
+        const minAge = document.querySelector("#min-age");
+        const maxAge = document.querySelector("#max-age");
+        const errorText = document.querySelector(".invalid-feedback")
+
+        maxAge.addEventListener('keyup', (event) => {
+            if (maxAge.value < minAge.value) {
+                errorText.style.display = "block";
+            }
+            else {
+                errorText.style.display = "none";
+            }
+        });
+
 
         // Importance
-
         $(document).on("change", ".importance", function () {
             var select = $(this).data("select");
 
-            if ($(this).val() == "choose" || $(this).val() == 0) {
+            if ($(this).val() == "choose" || $(this).val() == "not-important") {
                 $(this)
                     .parents(".col-lg-4")
                     .siblings(".col-lg-4")
@@ -923,7 +944,30 @@
             if (removeCertificate) removeCertificate.style.display = "block";
             if (removeEducation) removeEducation.style.display = "block";
         });
+
+        // Enable education degree input
+
+        $(document).on("change", ".education-degree", function () {
+            var select = $(this).data("degree");
+            if (
+                $(this).val() == "choose" ||
+                $(this).val() == "bachelor"
+            ) {
+                $(this)
+                    .parents(".col-lg-4")
+                    .siblings(".col-lg-4")
+                    .find(`[data-d=${select}]`)
+                    .prop("disabled", false);
+            } else {
+                $(this)
+                    .parents(".col-lg-4")
+                    .siblings(".col-lg-4")
+                    .find(`[data-d=${select}]`)
+                    .prop("disabled", true);
+            }
+        });
         // Create vacancy steps
+
 
         $(".progressbar li").on("click", function () {
             $(this).addClass("active");
@@ -943,9 +987,6 @@
             $(`.progressbar li[data-fieldset=${field}]`).siblings().removeClass("active");
         });
 
-        // $(".submit").click(function () {
-        //   return false;
-        // });
     </script>
 </body>
 

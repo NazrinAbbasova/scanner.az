@@ -366,20 +366,23 @@ select.importance {
 
 
 .send-to-mail,
-.active-vacancy {
+.active-vacancy,
+.compliance-percentage {
     display: flex;
     margin-top: 1rem;
 }
 
 .send-to-mail input,
-.active-vacancy input {
+.active-vacancy input,
+.compliance-percentage input {
     width: 15px !important;
     margin-right: 0.5rem;
     margin-top: 3px;
 }
 
 .send-to-mail label,
-.active-vacancy label {
+.active-vacancy label,
+.compliance-percentage label {
     color: #4567f4
 }
 

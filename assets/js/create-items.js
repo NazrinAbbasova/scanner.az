@@ -20,6 +20,7 @@ $(".add-commitment").on("click", function () {
     $(removeIcon).remove();
 
     $(cln).remove();
+    divCol.remove();
   });
 });
 
@@ -27,7 +28,10 @@ $(".add-commitment").on("click", function () {
 
 $(".remove-work").click(function () {
   let count1 = $(".dynamic-work").length;
-  if (count1 > 1) {
+  let other = $(".other").length;
+
+  if (count1 > 1 && other > 1) {
+    $(".other:last").remove();
     $(".dynamic-work:last").remove();
     count1 = $(".dynamic-work").length;
   }
@@ -38,7 +42,10 @@ $(".remove-work").click(function () {
 
 $(".remove-education").click(function () {
   let count2 = $(".dynamic-education").length;
-  if (count2 > 1) {
+  let other = $(".other").length;
+
+  if (count2 > 1 && other > 1) {
+    $(".other:last").remove();
     $(".dynamic-education:last").remove();
     count2 = $(".dynamic-education").length;
   }
@@ -48,8 +55,12 @@ $(".remove-education").click(function () {
 });
 $(".remove-language").click(function () {
   let count3 = $(".dynamic-language").length;
-  if (count3 > 1) {
+  let other = $(".other").length;
+
+  if (count3 > 1 && other > 1) {
+    $(".other:last").remove();
     $(".dynamic-language:last").remove();
+
     count3 = $(".dynamic-language").length;
   }
   if (count3 == 1) {
@@ -58,7 +69,10 @@ $(".remove-language").click(function () {
 });
 $(".remove-computer").click(function () {
   let count4 = $(".dynamic-computer").length;
-  if (count4 > 1) {
+  let other = $(".other").length;
+
+  if (count4 > 1 && other > 1) {
+    $(".other:last").remove();
     $(".dynamic-computer:last").remove();
     count4 = $(".dynamic-computer").length;
   }
@@ -68,8 +82,10 @@ $(".remove-computer").click(function () {
 });
 $(".remove-certificate").click(function () {
   let count5 = $(".dynamic-certificates").length;
+  let other = $(".other").length;
 
-  if (count5 > 1) {
+  if (count5 > 1 && other > 1) {
+    $(".other:last").remove();
     $(".dynamic-certificates:last").remove();
     count5 = $(".dynamic-certificates").length;
   }
@@ -140,7 +156,7 @@ $(document).on("change", ".other-input", function () {
     "</div>" +
     "</div>";
 
-  if ($(this).val() == "choose") {
+  if ($(this).val() == "choose" || $(this).val() == "not-important") {
     $(this)
       .parents(".col-lg-4")
       .siblings(".col-lg-4")
@@ -190,29 +206,6 @@ $(document).on("change", ".driving-lisence", function () {
       .siblings(".col-lg-4")
       .find(`[data-l=${select}]`)
       .prop("disabled", false);
-  }
-});
-
-// Enable education degree input
-
-$(document).on("change", ".education-degree", function () {
-  var select = $(this).data("degree");
-  if (
-    $(this).val() == "choose" ||
-    $(this).val() == "bachelor" ||
-    $(this).val() == "master"
-  ) {
-    $(this)
-      .parents(".col-lg-4")
-      .siblings(".col-lg-4")
-      .find(`[data-d=${select}]`)
-      .prop("disabled", false);
-  } else {
-    $(this)
-      .parents(".col-lg-4")
-      .siblings(".col-lg-4")
-      .find(`[data-d=${select}]`)
-      .prop("disabled", true);
   }
 });
 

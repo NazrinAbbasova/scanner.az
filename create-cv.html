@@ -257,8 +257,8 @@
                                                 <option value="">BMU</option>
                                                 <option value="">BDU</option>
                                                 <option value="">ADNSU</option>
-                                                <option value="bachelor">ADA</option>
-                                                <option value="master">BANM</option>
+                                                <option value="">ADA</option>
+                                                <option value="">BANM</option>
                                                 <option value="">ADU</option>
                                             </select>
                                         </div>
@@ -269,7 +269,7 @@
                                                 <option value="">İncəsənət</option>
                                                 <option value="">İqtisadiyyat</option>
                                                 <option value="">Komputer elmləri</option>
-                                                <option value="bachelor">Jurnalistika</option>
+                                                <option value="">Jurnalistika</option>
                                             </select>
                                         </div>
                                         <div class="col-lg-4">
@@ -318,6 +318,14 @@
                                             <input type="text" placeholder="Müəssisənin adı">
                                         </div>
                                         <div class="col-lg-4">
+                                            <label for="field">Sektor</label>
+                                            <select name="field" id="field">
+                                                <option>IT</option>
+                                                <option value="">Finance</option>
+                                                <option value="">Art</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-4">
                                             <label for="function">Funksiya</label>
                                             <select name="function" id="function">
                                                 <option>IT</option>
@@ -328,14 +336,6 @@
                                         <div class="col-lg-4">
                                             <label for="category">Vəzifə kateqoriyası</label>
                                             <select name="category" id="category">
-                                                <option>IT</option>
-                                                <option value="">Finance</option>
-                                                <option value="">Art</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <label for="field">Sektor</label>
-                                            <select name="field" id="field">
                                                 <option>IT</option>
                                                 <option value="">Finance</option>
                                                 <option value="">Art</option>
@@ -561,9 +561,9 @@
                             <div class="footer-social">
                                 <ul>
                                     <li><a href="#"><i class="lni lni-facebook-original"></i></a></li>
-
                                     <li><a href="#"><i class="lni lni-linkedin-original"></i></a></li>
-
+                                    <li><a href="#"><i class="fab fa-whatsapp"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-telegram-plane"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -631,6 +631,27 @@
             if (removeEducation) removeEducation.style.display = "block";
             if (removeWork) removeWork.style.display = "block";
 
+        });
+
+        $(document).on("change", ".education-degree", function () {
+            var select = $(this).data("degree");
+            if (
+                $(this).val() == "choose" ||
+                $(this).val() == "bachelor" ||
+                $(this).val() == "master"
+            ) {
+                $(this)
+                    .parents(".col-lg-4")
+                    .siblings(".col-lg-4")
+                    .find(`[data-d=${select}]`)
+                    .prop("disabled", false);
+            } else {
+                $(this)
+                    .parents(".col-lg-4")
+                    .siblings(".col-lg-4")
+                    .find(`[data-d=${select}]`)
+                    .prop("disabled", true);
+            }
         });
         // Create vacancy steps
 

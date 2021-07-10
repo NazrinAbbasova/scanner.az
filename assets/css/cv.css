@@ -16,27 +16,35 @@
 }
 
 .blue {
-    background: linear-gradient(45deg, #018bff, #243ec4) !important;
+    background-color: #243ec4 !important
 }
 
 .purple {
-    background: linear-gradient(45deg, #6831e3, #f528cb) !important;
+    background-color: #6831e3 !important
 }
 
 .green {
-    background: linear-gradient(45deg, #DCE35B, #45B649) !important;
-}
-
-.primary {
-    background: linear-gradient(45deg, #4567f4, #3CD3AD) !important;
+    background-color: #45B649 !important
 }
 
 .red {
-    background: linear-gradient(45deg, #f44545, #d35f3c) !important;
+    background-color: #f44545 !important
 }
 
 .yellow {
-    background: linear-gradient(45deg, #fae900, #d38c3c) !important;
+    background-color: #fae900 !important
+}
+
+.no-color {
+    background-color: #f4f4f4 !important;
+    color: #f4f4f4 !important;
+    /* border: 1px solid #000; */
+}
+
+.no-color h5,
+.no-color a,
+.no-color {
+    color: #b3b2b2 !important;
 }
 
 .cv-actions {
@@ -64,7 +72,7 @@
 .tooltip .tooltiptext {
     visibility: hidden;
     width: 120px;
-    background-color: black;
+    background-color: #b3b2b2;
     color: #fff;
     text-align: center;
     border-radius: 6px;
@@ -80,7 +88,7 @@
 }
 
 .cv-head {
-    background: linear-gradient(45deg, #4567f4, #3CD3AD);
+    background-color: #243ec4;
     padding: 2rem;
     color: #fff;
     text-align: center;
@@ -102,11 +110,11 @@
     border-radius: 50%;
     line-height: 3rem;
     font-size: 20px;
-    color: #4567f4;
+    color: #b3b2b2;
 }
 
 .line {
-    background: linear-gradient(45deg, #4567f4, #3CD3AD);
+    background-color: #243ec4;
     width: 80%;
     height: 1px;
     margin-left: 3.5rem;
@@ -134,8 +142,8 @@
     margin-top: 3rem;
 }
 
-.list-head i {
-    background: linear-gradient(45deg, #4567f4, #3CD3AD);
+.list-head span {
+    background-color: #243ec4;
     width: 3rem;
     height: 3rem;
     border-radius: 50%;
@@ -170,12 +178,12 @@
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    border: 1px solid #4567f4;
+    border: 1px solid #b3b2b2;
     margin-left: 1rem;
 }
 
-.skills .level.full {
-    background: linear-gradient(45deg, #4567f4, #3CD3AD);
+.full {
+    background-color: #b3b2b2;
     border: none;
 }
 
@@ -200,7 +208,7 @@
 .cv-body>ul::after {
     width: 2px;
     height: 100%;
-    background: #4567f4;
+    background: #b3b2b2;
     position: absolute;
     top: -17px;
     left: 23px;
@@ -215,7 +223,7 @@
     content: "";
     width: 1rem;
     height: 1rem;
-    background: #4567f4;
+    background: #b3b2b2;
     border-radius: 50%;
     font-weight: bold;
     position: absolute;
@@ -247,7 +255,7 @@
 .download-certificate {
     font-size: 22px;
     margin-left: 3rem;
-    color: black;
+    color: #b3b2b2;
     font-weight: 500;
 }
 
