@@ -1,27 +1,33 @@
 // Add and remove commitment
+let current = 1;
+const row = document.querySelector(".commitment .row");
 
-$(".add-commitment").on("click", function () {
-  const commitment = document.querySelector(".commitment .row");
-  const field = document.querySelector(`[data-commitment]`);
-  const cln = field.cloneNode(true);
-  commitment.appendChild(cln);
-  const divCol = document.createElement("div");
-  divCol.setAttribute("class", "col-lg-2");
-  const removeCommitment = document.createElement("div");
-  removeCommitment.setAttribute("class", "remove-commitment");
-  const removeIcon = document.createElement("i");
-  removeIcon.setAttribute("class", "fal fa-minus-square");
+$(document).on("click", ".add-commitment", function () {
+  if (current < 5) {
+    current++;
+    const newCommitment = row.cloneNode(true);
+    const addCommitment = $(newCommitment).find(".add-commitment");
+    const input = $(newCommitment).find("input");
+    $(input).val("");
+    $(addCommitment)
+      .find("i")
+      .removeClass("fa-plus-square")
+      .addClass("fa-minus-square");
 
-  commitment.appendChild(divCol);
-  divCol.appendChild(removeCommitment);
-  removeCommitment.appendChild(removeIcon);
-  $(".remove-commitment").on("click", function () {
-    console.log("clicked");
-    $(removeIcon).remove();
+    $(addCommitment)
+      .removeClass("add-commitment")
+      .addClass("remove-commitment");
+    $(".commitment").append(newCommitment);
+    console.log(current, "add");
 
-    $(cln).remove();
-    divCol.remove();
-  });
+    $(document).on("click", ".remove-commitment", function () {
+      $(this).parents(".commitment .row").remove();
+      if (current > 0) {
+        console.log(current, "remove");
+        current--;
+      }
+    });
+  }
 });
 
 // Remove added new fields (Needs to refactor)
@@ -29,8 +35,9 @@ $(".add-commitment").on("click", function () {
 $(".remove-work").click(function () {
   let count1 = $(".dynamic-work").length;
   let other = $(".other").length;
+  console.log($(".dynamic-work").length);
 
-  if (count1 > 1 && other > 1) {
+  if (count1 > 1 || other > 1) {
     $(".other:last").remove();
     $(".dynamic-work:last").remove();
     count1 = $(".dynamic-work").length;
@@ -44,7 +51,7 @@ $(".remove-education").click(function () {
   let count2 = $(".dynamic-education").length;
   let other = $(".other").length;
 
-  if (count2 > 1 && other > 1) {
+  if (count2 > 1 || other > 1) {
     $(".other:last").remove();
     $(".dynamic-education:last").remove();
     count2 = $(".dynamic-education").length;
@@ -57,7 +64,7 @@ $(".remove-language").click(function () {
   let count3 = $(".dynamic-language").length;
   let other = $(".other").length;
 
-  if (count3 > 1 && other > 1) {
+  if (count3 > 1 || other > 1) {
     $(".other:last").remove();
     $(".dynamic-language:last").remove();
 
@@ -71,7 +78,7 @@ $(".remove-computer").click(function () {
   let count4 = $(".dynamic-computer").length;
   let other = $(".other").length;
 
-  if (count4 > 1 && other > 1) {
+  if (count4 > 1 || other > 1) {
     $(".other:last").remove();
     $(".dynamic-computer:last").remove();
     count4 = $(".dynamic-computer").length;
@@ -84,7 +91,7 @@ $(".remove-certificate").click(function () {
   let count5 = $(".dynamic-certificates").length;
   let other = $(".other").length;
 
-  if (count5 > 1 && other > 1) {
+  if (count5 > 1 || other > 1) {
     $(".other:last").remove();
     $(".dynamic-certificates:last").remove();
     count5 = $(".dynamic-certificates").length;
