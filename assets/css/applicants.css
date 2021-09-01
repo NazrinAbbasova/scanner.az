@@ -153,14 +153,9 @@
     font-size: 14px;
     font-weight: 500;
     padding: 15px 20px;
-    color: #000;
+    color: #fff;
     border: none;
     border-radius: 6px;
     margin-left: 1rem;
     width: 45%;
-}
-
-.modal-body button:hover {
-    background: linear-gradient(45deg, #4567f4, #3CD3AD);
-    color: #fff;
 }

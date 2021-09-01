@@ -1,0 +1,91 @@
+@media screen and (max-width: 1023px) {
+    .profile-content {
+        padding: 0 !important;
+        margin-top: 1rem;
+    }
+
+    .profile-content .update {
+        width: 100% !important;
+    }
+
+    .created-jobs {
+        overflow: scroll;
+    }
+
+    .applicants .actions {
+        overflow: scroll;
+    }
+
+    .applicants-table {
+        overflow: scroll;
+    }
+
+    .filter-percentage.fails {
+        width: 8rem;
+        padding: 0rem;
+    }
+
+    .modal.applicants button {
+        width: 44%;
+        font-size: 12px;
+        padding: 15px 4px;
+    }
+
+    .created-jobs {
+        overflow: scroll;
+    }
+
+    .why-choose .single-choose {
+        min-height: 25rem;
+    }
+
+    .progressbar {
+        margin-top: 1rem;
+    }
+
+    /* 
+    .cv-head.info {
+        min-height: 11rem !important;
+    } */
+
+    .cv-head .contact-info {
+        margin-bottom: 1rem;
+    }
+
+    .cv-body .about {
+        margin-left: 0;
+    }
+
+    .cv-body .about .job {
+        margin-right: 1rem !important;
+    }
+
+    .cv-body .about .job-description h6 {
+        font-size: 14px;
+    }
+
+    .cv-body .about .download-certificate {
+        margin-left: 0rem;
+    }
+
+    .save-cv {
+        margin-top: 1 !important;
+        margin-bottom: 0 !important;
+    }
+
+    .save-cv input {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+}
+
+@media screen and (max-width: 767px) {
+
+    /* .intro-video-play a {
+        width: 100% !important;
+    } */
+
+    .progressbar li {
+        width: 33% !important;
+    }
+}

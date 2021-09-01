@@ -1,5 +1,5 @@
 .cv-colors {
-    margin-bottom: 2rem;
+    /* margin-bottom: 2rem; */
     display: flex;
 }
 
@@ -52,6 +52,7 @@
     display: flex;
     justify-content: flex-end;
     position: relative;
+    margin-bottom: 2rem;
 }
 
 .cv-actions a {
@@ -87,12 +88,17 @@
     visibility: visible;
 }
 
+.apply-head {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
 .cv-head {
     background-color: #243ec4;
     padding: 2rem;
     color: #fff;
     text-align: center;
-    height: 10rem;
+    height: auto;
 }
 
 .cv-head h5 {

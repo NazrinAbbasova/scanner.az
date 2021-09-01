@@ -8,7 +8,7 @@ $(document).on("click", ".add-commitment", function () {
     const newCommitment = row.cloneNode(true);
     const addCommitment = $(newCommitment).find(".add-commitment");
     const input = $(newCommitment).find("input");
-    $(input).val("");
+    $(input).val("")
     $(addCommitment)
       .find("i")
       .removeClass("fa-plus-square")

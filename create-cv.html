@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="assets/css/animate.css" />
     <link rel="stylesheet" href="assets/css/icons.min.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/main-mobile.css" />
     <link rel="stylesheet" href="assets/css/create-vacancy.css" />
 
 </head>
@@ -246,7 +247,7 @@
                                         </div>
 
                                         <div class="col-lg-4">
-                                            <label for="score">Bakalavr üzrə qəbul balı</label>
+                                            <label for="score">Qəbul balı</label>
                                             <input type="number" disabled data-d="degree" id="score"
                                                 placeholder="Qəbul balınız">
                                         </div>
@@ -621,8 +622,8 @@
             const cln = field.cloneNode(true);
 
             // $(cln).find(`[data-s=${input}]`).attr("disabled", true);
-            $(cln).find(`[data-level=${input}]`).attr("disabled", true);
-
+            $(cln).find(`[data-level=${input}]`).attr("disabled", true)
+            // $(cln).find(`[data-commitment='work']`).end().eq(0);
             $(parent_field).append(cln);
 
             if (removeLanguage) removeLanguage.style.display = "block";
